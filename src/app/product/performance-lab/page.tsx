@@ -115,7 +115,7 @@ export default function PerformanceLabPage() {
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <a
-            href="https://app.getvyral.io"
+            href="https://www.getvyral.io/beta"
             target="_blank"
             rel="noopener noreferrer"
             style={btnPrimary}
@@ -433,7 +433,7 @@ export default function PerformanceLabPage() {
         </p>
         <div style={{ marginBottom: 20 }}>
           <a
-            href="https://app.getvyral.io"
+            href="https://www.getvyral.io/beta"
             target="_blank"
             rel="noopener noreferrer"
             style={btnPrimary}

@@ -182,7 +182,7 @@ export default function CreatorsPage() {
             Understand your content. Build your strategy. Execute better posts — consistently.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
               Sign up for early launch
             </a>
             <Link href="/pricing" style={btnGhost}>See pricing</Link>
@@ -454,7 +454,7 @@ export default function CreatorsPage() {
           <p style={{ ...body, maxWidth: 440, margin: "0 auto 32px" }}>
             Sign up and see what&apos;s actually driving your growth.
           </p>
-          <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+          <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
             Sign up for early launch
           </a>
         </section>

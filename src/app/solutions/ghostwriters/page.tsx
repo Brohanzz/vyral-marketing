@@ -182,7 +182,7 @@ export default function GhostwritersPage() {
             Write better posts for every client using personalized analytics, strategy, and AI.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
               Sign up for early launch
             </a>
             <Link href="/pricing" style={btnGhost}>See pricing</Link>
@@ -442,7 +442,7 @@ export default function GhostwritersPage() {
           <p style={{ ...body, maxWidth: 400, margin: "0 auto 32px" }}>
             Sign up and deliver better results for every client.
           </p>
-          <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+          <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
             Sign up for early launch
           </a>
         </section>

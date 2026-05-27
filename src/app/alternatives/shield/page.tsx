@@ -111,7 +111,7 @@ export default function ShieldPage() {
         <p style={{ ...body, maxWidth: 540, margin: "0 auto 32px" }}>
           Shield shows what happened. VYRAL shows why it happened — and how to improve.
         </p>
-        <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+        <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
           Sign up for early launch
         </a>
       </section>
@@ -294,7 +294,7 @@ export default function ShieldPage() {
         <p style={{ ...body, maxWidth: 420, margin: "0 auto 32px" }}>
           Sign up and understand what&apos;s really driving your performance.
         </p>
-        <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+        <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
           Sign up for early launch
         </a>
       </section>

@@ -191,7 +191,7 @@ export default function LinkedInAnalyticsPage() {
             Finally understand why your posts perform — and how to repeat it.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
               Start free
             </a>
             <Link href="/product" style={btnGhost}>See demo</Link>
@@ -526,7 +526,7 @@ export default function LinkedInAnalyticsPage() {
               marginTop: 32,
             }}
           >
-            <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
               Start free
             </a>
             <Link href="/product" style={btnGhost}>See demo</Link>

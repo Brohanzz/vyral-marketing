@@ -148,7 +148,7 @@ export default function LinkedInGrowthToolPage() {
             Most LinkedIn tools help you post. VYRAL helps you think, write, analyze, and improve — so every post moves you closer to your goals.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>Sign up for early launch</a>
+            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>Sign up for early launch</a>
             <Link href="/product" style={btnGhost}>See how it works</Link>
           </div>
         </section>
@@ -253,7 +253,7 @@ export default function LinkedInGrowthToolPage() {
           <p style={{ ...body, maxWidth: 480, margin: "0 auto 28px" }}>
             Join the first 100 LinkedIn creators using VYRAL. Full Pro access for 14 days. No credit card required.
           </p>
-          <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>Sign up for early launch</a>
+          <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>Sign up for early launch</a>
         </section>
       </main>
     </>

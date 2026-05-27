@@ -334,7 +334,7 @@ export default function Nav() {
             }}
           >
             <a
-              href="https://app.getvyral.io"
+              href="https://www.getvyral.io/beta"
               target="_blank"
               rel="noopener noreferrer"
               style={plainLinkStyle}
@@ -343,7 +343,7 @@ export default function Nav() {
               Log in
             </a>
             <a
-              href="https://app.getvyral.io"
+              href="https://www.getvyral.io/beta"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -529,7 +529,7 @@ export default function Nav() {
             }}
           >
             <a
-              href="https://app.getvyral.io"
+              href="https://www.getvyral.io/beta"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
@@ -548,7 +548,7 @@ export default function Nav() {
               Log in
             </a>
             <a
-              href="https://app.getvyral.io"
+              href="https://www.getvyral.io/beta"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}

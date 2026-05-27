@@ -168,7 +168,7 @@ export default function HowItWorksPage() {
           }}
         >
           <a
-            href="https://app.getvyral.io"
+            href="https://www.getvyral.io/beta"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -588,7 +588,7 @@ export default function HowItWorksPage() {
           Stop posting blindly. Start improving on purpose.
         </p>
         <a
-          href="https://app.getvyral.io"
+          href="https://www.getvyral.io/beta"
           target="_blank"
           rel="noopener noreferrer"
           style={{

@@ -340,7 +340,7 @@ export default function AboutPage() {
           14-day free Pro trial · No credit card required
         </p>
         <a
-          href="https://app.getvyral.io"
+          href="https://www.getvyral.io/beta"
           target="_blank"
           rel="noopener noreferrer"
           style={{

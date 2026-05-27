@@ -102,7 +102,7 @@ export default function TaplioPage() {
         <p style={{ ...body, maxWidth: 540, margin: "0 auto 32px" }}>
           Taplio automates. VYRAL helps you understand your content and improve it.
         </p>
-        <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+        <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
           Sign up for early launch
         </a>
       </section>
@@ -283,7 +283,7 @@ export default function TaplioPage() {
         <p style={{ ...body, maxWidth: 420, margin: "0 auto 32px" }}>
           Sign up and see the difference deep analytics makes.
         </p>
-        <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+        <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
           Sign up for early launch
         </a>
       </section>

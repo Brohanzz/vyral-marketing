@@ -183,7 +183,7 @@ export default function LinkedInCoachingPage() {
             data, and costs a fraction of a course.
           </p>
           <a
-            href="https://app.getvyral.io"
+            href="https://www.getvyral.io/beta"
             target="_blank"
             rel="noopener noreferrer"
             style={btnPurple}
@@ -458,7 +458,7 @@ export default function LinkedInCoachingPage() {
               days. No credit card required.
             </p>
             <a
-              href="https://app.getvyral.io"
+              href="https://www.getvyral.io/beta"
               target="_blank"
               rel="noopener noreferrer"
               style={btnPurple}

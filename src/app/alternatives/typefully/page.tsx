@@ -112,7 +112,7 @@ export default function TypefullyPage() {
         <p style={{ ...body, maxWidth: 540, margin: "0 auto 32px" }}>
           Typefully helps you write. VYRAL helps you understand, plan, and improve.
         </p>
-        <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+        <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
           Sign up for early launch
         </a>
       </section>
@@ -295,7 +295,7 @@ export default function TypefullyPage() {
         <p style={{ ...body, maxWidth: 420, margin: "0 auto 32px" }}>
           Sign up and see how analytics-driven content outperforms.
         </p>
-        <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+        <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
           Sign up for early launch
         </a>
       </section>

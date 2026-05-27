@@ -72,7 +72,7 @@ export default function BetaPage() {
           creators using VYRAL.
         </p>
         <a
-          href="https://app.getvyral.io"
+          href="https://www.getvyral.io/beta"
           style={{
             display: "inline-block",
             background: "#7c3aed",

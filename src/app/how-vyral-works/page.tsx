@@ -555,7 +555,7 @@ export default function HowVyralWorksPage() {
           Join creators who trust VYRAL with their LinkedIn growth.
         </p>
         <a
-          href="https://app.getvyral.io"
+          href="https://www.getvyral.io/beta"
           target="_blank"
           rel="noopener noreferrer"
           style={{

@@ -139,7 +139,7 @@ export default function AILinkedInPostWriterPage() {
             Not generic AI templates. A coach that studies your writing patterns, understands your tone, and helps you write content that sounds authentically you — just sharper.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>Sign up for early launch</a>
+            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>Sign up for early launch</a>
             <Link href="/ai-coach" style={btnGhost}>Learn about the Coach</Link>
           </div>
         </section>
@@ -237,7 +237,7 @@ export default function AILinkedInPostWriterPage() {
           <p style={{ ...body, maxWidth: 440, margin: "0 auto 28px" }}>
             Join the first 100 creators using VYRAL&apos;s AI Coach. Full Pro access for 14 days.
           </p>
-          <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>Sign up for early launch</a>
+          <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>Sign up for early launch</a>
         </section>
       </main>
     </>

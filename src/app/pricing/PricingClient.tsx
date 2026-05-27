@@ -442,7 +442,7 @@ export default function PricingClient() {
               </div>
 
               <a
-                href="https://app.getvyral.io"
+                href="https://www.getvyral.io/beta"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -594,7 +594,7 @@ export default function PricingClient() {
               </div>
 
               <a
-                href="https://app.getvyral.io"
+                href="https://www.getvyral.io/beta"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -977,7 +977,7 @@ export default function PricingClient() {
           14-day trial · Full Pro access · No credit card required
         </p>
         <a
-          href="https://app.getvyral.io"
+          href="https://www.getvyral.io/beta"
           target="_blank"
           rel="noopener noreferrer"
           style={{

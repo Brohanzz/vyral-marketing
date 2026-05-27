@@ -163,7 +163,7 @@ export default function BlueprintAIPage() {
           }}
         >
           <a
-            href="https://app.getvyral.io"
+            href="https://www.getvyral.io/beta"
             target="_blank"
             rel="noopener noreferrer"
             style={btnPrimary}
@@ -524,7 +524,7 @@ export default function BlueprintAIPage() {
         </p>
         <div style={{ marginBottom: 14 }}>
           <a
-            href="https://app.getvyral.io"
+            href="https://www.getvyral.io/beta"
             target="_blank"
             rel="noopener noreferrer"
             style={btnPrimary}

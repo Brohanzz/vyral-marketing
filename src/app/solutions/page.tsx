@@ -170,7 +170,7 @@ export default function SolutionsPage() {
             Different personas, same powerful engine. VYRAL adapts to how you work and what you need to grow on LinkedIn.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
               Sign up for early launch
             </a>
             <Link href="/product" style={btnGhost}>Explore product</Link>
@@ -292,7 +292,7 @@ export default function SolutionsPage() {
             Start building your content engine today — no matter your role or goals
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://app.getvyral.io" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
               Sign up for early launch
             </a>
             <Link href="/product" style={btnGhost}>Explore product</Link>
