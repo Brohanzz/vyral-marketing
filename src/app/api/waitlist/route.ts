@@ -2,7 +2,15 @@ import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 
 export async function POST(req: NextRequest) {
-  const { email, waitlist, newsletter } = await req.json()
+  const { first_name, last_name, email, waitlist, newsletter } = await req.json()
+
+  if (!first_name || !first_name.trim()) {
+    return NextResponse.json({ error: 'First name is required' }, { status: 400 })
+  }
+
+  if (!last_name || !last_name.trim()) {
+    return NextResponse.json({ error: 'Last name is required' }, { status: 400 })
+  }
 
   if (!email || !email.includes('@')) {
     return NextResponse.json({ error: 'Invalid email' }, { status: 400 })
@@ -10,7 +18,7 @@ export async function POST(req: NextRequest) {
 
   const { error: dbError } = await supabase
     .from('waitlist_signups')
-    .upsert({ email, waitlist, newsletter }, { onConflict: 'email' })
+    .upsert({ email, first_name, last_name, waitlist, newsletter }, { onConflict: 'email' })
 
   if (dbError) {
     console.error('Supabase error:', dbError)
@@ -25,6 +33,8 @@ export async function POST(req: NextRequest) {
     },
     body: JSON.stringify({
       email,
+      firstName: first_name,
+      lastName: last_name,
       userGroup: waitlist && newsletter ? 'waitlist,newsletter' : waitlist ? 'waitlist' : 'newsletter',
       source: 'marketing-site',
     }),

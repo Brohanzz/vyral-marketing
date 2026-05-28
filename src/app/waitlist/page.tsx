@@ -5,6 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function WaitlistPage() {
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [waitlist, setWaitlist] = useState(true)
   const [newsletter, setNewsletter] = useState(true)
@@ -21,7 +23,7 @@ export default function WaitlistPage() {
       const res = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, waitlist, newsletter }),
+        body: JSON.stringify({ first_name: firstName, last_name: lastName, email, waitlist, newsletter }),
       })
 
       if (!res.ok) {
@@ -139,6 +141,55 @@ export default function WaitlistPage() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} style={{ textAlign: 'left' }}>
+            {/* First name + Last name */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                gap: 12,
+                marginBottom: 16,
+              }}
+            >
+              <input
+                type="text"
+                placeholder="First name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+                style={{
+                  width: '100%',
+                  boxSizing: 'border-box',
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  borderRadius: 10,
+                  padding: '14px 16px',
+                  color: '#fff',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: 15,
+                  outline: 'none',
+                }}
+              />
+              <input
+                type="text"
+                placeholder="Last name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                required
+                style={{
+                  width: '100%',
+                  boxSizing: 'border-box',
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  borderRadius: 10,
+                  padding: '14px 16px',
+                  color: '#fff',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: 15,
+                  outline: 'none',
+                }}
+              />
+            </div>
+
             {/* Email input */}
             <input
               type="email"
