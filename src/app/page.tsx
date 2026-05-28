@@ -401,6 +401,131 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
+          SECTION 1B — THE FULL LOOP
+      ══════════════════════════════════════════════════════════ */}
+      <ScrollReveal>
+        <section style={{ background: "#080510", padding: "96px 48px" }}>
+          <style>{`
+            .loop-steps {
+              display: grid;
+              grid-template-columns: repeat(5, 1fr);
+              gap: 24px;
+              margin-top: 56px;
+            }
+            @media (max-width: 860px) {
+              .loop-steps { grid-template-columns: 1fr; gap: 40px; }
+            }
+          `}</style>
+          <div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center" }}>
+            <div style={overlinePill("muted")}>THE VYRAL LOOP</div>
+            <h2 style={sectionHeading}>
+              From strategy to results —{" "}
+              <span style={{ color: "#a78bfa" }}>in one place</span>
+            </h2>
+            <p
+              style={{
+                ...bodyText,
+                maxWidth: 560,
+                margin: "0 auto",
+              }}
+            >
+              Most LinkedIn tools show you what happened. VYRAL connects every
+              step — so you know why it happened and exactly what to do next.
+            </p>
+
+            <div className="loop-steps">
+              {[
+                {
+                  n: "1",
+                  label: "Define your strategy",
+                  desc: "Set your content pillars, voice, and goals in Blueprint. Every post has a purpose from day one.",
+                },
+                {
+                  n: "2",
+                  label: "Create with intelligence",
+                  desc: "The AI Coach writes in your voice, informed by your real performance data and scored against your strategy before you hit publish.",
+                },
+                {
+                  n: "3",
+                  label: "Publish with confidence",
+                  desc: "Schedule and publish directly to LinkedIn. No copy-pasting, no tab switching.",
+                },
+                {
+                  n: "4",
+                  label: "Understand what works",
+                  desc: "Analytics tied to your pillars show what's performing — and why. Ask the AI Analyst plain-English questions against your actual data.",
+                },
+                {
+                  n: "5",
+                  label: "Track real outcomes",
+                  desc: "Log leads, attribute them to posts and campaigns, and see the pipeline your content is actually generating.",
+                },
+              ].map((step) => (
+                <div
+                  key={step.n}
+                  style={{
+                    textAlign: "left",
+                    borderTop: "1px solid rgba(255,255,255,0.08)",
+                    paddingTop: 20,
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: "Inter, sans-serif",
+                      fontWeight: 700,
+                      fontSize: 48,
+                      lineHeight: 1,
+                      color: "#7c3aed",
+                      marginBottom: 16,
+                    }}
+                  >
+                    {step.n}
+                  </div>
+                  <p
+                    style={{
+                      fontFamily: "Inter, sans-serif",
+                      fontWeight: 600,
+                      fontSize: 16,
+                      color: "#ffffff",
+                      margin: "0 0 8px",
+                    }}
+                  >
+                    {step.label}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: 14,
+                      color: "rgba(255,255,255,0.55)",
+                      lineHeight: 1.65,
+                      margin: 0,
+                    }}
+                  >
+                    {step.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontStyle: "italic",
+                fontSize: 16,
+                color: "rgba(255,255,255,0.4)",
+                lineHeight: 1.6,
+                maxWidth: 560,
+                margin: "56px auto 0",
+              }}
+            >
+              No other LinkedIn tool connects your content strategy to your
+              business results. VYRAL does.
+            </p>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ══════════════════════════════════════════════════════════
           SECTION 2 — SOCIAL PROOF BAR
       ══════════════════════════════════════════════════════════ */}
       <section
