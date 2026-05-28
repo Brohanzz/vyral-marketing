@@ -124,6 +124,9 @@ export default function Footer() {
                 { label: "vs Taplio", href: "/alternatives/taplio" },
                 { label: "vs Shield", href: "/alternatives/shield" },
                 { label: "vs Typefully", href: "/alternatives/typefully" },
+                { label: "vs Kleo", href: "/alternatives/kleo" },
+                { label: "vs AuthoredUp", href: "/alternatives/authoredup" },
+                { label: "vs MagicPost", href: "/alternatives/magicpost" },
               ].map((link) => (
                 <Link
                   key={link.href}

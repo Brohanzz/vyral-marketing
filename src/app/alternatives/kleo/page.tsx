@@ -3,14 +3,14 @@ import Link from "next/link";
 import { Check, X, AlertCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Typefully Alternative for LinkedIn — Strategy Beyond the Editor | VYRAL",
+  title: "Kleo Alternative — From Voice Matching to Performance Intelligence | VYRAL",
   description:
-    "Typefully is a great writing tool. VYRAL is a growth system. See what serious LinkedIn creators add when they're ready to go beyond drafts and scheduling.",
-  alternates: { canonical: "https://www.getvyral.io/alternatives/typefully" },
+    "Kleo learns how you write. VYRAL learns what your audience responds to — then helps you write more of that. Built on LinkedIn's official API with no Chrome extension required.",
+  alternates: { canonical: "https://www.getvyral.io/alternatives/kleo" },
   openGraph: {
-    title: "VYRAL vs Typefully — Beyond the Editor",
+    title: "VYRAL vs Kleo — Beyond Voice Matching",
     description:
-      "Great writing tool. Zero analytics. No strategy. VYRAL closes the gap.",
+      "Kleo learns your writing style. VYRAL learns what actually performs for your audience.",
   },
 };
 
@@ -61,17 +61,17 @@ function FeatureCell({ value }: { value: true | false | "partial" }) {
 }
 
 // ── Comparison data ───────────────────────────────────────────────────────────
-const rows: Array<{ feature: string; vyral: true | "partial"; typefully: true | false | "partial" }> = [
-  { feature: "Clean writing UI",                      vyral: true, typefully: true },
-  { feature: "Post scheduling",                       vyral: true, typefully: true },
-  { feature: "Draft management",                      vyral: true, typefully: true },
-  { feature: "LinkedIn analytics",                    vyral: true, typefully: false },
-  { feature: "Performance scoring",                   vyral: true, typefully: false },
-  { feature: "Blueprint strategy system",             vyral: true, typefully: false },
-  { feature: "AI trained on your data",               vyral: true, typefully: false },
-  { feature: "Hook & structure analysis",             vyral: true, typefully: false },
-  { feature: "Content pattern detection",             vyral: true, typefully: false },
-  { feature: "Built on LinkedIn's official API",      vyral: true, typefully: false },
+const rows: Array<{ feature: string; vyral: true | "partial"; kleo: true | false | "partial" }> = [
+  { feature: "AI post generation",                         vyral: true, kleo: true },
+  { feature: "Voice & style matching",                     vyral: true, kleo: true },
+  { feature: "Post templates & hooks library",             vyral: true, kleo: true },
+  { feature: "LinkedIn analytics",                         vyral: true, kleo: false },
+  { feature: "Performance-driven content intelligence",    vyral: true, kleo: false },
+  { feature: "Blueprint strategy system",                  vyral: true, kleo: false },
+  { feature: "Post quality scoring",                       vyral: true, kleo: false },
+  { feature: "Hook & structure analysis",                  vyral: true, kleo: false },
+  { feature: "Content pattern detection",                  vyral: true, kleo: false },
+  { feature: "Built on LinkedIn's official API",           vyral: true, kleo: "partial" },
 ];
 
 // ── Table styles ──────────────────────────────────────────────────────────────
@@ -87,7 +87,7 @@ const tblCell = (align: "left" | "center", highlight?: boolean): React.CSSProper
   justifyContent: align === "center" ? "center" : "flex-start",
 });
 
-export default function TypefullyPage() {
+export default function KleoPage() {
   return (
     <main style={{ background: "#080510", minHeight: "100vh", color: "#fff" }}>
       {/* HERO */}
@@ -99,11 +99,10 @@ export default function TypefullyPage() {
           textAlign: "center",
         }}
       >
-        <h1 style={h1}>VYRAL vs Typefully</h1>
+        <h1 style={h1}>VYRAL vs Kleo</h1>
         <p style={{ ...body, maxWidth: 540, margin: "0 auto 32px" }}>
-          Typefully is one of the cleanest writing and scheduling tools available. VYRAL is what you
-          add when you&apos;re ready to understand why your content performs — and build a strategy
-          around it.
+          Kleo builds a deep model of how you write. VYRAL builds a deep model of what your audience
+          responds to — and uses that to make every draft better.
         </p>
         <a href="/waitlist" style={btnPurple}>
           Join the waitlist
@@ -112,20 +111,21 @@ export default function TypefullyPage() {
 
       {/* OVERVIEW */}
       <section style={{ maxWidth: 720, margin: "0 auto", padding: "72px 48px" }}>
-        <h2 style={h2}>A writing tool vs a growth system</h2>
+        <h2 style={h2}>Two approaches to personalisation</h2>
         <p style={body}>
-          <strong style={{ color: "#fff" }}>Typefully excels at the writing experience.</strong>{" "}
-          Clean editor, multi-platform scheduling, simple draft management. For writers who want
-          friction removed from publishing, it&apos;s excellent.
+          <strong style={{ color: "#fff" }}>Kleo&apos;s strength is personalisation depth.</strong>{" "}
+          Upload your content, transcripts, and writing samples, and it builds a detailed style
+          guide that shapes every draft. For creators who want their voice preserved, it goes further
+          than most tools.
         </p>
         <p style={body}>
-          <strong style={{ color: "#fff" }}>VYRAL is built for what comes after publishing.</strong>{" "}
-          Understanding which posts landed and why, building a content strategy aligned to your
-          goals, and using that intelligence to make every future post better.
+          <strong style={{ color: "#fff" }}>VYRAL approaches personalisation differently.</strong>{" "}
+          Instead of learning from what you&apos;ve written, it learns from what has performed. Your
+          analytics become your creative brief. Your top posts become your training signal.
         </p>
         <p style={{ ...body, margin: 0 }}>
-          They solve different problems. If you&apos;ve outgrown just writing and scheduling, VYRAL
-          is the next step.
+          The result is content that doesn&apos;t just sound like you — it&apos;s optimised for your
+          actual audience.
         </p>
       </section>
 
@@ -152,15 +152,15 @@ export default function TypefullyPage() {
                 margin: "0 0 20px",
               }}
             >
-              What Typefully does well
+              What Kleo is good at
             </h3>
             <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
               {[
-                "Clean, distraction-free writing UI",
-                "Multi-platform post scheduling",
-                "Draft management and collaboration",
-                "Simple, fast publishing workflow",
-                "Thread and formatting support",
+                "Deep knowledge-base personalisation",
+                "Strong voice matching from uploaded content",
+                "Large library of post templates and hooks",
+                "Anti-generic AI mechanisms",
+                "All-inclusive pricing with no credit caps",
               ].map((item) => (
                 <li key={item} style={{ display: "flex", gap: 10, marginBottom: 12, alignItems: "center" }}>
                   <Check size={16} color="#2dd4bf" style={{ flexShrink: 0 }} />
@@ -183,16 +183,16 @@ export default function TypefullyPage() {
                 margin: "0 0 20px",
               }}
             >
-              What Typefully doesn&apos;t include
+              Where Kleo falls short
             </h3>
             <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
               {[
-                "No LinkedIn analytics",
-                "No performance scoring",
-                "No content strategy layer",
-                "No AI trained on your own posts",
-                "No hook or structure analysis",
-                "No coaching or improvement engine",
+                "No LinkedIn analytics or performance data",
+                "Voice learning is input-driven, not performance-driven",
+                "No strategy layer or Blueprint alignment",
+                "No post quality scoring",
+                "Requires significant setup time to onboard knowledge base",
+                "Chrome extension dependency",
               ].map((item) => (
                 <li key={item} style={{ display: "flex", gap: 10, marginBottom: 12, alignItems: "center" }}>
                   <X size={16} color="#ef4444" style={{ flexShrink: 0 }} />
@@ -206,14 +206,15 @@ export default function TypefullyPage() {
         </div>
       </section>
 
-      {/* WHAT VYRAL ADDS */}
+      {/* THE DIFFERENCE THAT MATTERS */}
       <section style={{ maxWidth: 720, margin: "0 auto", padding: "72px 48px", textAlign: "center" }}>
-        <h2 style={{ ...h2, textAlign: "center" }}>What VYRAL adds</h2>
+        <h2 style={{ ...h2, textAlign: "center" }}>The difference that matters</h2>
         <p style={{ ...body, maxWidth: 520, margin: "0 auto 32px" }}>
-          Writing and scheduling gets your content published. VYRAL gets it to perform. Analytics
-          that explain why posts work, a Blueprint strategy system that keeps your content aligned to
-          your goals, and an AI coach that improves your drafts before they go live — all built on
-          officially authorised LinkedIn data.
+          Kleo learns how you write. That&apos;s valuable. But the question that actually grows your
+          LinkedIn isn&apos;t &ldquo;does this sound like me?&rdquo; — it&apos;s &ldquo;does this
+          work for my audience?&rdquo; VYRAL answers the second question. Your engagement data, your
+          hook performance, your format patterns — all connected to the AI that helps you write your
+          next post. That&apos;s the loop Kleo doesn&apos;t close.
         </p>
         <div
           style={{
@@ -225,12 +226,12 @@ export default function TypefullyPage() {
           }}
         >
           <span style={{ fontFamily: "Inter, sans-serif", fontSize: 18, color: "#fff" }}>
-            Typefully helps you write and publish.
+            Kleo learns your writing style.
           </span>
           <br />
           <span style={{ fontFamily: "Inter, sans-serif", fontSize: 18, color: "#fff" }}>
-            VYRAL helps you{" "}
-            <span style={{ color: "#a78bfa", fontWeight: 700 }}>grow.</span>
+            VYRAL learns what your audience{" "}
+            <span style={{ color: "#a78bfa", fontWeight: 700 }}>responds to.</span>
           </span>
         </div>
       </section>
@@ -251,7 +252,7 @@ export default function TypefullyPage() {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 120px 120px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <div style={{ padding: "13px 20px", fontFamily: "Inter, sans-serif", fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.4)" }}>Feature</div>
               <div style={{ padding: "13px 20px", fontFamily: "Inter, sans-serif", fontSize: 13, fontWeight: 600, color: "#a78bfa", background: "rgba(124,58,237,0.06)", textAlign: "center" }}>VYRAL</div>
-              <div style={{ padding: "13px 20px", fontFamily: "Inter, sans-serif", fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.4)", textAlign: "center" }}>Typefully</div>
+              <div style={{ padding: "13px 20px", fontFamily: "Inter, sans-serif", fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.4)", textAlign: "center" }}>Kleo</div>
             </div>
             {rows.map((row, i) => (
               <div
@@ -269,7 +270,7 @@ export default function TypefullyPage() {
                   <FeatureCell value={row.vyral} />
                 </div>
                 <div style={tblCell("center")}>
-                  <FeatureCell value={row.typefully} />
+                  <FeatureCell value={row.kleo} />
                 </div>
               </div>
             ))}
@@ -279,9 +280,9 @@ export default function TypefullyPage() {
 
       {/* FINAL CTA */}
       <section style={{ maxWidth: 640, margin: "0 auto", padding: "72px 48px", textAlign: "center" }}>
-        <h2 style={{ ...h2, textAlign: "center" }}>Ready to go beyond the editor?</h2>
+        <h2 style={{ ...h2, textAlign: "center" }}>Write in your voice. Optimised for your audience.</h2>
         <p style={{ ...body, maxWidth: 420, margin: "0 auto 32px" }}>
-          Writing is the start. Understanding what works is how you grow.
+          Your style matters. So does knowing what resonates. VYRAL gives you both.
         </p>
         <a href="/waitlist" style={btnPurple}>
           Join the waitlist

@@ -3,13 +3,14 @@ import Link from "next/link";
 import { Check, X, AlertCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "VYRAL vs Shield — Analytics Compared",
+  title: "Shield Analytics Alternative — Where Shield Users Go Next | VYRAL",
   description:
-    "Compare VYRAL and Shield analytics. Shield shows what happened. VYRAL shows why it happened — and how to improve your LinkedIn content.",
+    "Shield Analytics is shutting down. VYRAL gives you everything Shield offered — plus AI coaching, content strategy, and a performance loop built on LinkedIn's official API.",
   alternates: { canonical: "https://www.getvyral.io/alternatives/shield" },
   openGraph: {
-    title: "VYRAL vs Shield — Beyond the Dashboard",
-    description: "Shield shows what happened. VYRAL shows why — and what to do next.",
+    title: "Shield is closing. VYRAL is where serious creators go next.",
+    description:
+      "Official API analytics, AI coaching, and a strategy layer. Everything Shield couldn't offer.",
   },
 };
 
@@ -61,18 +62,19 @@ function FeatureCell({ value }: { value: true | false | "partial" }) {
 
 // ── Comparison data ───────────────────────────────────────────────────────────
 const rows: Array<{ feature: string; vyral: true; shield: true | false }> = [
-  { feature: "Basic KPI dashboards",           vyral: true, shield: true },
-  { feature: "Reach & impressions tracking",   vyral: true, shield: true },
-  { feature: "Hook type analysis",             vyral: true, shield: false },
-  { feature: "Tone & structure insights",      vyral: true, shield: false },
-  { feature: "Performance scoring",            vyral: true, shield: false },
-  { feature: "Theme & pattern detection",      vyral: true, shield: false },
-  { feature: "Blueprint strategy system",      vyral: true, shield: false },
-  { feature: "AI coaching & sparring",         vyral: true, shield: false },
-  { feature: "Content workflow tools",         vyral: true, shield: false },
-  { feature: "Performance Lab",               vyral: true, shield: false },
+  { feature: "Basic KPI dashboards",                    vyral: true, shield: true },
+  { feature: "Reach & impressions tracking",            vyral: true, shield: true },
+  { feature: "Engagement trend analysis",               vyral: true, shield: true },
+  { feature: "Why posts performed (AI insight)",        vyral: true, shield: false },
+  { feature: "Hook, tone & structure analysis",         vyral: true, shield: false },
+  { feature: "Performance scoring",                     vyral: true, shield: false },
+  { feature: "Blueprint strategy system",               vyral: true, shield: false },
+  { feature: "AI coaching & draft improvement",         vyral: true, shield: false },
+  { feature: "Content creation workflow",               vyral: true, shield: false },
+  { feature: "Built on LinkedIn's official API",        vyral: true, shield: false },
 ];
 
+// ── Table styles ──────────────────────────────────────────────────────────────
 const tblCell = (align: "left" | "center", highlight?: boolean): React.CSSProperties => ({
   padding: "13px 20px",
   fontFamily: "Inter, sans-serif",
@@ -84,16 +86,6 @@ const tblCell = (align: "left" | "center", highlight?: boolean): React.CSSProper
   alignItems: "center",
   justifyContent: align === "center" ? "center" : "flex-start",
 });
-
-const insightItems = [
-  "What themes work best",
-  "Why a post outperformed",
-  "Hook clarity issues",
-  "Tone insights",
-  "Structure problems",
-  "Execution errors",
-  "Personalized recommendations",
-];
 
 export default function ShieldPage() {
   return (
@@ -107,28 +99,27 @@ export default function ShieldPage() {
           textAlign: "center",
         }}
       >
-        <h1 style={h1}>VYRAL vs Shield</h1>
+        <h1 style={h1}>Shield is closing. Here&apos;s what comes next.</h1>
         <p style={{ ...body, maxWidth: 540, margin: "0 auto 32px" }}>
-          Shield shows what happened. VYRAL shows why it happened — and how to improve.
+          Shield showed you the numbers. VYRAL shows you what they mean — and helps you act on them.
+          Built on LinkedIn&apos;s official API, with no browser extension required.
         </p>
         <a href="/waitlist" style={btnPurple}>
           Join the waitlist
         </a>
       </section>
 
-      {/* OVERVIEW */}
+      {/* WHAT SHIELD BUILT */}
       <section style={{ maxWidth: 720, margin: "0 auto", padding: "72px 48px" }}>
-        <h2 style={h2}>Shield is a dashboard. VYRAL is an analysis engine.</h2>
+        <h2 style={h2}>What Shield built</h2>
         <p style={body}>
-          <strong style={{ color: "#fff" }}>Shield is a metrics dashboard.</strong>{" "}
-          Clean charts showing reach, impressions, and engagement over time.
-        </p>
-        <p style={body}>
-          <strong style={{ color: "#fff" }}>VYRAL is an analysis and improvement engine.</strong>{" "}
-          It tells you which hooks work, why posts underperform, and what to do next.
+          Shield spent seven years building the cleanest analytics dashboard in the LinkedIn creator
+          space. Reach, impressions, engagement over time — presented beautifully. For creators who
+          wanted to understand their baseline performance, it was the go-to tool.
         </p>
         <p style={{ ...body, margin: 0 }}>
-          If you want deep insight into your content patterns, VYRAL is the clear choice.
+          But Shield was always a dashboard. It showed you what happened. It never told you why, or
+          what to do next.
         </p>
       </section>
 
@@ -155,14 +146,15 @@ export default function ShieldPage() {
                 margin: "0 0 20px",
               }}
             >
-              What Shield is good at
+              What Shield was good at
             </h3>
             <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
               {[
-                "Clean, visual dashboards",
-                "Basic KPI tracking",
-                "Reach, impressions, engagement metrics",
+                "Clean, visual performance dashboards",
+                "Reach and impressions tracking over time",
+                "Engagement trend analysis",
                 "Team reporting features",
+                "Simple, focused interface",
               ].map((item) => (
                 <li key={item} style={{ display: "flex", gap: 10, marginBottom: 12, alignItems: "center" }}>
                   <Check size={16} color="#2dd4bf" style={{ flexShrink: 0 }} />
@@ -185,16 +177,16 @@ export default function ShieldPage() {
                 margin: "0 0 20px",
               }}
             >
-              Where Shield stops
+              Where Shield stopped
             </h3>
             <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
               {[
+                "No insight into why posts performed",
                 "No hook, tone, or structure analysis",
-                "No performance scoring",
-                "No pattern detection",
-                "No strategy system",
-                "No AI coaching",
-                "No content workflow",
+                "No content strategy layer",
+                "No AI coaching or draft improvement",
+                "No post quality scoring",
+                "No content creation workflow",
               ].map((item) => (
                 <li key={item} style={{ display: "flex", gap: 10, marginBottom: 12, alignItems: "center" }}>
                   <X size={16} color="#ef4444" style={{ flexShrink: 0 }} />
@@ -208,50 +200,42 @@ export default function ShieldPage() {
         </div>
       </section>
 
-      {/* WHY OUTGROW */}
-      <section style={{ maxWidth: 720, margin: "0 auto", padding: "72px 48px" }}>
-        <h2 style={h2}>Why creators outgrow Shield</h2>
-        <p style={body}>
-          Once creators reach 5–10k followers, they need more than numbers. They need to understand:
+      {/* THE GAP VYRAL CLOSES */}
+      <section style={{ maxWidth: 720, margin: "0 auto", padding: "72px 48px", textAlign: "center" }}>
+        <h2 style={{ ...h2, textAlign: "center" }}>The gap VYRAL closes</h2>
+        <p style={{ ...body, maxWidth: 520, margin: "0 auto 32px" }}>
+          VYRAL starts where Shield stopped. Official API analytics — the same data foundation —
+          plus an AI layer that explains what&apos;s driving your numbers, a strategy system that
+          connects your content to your goals, and a coach that helps you write better posts from
+          that insight.
+        </p>
+        <p style={{ ...body, maxWidth: 520, margin: "0 auto 32px" }}>
+          One platform. The full loop.
         </p>
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: 10,
-            marginBottom: 28,
+            background: "rgba(124,58,237,0.08)",
+            border: "1px solid rgba(124,58,237,0.25)",
+            borderRadius: 14,
+            padding: 28,
+            textAlign: "center",
           }}
         >
-          {insightItems.map((item) => (
-            <div
-              key={item}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 10,
-                background: "rgba(124,58,237,0.08)",
-                border: "1px solid rgba(124,58,237,0.2)",
-                borderRadius: 8,
-                padding: "12px 16px",
-              }}
-            >
-              <Check size={15} color="#7c3aed" style={{ flexShrink: 0 }} />
-              <span style={{ fontFamily: "Inter, sans-serif", fontSize: 14, color: "rgba(255,255,255,0.7)" }}>
-                {item}
-              </span>
-            </div>
-          ))}
+          <span style={{ fontFamily: "Inter, sans-serif", fontSize: 18, color: "#fff" }}>
+            Shield showed you the data.
+          </span>
+          <br />
+          <span style={{ fontFamily: "Inter, sans-serif", fontSize: 18, color: "#fff" }}>
+            VYRAL shows you{" "}
+            <span style={{ color: "#a78bfa", fontWeight: 700 }}>what to do with it.</span>
+          </span>
         </div>
-        <p style={{ ...body, margin: 0 }}>
-          Shield doesn&apos;t offer this.{" "}
-          <span style={{ fontWeight: 700, color: "#fff" }}>VYRAL does.</span>
-        </p>
       </section>
 
       {/* COMPARISON TABLE */}
       <section style={{ background: "rgba(255,255,255,0.02)" }}>
         <div style={{ maxWidth: 860, margin: "0 auto", padding: "72px 48px" }}>
-          <h2 style={{ ...h2, textAlign: "center" }}>Feature Comparison</h2>
+          <h2 style={{ ...h2, fontSize: 38, textAlign: "center" }}>Feature Comparison</h2>
           <div
             style={{
               border: "1px solid rgba(255,255,255,0.08)",
@@ -275,7 +259,9 @@ export default function ShieldPage() {
                   borderBottom: i < rows.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none",
                 }}
               >
-                <div style={tblCell("left")}>{row.feature}</div>
+                <div style={tblCell("left")}>
+                  {row.feature}
+                </div>
                 <div style={{ ...tblCell("center", true) }}>
                   <FeatureCell value={row.vyral} />
                 </div>
@@ -290,9 +276,9 @@ export default function ShieldPage() {
 
       {/* FINAL CTA */}
       <section style={{ maxWidth: 640, margin: "0 auto", padding: "72px 48px", textAlign: "center" }}>
-        <h2 style={{ ...h2, textAlign: "center" }}>Get the analytics serious creators use.</h2>
+        <h2 style={{ ...h2, textAlign: "center" }}>Your analytics home, rebuilt for growth.</h2>
         <p style={{ ...body, maxWidth: 420, margin: "0 auto 32px" }}>
-          Sign up and understand what&apos;s really driving your performance.
+          Everything you tracked in Shield — plus the strategy and coaching layer to actually act on it.
         </p>
         <a href="/waitlist" style={btnPurple}>
           Join the waitlist

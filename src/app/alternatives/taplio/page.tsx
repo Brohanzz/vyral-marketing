@@ -3,13 +3,14 @@ import Link from "next/link";
 import { Check, X, AlertCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "VYRAL vs Taplio — The Clear Alternative for Serious Creators",
+  title: "Taplio Alternative — Performance-Driven LinkedIn Growth | VYRAL",
   description:
-    "Compare VYRAL and Taplio. Taplio automates posting. VYRAL helps you understand your content and improve it with deep analytics and personalized AI.",
+    "Taplio generates posts from other people's viral content. VYRAL generates from your own performance data. See why serious creators are making the switch.",
   alternates: { canonical: "https://www.getvyral.io/alternatives/taplio" },
   openGraph: {
-    title: "VYRAL vs Taplio — Analytics vs Automation",
-    description: "Taplio helps you post more. VYRAL helps you post better.",
+    title: "VYRAL vs Taplio — Performance vs Automation",
+    description:
+      "Your data. Your voice. Your results. Not someone else's viral posts.",
   },
 };
 
@@ -60,17 +61,17 @@ function FeatureCell({ value }: { value: true | false | "partial" }) {
 }
 
 // ── Comparison data ───────────────────────────────────────────────────────────
-const rows: Array<{ feature: string; vyral: true | "partial"; taplio: true | false | "partial" }> = [
-  { feature: "Deep LinkedIn analytics",            vyral: true, taplio: "partial" },
-  { feature: "Content pattern analysis",           vyral: true, taplio: false },
-  { feature: "Performance Lab",                    vyral: true, taplio: false },
-  { feature: "Blueprint strategy system",          vyral: true, taplio: false },
-  { feature: "AI Coach trained on your data",      vyral: true, taplio: "partial" },
-  { feature: "Hook, tone & structure analysis",    vyral: true, taplio: false },
-  { feature: "Ideas based on your analytics",      vyral: true, taplio: false },
-  { feature: "Draft sparring & improvement",       vyral: true, taplio: false },
-  { feature: "Content calendar & drafts",          vyral: true, taplio: "partial" },
-  { feature: "LinkedIn-safe (no automation)",      vyral: true, taplio: "partial" },
+const rows: Array<{ feature: string; vyral: true; taplio: true | false | "partial" }> = [
+  { feature: "Analytics tied to content performance",  vyral: true, taplio: false },
+  { feature: "Content pattern analysis",               vyral: true, taplio: false },
+  { feature: "Blueprint strategy system",              vyral: true, taplio: false },
+  { feature: "AI trained on your own data",            vyral: true, taplio: "partial" },
+  { feature: "Hook, tone & structure analysis",        vyral: true, taplio: false },
+  { feature: "Post quality scoring",                   vyral: true, taplio: false },
+  { feature: "Ideas grounded in your analytics",       vyral: true, taplio: false },
+  { feature: "Draft coaching & improvement",           vyral: true, taplio: false },
+  { feature: "Content calendar & scheduling",          vyral: true, taplio: true },
+  { feature: "Built on LinkedIn's official API",       vyral: true, taplio: "partial" },
 ];
 
 // ── Table styles ──────────────────────────────────────────────────────────────
@@ -100,7 +101,8 @@ export default function TaplioPage() {
       >
         <h1 style={h1}>VYRAL vs Taplio</h1>
         <p style={{ ...body, maxWidth: 540, margin: "0 auto 32px" }}>
-          Taplio automates. VYRAL helps you understand your content and improve it.
+          Taplio generates content from other people&apos;s viral posts. VYRAL generates from your
+          own performance data — so every draft is grounded in what actually works for your audience.
         </p>
         <a href="/waitlist" style={btnPurple}>
           Join the waitlist
@@ -109,17 +111,19 @@ export default function TaplioPage() {
 
       {/* OVERVIEW */}
       <section style={{ maxWidth: 720, margin: "0 auto", padding: "72px 48px" }}>
-        <h2 style={h2}>High-level overview</h2>
+        <h2 style={h2}>Two different philosophies</h2>
         <p style={body}>
-          <strong style={{ color: "#fff" }}>Taplio is an automation tool.</strong>{" "}
-          Scheduling, generating generic AI posts, and basic repurposing.
+          <strong style={{ color: "#fff" }}>Taplio is a volume tool.</strong>{" "}
+          Post more, automate engagement, generate content fast from a database of 4M+ viral posts.
         </p>
         <p style={body}>
           <strong style={{ color: "#fff" }}>VYRAL is a performance tool.</strong>{" "}
-          Analytics → strategy → execution → improvement.
+          Understand what works in your own content, build a strategy around it, and let AI help you
+          execute it — in your voice, grounded in your data.
         </p>
         <p style={{ ...body, margin: 0 }}>
-          If you&apos;re serious about becoming a better creator, VYRAL is the better fit.
+          If you want to post more, Taplio does that. If you want your content to actually grow your
+          business, VYRAL is the better fit.
         </p>
       </section>
 
@@ -150,10 +154,11 @@ export default function TaplioPage() {
             </h3>
             <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
               {[
-                "Scheduling posts",
-                "Automatic engagement features",
-                "Generic AI post generation",
-                "Rapid output volume",
+                "High-volume content generation",
+                "Post scheduling and calendar",
+                "Viral post inspiration library (4M+ posts)",
+                "Lead database features on higher plans",
+                "Content repurposing",
               ].map((item) => (
                 <li key={item} style={{ display: "flex", gap: 10, marginBottom: 12, alignItems: "center" }}>
                   <Check size={16} color="#2dd4bf" style={{ flexShrink: 0 }} />
@@ -163,16 +168,6 @@ export default function TaplioPage() {
                 </li>
               ))}
             </ul>
-            <p
-              style={{
-                fontFamily: "Inter, sans-serif",
-                fontSize: 13,
-                color: "rgba(255,255,255,0.3)",
-                marginTop: 20,
-              }}
-            >
-              These features appeal to people who want automation.
-            </p>
           </div>
 
           {/* Right */}
@@ -190,12 +185,12 @@ export default function TaplioPage() {
             </h3>
             <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
               {[
-                "No deep analytics",
-                "No hook, structure, or tone insights",
-                "No strategy system",
-                "No personalized AI trained on your data",
+                "AI output consistently described as generic and formulaic",
+                "No connection between your analytics and your content",
+                "No strategy layer or Blueprint alignment",
                 "No post quality scoring",
-                "Encourages automation over authenticity",
+                "Credits burn fast — real AI access starts at $65/month",
+                "Analytics don't inform generation",
               ].map((item) => (
                 <li key={item} style={{ display: "flex", gap: 10, marginBottom: 12, alignItems: "center" }}>
                   <X size={16} color="#ef4444" style={{ flexShrink: 0 }} />
@@ -213,7 +208,10 @@ export default function TaplioPage() {
       <section style={{ maxWidth: 720, margin: "0 auto", padding: "72px 48px", textAlign: "center" }}>
         <h2 style={{ ...h2, textAlign: "center" }}>Why creators switch to VYRAL</h2>
         <p style={{ ...body, maxWidth: 520, margin: "0 auto 32px" }}>
-          Creators choose VYRAL because they want clarity, strategy, personalization, long-term growth, skill development, and better content.
+          The fundamental problem with generating from other people&apos;s viral posts: it optimises
+          for what worked for someone else, in someone else&apos;s voice, with someone else&apos;s
+          audience. VYRAL flips the model. Your top-performing posts become the training signal. Your
+          patterns, your hooks, your tone — scored, analysed, and used to make your next post better.
         </p>
         <div
           style={{
@@ -279,9 +277,9 @@ export default function TaplioPage() {
 
       {/* FINAL CTA */}
       <section style={{ maxWidth: 640, margin: "0 auto", padding: "72px 48px", textAlign: "center" }}>
-        <h2 style={{ ...h2, textAlign: "center" }}>Ready to become a higher-performing creator?</h2>
+        <h2 style={{ ...h2, textAlign: "center" }}>Your content, optimised for your audience.</h2>
         <p style={{ ...body, maxWidth: 420, margin: "0 auto 32px" }}>
-          Sign up and see the difference deep analytics makes.
+          Stop guessing what works. Start building from what already does.
         </p>
         <a href="/waitlist" style={btnPurple}>
           Join the waitlist
