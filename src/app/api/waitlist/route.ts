@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Database error' }, { status: 500 })
   }
 
-  const loopsRes = await fetch('https://app.loops.so/api/v1/contacts/upsert', {
+  const loopsRes = await fetch('https://app.loops.so/api/v1/contacts/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
