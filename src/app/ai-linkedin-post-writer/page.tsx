@@ -231,6 +231,22 @@ export default function AILinkedInPostWriterPage() {
           </div>
         </section>
 
+        {/* CROSS-LINK */}
+        <div
+          style={{
+            textAlign: "center",
+            paddingBottom: 48,
+            fontFamily: "Inter, sans-serif",
+            fontSize: 14,
+            color: "rgba(255,255,255,0.5)",
+          }}
+        >
+          Want coaching alongside your writing?{" "}
+          <Link href="/linkedin-coaching" style={{ color: "#a78bfa", textDecoration: "none" }}>
+            See LinkedIn Coaching →
+          </Link>
+        </div>
+
         {/* FINAL CTA */}
         <section style={{ maxWidth: 640, margin: "0 auto", padding: "72px 48px 80px", textAlign: "center" }}>
           <h2 style={{ ...h2, fontSize: 40 }}>Write LinkedIn posts that sound like you</h2>

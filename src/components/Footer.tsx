@@ -118,7 +118,47 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* COL 5: Legal */}
+            {/* COL 5: LinkedIn Tools */}
+            <div>
+              <span style={colHeading}>LinkedIn Tools</span>
+              {[
+                { label: "LinkedIn Coaching", href: "/linkedin-coaching" },
+                { label: "LinkedIn Post Analytics", href: "/linkedin-post-analytics" },
+                { label: "AI Post Writer", href: "/ai-linkedin-post-writer" },
+                { label: "Personal Branding", href: "/linkedin-personal-branding" },
+                { label: "Content Calendar", href: "/linkedin-content-calendar" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  style={footerLink}
+                  className="footer-link"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* COL 6: Alternatives */}
+            <div>
+              <span style={colHeading}>Alternatives</span>
+              {[
+                { label: "vs Taplio", href: "/alternatives/taplio" },
+                { label: "vs Shield", href: "/alternatives/shield" },
+                { label: "vs Typefully", href: "/alternatives/typefully" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  style={footerLink}
+                  className="footer-link"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* COL 7: Legal */}
             <div>
               <span style={colHeading}>Legal</span>
               {[

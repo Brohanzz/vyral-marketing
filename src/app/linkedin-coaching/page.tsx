@@ -442,6 +442,22 @@ export default function LinkedInCoachingPage() {
           </div>
         </section>
 
+        {/* CROSS-LINK */}
+        <div
+          style={{
+            textAlign: "center",
+            paddingBottom: 48,
+            fontFamily: "Inter, sans-serif",
+            fontSize: 14,
+            color: "rgba(255,255,255,0.5)",
+          }}
+        >
+          Ready to try AI-powered coaching?{" "}
+          <Link href="/ai-coach" style={{ color: "#a78bfa", textDecoration: "none" }}>
+            See the AI Coach →
+          </Link>
+        </div>
+
         {/* FINAL CTA */}
         <section style={{ background: "rgba(255,255,255,0.02)" }}>
           <div

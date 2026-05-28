@@ -504,6 +504,22 @@ export default function LinkedInAnalyticsPage() {
           </div>
         </section>
 
+        {/* CROSS-LINK */}
+        <div
+          style={{
+            textAlign: "center",
+            paddingBottom: 48,
+            fontFamily: "Inter, sans-serif",
+            fontSize: 14,
+            color: "rgba(255,255,255,0.5)",
+          }}
+        >
+          Looking for post-level analytics?{" "}
+          <Link href="/linkedin-post-analytics" style={{ color: "#a78bfa", textDecoration: "none" }}>
+            See LinkedIn Post Analytics →
+          </Link>
+        </div>
+
         {/* FINAL CTA */}
         <section
           style={{
