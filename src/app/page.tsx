@@ -686,11 +686,21 @@ export default function Home() {
                 Learn more →
               </Link>
             </div>
-            <FeatureVideo src="/vyral-the-coach.mp4" />
+            <img
+              src="/screenshot-coach.png"
+              alt="VYRAL AI Coach"
+              style={{
+                width: "100%",
+                borderRadius: 12,
+                border: "1px solid rgba(255,255,255,0.08)",
+                boxShadow: "0 0 40px rgba(124,58,237,0.15)",
+                display: "block",
+              }}
+            />
           </div>
         </ScrollReveal>
 
-        {/* Row 2 — Analytics: video left, text right */}
+        {/* Row 2 — Analytics: text left, screenshot right */}
         <ScrollReveal>
           <div
             style={{
@@ -703,7 +713,6 @@ export default function Home() {
               alignItems: "center",
             }}
           >
-            <FeatureVideo src="/vyral-analytics.mp4" />
             <div>
               <div style={overlinePill("purple")}>Analytics</div>
               <h2 style={sectionHeading}>
@@ -730,6 +739,17 @@ export default function Home() {
                 Learn more →
               </Link>
             </div>
+            <img
+              src="/screenshot-analytics-kpi.png"
+              alt="VYRAL Analytics KPIs"
+              style={{
+                width: "100%",
+                borderRadius: 12,
+                border: "1px solid rgba(255,255,255,0.08)",
+                boxShadow: "0 0 40px rgba(124,58,237,0.15)",
+                display: "block",
+              }}
+            />
           </div>
         </ScrollReveal>
 
@@ -772,6 +792,31 @@ export default function Home() {
               </Link>
             </div>
             <FeatureVideo src="/vyral-data-analyst.mp4" />
+          </div>
+        </ScrollReveal>
+
+        {/* Full-width analytics graph */}
+        <ScrollReveal>
+          <div
+            style={{
+              maxWidth: 1100,
+              margin: "0 auto",
+              padding: "56px 48px",
+              textAlign: "center",
+            }}
+          >
+            <div style={overlinePill("muted")}>YOUR METRICS, IN DEPTH</div>
+            <img
+              src="/screenshot-analytics-graph.png"
+              alt="VYRAL Analytics Graph"
+              style={{
+                width: "100%",
+                borderRadius: 12,
+                border: "1px solid rgba(255,255,255,0.08)",
+                boxShadow: "0 0 40px rgba(124,58,237,0.15)",
+                display: "block",
+              }}
+            />
           </div>
         </ScrollReveal>
       </section>
