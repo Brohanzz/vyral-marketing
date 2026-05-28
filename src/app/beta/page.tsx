@@ -214,7 +214,7 @@ export default function BetaPage() {
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           {[
             'Use the platform regularly during your first month',
-            'Come back to us with real feedback — what clicks, what confuses you, what's missing',
+            'Come back to us with real feedback — what clicks, what confuses you, what&apos;s missing',
             'Join a short call with us toward the end of your first month',
           ].map((item) => (
             <p
