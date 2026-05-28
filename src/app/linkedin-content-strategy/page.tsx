@@ -176,10 +176,10 @@ export default function LinkedInContentStrategyPage() {
             your content, analytics, and AI coaching.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+            <a href="/waitlist" style={btnPurple}>
               Create your Blueprint
             </a>
-            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnGhost}>
+            <a href="/waitlist" style={btnGhost}>
               Start free
             </a>
           </div>
@@ -450,10 +450,10 @@ export default function LinkedInContentStrategyPage() {
             <span style={{ color: "#a78bfa" }}>today.</span>
           </h2>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginTop: 28 }}>
-            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+            <a href="/waitlist" style={btnPurple}>
               Create your Blueprint
             </a>
-            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnGhost}>
+            <a href="/waitlist" style={btnGhost}>
               Start free
             </a>
           </div>

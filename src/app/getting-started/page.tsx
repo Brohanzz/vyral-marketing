@@ -441,9 +441,7 @@ export default function GettingStartedPage() {
           14-day free Pro trial · No credit card required
         </p>
         <a
-          href="https://www.getvyral.io/beta"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/waitlist"
           style={{
             display: "inline-block",
             background: "#7c3aed",
@@ -456,7 +454,7 @@ export default function GettingStartedPage() {
             textDecoration: "none",
           }}
         >
-          Sign up for early launch
+          Join the waitlist
         </a>
       </section>
     </main>

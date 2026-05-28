@@ -324,9 +324,7 @@ export default function ProductPage() {
             }}
           >
             <a
-              href="https://www.getvyral.io/beta"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/waitlist"
               style={{
                 background: "#7c3aed",
                 color: "#ffffff",
@@ -339,7 +337,7 @@ export default function ProductPage() {
                 ...inter,
               }}
             >
-              Sign up for early launch
+              Join the waitlist
             </a>
             <Link
               href="/pricing"
@@ -663,9 +661,7 @@ export default function ProductPage() {
             14-day Pro trial · No credit card required
           </p>
           <a
-            href="https://www.getvyral.io/beta"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/waitlist"
             style={{
               display: "inline-block",
               background: "#7c3aed",
@@ -679,7 +675,7 @@ export default function ProductPage() {
               ...inter,
             }}
           >
-            Sign up for early launch
+            Join the waitlist
           </a>
         </section>
 

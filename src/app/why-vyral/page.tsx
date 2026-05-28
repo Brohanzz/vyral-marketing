@@ -185,8 +185,8 @@ export default function WhyVyralPage() {
           numbers. This is why creators choose us.
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
-            Sign up for early launch
+          <a href="/waitlist" style={btnPurple}>
+            Join the waitlist
           </a>
           <Link href="/product" style={btnGhost}>View product</Link>
         </div>
@@ -515,8 +515,8 @@ export default function WhyVyralPage() {
           Not just more posts — better strategy, clearer insights, real outcomes
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
-            Sign up for early launch
+          <a href="/waitlist" style={btnPurple}>
+            Join the waitlist
           </a>
           <Link href="/product" style={btnGhost}>View product</Link>
         </div>

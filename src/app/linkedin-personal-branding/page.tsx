@@ -114,8 +114,8 @@ export default function LinkedInPersonalBrandingPage() {
           <p style={{ fontFamily: "Inter, sans-serif", fontSize: 18, color: "rgba(255,255,255,0.55)", lineHeight: 1.7, margin: "0 0 36px", maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
             Your personal brand on LinkedIn is your most valuable business asset. VYRAL gives you the strategy, AI coaching, and analytics to build it systematically — not randomly.
           </p>
-          <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
-            Sign up for early launch
+          <a href="/waitlist" style={btnPurple}>
+            Join the waitlist
           </a>
         </section>
 
@@ -199,7 +199,7 @@ export default function LinkedInPersonalBrandingPage() {
             <p style={{ ...body, maxWidth: 440, margin: "0 auto 28px" }}>
               Join the first 100 creators using VYRAL. Full Pro access for 14 days. No credit card required.
             </p>
-            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>Sign up for early launch</a>
+            <a href="/waitlist" style={btnPurple}>Join the waitlist</a>
           </div>
         </section>
       </main>

@@ -175,8 +175,8 @@ export default function AgenciesPage() {
             Manage clients, deliver insights, and produce better content — all in one place.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
-              Sign up for early launch
+            <a href="/waitlist" style={btnPurple}>
+              Join the waitlist
             </a>
             <Link href="/pricing" style={btnGhost}>See pricing</Link>
           </div>
@@ -395,8 +395,8 @@ export default function AgenciesPage() {
           <p style={{ ...body, maxWidth: 420, margin: "0 auto 32px" }}>
             Sign up and see how VYRAL transforms client delivery.
           </p>
-          <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
-            Sign up for early launch
+          <a href="/waitlist" style={btnPurple}>
+            Join the waitlist
           </a>
         </section>
       </main>

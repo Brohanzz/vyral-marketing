@@ -150,12 +150,10 @@ export default function LinkedInContentCalendarPage() {
             automatically.
           </p>
           <a
-            href="https://www.getvyral.io/beta"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/waitlist"
             style={btnPurple}
           >
-            Sign up for early launch
+            Join the waitlist
           </a>
         </section>
 
@@ -313,12 +311,10 @@ export default function LinkedInContentCalendarPage() {
             days. No credit card required.
           </p>
           <a
-            href="https://www.getvyral.io/beta"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/waitlist"
             style={btnPurple}
           >
-            Sign up for early launch
+            Join the waitlist
           </a>
         </section>
       </main>

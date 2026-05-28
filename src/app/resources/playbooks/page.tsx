@@ -88,7 +88,7 @@ export default function PlaybooksPage() {
           ghostwriting practice.
         </p>
         <a
-          href="https://www.getvyral.io/beta"
+          href="/waitlist"
           style={{
             display: "inline-block",
             background: "#7c3aed",
@@ -202,7 +202,7 @@ export default function PlaybooksPage() {
           Coach — not a PDF you read once and forget.
         </p>
         <a
-          href="https://www.getvyral.io/beta"
+          href="/waitlist"
           style={{
             display: "inline-block",
             background: "#7c3aed",

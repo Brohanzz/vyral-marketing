@@ -168,9 +168,7 @@ export default function HowItWorksPage() {
           }}
         >
           <a
-            href="https://www.getvyral.io/beta"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/waitlist"
             style={{
               background: "#7c3aed",
               color: "#ffffff",
@@ -183,7 +181,7 @@ export default function HowItWorksPage() {
               ...inter,
             }}
           >
-            Sign up for early launch
+            Join the waitlist
           </a>
           <Link
             href="/product"
@@ -588,9 +586,7 @@ export default function HowItWorksPage() {
           Stop posting blindly. Start improving on purpose.
         </p>
         <a
-          href="https://www.getvyral.io/beta"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/waitlist"
           style={{
             display: "inline-block",
             background: "#7c3aed",
@@ -604,7 +600,7 @@ export default function HowItWorksPage() {
             ...inter,
           }}
         >
-          Sign up for early launch
+          Join the waitlist
         </a>
       </section>
 

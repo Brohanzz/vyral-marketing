@@ -342,7 +342,7 @@ export default function LinkedInToolSafePage() {
             Join the first 100 creators using VYRAL. Official API only. No risk to your account.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>Sign up for early launch</a>
+            <a href="/waitlist" style={btnPurple}>Join the waitlist</a>
             <Link href="/product" style={btnGhost}>See how it works</Link>
           </div>
         </section>

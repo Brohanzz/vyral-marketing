@@ -115,9 +115,7 @@ export default function AnalyticsPage() {
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <a
-            href="https://www.getvyral.io/beta"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/waitlist"
             style={btnPrimary}
           >
             Start free trial
@@ -428,9 +426,7 @@ export default function AnalyticsPage() {
         <p style={body}>Not just numbers — insights that tell you what to do next</p>
         <div style={{ marginBottom: 20 }}>
           <a
-            href="https://www.getvyral.io/beta"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/waitlist"
             style={btnPrimary}
           >
             Start free trial

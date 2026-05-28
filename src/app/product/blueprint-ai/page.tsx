@@ -163,9 +163,7 @@ export default function BlueprintAIPage() {
           }}
         >
           <a
-            href="https://www.getvyral.io/beta"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/waitlist"
             style={btnPrimary}
           >
             Start free
@@ -524,9 +522,7 @@ export default function BlueprintAIPage() {
         </p>
         <div style={{ marginBottom: 14 }}>
           <a
-            href="https://www.getvyral.io/beta"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/waitlist"
             style={btnPrimary}
           >
             Start free

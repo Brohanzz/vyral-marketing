@@ -116,12 +116,10 @@ export default function ProofPagePage() {
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <a
-            href="https://www.getvyral.io/beta"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/waitlist"
             style={btnPrimary}
           >
-            Sign up for early launch
+            Join the waitlist
           </a>
           <Link href="/product/analytics" style={btnGhost}>
             View analytics
@@ -369,12 +367,10 @@ export default function ProofPagePage() {
           Launch your Proof Page in minutes — and share it anywhere.
         </p>
         <a
-          href="https://www.getvyral.io/beta"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/waitlist"
           style={btnPrimary}
         >
-          Sign up for early launch
+          Join the waitlist
         </a>
       </section>
     </main>

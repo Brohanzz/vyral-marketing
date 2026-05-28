@@ -219,7 +219,7 @@ export default function AICoachPage() {
             on your Blueprint and analytics.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+            <a href="/waitlist" style={btnPurple}>
               Try the AI Coach
             </a>
             <Link href="/product" style={btnGhost}>See demo</Link>
@@ -392,10 +392,10 @@ export default function AICoachPage() {
             data.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnPurple}>
+            <a href="/waitlist" style={btnPurple}>
               Try the AI Coach
             </a>
-            <a href="https://www.getvyral.io/beta" target="_blank" rel="noopener noreferrer" style={btnGhost}>
+            <a href="/waitlist" style={btnGhost}>
               Start free
             </a>
           </div>

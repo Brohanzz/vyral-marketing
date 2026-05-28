@@ -343,9 +343,7 @@ export default function Nav() {
               Log in
             </a>
             <a
-              href="https://www.getvyral.io/beta"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/waitlist"
               style={{
                 background: "#7c3aed",
                 borderRadius: 100,
@@ -360,7 +358,7 @@ export default function Nav() {
                 display: "inline-block",
               }}
             >
-              Sign up for early launch
+              Join the waitlist
             </a>
           </div>
 
@@ -548,9 +546,7 @@ export default function Nav() {
               Log in
             </a>
             <a
-              href="https://www.getvyral.io/beta"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/waitlist"
               onClick={() => setMobileOpen(false)}
               style={{
                 display: "block",
@@ -566,7 +562,7 @@ export default function Nav() {
                 boxShadow: "0 0 0 1px rgba(124,58,237,0.4)",
               }}
             >
-              Sign up for early launch
+              Join the waitlist
             </a>
           </div>
         </div>

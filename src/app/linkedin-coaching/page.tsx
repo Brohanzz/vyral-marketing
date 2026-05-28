@@ -183,12 +183,10 @@ export default function LinkedInCoachingPage() {
             data, and costs a fraction of a course.
           </p>
           <a
-            href="https://www.getvyral.io/beta"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/waitlist"
             style={btnPurple}
           >
-            Sign up for early launch
+            Join the waitlist
           </a>
         </section>
 
@@ -474,12 +472,10 @@ export default function LinkedInCoachingPage() {
               days. No credit card required.
             </p>
             <a
-              href="https://www.getvyral.io/beta"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/waitlist"
               style={btnPurple}
             >
-              Sign up for early launch
+              Join the waitlist
             </a>
           </div>
         </section>

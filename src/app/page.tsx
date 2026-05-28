@@ -326,9 +326,7 @@ export default function Home() {
               }}
             >
               <a
-                href="https://www.getvyral.io/beta"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/waitlist"
                 style={{
                   background: "#7c3aed",
                   color: "#ffffff",
@@ -1212,9 +1210,7 @@ export default function Home() {
                 ))}
               </div>
               <a
-                href="https://www.getvyral.io/beta"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/waitlist"
                 style={{
                   display: "block",
                   background: "#7c3aed",
@@ -1302,9 +1298,7 @@ export default function Home() {
                   ))}
                 </div>
                 <a
-                  href="https://www.getvyral.io/beta"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/waitlist"
                   style={{
                     display: "block",
                     background: "#7c3aed",
@@ -1413,9 +1407,7 @@ export default function Home() {
               strategies — free for every VYRAL user. No paywall, no upsell.
             </p>
             <a
-              href="https://www.getvyral.io/beta"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/waitlist"
               style={{
                 display: "inline-block",
                 background: "transparent",
@@ -1460,9 +1452,7 @@ export default function Home() {
             14-day free Pro trial · No credit card required
           </p>
           <a
-            href="https://www.getvyral.io/beta"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/waitlist"
             style={{
               display: "inline-block",
               background: "#7c3aed",

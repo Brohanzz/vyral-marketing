@@ -175,12 +175,10 @@ export default function LinkedInPostAnalyticsPage() {
             style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}
           >
             <a
-              href="https://www.getvyral.io/beta"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/waitlist"
               style={btnPurple}
             >
-              Sign up for early launch
+              Join the waitlist
             </a>
             <Link href="/linkedin-analytics" style={btnGhost}>
               See analytics features
@@ -402,12 +400,10 @@ export default function LinkedInPostAnalyticsPage() {
               days.
             </p>
             <a
-              href="https://www.getvyral.io/beta"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/waitlist"
               style={btnPurple}
             >
-              Sign up for early launch
+              Join the waitlist
             </a>
           </div>
         </section>
