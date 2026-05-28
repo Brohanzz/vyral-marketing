@@ -42,42 +42,20 @@ export default function Footer() {
       >
         <div
           style={{
-            maxWidth: 1200,
+            maxWidth: 1400,
             margin: "0 auto",
             padding: "64px 48px 40px",
           }}
         >
-          {/* ── GRID ── */}
+          {/* ── TOP ROW: 5 NAV COLUMNS ── */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-              gap: 48,
+              gridTemplateColumns: "repeat(5, 1fr)",
+              gap: 32,
             }}
           >
-            {/* COL 1–2: Brand */}
-            <div style={{ gridColumn: "span 2" }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/vyral-logo-new.png"
-                alt="VYRAL"
-                style={{ height: 48, width: "auto", display: "block", marginBottom: 20 }}
-              />
-              <p
-                style={{
-                  fontSize: 14,
-                  color: "rgba(255,255,255,0.55)",
-                  maxWidth: 240,
-                  lineHeight: 1.6,
-                  fontFamily: "Inter, sans-serif",
-                  margin: 0,
-                }}
-              >
-                Build a content engine that grows your LinkedIn with clarity.
-              </p>
-            </div>
-
-            {/* COL 3: Product */}
+            {/* Product */}
             <div>
               <span style={colHeading}>Product</span>
               {[
@@ -97,7 +75,7 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* COL 4: Resources */}
+            {/* Resources */}
             <div>
               <span style={colHeading}>Resources</span>
               {[
@@ -118,7 +96,7 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* COL 5: LinkedIn Tools */}
+            {/* LinkedIn Tools */}
             <div>
               <span style={colHeading}>LinkedIn Tools</span>
               {[
@@ -139,7 +117,7 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* COL 6: Alternatives */}
+            {/* Alternatives */}
             <div>
               <span style={colHeading}>Alternatives</span>
               {[
@@ -158,7 +136,7 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* COL 7: Legal */}
+            {/* Legal */}
             <div>
               <span style={colHeading}>Legal</span>
               {[
@@ -182,7 +160,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* ── ROW 1: API safety note ── */}
+          {/* ── API SAFETY NOTE ── */}
           <div
             style={{
               marginTop: 48,
@@ -204,7 +182,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* ── ROW 2: Copyright + bottom links ── */}
+          {/* ── BOTTOM ROW: Logo + tagline left / Copyright + links right ── */}
           <div
             style={{
               marginTop: 24,
@@ -212,42 +190,71 @@ export default function Footer() {
               borderTop: "1px solid rgba(255,255,255,0.05)",
               display: "flex",
               justifyContent: "space-between",
-              flexWrap: "wrap",
+              alignItems: "flex-start",
               gap: 16,
-              alignItems: "center",
             }}
           >
-            <p
+            {/* Left: logo + tagline */}
+            <div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/vyral-logo-new.png"
+                alt="VYRAL"
+                style={{ height: 36, width: "auto", display: "block", marginBottom: 10 }}
+              />
+              <p
+                style={{
+                  fontSize: 13,
+                  color: "rgba(255,255,255,0.4)",
+                  fontFamily: "Inter, sans-serif",
+                  margin: 0,
+                  lineHeight: 1.5,
+                }}
+              >
+                Build a content engine that grows your LinkedIn with clarity.
+              </p>
+            </div>
+
+            {/* Right: bottom links + copyright */}
+            <div
               style={{
-                fontSize: 12,
-                color: "rgba(255,255,255,0.18)",
-                fontFamily: "Inter, sans-serif",
-                margin: 0,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-end",
+                gap: 10,
               }}
             >
-              © 2026 VYRAL. Built for LinkedIn creators.
-            </p>
-
-            <div style={{ display: "flex", gap: 24 }}>
-              {[
-                { label: "Terms", href: "/legal/terms" },
-                { label: "Privacy", href: "/legal/privacy-policy" },
-                { label: "About", href: "/about" },
-              ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  style={{
-                    fontSize: 12,
-                    color: "rgba(255,255,255,0.18)",
-                    fontFamily: "Inter, sans-serif",
-                    textDecoration: "none",
-                  }}
-                  className="footer-bottom-link"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              <div style={{ display: "flex", gap: 24 }}>
+                {[
+                  { label: "Terms", href: "/legal/terms" },
+                  { label: "Privacy", href: "/legal/privacy-policy" },
+                  { label: "About", href: "/about" },
+                ].map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    style={{
+                      fontSize: 12,
+                      color: "rgba(255,255,255,0.18)",
+                      fontFamily: "Inter, sans-serif",
+                      textDecoration: "none",
+                    }}
+                    className="footer-bottom-link"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              <p
+                style={{
+                  fontSize: 12,
+                  color: "rgba(255,255,255,0.18)",
+                  fontFamily: "Inter, sans-serif",
+                  margin: 0,
+                }}
+              >
+                © 2026 VYRAL. Built for LinkedIn creators.
+              </p>
             </div>
           </div>
         </div>

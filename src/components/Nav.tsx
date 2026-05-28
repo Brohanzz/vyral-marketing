@@ -303,15 +303,6 @@ export default function Nav() {
               )}
             </div>
 
-            {/* Alternatives — plain link */}
-            <Link
-              href="/alternatives/taplio"
-              style={plainLinkStyle}
-              className="nav-plain-link"
-            >
-              Alternatives
-            </Link>
-
             {/* Pricing — plain link */}
             <Link
               href="/pricing"
@@ -504,7 +495,6 @@ export default function Nav() {
           {/* Plain links */}
           {[
             { label: "LinkedIn Safe", href: "/linkedin-tool-safe" },
-            { label: "Alternatives", href: "/alternatives/taplio" },
             { label: "Pricing", href: "/pricing" },
             { label: "About", href: "/about" },
           ].map((link) => (
