@@ -173,7 +173,6 @@ export default function PricingClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const isYearly = billingInterval === "yearly";
-  const launchActive = !isYearly; // launch offer only on monthly
 
   return (
     <div style={{ background: "#080510", color: "#ffffff", minHeight: "100vh" }}>
@@ -301,25 +300,6 @@ export default function PricingClient() {
           </button>
         </div>
 
-        {/* Launch banner */}
-        {launchActive && (
-          <div style={{ marginBottom: 8 }}>
-            <span
-              style={{
-                display: "inline-block",
-                background: "rgba(124,58,237,0.12)",
-                border: "1px solid rgba(124,58,237,0.25)",
-                borderRadius: 100,
-                padding: "8px 20px",
-                ...bodyFont,
-                fontSize: 13,
-                color: "#a78bfa",
-              }}
-            >
-              🚀 Launch offer: 50% off your first 3 months
-            </span>
-          </div>
-        )}
       </section>
 
       {/* ══════════════════════════════════════════════════════════
@@ -380,35 +360,7 @@ export default function PricingClient() {
               </p>
 
               {/* Price display */}
-              {launchActive ? (
-                <div style={{ marginBottom: 4 }}>
-                  <span
-                    style={{
-                      ...bodyFont,
-                      fontSize: 14,
-                      color: "rgba(255,255,255,0.35)",
-                      textDecoration: "line-through",
-                      marginRight: 8,
-                    }}
-                  >
-                    $49
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "'Playfair Display', serif",
-                      fontSize: 40,
-                      fontWeight: 700,
-                      color: "#ffffff",
-                    }}
-                  >
-                    $24.50
-                    <span style={{ ...bodyFont, fontSize: 16, color: "rgba(255,255,255,0.5)" }}>/mo</span>
-                  </span>
-                  <p style={{ ...bodyFont, fontSize: 13, color: "rgba(255,255,255,0.4)", margin: "4px 0 0" }}>
-                    For 3 months, then $49/mo after
-                  </p>
-                </div>
-              ) : isYearly ? (
+              {isYearly ? (
                 <div style={{ marginBottom: 4 }}>
                   <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 40, fontWeight: 700, color: "#ffffff", margin: 0 }}>
                     $39<span style={{ ...bodyFont, fontSize: 16, color: "rgba(255,255,255,0.5)" }}>/mo</span>
@@ -488,7 +440,7 @@ export default function PricingClient() {
                 padding: "28px 24px",
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+              <div style={{ marginBottom: 12 }}>
                 <p
                   style={{
                     ...bodyFont,
@@ -502,55 +454,10 @@ export default function PricingClient() {
                 >
                   PRO
                 </p>
-                {launchActive && (
-                  <span
-                    style={{
-                      background: "rgba(124,58,237,0.2)",
-                      color: "#c4b5fd",
-                      fontSize: 10,
-                      fontWeight: 700,
-                      padding: "2px 10px",
-                      borderRadius: 100,
-                      letterSpacing: "0.04em",
-                      textTransform: "uppercase",
-                      ...bodyFont,
-                    }}
-                  >
-                    Launch Offer
-                  </span>
-                )}
               </div>
 
               {/* Price display */}
-              {launchActive ? (
-                <div style={{ marginBottom: 4 }}>
-                  <span
-                    style={{
-                      ...bodyFont,
-                      fontSize: 14,
-                      color: "rgba(255,255,255,0.35)",
-                      textDecoration: "line-through",
-                      marginRight: 8,
-                    }}
-                  >
-                    $99
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "'Playfair Display', serif",
-                      fontSize: 40,
-                      fontWeight: 700,
-                      color: "#ffffff",
-                    }}
-                  >
-                    $49.50
-                    <span style={{ ...bodyFont, fontSize: 16, color: "rgba(255,255,255,0.5)" }}>/mo</span>
-                  </span>
-                  <p style={{ ...bodyFont, fontSize: 13, color: "rgba(255,255,255,0.4)", margin: "4px 0 0" }}>
-                    For 3 months, then $99/mo after
-                  </p>
-                </div>
-              ) : isYearly ? (
+              {isYearly ? (
                 <div style={{ marginBottom: 4 }}>
                   <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 40, fontWeight: 700, color: "#ffffff", margin: 0 }}>
                     $79<span style={{ ...bodyFont, fontSize: 16, color: "rgba(255,255,255,0.5)" }}>/mo</span>

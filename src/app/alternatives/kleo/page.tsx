@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, X, AlertCircle } from "lucide-react";
+import ApiTooltip from "@/components/ApiTooltip";
 
 export const metadata: Metadata = {
   title: "Kleo Alternative — From Voice Matching to Performance Intelligence | VYRAL",
@@ -264,7 +265,11 @@ export default function KleoPage() {
                 }}
               >
                 <div style={tblCell("left")}>
-                  {row.feature}
+                  {row.feature === "Built on LinkedIn's official API" ? (
+                    <ApiTooltip>{row.feature}</ApiTooltip>
+                  ) : (
+                    row.feature
+                  )}
                 </div>
                 <div style={{ ...tblCell("center", true) }}>
                   <FeatureCell value={row.vyral} />
