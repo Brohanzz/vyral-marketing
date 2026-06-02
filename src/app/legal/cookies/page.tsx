@@ -81,7 +81,7 @@ export default function Cookies() {
         <p style={p}>We may update this Cookie Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
 
         <h2 style={h2}>10. Contact Us</h2>
-        <p style={p}>If you have questions about our use of cookies, contact us at <a href="mailto:johan@getvyral.io" style={{ color: '#a78bfa' }}>johan@getvyral.io</a></p>
+        <p style={p}>If you have questions about our use of cookies, contact us at <a href="mailto:hello@getvyral.io" style={{ color: '#a78bfa' }}>hello@getvyral.io</a></p>
       </div>
     </div>
   );

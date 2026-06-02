@@ -156,7 +156,7 @@ export default function PrivacyPolicy() {
         <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 15, color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: 4 }}>VYRAL</p>
         <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 15, color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: 4 }}>Copenhagen, Denmark</p>
         <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 15, color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: 4 }}>CVR: 45239411</p>
-        <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 15, color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>Email: <a href="mailto:johan@getvyral.io" style={{ color: '#a78bfa' }}>johan@getvyral.io</a></p>
+        <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 15, color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>Email: <a href="mailto:hello@getvyral.io" style={{ color: '#a78bfa' }}>hello@getvyral.io</a></p>
       </div>
     </div>
   );

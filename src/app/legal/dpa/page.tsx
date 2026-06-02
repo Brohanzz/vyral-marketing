@@ -116,7 +116,7 @@ export default function DPA() {
         <p style={p}>Each party&apos;s liability under this DPA is subject to the limitations set forth in the Terms of Service.</p>
 
         <h2 style={h2}>15. Contact</h2>
-        <p style={p}>For questions about this DPA, contact: <a href="mailto:johan@getvyral.io" style={{ color: '#a78bfa' }}>johan@getvyral.io</a></p>
+        <p style={p}>For questions about this DPA, contact: <a href="mailto:hello@getvyral.io" style={{ color: '#a78bfa' }}>hello@getvyral.io</a></p>
       </div>
     </div>
   );

@@ -88,7 +88,7 @@ export default function GDPR() {
         <p style={p}>We do not use customer data outside VYRAL. Any data used for analytics or AI is fully anonymized and cannot be traced back to individual users. We do not sell, share, or monetize your personal data in any way.</p>
 
         <h2 style={h2}>Data Protection Officer</h2>
-        <p style={p}>For GDPR-related inquiries, you can contact us at: <a href="mailto:johan@getvyral.io" style={{ color: '#a78bfa' }}>johan@getvyral.io</a></p>
+        <p style={p}>For GDPR-related inquiries, you can contact us at: <a href="mailto:privacy@getvyral.io" style={{ color: '#a78bfa' }}>privacy@getvyral.io</a></p>
 
         <h2 style={h2}>Supervisory Authority</h2>
         <p style={p}>You have the right to lodge a complaint with a supervisory authority, in particular in the EU Member State of your habitual residence, place of work, or place of the alleged infringement.</p>

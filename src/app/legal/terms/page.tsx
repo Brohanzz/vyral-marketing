@@ -108,7 +108,7 @@ export default function Terms() {
         <p style={p}>Any disputes arising from these Terms shall be resolved through binding arbitration in Copenhagen, Denmark, except where prohibited by law.</p>
 
         <h2 style={h2}>18. Contact</h2>
-        <p style={p}>For questions about these Terms, please contact us at <a href="mailto:johan@getvyral.io" style={{ color: '#a78bfa' }}>johan@getvyral.io</a></p>
+        <p style={p}>For questions about these Terms, please contact us at <a href="mailto:hello@getvyral.io" style={{ color: '#a78bfa' }}>hello@getvyral.io</a></p>
       </div>
     </div>
   );

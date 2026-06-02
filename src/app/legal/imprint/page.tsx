@@ -18,7 +18,7 @@ export default function Imprint() {
         <p style={p}>Business Type: Sole Proprietorship (Enkeltmandsvirksomhed)</p>
         <p style={p}>CVR: 45239411</p>
         <p style={p}>Address: Krusågade 35, 5. tv, 1719 København V, Denmark</p>
-        <p style={p}>Email: <a href="mailto:johan@getvyral.io" style={{ color: '#a78bfa' }}>johan@getvyral.io</a></p>
+        <p style={p}>Email: <a href="mailto:hello@getvyral.io" style={{ color: '#a78bfa' }}>hello@getvyral.io</a></p>
         <p style={p}>Website: <a href="https://www.getvyral.io" style={{ color: '#a78bfa' }}>www.getvyral.io</a></p>
 
         <h2 style={h2}>Management</h2>
@@ -35,7 +35,7 @@ export default function Imprint() {
         <p style={p}>We are not obligated to participate in dispute resolution proceedings before a consumer arbitration board, but we are willing to engage in direct communication to resolve any issues.</p>
 
         <h2 style={h2}>Contact</h2>
-        <p style={p}>For any inquiries, please contact us at: <a href="mailto:johan@getvyral.io" style={{ color: '#a78bfa' }}>johan@getvyral.io</a></p>
+        <p style={p}>For any inquiries, please contact us at: <a href="mailto:hello@getvyral.io" style={{ color: '#a78bfa' }}>hello@getvyral.io</a></p>
       </div>
     </div>
   );

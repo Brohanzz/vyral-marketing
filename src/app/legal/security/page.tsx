@@ -128,7 +128,7 @@ export default function Security() {
         </ul>
 
         <h2 style={h2}>11. Responsible Disclosure</h2>
-        <p style={p}>We welcome responsible disclosure of security vulnerabilities. If you discover a security issue, please contact us at <a href="mailto:johan@getvyral.io" style={{ color: '#a78bfa' }}>johan@getvyral.io</a></p>
+        <p style={p}>We welcome responsible disclosure of security vulnerabilities. If you discover a security issue, please contact us at <a href="mailto:hello@getvyral.io" style={{ color: '#a78bfa' }}>hello@getvyral.io</a></p>
         <p style={p}>We commit to:</p>
         <ul style={ul}>
           <li>Acknowledging receipt within 24 hours</li>
@@ -137,7 +137,7 @@ export default function Security() {
         </ul>
 
         <h2 style={h2}>Contact</h2>
-        <p style={p}>For security-related inquiries: <a href="mailto:johan@getvyral.io" style={{ color: '#a78bfa' }}>johan@getvyral.io</a></p>
+        <p style={p}>For security-related inquiries: <a href="mailto:hello@getvyral.io" style={{ color: '#a78bfa' }}>hello@getvyral.io</a></p>
       </div>
     </div>
   );
