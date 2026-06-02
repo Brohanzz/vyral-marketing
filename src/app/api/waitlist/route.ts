@@ -18,9 +18,12 @@ export async function POST(req: NextRequest) {
 
   const { error: dbError } = await supabase
     .from('waitlist_signups')
-    .upsert({ email, first_name, last_name, waitlist, newsletter }, { onConflict: 'email' })
+    .insert({ email, first_name, last_name, waitlist, newsletter })
 
   if (dbError) {
+    if (dbError.code === '23505') {
+      return NextResponse.json({ success: true, message: "You're already on the list!" }, { status: 200 })
+    }
     console.error('Supabase error:', dbError)
     return NextResponse.json({ error: 'Database error' }, { status: 500 })
   }

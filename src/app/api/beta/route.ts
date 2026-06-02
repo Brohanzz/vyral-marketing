@@ -19,6 +19,9 @@ export async function POST(req: NextRequest) {
     .insert({ first_name, last_name, email, linkedin_url, newsletter, source: 'founding-circle' })
 
   if (dbError) {
+    if (dbError.code === '23505') {
+      return NextResponse.json({ success: true, message: "You've already applied." }, { status: 200 })
+    }
     console.error('Supabase error:', dbError)
     return NextResponse.json({ error: 'Database error' }, { status: 500 })
   }
