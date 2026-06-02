@@ -19,7 +19,7 @@ const creatorFeatures = [
   "Content Calendar & Publishing",
   "Weekly Performance Reviews",
   "Full Analytics",
-  "Claude Sonnet AI model",
+  "Claude AI model",
 ];
 
 const proFeatures = [
@@ -56,7 +56,7 @@ const comparisonGroups: ComparisonGroup[] = [
     heading: "AI & Coaching",
     rows: [
       { label: "AI coaching messages", creator: "250/mo", pro: "Unlimited" },
-      { label: "AI model", creator: "Claude Sonnet", pro: "Claude Sonnet" },
+      { label: "AI model", creator: "Claude", pro: "Claude" },
       { label: "Coach (brainstorm, rewrite, critique)", creator: true, pro: true },
       { label: "Ideas Generator", creator: true, pro: true },
       { label: "Data Analyst", creator: false, pro: true },

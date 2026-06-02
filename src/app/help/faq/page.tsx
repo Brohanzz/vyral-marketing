@@ -24,7 +24,7 @@ const sections: Section[] = [
     items: [
       {
         q: "How do I connect my LinkedIn account?",
-        a: "Go to Settings → LinkedIn Connection and click Connect. You'll be taken through LinkedIn's standard OAuth flow — this is the same process used by apps like Notion and Slack. VYRAL never sees your LinkedIn password.",
+        a: "Go to Settings → LinkedIn Connection and click Connect. You'll go through LinkedIn's standard OAuth flow — the same process used by apps like Notion and Slack. VYRAL never sees your LinkedIn password.",
       },
       {
         q: "Is there a free trial?",
@@ -32,7 +32,7 @@ const sections: Section[] = [
       },
       {
         q: "What happens after my trial ends?",
-        a: "You'll be moved to the Creator plan ($49/mo) unless you upgrade to Pro or cancel. Your data and LinkedIn connection stay intact.",
+        a: "You'll move to the Free plan, which gives you read-only access to your analytics and post library. You can upgrade to Creator or Pro from Settings → Billing at any time. Your data and LinkedIn connection stay intact.",
       },
     ],
   },
@@ -41,15 +41,44 @@ const sections: Section[] = [
     items: [
       {
         q: "Is VYRAL safe to use with LinkedIn?",
-        a: "Yes. VYRAL is built exclusively on LinkedIn's official APIs — the same APIs used by enterprise tools and LinkedIn's own partners. We don't use browser extensions, scraping, or automation outside of what LinkedIn explicitly permits. Your account is never at risk.",
+        a: "Yes. VYRAL is built exclusively on LinkedIn's official Community Management API — the same infrastructure used by LinkedIn's enterprise partners. We don't use browser extensions, scraping, or any automation outside what LinkedIn explicitly permits. Your account is never at risk.",
       },
       {
-        q: "Why are other LinkedIn tools getting banned?",
-        a: "Tools that use browser extensions, scraping, or unofficial automation violate LinkedIn's Terms of Service. Several tools — including Kleo, Shield's Chrome extension, and others — have been banned or removed for this reason. VYRAL uses only LinkedIn's official API, which is fully permitted.",
+        q: "Why do some LinkedIn tools get restricted or shut down?",
+        a: "Tools that use browser extensions, scraping, or unofficial automation violate LinkedIn's Terms of Service. LinkedIn actively detects these methods and restricts or removes tools that use them. VYRAL operates entirely through LinkedIn's official API, which means your account is fully protected.",
       },
       {
-        q: "Does VYRAL post on my behalf?",
-        a: "Only when you explicitly schedule or trigger a publish. VYRAL never posts automatically without your permission.",
+        q: "Does VYRAL post on my behalf automatically?",
+        a: "Only when you explicitly schedule or trigger a publish. VYRAL never posts without your direct action.",
+      },
+      {
+        q: "Can VYRAL comment on posts or auto-engage on my behalf?",
+        a: "No — and deliberately so. Auto-commenting and inauthentic engagement violate LinkedIn's Terms of Service. VYRAL is built to grow your presence through better content and strategy, not shortcuts that put your account at risk.",
+      },
+    ],
+  },
+  {
+    heading: "What VYRAL can and can't do",
+    items: [
+      {
+        q: "Why can't I tag or mention people in posts?",
+        a: "Tagging people in posts requires access to a restricted part of LinkedIn's API that is not available to most third-party tools. Tools that do offer tagging typically route the post through a Chrome extension using your LinkedIn session cookies — not through the official API. This works until it doesn't: LinkedIn actively detects and restricts cookie-based automation, and it puts your account at risk. VYRAL doesn't offer tagging via workarounds. If you need to tag someone, draft your post in VYRAL and publish natively on LinkedIn where you can add mentions directly.",
+      },
+      {
+        q: "Why do I need to post through VYRAL to see my analytics?",
+        a: "LinkedIn's official API only provides performance data — impressions, clicks, engagement — for posts published through an approved application. Posts published directly on LinkedIn are not accessible to third-party tools through official means. Tools that show analytics for posts you didn't publish through them are either using screen scraping, browser extensions reading your LinkedIn session, or unofficial data access — all of which violate LinkedIn's Terms of Service and carry a real risk of account restriction. Posting through VYRAL is what connects your content to your data cleanly and safely.",
+      },
+      {
+        q: "Why can't I see an inspiration library of other people's posts?",
+        a: "Accessing other users' content at scale requires scraping or unofficial data access, both of which violate LinkedIn's Terms of Service. VYRAL only works with data you own — your posts, your analytics, your audience. This is a deliberate choice to keep your account safe and stay within LinkedIn's rules.",
+      },
+      {
+        q: "Can VYRAL access my follower demographics?",
+        a: "For company pages, yes — LinkedIn provides full demographic breakdowns via the API. For personal profiles, LinkedIn does not expose follower demographics through the official API. This is a LinkedIn platform limitation, not a VYRAL one. You can export your demographic data directly from LinkedIn and we're exploring ways to use that export inside VYRAL.",
+      },
+      {
+        q: "What's the video size limit?",
+        a: "VYRAL supports video uploads up to 5GB, in line with LinkedIn's official API specification. Videos must be in MP4 format and between 3 seconds and 30 minutes long.",
       },
     ],
   },
@@ -58,7 +87,7 @@ const sections: Section[] = [
     items: [
       {
         q: "What's the difference between Creator and Pro?",
-        a: "Creator ($49/mo) covers analytics, Blueprint, AI Coach, Calendar, and publishing. Pro ($99/mo) adds the Data Analyst, Creator Intelligence, Strategy Builder, unlimited AI, and access to Claude Sonnet 4.",
+        a: "Creator ($49/mo) covers analytics, Blueprint, AI Coach, Calendar, and publishing. Pro ($99/mo) adds the Data Analyst, advanced content intelligence, and access to Claude for higher-complexity coaching and analysis.",
       },
       {
         q: "Can I change my plan anytime?",
@@ -82,8 +111,8 @@ const sections: Section[] = [
         a: "No. Your data is used only to power your VYRAL account. We never share, sell, or use your content to train public AI models.",
       },
       {
-        q: "What AI models does VYRAL use?",
-        a: "Creator plan uses Gemini Flash. Pro plan uses Gemini Flash plus Claude Sonnet 4 for higher-complexity tasks like the Data Analyst and deep coaching sessions.",
+        q: "What AI does VYRAL use?",
+        a: "VYRAL uses Gemini for fast tasks and Claude for higher-complexity work like the Data Analyst and deep coaching sessions.",
       },
     ],
   },

@@ -58,7 +58,7 @@ const faqSchema = {
       name: "What AI models does VYRAL use?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "VYRAL uses Gemini Flash for fast tasks and Claude Sonnet for coaching and deep analysis across all paid plans.",
+        text: "VYRAL uses Gemini for fast tasks and Claude for coaching and deep analysis across all paid plans.",
       },
     },
   ],
