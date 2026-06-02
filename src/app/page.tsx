@@ -793,6 +793,57 @@ export default function Home() {
           </div>
         </ScrollReveal>
 
+        {/* Row 4 — Profile Review: text left, image right */}
+        <ScrollReveal>
+          <div
+            style={{
+              maxWidth: 1100,
+              margin: "0 auto",
+              padding: "56px 48px",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: 48,
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <div style={overlinePill("purple")}>Profile Review</div>
+              <h2 style={sectionHeading}>
+                Know exactly what your{" "}
+                <span style={{ color: "#a78bfa" }}>profile is costing you</span>
+              </h2>
+              <p style={bodyText}>
+                Upload a screenshot of your LinkedIn profile and get an AI-powered audit in seconds. Section-by-section scores, priority fixes, and headline rewrites — all tailored to your content strategy.
+              </p>
+              <Link
+                href="/product/blueprint-ai"
+                style={{
+                  display: "inline-block",
+                  marginTop: 20,
+                  color: "#a78bfa",
+                  textDecoration: "none",
+                  fontWeight: 500,
+                  fontSize: 15,
+                  fontFamily: "Inter, sans-serif",
+                }}
+              >
+                Learn more →
+              </Link>
+            </div>
+            <img
+              src="/profileviewer.png"
+              alt="VYRAL Profile Review"
+              style={{
+                width: "100%",
+                borderRadius: 12,
+                border: "1px solid rgba(255,255,255,0.08)",
+                boxShadow: "0 0 40px rgba(124,58,237,0.15)",
+                display: "block",
+              }}
+            />
+          </div>
+        </ScrollReveal>
+
         {/* Full-width analytics graph */}
         <ScrollReveal>
           <div
@@ -905,6 +956,12 @@ export default function Home() {
                 emoji: "🪝",
                 title: "Hook Library",
                 desc: "Never face a blank page again",
+                pro: false,
+              },
+              {
+                emoji: "👤",
+                title: "Profile Review",
+                desc: "AI-scored profile audit with section-by-section feedback and fix suggestions",
                 pro: false,
               },
               {
