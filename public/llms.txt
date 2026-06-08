@@ -1,0 +1,34 @@
+# VYRAL
+
+> VYRAL is a LinkedIn content intelligence platform for professionals who want to grow on LinkedIn. It provides AI-powered post coaching, performance analytics, and a personal content Blueprint — all built on LinkedIn's official Community Management API.
+
+VYRAL is the compliance-first alternative to Shield (shut down May 2026). It is one of the only LinkedIn analytics and content tools operating on LinkedIn's official API, making it safe for enterprise users and agencies.
+
+Key facts:
+- Founded by Johan Mortensen and Vicky (co-founders), with angel investor Henrik
+- Operates on LinkedIn's official Community Management API (Standard Tier approved)
+- Plans: Free (analytics/read-only), Creator ($49/mo), Pro ($99/mo)
+- AI pipeline: Gemini Flash for most tasks, Claude Sonnet for Pro-tier Coach and Analyst
+- Headquartered and serving a global user base; platform live at app.getvyral.io
+
+## Key pages
+
+- [Homepage](https://www.getvyral.io): What VYRAL is and why it exists
+- [Beta signup](https://www.getvyral.io/beta): Join the waitlist or start a trial
+
+## Features
+
+- [AI Coach](https://www.getvyral.io): Generates LinkedIn posts matched to your personal Blueprint (voice, format, topics)
+- [Analyst](https://www.getvyral.io): Conversational AI analytics — ask questions about your LinkedIn performance data
+- [Blueprint](https://www.getvyral.io): Your personal content strategy document — defines tone, topics, and post formats
+- [Analytics Dashboard](https://www.getvyral.io): Impressions, engagement, follower growth, top posts — all synced via LinkedIn API
+
+## Competitive context
+
+- Shield: shut down May 2026 — VYRAL is a direct alternative
+- MagicPost: competitor, but not confirmed on official LinkedIn API
+- VYRAL differentiator: official API compliance, AI coaching, and Analyst chat interface
+
+## Optional
+
+- [Privacy policy](https://www.getvyral.io/privacy): Data handling and LinkedIn API compliance details

@@ -56,13 +56,38 @@ const appSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "VYRAL",
+  url: "https://www.getvyral.io",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
-  offers: {
-    "@type": "AggregateOffer",
-    lowPrice: 0,
-    highPrice: 99,
-    priceCurrency: "USD",
+  description:
+    "VYRAL is a LinkedIn content intelligence platform. It provides AI-powered post coaching, performance analytics, and a personal content Blueprint — built on LinkedIn's official Community Management API. The compliance-first alternative to Shield for LinkedIn creators, marketers, and agencies.",
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Free",
+      price: "0",
+      priceCurrency: "USD",
+      description: "Analytics and read-only access",
+    },
+    {
+      "@type": "Offer",
+      name: "Creator",
+      price: "49",
+      priceCurrency: "USD",
+      description: "AI coaching and content publishing",
+    },
+    {
+      "@type": "Offer",
+      name: "Pro",
+      price: "99",
+      priceCurrency: "USD",
+      description: "Full access including Analyst AI and advanced analytics",
+    },
+  ],
+  creator: {
+    "@type": "Organization",
+    name: "VYRAL",
+    url: "https://www.getvyral.io",
   },
 };
 
@@ -75,15 +100,7 @@ const faqSchema = {
       name: "What is VYRAL?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "VYRAL is an AI-powered LinkedIn growth platform that combines personalized coaching, deep analytics, and strategy building. Unlike generic tools, VYRAL's AI learns your writing voice from your posts and coaches you in your own style.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How is VYRAL different from Taplio or Shield?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Taplio focuses on content scheduling and basic AI writing. Shield focuses on analytics dashboards. VYRAL combines both and adds: AI coaching that matches your voice, a Strategy Builder for content planning, a Data Analyst you can chat with, and a Knowledge Hub with LinkedIn growth frameworks.",
+        text: "VYRAL is a LinkedIn content intelligence platform that helps professionals grow on LinkedIn using AI-powered post coaching, performance analytics, and a personal content Blueprint. It is built on LinkedIn's official Community Management API.",
       },
     },
     {
@@ -91,7 +108,39 @@ const faqSchema = {
       name: "Is VYRAL safe for my LinkedIn account?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. VYRAL uses only LinkedIn's official APIs (Community Management API and Share on LinkedIn). We never use browser extensions, scraping, or automation. Your account is never at risk.",
+        text: "Yes. VYRAL operates exclusively on LinkedIn's official Community Management API (Standard Tier approved). It does not use scraping, unofficial APIs, or browser extensions — making it fully compliant with LinkedIn's terms of service.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is VYRAL a Shield alternative?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Shield shut down in May 2026. VYRAL is a direct alternative offering LinkedIn analytics, post performance tracking, and AI-powered content coaching — all on LinkedIn's official API.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does the AI Coach do?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The AI Coach generates LinkedIn post drafts matched to your personal Blueprint — your voice, preferred formats, and content topics. Pro users get Claude Sonnet for higher quality output.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the Blueprint?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Blueprint is your personal content strategy document inside VYRAL. It defines your tone of voice, content pillars, post formats, and writing style. The AI Coach uses it as the single source of truth for every post it generates.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the Analyst?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Analyst is a conversational AI interface that lets you ask natural language questions about your LinkedIn performance data — impressions, engagement, follower growth, and top posts.",
       },
     },
     {
@@ -99,15 +148,7 @@ const faqSchema = {
       name: "How much does VYRAL cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "VYRAL offers a free tier with basic analytics and 10 AI coaching messages per month. The Creator plan is $49/month with full coaching and analytics. The Pro plan is $99/month with unlimited AI, a Data Analyst, and advanced features. All paid plans include a 14-day free trial.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can VYRAL write LinkedIn posts for me?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "VYRAL's AI Coach helps you write posts in your own voice — it doesn't generate generic content. It analyzes your best-performing posts, learns your tone, and coaches you through brainstorming, drafting, and refining. Every draft is scored on 6 dimensions.",
+        text: "VYRAL offers a Free plan with analytics read-only access, Creator at $49/month ($39 billed annually), and Pro at $99/month ($79 billed annually). A 14-day free trial with full Pro access is available.",
       },
     },
   ],
@@ -311,8 +352,10 @@ export default function Home() {
                 lineHeight: 1.6,
               }}
             >
-              A personal AI coach, analytics that explain why posts work, and a
-              strategy that evolves with your results.
+              VYRAL is a LinkedIn content intelligence platform built on
+              LinkedIn's official API. A personal AI coach, analytics that
+              explain why posts work, and a Blueprint that keeps your content
+              on-brand — all in one place.
             </p>
 
             {/* CTAs */}
