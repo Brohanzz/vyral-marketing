@@ -29,6 +29,11 @@ Key facts:
 - MagicPost: competitor, but not confirmed on official LinkedIn API
 - VYRAL differentiator: official API compliance, AI coaching, and Analyst chat interface
 
+## Blog
+
+- [Shield Analytics Is Shutting Down: What Happened and Where to Go Next](https://www.getvyral.io/blog/shield-analytics-shutting-down-alternatives): Covers Shield Analytics' May 2026 shutdown, the broader pattern of LinkedIn enforcement against Chrome extension-based tools since 2025, and how to evaluate a replacement based on API access method.
+- [Is Your LinkedIn Tool Safe? A 2026 Compliance Guide](https://www.getvyral.io/blog/is-your-linkedin-tool-safe-2026): Explains the four ways LinkedIn tools connect to user accounts (official API, Chrome extension DOM reading, Chrome extension with cookie access, scraping), the compliance spectrum across major LinkedIn tools, and how to evaluate any tool's safety.
+
 ## Optional
 
 - [Privacy policy](https://www.getvyral.io/privacy): Data handling and LinkedIn API compliance details

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import { getAllPosts } from "@/lib/blog";
 
 // ─── METADATA ────────────────────────────────────────────────────────────────
 
@@ -273,6 +274,8 @@ function FeatureVideo({ src }: { src: string }) {
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
+  const latestPosts = getAllPosts().slice(0, 3);
+
   return (
     <>
       {/* Smooth scroll */}
@@ -1527,7 +1530,145 @@ export default function Home() {
       </ScrollReveal>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 10 — FINAL CTA
+          SECTION 10 — FROM THE BLOG
+      ══════════════════════════════════════════════════════════ */}
+      {latestPosts.length > 0 && (
+        <ScrollReveal>
+          <section
+            style={{
+              maxWidth: 1080,
+              margin: "0 auto",
+              padding: "0 48px 80px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "baseline",
+                justifyContent: "space-between",
+                marginBottom: 32,
+              }}
+            >
+              <h2
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontWeight: 700,
+                  fontSize: 32,
+                  color: "#fff",
+                  margin: 0,
+                }}
+              >
+                From the Blog
+              </h2>
+              <Link
+                href="/blog"
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: 13,
+                  fontWeight: 500,
+                  color: "#a78bfa",
+                  textDecoration: "none",
+                }}
+              >
+                View all posts →
+              </Link>
+            </div>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+                gap: 20,
+              }}
+            >
+              {latestPosts.map((post) => (
+                <Link
+                  key={post.frontmatter.slug}
+                  href={`/blog/${post.frontmatter.slug}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <article
+                    style={{
+                      background: "#111111",
+                      border: "1px solid #222222",
+                      borderRadius: 12,
+                      padding: "22px 24px",
+                      height: "100%",
+                      boxSizing: "border-box",
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: 5,
+                        marginBottom: 12,
+                      }}
+                    >
+                      {post.frontmatter.tags.slice(0, 2).map((tag) => (
+                        <span
+                          key={tag}
+                          style={{
+                            background: "rgba(124,58,237,0.1)",
+                            color: "#a78bfa",
+                            fontFamily: "Inter, sans-serif",
+                            fontSize: 10,
+                            fontWeight: 500,
+                            letterSpacing: "0.05em",
+                            padding: "2px 8px",
+                            borderRadius: 999,
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <h3
+                      style={{
+                        fontFamily: "'Playfair Display', serif",
+                        fontWeight: 700,
+                        fontSize: 18,
+                        color: "#fff",
+                        margin: "0 0 8px",
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {post.frontmatter.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: 13,
+                        color: "rgba(255,255,255,0.5)",
+                        lineHeight: 1.55,
+                        margin: "0 0 16px",
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {post.frontmatter.description}
+                    </p>
+                    <span
+                      style={{
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: 12,
+                        fontWeight: 500,
+                        color: "#a78bfa",
+                      }}
+                    >
+                      Read more →
+                    </span>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════
+          SECTION 11 — FINAL CTA
       ══════════════════════════════════════════════════════════ */}
       <ScrollReveal>
         <section
