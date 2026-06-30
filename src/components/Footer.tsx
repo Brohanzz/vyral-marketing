@@ -127,6 +127,10 @@ export default function Footer() {
                 { label: "vs Kleo", href: "/alternatives/kleo" },
                 { label: "vs AuthoredUp", href: "/alternatives/authoredup" },
                 { label: "vs MagicPost", href: "/alternatives/magicpost" },
+                { label: "vs Postiv", href: "/alternatives/postiv" },
+                { label: "vs Scripe", href: "/alternatives/scripe" },
+                { label: "vs Supergrow", href: "/alternatives/supergrow" },
+                { label: "vs Stanley", href: "/alternatives/stanley" },
               ].map((link) => (
                 <Link
                   key={link.href}
