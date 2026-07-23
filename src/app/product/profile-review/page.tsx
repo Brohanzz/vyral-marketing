@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "Profile Review — AI LinkedIn Profile Audit | VYRAL",
@@ -117,7 +118,7 @@ export default function ProfileReviewPage() {
           Upload a screenshot and get an instant AI audit — section-by-section scores, priority fixes, and headline rewrites tailored to your content strategy.
         </p>
         <a
-          href="/waitlist"
+          href={APP_SIGNUP_URL}
           style={{
             display: "inline-block",
             background: "#7c3aed",
@@ -327,7 +328,7 @@ export default function ProfileReviewPage() {
           14-day free trial · No credit card required
         </p>
         <a
-          href="/waitlist"
+          href={APP_SIGNUP_URL}
           style={{
             display: "inline-block",
             background: "#7c3aed",

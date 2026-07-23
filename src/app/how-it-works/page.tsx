@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import { Lightbulb, Calendar, TrendingUp, RefreshCw } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 // ─── METADATA ────────────────────────────────────────────────────────────────
 
@@ -168,7 +169,7 @@ export default function HowItWorksPage() {
           }}
         >
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={{
               background: "#7c3aed",
               color: "#ffffff",
@@ -181,7 +182,7 @@ export default function HowItWorksPage() {
               ...inter,
             }}
           >
-            Join the waitlist
+            Sign up for a trial
           </a>
           <Link
             href="/product"
@@ -586,7 +587,7 @@ export default function HowItWorksPage() {
           Stop posting blindly. Start improving on purpose.
         </p>
         <a
-          href="/waitlist"
+          href={APP_SIGNUP_URL}
           style={{
             display: "inline-block",
             background: "#7c3aed",
@@ -600,7 +601,7 @@ export default function HowItWorksPage() {
             ...inter,
           }}
         >
-          Join the waitlist
+          Sign up for a trial
         </a>
       </section>
 

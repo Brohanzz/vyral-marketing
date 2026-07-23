@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Brain, FileText, Shield, CheckCircle } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "AI LinkedIn Post Writer That Sounds Like You — VYRAL",
@@ -139,7 +140,7 @@ export default function AILinkedInPostWriterPage() {
             Not generic AI templates. A coach that studies your writing patterns, understands your tone, and helps you write content that sounds authentically you — just sharper.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/waitlist" style={btnPurple}>Join the waitlist</a>
+            <a href={APP_SIGNUP_URL} style={btnPurple}>Sign up for a trial</a>
             <Link href="/ai-coach" style={btnGhost}>Learn about the Coach</Link>
           </div>
         </section>
@@ -253,7 +254,7 @@ export default function AILinkedInPostWriterPage() {
           <p style={{ ...body, maxWidth: 440, margin: "0 auto 28px" }}>
             Join the first 100 creators using VYRAL&apos;s AI Coach. Full Pro access for 14 days.
           </p>
-          <a href="/waitlist" style={btnPurple}>Join the waitlist</a>
+          <a href={APP_SIGNUP_URL} style={btnPurple}>Sign up for a trial</a>
         </section>
       </main>
     </>

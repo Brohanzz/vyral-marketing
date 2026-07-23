@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, X, AlertCircle } from "lucide-react";
 import ApiTooltip from "@/components/ApiTooltip";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "Typefully Alternative for LinkedIn — Strategy Beyond the Editor | VYRAL",
@@ -106,8 +107,8 @@ export default function TypefullyPage() {
           add when you&apos;re ready to understand why your content performs — and build a strategy
           around it.
         </p>
-        <a href="/waitlist" style={btnPurple}>
-          Join the waitlist
+        <a href={APP_SIGNUP_URL} style={btnPurple}>
+          Sign up for a trial
         </a>
       </section>
 
@@ -288,8 +289,8 @@ export default function TypefullyPage() {
         <p style={{ ...body, maxWidth: 420, margin: "0 auto 32px" }}>
           Writing is the start. Understanding what works is how you grow.
         </p>
-        <a href="/waitlist" style={btnPurple}>
-          Join the waitlist
+        <a href={APP_SIGNUP_URL} style={btnPurple}>
+          Sign up for a trial
         </a>
       </section>
     </main>

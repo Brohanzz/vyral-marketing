@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { APP_LOGIN_URL, APP_SIGNUP_URL } from "@/lib/urls";
 
 // ─── NAV DATA ─────────────────────────────────────────────────────────────────
 
@@ -334,7 +335,7 @@ export default function Nav() {
             }}
           >
             <a
-              href="https://app.getvyral.io/auth"
+              href={APP_LOGIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               style={plainLinkStyle}
@@ -343,7 +344,7 @@ export default function Nav() {
               Log in
             </a>
             <a
-              href="/waitlist"
+              href={APP_SIGNUP_URL}
               style={{
                 background: "#7c3aed",
                 borderRadius: 100,
@@ -358,7 +359,7 @@ export default function Nav() {
                 display: "inline-block",
               }}
             >
-              Join the waitlist
+              Sign up for a trial
             </a>
           </div>
 
@@ -527,7 +528,7 @@ export default function Nav() {
             }}
           >
             <a
-              href="https://app.getvyral.io/auth"
+              href={APP_LOGIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
@@ -546,7 +547,7 @@ export default function Nav() {
               Log in
             </a>
             <a
-              href="/waitlist"
+              href={APP_SIGNUP_URL}
               onClick={() => setMobileOpen(false)}
               style={{
                 display: "block",
@@ -562,7 +563,7 @@ export default function Nav() {
                 boxShadow: "0 0 0 1px rgba(124,58,237,0.4)",
               }}
             >
-              Join the waitlist
+              Sign up for a trial
             </a>
           </div>
         </div>

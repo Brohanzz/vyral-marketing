@@ -7,6 +7,7 @@ import {
   Lightbulb,
   Zap,
 } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "Performance Lab — Understand Why Your Posts Perform — VYRAL",
@@ -115,10 +116,10 @@ export default function PerformanceLabPage() {
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={btnPrimary}
           >
-            Join the waitlist
+            Sign up for a trial
           </a>
           <Link href="/product/analytics" style={btnGhost}>
             See analytics
@@ -431,10 +432,10 @@ export default function PerformanceLabPage() {
         </p>
         <div style={{ marginBottom: 20 }}>
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={btnPrimary}
           >
-            Join the waitlist
+            Sign up for a trial
           </a>
         </div>
         <Link

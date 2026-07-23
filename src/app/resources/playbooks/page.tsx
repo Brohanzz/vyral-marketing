@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "LinkedIn Playbooks — Proven Content Frameworks | VYRAL",
@@ -88,7 +89,7 @@ export default function PlaybooksPage() {
           ghostwriting practice.
         </p>
         <a
-          href="/waitlist"
+          href={APP_SIGNUP_URL}
           style={{
             display: "inline-block",
             background: "#7c3aed",
@@ -202,7 +203,7 @@ export default function PlaybooksPage() {
           Coach — not a PDF you read once and forget.
         </p>
         <a
-          href="/waitlist"
+          href={APP_SIGNUP_URL}
           style={{
             display: "inline-block",
             background: "#7c3aed",

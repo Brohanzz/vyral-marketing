@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NewsletterForm from "@/components/NewsletterForm";
 
 // ─── SHARED STYLES ────────────────────────────────────────────────────────────
 
@@ -167,10 +168,21 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* ── API SAFETY NOTE ── */}
+          {/* ── NEWSLETTER ── */}
           <div
             style={{
               marginTop: 48,
+              paddingTop: 32,
+              borderTop: "1px solid rgba(255,255,255,0.05)",
+            }}
+          >
+            <NewsletterForm variant="footer" />
+          </div>
+
+          {/* ── API SAFETY NOTE ── */}
+          <div
+            style={{
+              marginTop: 40,
               paddingTop: 20,
               borderTop: "1px solid rgba(255,255,255,0.05)",
               textAlign: "center",

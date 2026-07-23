@@ -10,6 +10,7 @@ import {
   Sparkles,
   TrendingUp,
 } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "LinkedIn Content Strategy Blueprint — Build Your Creator System | VYRAL",
@@ -176,10 +177,10 @@ export default function LinkedInContentStrategyPage() {
             your content, analytics, and AI coaching.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/waitlist" style={btnPurple}>
+            <a href={APP_SIGNUP_URL} style={btnPurple}>
               Create your Blueprint
             </a>
-            <a href="/waitlist" style={btnGhost}>
+            <a href={APP_SIGNUP_URL} style={btnGhost}>
               Start free
             </a>
           </div>
@@ -450,10 +451,10 @@ export default function LinkedInContentStrategyPage() {
             <span style={{ color: "#a78bfa" }}>today.</span>
           </h2>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginTop: 28 }}>
-            <a href="/waitlist" style={btnPurple}>
+            <a href={APP_SIGNUP_URL} style={btnPurple}>
               Create your Blueprint
             </a>
-            <a href="/waitlist" style={btnGhost}>
+            <a href={APP_SIGNUP_URL} style={btnGhost}>
               Start free
             </a>
           </div>

@@ -31,9 +31,11 @@ If you are in a worktree, stop immediately and switch to main before doing anyth
 - Footer: MarketingFooter component (global via layout.tsx)
 
 ## URL rules — CRITICAL
-- Log in button → `https://app.getvyral.io`
-- ALL other CTAs (Sign up, Start free trial, Create account, etc.) → `https://www.getvyral.io/beta`
-- Never point CTAs to `https://app.getvyral.io` directly
+- Never hardcode app URLs. Import from `src/lib/urls.ts`.
+- Log in button → `APP_LOGIN_URL`
+- ALL other CTAs (Sign up, Start free trial, Create account, etc.) → `APP_SIGNUP_URL`
+- The `/waitlist` and `/beta` pages were removed when self-serve trials opened.
+  Do not reintroduce them or link to them.
 
 ## Code rules
 - Nav and Footer are global via `layout.tsx` — never import them per-page

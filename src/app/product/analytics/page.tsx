@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TrendingUp, BarChart3, Target, Zap, Calendar } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "Analytics That Tell You What to Do Next — VYRAL",
@@ -115,7 +116,7 @@ export default function AnalyticsPage() {
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={btnPrimary}
           >
             Start free trial
@@ -426,7 +427,7 @@ export default function AnalyticsPage() {
         <p style={body}>Not just numbers — insights that tell you what to do next</p>
         <div style={{ marginBottom: 20 }}>
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={btnPrimary}
           >
             Start free trial

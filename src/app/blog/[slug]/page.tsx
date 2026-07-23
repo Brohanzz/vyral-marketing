@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import NewsletterForm from "@/components/NewsletterForm";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -351,8 +353,8 @@ export default async function BlogPostPage({ params }: Props) {
             >
               Join VYRAL and get official LinkedIn analytics, AI coaching, and content intelligence in one place.
             </p>
-            <Link
-              href="/waitlist"
+            <a
+              href={APP_SIGNUP_URL}
               style={{
                 display: "inline-block",
                 background: "#7c3aed",
@@ -366,7 +368,22 @@ export default async function BlogPostPage({ params }: Props) {
               }}
             >
               Start your free trial
-            </Link>
+            </a>
+          </div>
+
+          {/* ── NEWSLETTER ── */}
+          <div
+            style={{
+              marginTop: 32,
+              padding: "40px",
+              background: "#111111",
+              border: "1px solid #222222",
+              borderRadius: 16,
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <NewsletterForm variant="standalone" />
           </div>
         </div>
       </main>

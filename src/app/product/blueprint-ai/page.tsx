@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "Blueprint — Set Your Strategy Once, Let AI Follow It Forever — VYRAL",
@@ -163,7 +164,7 @@ export default function BlueprintAIPage() {
           }}
         >
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={btnPrimary}
           >
             Start free
@@ -522,7 +523,7 @@ export default function BlueprintAIPage() {
         </p>
         <div style={{ marginBottom: 14 }}>
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={btnPrimary}
           >
             Start free

@@ -9,6 +9,7 @@ import {
   CheckCircle,
   DollarSign,
 } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "LinkedIn Coaching Alternative — AI-Powered Personal Coaching | VYRAL",
@@ -183,10 +184,10 @@ export default function LinkedInCoachingPage() {
             data, and costs a fraction of a course.
           </p>
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={btnPurple}
           >
-            Join the waitlist
+            Sign up for a trial
           </a>
         </section>
 
@@ -472,10 +473,10 @@ export default function LinkedInCoachingPage() {
               days. No credit card required.
             </p>
             <a
-              href="/waitlist"
+              href={APP_SIGNUP_URL}
               style={btnPurple}
             >
-              Join the waitlist
+              Sign up for a trial
             </a>
           </div>
         </section>

@@ -15,6 +15,7 @@ import {
   Zap,
   Eye,
 } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "How VYRAL Works — Your Data, Your Safety, Your Growth",
@@ -555,7 +556,7 @@ export default function HowVyralWorksPage() {
           Join creators who trust VYRAL with their LinkedIn growth.
         </p>
         <a
-          href="/waitlist"
+          href={APP_SIGNUP_URL}
           style={{
             display: "inline-block",
             background: "#7c3aed",
@@ -568,7 +569,7 @@ export default function HowVyralWorksPage() {
             textDecoration: "none",
           }}
         >
-          Join the waitlist
+          Sign up for a trial
         </a>
       </section>
     </main>

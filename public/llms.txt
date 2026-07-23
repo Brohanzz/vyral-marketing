@@ -14,7 +14,7 @@ Key facts:
 ## Key pages
 
 - [Homepage](https://www.getvyral.io): What VYRAL is and why it exists
-- [Beta signup](https://www.getvyral.io/beta): Join the waitlist or start a trial
+- [Sign up](https://app.getvyral.io/auth?mode=signup): Start a free trial
 
 ## Features
 

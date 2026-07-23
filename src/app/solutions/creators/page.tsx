@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "VYRAL for Creators — The Growth Engine for Serious LinkedIn Creators",
@@ -182,8 +183,8 @@ export default function CreatorsPage() {
             Understand your content. Build your strategy. Execute better posts — consistently.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/waitlist" style={btnPurple}>
-              Join the waitlist
+            <a href={APP_SIGNUP_URL} style={btnPurple}>
+              Sign up for a trial
             </a>
             <Link href="/pricing" style={btnGhost}>See pricing</Link>
           </div>
@@ -454,8 +455,8 @@ export default function CreatorsPage() {
           <p style={{ ...body, maxWidth: 440, margin: "0 auto 32px" }}>
             Sign up and see what&apos;s actually driving your growth.
           </p>
-          <a href="/waitlist" style={btnPurple}>
-            Join the waitlist
+          <a href={APP_SIGNUP_URL} style={btnPurple}>
+            Sign up for a trial
           </a>
         </section>
       </main>

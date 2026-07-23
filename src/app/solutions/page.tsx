@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "VYRAL Solutions — For Creators, Ghostwriters & Agencies",
@@ -170,8 +171,8 @@ export default function SolutionsPage() {
             Different personas, same powerful engine. VYRAL adapts to how you work and what you need to grow on LinkedIn.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/waitlist" style={btnPurple}>
-              Join the waitlist
+            <a href={APP_SIGNUP_URL} style={btnPurple}>
+              Sign up for a trial
             </a>
             <Link href="/product" style={btnGhost}>Explore product</Link>
           </div>
@@ -292,8 +293,8 @@ export default function SolutionsPage() {
             Start building your content engine today — no matter your role or goals
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/waitlist" style={btnPurple}>
-              Join the waitlist
+            <a href={APP_SIGNUP_URL} style={btnPurple}>
+              Sign up for a trial
             </a>
             <Link href="/product" style={btnGhost}>Explore product</Link>
           </div>

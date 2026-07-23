@@ -12,6 +12,7 @@ import {
   Send,
   CalendarClock,
 } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "Get Started in 5 Minutes — VYRAL",
@@ -441,7 +442,7 @@ export default function GettingStartedPage() {
           14-day free Pro trial · No credit card required
         </p>
         <a
-          href="/waitlist"
+          href={APP_SIGNUP_URL}
           style={{
             display: "inline-block",
             background: "#7c3aed",
@@ -454,7 +455,7 @@ export default function GettingStartedPage() {
             textDecoration: "none",
           }}
         >
-          Join the waitlist
+          Sign up for a trial
         </a>
       </section>
     </main>

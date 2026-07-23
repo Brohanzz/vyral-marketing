@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Check, ChevronDown } from "lucide-react";
 import type { CSSProperties } from "react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 // ─── TYPES ────────────────────────────────────────────────────────────────────
 
@@ -394,7 +395,7 @@ export default function PricingClient() {
               </div>
 
               <a
-                href="/waitlist"
+                href={APP_SIGNUP_URL}
                 style={{
                   display: "block",
                   background: "#7c3aed",
@@ -499,7 +500,7 @@ export default function PricingClient() {
               </div>
 
               <a
-                href="/waitlist"
+                href={APP_SIGNUP_URL}
                 style={{
                   display: "block",
                   background: "#7c3aed",
@@ -880,7 +881,7 @@ export default function PricingClient() {
           14-day trial · Full Pro access · No credit card required
         </p>
         <a
-          href="/waitlist"
+          href={APP_SIGNUP_URL}
           style={{
             display: "inline-block",
             background: "#7c3aed",

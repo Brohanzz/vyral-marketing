@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Shield, CheckCircle, XCircle, Send, BarChart3, Key } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "Is VYRAL Safe for LinkedIn? — Official API, No Extensions | VYRAL",
@@ -342,7 +343,7 @@ export default function LinkedInToolSafePage() {
             Join the first 100 creators using VYRAL. Official API only. No risk to your account.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/waitlist" style={btnPurple}>Join the waitlist</a>
+            <a href={APP_SIGNUP_URL} style={btnPurple}>Sign up for a trial</a>
             <Link href="/product" style={btnGhost}>See how it works</Link>
           </div>
         </section>

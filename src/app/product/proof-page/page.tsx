@@ -8,6 +8,7 @@ import {
   Building,
   Share2,
 } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "Proof Page — Turn Your Content Into a Public Portfolio — VYRAL",
@@ -116,10 +117,10 @@ export default function ProofPagePage() {
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={btnPrimary}
           >
-            Join the waitlist
+            Sign up for a trial
           </a>
           <Link href="/product/analytics" style={btnGhost}>
             View analytics
@@ -367,10 +368,10 @@ export default function ProofPagePage() {
           Launch your Proof Page in minutes — and share it anywhere.
         </p>
         <a
-          href="/waitlist"
+          href={APP_SIGNUP_URL}
           style={btnPrimary}
         >
-          Join the waitlist
+          Sign up for a trial
         </a>
       </section>
     </main>

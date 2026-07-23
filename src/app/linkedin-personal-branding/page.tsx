@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Target, Brain, BarChart3, BookOpen, TrendingUp, Users } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "LinkedIn Personal Branding Tool — Build Your Authority | VYRAL",
@@ -114,8 +115,8 @@ export default function LinkedInPersonalBrandingPage() {
           <p style={{ fontFamily: "Inter, sans-serif", fontSize: 18, color: "rgba(255,255,255,0.55)", lineHeight: 1.7, margin: "0 0 36px", maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
             Your personal brand on LinkedIn is your most valuable business asset. VYRAL gives you the strategy, AI coaching, and analytics to build it systematically — not randomly.
           </p>
-          <a href="/waitlist" style={btnPurple}>
-            Join the waitlist
+          <a href={APP_SIGNUP_URL} style={btnPurple}>
+            Sign up for a trial
           </a>
         </section>
 
@@ -199,7 +200,7 @@ export default function LinkedInPersonalBrandingPage() {
             <p style={{ ...body, maxWidth: 440, margin: "0 auto 28px" }}>
               Join the first 100 creators using VYRAL. Full Pro access for 14 days. No credit card required.
             </p>
-            <a href="/waitlist" style={btnPurple}>Join the waitlist</a>
+            <a href={APP_SIGNUP_URL} style={btnPurple}>Sign up for a trial</a>
           </div>
         </section>
       </main>

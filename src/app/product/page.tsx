@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 // ─── METADATA ────────────────────────────────────────────────────────────────
 
@@ -324,7 +325,7 @@ export default function ProductPage() {
             }}
           >
             <a
-              href="/waitlist"
+              href={APP_SIGNUP_URL}
               style={{
                 background: "#7c3aed",
                 color: "#ffffff",
@@ -337,7 +338,7 @@ export default function ProductPage() {
                 ...inter,
               }}
             >
-              Join the waitlist
+              Sign up for a trial
             </a>
             <Link
               href="/pricing"
@@ -661,7 +662,7 @@ export default function ProductPage() {
             14-day Pro trial · No credit card required
           </p>
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={{
               display: "inline-block",
               background: "#7c3aed",
@@ -675,7 +676,7 @@ export default function ProductPage() {
               ...inter,
             }}
           >
-            Join the waitlist
+            Sign up for a trial
           </a>
         </section>
 

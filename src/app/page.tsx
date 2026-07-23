@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import { getAllPosts } from "@/lib/blog";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 // ─── METADATA ────────────────────────────────────────────────────────────────
 
@@ -311,7 +312,7 @@ export default function Home() {
             fontFamily: "Inter, sans-serif",
           }}
         >
-          ✦ Now in early access — built on LinkedIn&apos;s official API. No
+          ✦ Start free today. Built on LinkedIn&apos;s official API. No
           scraping. No risk.
         </div>
 
@@ -372,7 +373,7 @@ export default function Home() {
               }}
             >
               <a
-                href="/waitlist"
+                href={APP_SIGNUP_URL}
                 style={{
                   background: "#7c3aed",
                   color: "#ffffff",
@@ -1313,7 +1314,7 @@ export default function Home() {
                 ))}
               </div>
               <a
-                href="/waitlist"
+                href={APP_SIGNUP_URL}
                 style={{
                   display: "block",
                   background: "#7c3aed",
@@ -1401,7 +1402,7 @@ export default function Home() {
                   ))}
                 </div>
                 <a
-                  href="/waitlist"
+                  href={APP_SIGNUP_URL}
                   style={{
                     display: "block",
                     background: "#7c3aed",
@@ -1510,7 +1511,7 @@ export default function Home() {
               strategies — free for every VYRAL user. No paywall, no upsell.
             </p>
             <a
-              href="/waitlist"
+              href={APP_SIGNUP_URL}
               style={{
                 display: "inline-block",
                 background: "transparent",
@@ -1693,7 +1694,7 @@ export default function Home() {
             14-day free Pro trial · No credit card required
           </p>
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={{
               display: "inline-block",
               background: "#7c3aed",
@@ -1707,7 +1708,7 @@ export default function Home() {
               fontFamily: "Inter, sans-serif",
             }}
           >
-            Sign up for early access
+            Sign up for a trial
           </a>
         </section>
       </ScrollReveal>

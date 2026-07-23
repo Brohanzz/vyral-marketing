@@ -10,6 +10,7 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "LinkedIn Growth Tool for Creators & Founders — VYRAL",
@@ -148,7 +149,7 @@ export default function LinkedInGrowthToolPage() {
             Most LinkedIn tools help you post. VYRAL helps you think, write, analyze, and improve — so every post moves you closer to your goals.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/waitlist" style={btnPurple}>Join the waitlist</a>
+            <a href={APP_SIGNUP_URL} style={btnPurple}>Sign up for a trial</a>
             <Link href="/product" style={btnGhost}>See how it works</Link>
           </div>
         </section>
@@ -253,7 +254,7 @@ export default function LinkedInGrowthToolPage() {
           <p style={{ ...body, maxWidth: 480, margin: "0 auto 28px" }}>
             Join the first 100 LinkedIn creators using VYRAL. Full Pro access for 14 days. No credit card required.
           </p>
-          <a href="/waitlist" style={btnPurple}>Join the waitlist</a>
+          <a href={APP_SIGNUP_URL} style={btnPurple}>Sign up for a trial</a>
         </section>
       </main>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "About VYRAL — LinkedIn Growth Platform for Creators",
@@ -340,7 +341,7 @@ export default function AboutPage() {
           14-day free Pro trial · No credit card required
         </p>
         <a
-          href="/waitlist"
+          href={APP_SIGNUP_URL}
           style={{
             display: "inline-block",
             background: "#7c3aed",

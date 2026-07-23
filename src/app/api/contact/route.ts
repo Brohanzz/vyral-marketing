@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-// NOTE: NEXT_PUBLIC_SUPABASE_URL is referenced elsewhere in this repo (src/lib/supabase.ts,
-// src/app/api/beta/route.ts) but there is no local .env file, so the literal is kept as a
-// fallback. It should be moved to an env var only — see report.
+// NOTE: NEXT_PUBLIC_SUPABASE_URL is referenced elsewhere in this repo
+// (src/lib/supabase.ts) but there is no local .env file, so the literal is kept
+// as a fallback. It should be moved to an env var only.
 const SUPABASE_URL =
   process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jstjulsdtxkbjdjjrudc.supabase.co'
 

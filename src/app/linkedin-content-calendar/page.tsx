@@ -10,6 +10,7 @@ import {
   CheckCircle,
   Clock,
 } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "LinkedIn Content Calendar — Plan, Schedule & Auto-Publish | VYRAL",
@@ -150,10 +151,10 @@ export default function LinkedInContentCalendarPage() {
             automatically.
           </p>
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={btnPurple}
           >
-            Join the waitlist
+            Sign up for a trial
           </a>
         </section>
 
@@ -311,10 +312,10 @@ export default function LinkedInContentCalendarPage() {
             days. No credit card required.
           </p>
           <a
-            href="/waitlist"
+            href={APP_SIGNUP_URL}
             style={btnPurple}
           >
-            Join the waitlist
+            Sign up for a trial
           </a>
         </section>
       </main>

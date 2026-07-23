@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { getAllAlternatives, getAlternativeBySlug } from "@/lib/alternatives";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -349,8 +350,8 @@ export default async function AlternativePage({ params }: Props) {
             >
               Official LinkedIn API. AI coaching. Deep analytics. 14-day free trial, no credit card required.
             </p>
-            <Link
-              href="/waitlist"
+            <a
+              href={APP_SIGNUP_URL}
               style={{
                 display: "inline-block",
                 background: "#7c3aed",
@@ -363,8 +364,8 @@ export default async function AlternativePage({ params }: Props) {
                 textDecoration: "none",
               }}
             >
-              Join the waitlist
-            </Link>
+              Sign up for a trial
+            </a>
           </div>
         </div>
       </main>

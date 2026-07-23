@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "LinkedIn Analytics Tool for Creators — VYRAL",
@@ -191,7 +192,7 @@ export default function LinkedInAnalyticsPage() {
             Finally understand why your posts perform — and how to repeat it.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/waitlist" style={btnPurple}>
+            <a href={APP_SIGNUP_URL} style={btnPurple}>
               Start free
             </a>
             <Link href="/product" style={btnGhost}>See demo</Link>
@@ -542,7 +543,7 @@ export default function LinkedInAnalyticsPage() {
               marginTop: 32,
             }}
           >
-            <a href="/waitlist" style={btnPurple}>
+            <a href={APP_SIGNUP_URL} style={btnPurple}>
               Start free
             </a>
             <Link href="/product" style={btnGhost}>See demo</Link>

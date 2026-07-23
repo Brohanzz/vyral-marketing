@@ -10,6 +10,7 @@ import {
   Sparkles,
   MessageSquare,
 } from "lucide-react";
+import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "LinkedIn Post Analytics — Understand Why Posts Perform | VYRAL",
@@ -175,10 +176,10 @@ export default function LinkedInPostAnalyticsPage() {
             style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}
           >
             <a
-              href="/waitlist"
+              href={APP_SIGNUP_URL}
               style={btnPurple}
             >
-              Join the waitlist
+              Sign up for a trial
             </a>
             <Link href="/linkedin-analytics" style={btnGhost}>
               See analytics features
@@ -400,10 +401,10 @@ export default function LinkedInPostAnalyticsPage() {
               days.
             </p>
             <a
-              href="/waitlist"
+              href={APP_SIGNUP_URL}
               style={btnPurple}
             >
-              Join the waitlist
+              Sign up for a trial
             </a>
           </div>
         </section>
