@@ -9,6 +9,7 @@ interface FormState {
   phone: string;
   company: string;
   message: string;
+  website: string;
 }
 
 interface FormErrors {
@@ -29,6 +30,15 @@ const inputStyle: React.CSSProperties = {
   fontFamily: "Inter, sans-serif",
   boxSizing: "border-box",
   outline: "none",
+};
+
+const honeypotStyle: React.CSSProperties = {
+  position: "absolute",
+  left: "-9999px",
+  width: 1,
+  height: 1,
+  opacity: 0,
+  pointerEvents: "none",
 };
 
 const labelStyle: React.CSSProperties = {
@@ -54,9 +64,12 @@ export default function ContactForm() {
     phone: "",
     company: "",
     message: "",
+    website: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [focused, setFocused] = useState<string | null>(null);
 
   function validate(): FormErrors {
@@ -76,7 +89,7 @@ export default function ContactForm() {
     return e;
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) {
@@ -84,7 +97,30 @@ export default function ContactForm() {
       return;
     }
     setErrors({});
-    setSubmitted(true);
+    setSubmitError(null);
+    setSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setSubmitError(data.error || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError(
+        "Couldn't reach the server. Please check your connection and try again."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   function handleChange(
@@ -155,6 +191,20 @@ export default function ContactForm() {
         padding: 40,
       }}
     >
+      {/* Honeypot — hidden from real users, filled only by bots */}
+      <div style={honeypotStyle} aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.website}
+          onChange={handleChange}
+        />
+      </div>
+
       {/* Name row */}
       <div
         style={{
@@ -277,8 +327,15 @@ export default function ContactForm() {
         {errors.message && <p style={errorStyle}>{errors.message}</p>}
       </div>
 
+      {submitError && (
+        <p style={{ ...errorStyle, marginTop: 0, marginBottom: 12 }} role="alert">
+          {submitError}
+        </p>
+      )}
+
       <button
         type="submit"
+        disabled={submitting}
         style={{
           width: "100%",
           background: "#7c3aed",
@@ -289,11 +346,12 @@ export default function ContactForm() {
           fontWeight: 600,
           fontFamily: "Inter, sans-serif",
           border: "none",
-          cursor: "pointer",
+          cursor: submitting ? "not-allowed" : "pointer",
+          opacity: submitting ? 0.6 : 1,
           marginTop: 8,
         }}
       >
-        Send message
+        {submitting ? "Sending…" : "Send message"}
       </button>
     </form>
   );
