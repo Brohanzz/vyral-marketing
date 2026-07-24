@@ -110,7 +110,7 @@ const faqs = [
   },
   {
     q: "Do I need a credit card for the trial?",
-    a: "No. Your 14-day trial starts immediately — no card required. You only enter payment info when you decide to subscribe.",
+    a: "No. Your 14-day trial starts immediately, no card required. You only enter payment info when you decide to subscribe.",
   },
   {
     q: "What's the difference between Creator and Pro?",
@@ -118,7 +118,7 @@ const faqs = [
   },
   {
     q: "How is VYRAL different from other LinkedIn tools?",
-    a: "Most LinkedIn tools focus on scheduling or generating generic content. VYRAL goes deeper: our AI Coach learns your actual writing voice from your posts, the Data Analyst explains WHY your posts perform the way they do, and the Blueprint helps you build a real content strategy — not just create posts.",
+    a: "Most LinkedIn tools focus on scheduling or generating generic content. VYRAL goes deeper: our AI Coach learns your actual writing voice from your posts, the Data Analyst explains WHY your posts perform the way they do, and the Blueprint helps you build a real content strategy, not just create posts.",
   },
   {
     q: "Is my LinkedIn data secure?",
@@ -239,7 +239,7 @@ export default function PricingClient() {
             lineHeight: 1.6,
           }}
         >
-          Start with a 14-day free trial. No credit card required.
+          Your first 14 days are free, with every feature unlocked. No credit card required.
         </p>
 
         {/* Billing toggle */}
@@ -645,7 +645,7 @@ export default function PricingClient() {
             margin: "0 0 24px",
           }}
         >
-          Creator vs Pro — what&apos;s different?
+          Creator vs Pro: what&apos;s different?
         </h2>
 
         {/* Toggle button */}

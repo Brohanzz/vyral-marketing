@@ -4,12 +4,12 @@ import PricingClient from "./PricingClient";
 // ─── METADATA ────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Simple Pricing That Grows With You — VYRAL",
+  title: "Simple Pricing That Grows With You. VYRAL",
   description:
     "Creator and Pro plans for LinkedIn creators. Start with 14 days free, every feature unlocked, no credit card required.",
   alternates: { canonical: "https://www.getvyral.io/pricing" },
   openGraph: {
-    title: "VYRAL Pricing — Start Your Free Trial",
+    title: "VYRAL Pricing: Start Your Free Trial",
     description:
       "Your first 14 days are free with every feature unlocked. Pick the plan that fits your content goals.",
     url: "https://www.getvyral.io/pricing",
