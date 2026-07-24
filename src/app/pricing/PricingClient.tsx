@@ -28,6 +28,7 @@ const proFeatures = [
   "Improve (patterns, timing, suggestions)",
   "Data Analyst",
   "Swipe File",
+  "Carousel generation & editor",
   "Blueprint Strategy Inference",
   "Advanced Analytics",
 ];
@@ -67,9 +68,9 @@ const comparisonGroups: ComparisonGroup[] = [
   {
     heading: "Analytics & Insights",
     rows: [
-      { label: "Full analytics & Performance Lab", creator: true, pro: true },
+      { label: "Full analytics", creator: true, pro: true },
       { label: "Weekly Performance Reviews", creator: true, pro: true },
-      { label: "Advanced Analytics", creator: false, pro: true },
+      { label: "Advanced Analytics", creator: true, pro: true },
       { label: "Swipe File", creator: false, pro: true },
     ],
   },
@@ -80,6 +81,7 @@ const comparisonGroups: ComparisonGroup[] = [
       { label: "Blueprint Strategy Inference", creator: false, pro: true },
       { label: "Content Calendar & Publishing", creator: true, pro: true },
       { label: "Campaigns", creator: true, pro: true },
+      { label: "Carousel generation & editor", creator: false, pro: true },
     ],
   },
   {
@@ -95,6 +97,10 @@ const comparisonGroups: ComparisonGroup[] = [
 
 const faqs = [
   {
+    q: "How does the free trial work?",
+    a: "When you sign up you get 14 days with every feature unlocked, including everything on Pro, plus 50 AI generations. No credit card required. When you're ready, pick Creator or Pro and billing starts immediately. Subscribing ends the trial, so if you subscribe on day 3 you don't keep the remaining 11 days. If you do nothing, you move to the free plan: your analytics, post history and Knowledge Hub stay available, and AI features pause until you subscribe.",
+  },
+  {
     q: "Can I change plans anytime?",
     a: "Yes. Upgrade or downgrade anytime from your Settings. Changes take effect immediately. If you downgrade, you keep access until the end of your current billing period.",
   },
@@ -108,7 +114,7 @@ const faqs = [
   },
   {
     q: "What's the difference between Creator and Pro?",
-    a: "Creator gives you everything you need to write, analyze, and publish great LinkedIn content. Pro adds the intelligence layer: a Data Analyst you can chat with, Improve for pattern-based suggestions, Swipe File for competitive inspiration, and Blueprint Strategy Inference.",
+    a: "Creator gives you everything you need to write, analyze, and publish great LinkedIn content. Pro adds the intelligence layer: a Data Analyst you can chat with, Improve for pattern and timing analysis, Swipe File for competitive inspiration, Blueprint Strategy Inference, carousel generation, and unlimited AI generations instead of 250 a month.",
   },
   {
     q: "How is VYRAL different from other LinkedIn tools?",
@@ -124,7 +130,7 @@ const faqs = [
   },
   {
     q: "What's included in the Team plan?",
-    a: "Team is built for agencies, ghostwriters, and content teams. It includes multiple seats, a team performance dashboard, aggregate analytics across all members, centralized billing, priority support, and dedicated onboarding. Contact us to get a custom quote.",
+    a: "Team is in development, built for agencies, ghostwriters, and content teams. It will include multiple seats, a team performance dashboard, company page analytics, aggregate reporting across members, centralized billing, and dedicated onboarding. Get in touch if you'd like early access.",
   },
 ];
 
@@ -329,7 +335,7 @@ export default function PricingClient() {
               color: "#a78bfa",
             }}
           >
-            ✦ Every plan starts with a 14-day free trial — full Pro access, no credit card required.
+            ✦ Your first 14 days are free. Full feature access, 50 AI generations, no credit card required.
           </span>
         </div>
 
@@ -379,7 +385,7 @@ export default function PricingClient() {
               )}
 
               <p style={{ ...bodyFont, fontSize: 13, color: "#2dd4bf", margin: "0 0 6px" }}>
-                14-day free trial
+                Billed from day one when you subscribe
               </p>
               <p style={{ ...bodyFont, fontSize: 13, color: "rgba(255,255,255,0.45)", margin: "0 0 24px" }}>
                 Everything you need to grow on LinkedIn
@@ -464,7 +470,7 @@ export default function PricingClient() {
                     $79<span style={{ ...bodyFont, fontSize: 16, color: "rgba(255,255,255,0.5)" }}>/mo</span>
                   </p>
                   <p style={{ ...bodyFont, fontSize: 13, color: "rgba(255,255,255,0.4)", margin: "4px 0 0" }}>
-                    Billed annually ($958/year)
+                    Billed annually ($948/year)
                   </p>
                 </div>
               ) : (
@@ -476,7 +482,7 @@ export default function PricingClient() {
               )}
 
               <p style={{ ...bodyFont, fontSize: 13, color: "#2dd4bf", margin: "0 0 6px" }}>
-                14-day free trial
+                Billed from day one when you subscribe
               </p>
               <p style={{ ...bodyFont, fontSize: 13, color: "rgba(255,255,255,0.45)", margin: "0 0 24px" }}>
                 Content intelligence for serious creators
@@ -522,7 +528,23 @@ export default function PricingClient() {
 
           {/* ── TEAM ── */}
           <div>
-            <div style={{ height: 28 }} />
+            <div style={{ textAlign: "center", marginBottom: 8 }}>
+              <span
+                style={{
+                  background: "rgba(45,212,191,0.15)",
+                  color: "#5eead4",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  padding: "4px 14px",
+                  borderRadius: 100,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  ...bodyFont,
+                }}
+              >
+                Coming Soon
+              </span>
+            </div>
             <div
               style={{
                 background: "rgba(255,255,255,0.02)",
@@ -556,7 +578,7 @@ export default function PricingClient() {
                 Custom
               </p>
               <p style={{ ...bodyFont, fontSize: 13, color: "rgba(255,255,255,0.4)", margin: "0 0 6px" }}>
-                Pricing based on team size
+                In development, talk to us about early access
               </p>
               <p style={{ ...bodyFont, fontSize: 13, color: "rgba(255,255,255,0.45)", margin: "0 0 24px" }}>
                 For agencies, ghostwriters & content teams
@@ -741,7 +763,7 @@ export default function PricingClient() {
               }}
             >
               <p style={{ ...bodyFont, fontSize: 13, color: "rgba(255,255,255,0.38)", margin: 0 }}>
-                Team plan includes everything in Pro plus team seats, aggregate analytics, and dedicated support.{" "}
+                Team is in development and will add seats, company page analytics, and aggregate reporting.{" "}
                 <Link href="/contact" style={{ color: "#a78bfa", textDecoration: "none" }}>
                   Contact us for a custom quote →
                 </Link>
@@ -878,7 +900,7 @@ export default function PricingClient() {
             margin: "0 0 32px",
           }}
         >
-          14-day trial · Full Pro access · No credit card required
+          14-day trial · Every feature unlocked · 50 AI generations · No credit card
         </p>
         <a
           href={APP_SIGNUP_URL}
