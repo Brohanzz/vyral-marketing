@@ -167,8 +167,8 @@ export default function Nav() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/vyral-logo-new.png"
-              alt="VYRAL"
-              style={{ height: 32, width: "auto", display: "block" }}
+              alt=""
+              style={{ height: 13, width: "auto", display: "block" }}
             />
             <span
               style={{
