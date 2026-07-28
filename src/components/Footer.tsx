@@ -217,9 +217,9 @@ export default function Footer() {
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/vyral-wordmark.png"
+                src="/vyral-lockup-horizontal.png"
                 alt="VYRAL"
-                style={{ height: 36, width: "auto", display: "block", marginBottom: 10 }}
+                style={{ height: 30, width: "auto", display: "block", marginBottom: 10 }}
               />
               <p
                 style={{

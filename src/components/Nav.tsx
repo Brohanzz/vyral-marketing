@@ -168,7 +168,7 @@ export default function Nav() {
             <img
               src="/vyral-logo-new.png"
               alt=""
-              style={{ height: 13, width: "auto", display: "block" }}
+              style={{ height: 26, width: "auto", display: "block" }}
             />
             <span
               style={{
