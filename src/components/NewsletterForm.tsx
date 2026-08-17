@@ -29,7 +29,7 @@ const FONT = "Inter, sans-serif";
 export default function NewsletterForm({
   variant = "footer",
 }: {
-  variant?: "footer" | "standalone";
+  variant?: "footer" | "standalone" | "bare";
 }) {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
@@ -44,6 +44,9 @@ export default function NewsletterForm({
   const emailId = `newsletter-email-${uid}`;
 
   const standalone = variant === "standalone";
+  // "bare" renders only the inputs and the built-in status messages, for pages
+  // that supply their own heading and sub-copy (e.g. /newsletter).
+  const bare = variant === "bare";
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -98,7 +101,7 @@ export default function NewsletterForm({
   };
 
   return (
-    <div style={{ width: "100%", maxWidth: standalone ? 560 : 420 }}>
+    <div style={{ width: "100%", maxWidth: standalone || bare ? 560 : 420 }}>
       <style>{`
         .newsletter-input::placeholder { color: rgba(255,255,255,0.3); }
         .newsletter-input:focus { border-color: rgba(124,58,237,0.7) !important; }
@@ -120,7 +123,7 @@ export default function NewsletterForm({
         </h3>
       )}
 
-      {!standalone && (
+      {!standalone && !bare && (
         <span
           style={{
             color: "rgba(255,255,255,0.22)",
@@ -137,17 +140,19 @@ export default function NewsletterForm({
         </span>
       )}
 
-      <p
-        style={{
-          fontSize: standalone ? 15 : 13,
-          color: "rgba(255,255,255,0.45)",
-          fontFamily: FONT,
-          margin: "0 0 16px",
-          lineHeight: 1.5,
-        }}
-      >
-        Practical LinkedIn growth tactics and product updates, once a week.
-      </p>
+      {!bare && (
+        <p
+          style={{
+            fontSize: standalone ? 15 : 13,
+            color: "rgba(255,255,255,0.45)",
+            fontFamily: FONT,
+            margin: "0 0 16px",
+            lineHeight: 1.5,
+          }}
+        >
+          Practical LinkedIn growth tactics and product updates, once a week.
+        </p>
+      )}
 
       {status === "success" ? (
         <p

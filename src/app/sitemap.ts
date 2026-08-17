@@ -50,6 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/about`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/contact`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/getting-started`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/newsletter`, lastModified: "2026-08-17", changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/resources/playbooks`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.6 },
     // Blog
     { url: `${BASE}/blog`, lastModified: STATIC_LAST_MOD, changeFrequency: "weekly", priority: 0.6 },

@@ -84,6 +84,7 @@ export default function Footer() {
                 { label: "FAQ", href: "/help/faq" },
                 { label: "How VYRAL Works", href: "/how-vyral-works" },
                 { label: "Blog", href: "/blog" },
+                { label: "Newsletter", href: "/newsletter" },
                 { label: "Contact Us", href: "/contact" },
               ].map((link) => (
                 <Link
