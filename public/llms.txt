@@ -31,6 +31,7 @@ Key facts:
 
 ## Blog
 
+- [LinkedIn Company Pages in 2026: What They Can Actually Do](https://www.getvyral.io/blog/linkedin-company-page-strategy-2026): Covers why company pages reach less than personal profiles, the four jobs a page does that a profile cannot, how company page analytics differ from profile analytics, why most LinkedIn tools do not support pages, and how to run both surfaces together without doubling the workload.
 - [LinkedIn's 'Seems Like AI Slop' Button: What It Actually Flags](https://www.getvyral.io/blog/linkedin-ai-slop-button-2026): Covers the AI slop report button LinkedIn shipped on July 30, 2026, the six changes announced alongside it, why the tells that get posts flagged are structural rather than vocabulary-based, and how to evaluate your own content against them.
 - [Shield Analytics Is Shutting Down: What Happened and Where to Go Next](https://www.getvyral.io/blog/shield-analytics-shutting-down-alternatives): Covers Shield Analytics' May 2026 shutdown, the broader pattern of LinkedIn enforcement against Chrome extension-based tools since 2025, and how to evaluate a replacement based on API access method.
 - [Is Your LinkedIn Tool Safe? A 2026 Compliance Guide](https://www.getvyral.io/blog/is-your-linkedin-tool-safe-2026): Explains the four ways LinkedIn tools connect to user accounts (official API, Chrome extension DOM reading, Chrome extension with cookie access, scraping), the compliance spectrum across major LinkedIn tools, and how to evaluate any tool's safety.
