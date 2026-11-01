@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'GDPR Compliance | VYRAL',
   description: 'How VYRAL meets EU data protection requirements.',
+  alternates: { canonical: 'https://www.getvyral.io/legal/gdpr' },
 };
 
 export default function GDPR() {

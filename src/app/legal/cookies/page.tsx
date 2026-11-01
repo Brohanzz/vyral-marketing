@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Cookie Policy | VYRAL',
   description: 'How VYRAL uses cookies and tracking technologies.',
+  alternates: { canonical: 'https://www.getvyral.io/legal/cookies' },
 };
 
 export default function Cookies() {
@@ -12,14 +13,13 @@ export default function Cookies() {
     <div style={{ background: '#080510', minHeight: '100vh' }}>
       <div style={{ maxWidth: 720, margin: '0 auto', padding: '128px 24px 80px' }}>
         <h1 style={{ fontFamily: 'Playfair Display, serif', fontWeight: 700, fontSize: 44, color: '#fff', marginBottom: 8 }}>Cookie Policy</h1>
-        <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 64 }}>Last updated: December 2025</p>
+        <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 64 }}>Last updated: November 2026</p>
 
         <h2 style={h2}>1. What Cookies We Use</h2>
         <p style={p}>VYRAL uses:</p>
         <ul style={ul}>
           <li>Essential cookies – login, session management, security</li>
-          <li>Analytics cookies – usage patterns, errors, performance monitoring</li>
-          <li>Preference cookies – language, theme, and settings</li>
+          <li>Analytics cookies (Google Analytics): which pages are visited and how people find the site. Only set after you click Accept analytics.</li>
         </ul>
 
         <h2 style={h2}>2. Analytics Cookies</h2>
@@ -29,10 +29,10 @@ export default function Cookies() {
           <li>Improve user experience</li>
           <li>Measure feature adoption</li>
         </ul>
-        <p style={p}>Analytics data is anonymized and cannot be used to identify individual users.</p>
+        <p style={p}>Google Analytics receives your IP address and a cookie identifier. See Google&apos;s privacy policy for how Google handles this data.</p>
 
         <h2 style={h2}>3. Consent</h2>
-        <p style={p}>We only load non-essential cookies after you give consent. You may withdraw consent at any time through your browser settings or by contacting us.</p>
+        <p style={p}>We only load non-essential cookies after you give consent. You can change your choice at any time with the Cookie settings link at the bottom of every page.</p>
         <p style={p}>Your cookie choice is saved in your browser&apos;s local storage so we don&apos;t ask again.</p>
 
         <h2 style={h2}>4. No Advertising Cookies</h2>
@@ -50,6 +50,7 @@ export default function Cookies() {
         <ul style={ul}>
           <li>Stripe – for secure payment processing</li>
           <li>Supabase – for authentication</li>
+          <li>Google (Google Analytics) – for website analytics</li>
         </ul>
         <p style={p}>These cookies are subject to the respective third parties&apos; privacy policies.</p>
 

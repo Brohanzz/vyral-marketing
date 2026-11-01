@@ -32,7 +32,7 @@ const sections: Section[] = [
       },
       {
         q: "What happens after my trial ends?",
-        a: "You'll move to the Free plan, which gives you read-only access to your analytics and post library. You can upgrade to Creator or Pro from Settings → Billing at any time. Your data and LinkedIn connection stay intact.",
+        a: "Your account keeps read-only access to your analytics and post library. You can upgrade to Creator or Pro from Settings → Billing at any time. Your data and LinkedIn connection stay intact.",
       },
     ],
   },
@@ -41,7 +41,7 @@ const sections: Section[] = [
     items: [
       {
         q: "Is VYRAL safe to use with LinkedIn?",
-        a: "Yes. VYRAL is built exclusively on LinkedIn's official Community Management API — the same infrastructure used by LinkedIn's enterprise partners. We don't use browser extensions, scraping, or any automation outside what LinkedIn explicitly permits. Your account is never at risk.",
+        a: "Yes. VYRAL is built exclusively on LinkedIn's official Community Management API. We don't use browser extensions, scraping, or any automation outside what LinkedIn explicitly permits. Your account connects through LinkedIn's official login, and you can remove access any time in your LinkedIn settings.",
       },
       {
         q: "Why do some LinkedIn tools get restricted or shut down?",

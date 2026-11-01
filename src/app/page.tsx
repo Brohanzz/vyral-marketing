@@ -110,7 +110,7 @@ const faqSchema = {
       name: "Is VYRAL safe for my LinkedIn account?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. VYRAL operates exclusively on LinkedIn's official Community Management API (Standard Tier approved). It does not use scraping, unofficial APIs, or browser extensions — making it fully compliant with LinkedIn's terms of service.",
+        text: "Yes. VYRAL is built on LinkedIn's official API. It does not use scraping, unofficial APIs, or browser extensions.",
       },
     },
     {
@@ -150,7 +150,7 @@ const faqSchema = {
       name: "How much does VYRAL cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "VYRAL offers a Free plan with analytics read-only access, Creator at $49/month ($39 billed annually), and Pro at $99/month ($79 billed annually). A 14-day free trial with full Pro access is available.",
+        text: "No free plan. Every account starts with a 14-day free trial of Pro, no credit card. After the trial, choose Creator ($49/mo) or Pro ($99/mo). If a trial ends or payment stops, you keep read-only access to your history.",
       },
     },
   ],
@@ -313,7 +313,7 @@ export default function Home() {
           }}
         >
           ✦ Start free today. Built on LinkedIn&apos;s official API. No
-          scraping. No risk.
+          scraping.
         </div>
 
         {/* Hero content */}
@@ -593,7 +593,7 @@ export default function Home() {
           }}
         >
           Built on LinkedIn&apos;s official API · No browser extensions · No
-          scraping · Account safety guaranteed
+          scraping
         </p>
       </section>
 
@@ -1197,8 +1197,8 @@ export default function Home() {
               {
                 emoji: "🔒",
                 title:
-                  "Built on LinkedIn's official API — safe by design",
-                desc: "No browser extensions, no risk to your account. Enterprise-grade security.",
+                  "Built on LinkedIn's official API",
+                desc: "No browser extensions. Enterprise-grade security.",
               },
             ].map((item) => (
               <div

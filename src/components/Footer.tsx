@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NewsletterForm from "@/components/NewsletterForm";
+import { CookieSettingsLink } from "@/components/CookieConsent";
 
 // ─── SHARED STYLES ────────────────────────────────────────────────────────────
 
@@ -166,6 +167,7 @@ export default function Footer() {
                   {link.label}
                 </Link>
               ))}
+              <CookieSettingsLink />
             </div>
           </div>
 
@@ -198,7 +200,7 @@ export default function Footer() {
               }}
             >
               Built on LinkedIn&apos;s official API — no extensions, no
-              scraping, no risk to your account.
+              scraping.
             </p>
           </div>
 

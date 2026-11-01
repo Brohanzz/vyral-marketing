@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Imprint | VYRAL',
   description: 'Company information for VYRAL.',
+  alternates: { canonical: 'https://www.getvyral.io/legal/imprint' },
 };
 
 export default function Imprint() {

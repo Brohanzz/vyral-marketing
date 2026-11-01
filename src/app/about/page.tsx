@@ -5,7 +5,7 @@ import { APP_SIGNUP_URL } from "@/lib/urls";
 export const metadata: Metadata = {
   title: "About VYRAL — LinkedIn Growth Platform for Creators",
   description:
-    "VYRAL connects strategy, content, and outcomes in one platform. Built on LinkedIn's official API. No scraping, no automation, no risk.",
+    "VYRAL connects strategy, content, and outcomes in one platform. Built on LinkedIn's official API. No scraping, no automation.",
   alternates: { canonical: "https://www.getvyral.io/about" },
 };
 
@@ -13,7 +13,7 @@ const bulletPoints = [
   "VYRAL uses LinkedIn's official APIs (Community Management API and Share on LinkedIn) for all data access and publishing.",
   "We never use browser extensions, scraping, automation scripts, or any unofficial methods to access LinkedIn.",
   "Your LinkedIn account is connected via OAuth — we never see or store your LinkedIn password.",
-  "VYRAL is fully compliant with LinkedIn's Platform Terms of Service and API Terms of Use.",
+  "VYRAL is built on LinkedIn's official API.",
   "Your data is encrypted at rest and in transit. We never share or sell your data.",
 ];
 

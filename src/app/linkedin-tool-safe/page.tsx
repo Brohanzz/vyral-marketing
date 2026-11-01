@@ -6,7 +6,7 @@ import { APP_SIGNUP_URL } from "@/lib/urls";
 export const metadata: Metadata = {
   title: "Is VYRAL Safe for LinkedIn? — Official API, No Extensions | VYRAL",
   description:
-    "VYRAL uses only LinkedIn's official APIs. No browser extensions, no scraping, no automation. Your account is never at risk.",
+    "VYRAL uses only LinkedIn's official APIs. No browser extensions, no scraping, no automation. Your account connects through LinkedIn's official login, and you can remove access any time in your LinkedIn settings.",
   alternates: { canonical: "https://www.getvyral.io/linkedin-tool-safe" },
 };
 
@@ -143,7 +143,7 @@ export default function LinkedInToolSafePage() {
                 name: "Is VYRAL safe to use with LinkedIn?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. VYRAL uses only LinkedIn's official APIs (Community Management API and Share on LinkedIn). No browser extensions, no scraping, no automation. Your account is never at risk.",
+                  text: "Yes. VYRAL uses only LinkedIn's official APIs (Community Management API and Share on LinkedIn). No browser extensions, no scraping, no automation. Your account connects through LinkedIn's official login, and you can remove access any time in your LinkedIn settings.",
                 },
               },
               {
@@ -301,12 +301,12 @@ export default function LinkedInToolSafePage() {
             <Shield size={30} color="#2dd4bf" />
           </div>
           <div style={tealBadge}>Compliance &amp; Trust</div>
-          <h2 style={{ ...h2base, fontSize: 38 }}>Fully compliant with LinkedIn&apos;s terms</h2>
+          <h2 style={{ ...h2base, fontSize: 38 }}>Built on LinkedIn&apos;s official API</h2>
           <p style={bodyStyle}>
-            VYRAL is fully compliant with LinkedIn&apos;s Platform Terms of Service and API Terms of Use. We use only the Community Management API (approved) and Share on LinkedIn API (approved) for all data access and publishing.
+            VYRAL is built on LinkedIn&apos;s official API. We use only the Community Management API (approved) and Share on LinkedIn API (approved) for all data access and publishing.
           </p>
           <p style={{ fontFamily: "Inter, sans-serif", fontSize: 16, color: "#fff", fontWeight: 700, lineHeight: 1.7, margin: "0 0 16px" }}>
-            VYRAL only uses LinkedIn&apos;s official API and never automates likes, comments or connection requests, keeping your use of VYRAL within LinkedIn&apos;s rules.
+            VYRAL only uses LinkedIn&apos;s official API and never automates likes, comments or connection requests. That keeps your use of VYRAL within LinkedIn&apos;s rules. You can remove VYRAL&apos;s access any time in your LinkedIn settings.
           </p>
           <p style={{ ...bodyStyle, margin: 0 }}>
             Your data is encrypted at rest and in transit. We never share or sell your data. You can read our full{" "}
@@ -340,7 +340,7 @@ export default function LinkedInToolSafePage() {
             <span style={{ color: "#a78bfa" }}>safely</span>
           </h2>
           <p style={{ fontFamily: "Inter, sans-serif", fontSize: 16, color: "rgba(255,255,255,0.55)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: 480, marginLeft: "auto", marginRight: "auto" }}>
-            Join the first 100 creators using VYRAL. Official API only. No risk to your account.
+            Join the first 100 creators using VYRAL. Official API only.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={APP_SIGNUP_URL} style={btnPurple}>Sign up for a trial</a>

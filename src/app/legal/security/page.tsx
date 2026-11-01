@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Security Statement | VYRAL',
   description: 'How we protect your data.',
+  alternates: { canonical: 'https://www.getvyral.io/legal/security' },
 };
 
 export default function Security() {

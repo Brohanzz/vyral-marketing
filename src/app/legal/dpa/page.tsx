@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Data Processing Agreement | VYRAL',
   description: 'GDPR-compliant processing terms for business users.',
+  alternates: { canonical: 'https://www.getvyral.io/legal/dpa' },
 };
 
 export default function DPA() {
