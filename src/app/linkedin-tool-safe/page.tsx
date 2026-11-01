@@ -151,7 +151,7 @@ export default function LinkedInToolSafePage() {
                 name: "Can LinkedIn ban my account for using VYRAL?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "No. VYRAL is fully compliant with LinkedIn's Platform Terms of Service and API Terms of Use. We use only official, approved API endpoints. LinkedIn cannot and will not flag your account for using VYRAL.",
+                  text: "VYRAL only uses LinkedIn's official API and never automates likes, comments or connection requests. That keeps your use of VYRAL within LinkedIn's rules. You can remove VYRAL's access any time in your LinkedIn settings.",
                 },
               },
               {
@@ -306,7 +306,7 @@ export default function LinkedInToolSafePage() {
             VYRAL is fully compliant with LinkedIn&apos;s Platform Terms of Service and API Terms of Use. We use only the Community Management API (approved) and Share on LinkedIn API (approved) for all data access and publishing.
           </p>
           <p style={{ fontFamily: "Inter, sans-serif", fontSize: 16, color: "#fff", fontWeight: 700, lineHeight: 1.7, margin: "0 0 16px" }}>
-            Your LinkedIn account will never be flagged, restricted, or banned because of VYRAL.
+            VYRAL only uses LinkedIn&apos;s official API and never automates likes, comments or connection requests, keeping your use of VYRAL within LinkedIn&apos;s rules.
           </p>
           <p style={{ ...bodyStyle, margin: 0 }}>
             Your data is encrypted at rest and in transit. We never share or sell your data. You can read our full{" "}

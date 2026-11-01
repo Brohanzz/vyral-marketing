@@ -42,7 +42,7 @@ const faqSchema = {
       name: "How does the free trial work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "When you sign up you get 14 days with every feature unlocked, including everything on Pro, plus 50 AI generations. No credit card required. When you are ready, pick Creator or Pro and billing starts immediately. Subscribing ends the trial, so if you subscribe on day 3 you do not keep the remaining 11 days. If you do nothing, you move to the free plan: your analytics, post history and Knowledge Hub stay available, and AI features pause until you subscribe.",
+        text: "When you sign up you get 14 days with every feature unlocked, including everything on Pro, plus 50 AI generations. No credit card required. When you are ready, pick Creator or Pro and billing starts immediately. Subscribing ends the trial, so if you subscribe on day 3 you do not keep the remaining 11 days. Your account keeps read-only access to your existing history. Nothing new syncs and paid features are unavailable.",
       },
     },
     {
