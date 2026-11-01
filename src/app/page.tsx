@@ -1197,8 +1197,8 @@ export default function Home() {
               {
                 emoji: "🔒",
                 title:
-                  "Built on LinkedIn's official API — safe by design",
-                desc: "No browser extensions, Enterprise-grade security.",
+                  "Built on LinkedIn's official API",
+                desc: "No browser extensions. Enterprise-grade security.",
               },
             ].map((item) => (
               <div

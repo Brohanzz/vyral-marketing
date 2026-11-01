@@ -51,7 +51,7 @@ export default function Terms() {
         </ul>
 
         <h2 style={h2}>7. Free Trials</h2>
-        <p style={p}>Free trials provide full access to paid features for a limited time. When your trial ends, you will be automatically downgraded to the free plan unless you subscribe.</p>
+        <p style={p}>Free trials provide full access to paid features for a limited time. When your trial ends, the account keeps read-only access to its existing history. No new data is synced and paid features are unavailable.</p>
 
         <h2 style={h2}>8. AI Features</h2>
         <p style={p}>Our AI-powered features are provided &quot;as is&quot;. While we strive for accuracy:</p>
