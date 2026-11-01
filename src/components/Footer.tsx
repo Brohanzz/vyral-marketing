@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NewsletterForm from "@/components/NewsletterForm";
+import { CookieSettingsLink } from "@/components/CookieConsent";
 
 // ─── SHARED STYLES ────────────────────────────────────────────────────────────
 
@@ -166,6 +167,7 @@ export default function Footer() {
                   {link.label}
                 </Link>
               ))}
+              <CookieSettingsLink />
             </div>
           </div>
 
