@@ -18,12 +18,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/pricing`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/product`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/how-it-works`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/how-vyral-works`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/why-vyral`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     // Product sub-pages
     { url: `${BASE}/product/analytics`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/product/blueprint-ai`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/product/performance-lab`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/product/proof-page`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/product/profile-review`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
     // Feature/SEO hubs
     { url: `${BASE}/linkedin-analytics`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/ai-coach`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
@@ -46,6 +48,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/alternatives/typefully`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/alternatives/authoredup`, lastModified: "2026-05-29", changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/alternatives/kleo`, lastModified: "2026-05-29", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/alternatives/magicpost`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/alternatives/postiv`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/alternatives/scripe`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/alternatives/supergrow`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/alternatives/stanley`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
     // Other pages
     { url: `${BASE}/about`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/contact`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.6 },

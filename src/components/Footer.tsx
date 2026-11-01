@@ -198,7 +198,7 @@ export default function Footer() {
               }}
             >
               Built on LinkedIn&apos;s official API — no extensions, no
-              scraping, no risk to your account.
+              scraping.
             </p>
           </div>
 

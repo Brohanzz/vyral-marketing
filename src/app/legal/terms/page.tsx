@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Terms of Service | VYRAL',
   description: 'Your agreement with VYRAL.',
+  alternates: { canonical: 'https://www.getvyral.io/legal/terms' },
 };
 
 export default function Terms() {

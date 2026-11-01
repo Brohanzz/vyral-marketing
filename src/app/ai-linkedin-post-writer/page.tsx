@@ -226,7 +226,7 @@ export default function AILinkedInPostWriterPage() {
             <Shield size={40} color="#2dd4bf" style={{ margin: "0 auto 20px", display: "block" }} />
             <h2 style={{ ...h2, fontSize: 36 }}>Your data stays yours</h2>
             <p style={{ ...body, margin: "0 0 8px" }}>
-              VYRAL connects via LinkedIn&apos;s official API — no browser extensions, no scraping, no risk. Your writing patterns and voice profile are private to your account. We never share or sell your data.{" "}
+              VYRAL connects via LinkedIn&apos;s official API — no browser extensions, no scraping. Your writing patterns and voice profile are private to your account. We never share or sell your data.{" "}
               <Link href="/linkedin-tool-safe" style={{ color: "#a78bfa", textDecoration: "none" }}>Learn more →</Link>
             </p>
           </div>
