@@ -48,7 +48,7 @@ export default function ApiTooltip({ children }: { children: React.ReactNode }) 
             pointerEvents: "none",
           }}
         >
-          VYRAL connects to LinkedIn exclusively through LinkedIn's official API. This means your data is accessed securely, with no browser extension required.
+          VYRAL connects to LinkedIn exclusively through LinkedIn&apos;s official API. This means your data is accessed securely, with no browser extension required.
         </span>
       )}
     </span>

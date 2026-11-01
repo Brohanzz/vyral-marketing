@@ -1,36 +1,286 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
-
 @import "tailwindcss";
+@import "../styles/tokens.css";
 
-:root {
-  --color-bg: #080510;
-  --color-purple: #7c3aed;
-  --color-purple-light: #a78bfa;
-  --color-teal: #2dd4bf;
-  --color-amber: #fbbf24;
-  --color-text: #f8f8f8;
-  --color-text-muted: #a1a1aa;
+/* Redesign: Tailwind theme mapped onto the VYRAL tokens. Only token colours exist. */
+
+@custom-variant on-dark (&:where([data-tone="dark"] *, [data-tone="dark"]));
+
+@theme {
+  --color-*: initial;
+  --breakpoint-desk: 860px;
 }
 
 @theme inline {
-  --color-bg: #080510;
-  --color-purple: #7c3aed;
-  --color-purple-light: #a78bfa;
-  --color-teal: #2dd4bf;
-  --color-amber: #fbbf24;
-  --color-text: #f8f8f8;
-  --color-text-muted: #a1a1aa;
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
+  /* `base` is a colour here, so `text-base` means the page colour, not 16px. Use text-[16px]. */
+  --color-base: var(--vy-base);
+  --color-surface: var(--vy-surface);
+  --color-surface-soft: var(--vy-surface-soft);
+  --color-surface-panel: var(--vy-surface-panel);
+  --color-band-tint: var(--vy-band-tint);
+  --color-band-dark: var(--vy-band-dark);
+  --color-ink: var(--vy-ink);
+  --color-ink-2: var(--vy-ink-2);
+  --color-muted: var(--vy-muted);
+  --color-on-dark: var(--vy-on-dark);
+  --color-on-dark-muted: var(--vy-on-dark-muted);
+  --color-hairline: var(--vy-hairline);
+  --color-hairline-strong: var(--vy-hairline-strong);
+  --color-primary: var(--vy-primary);
+  --color-primary-strong: var(--vy-primary-strong);
+  --color-on-primary: var(--vy-on-primary);
+  --color-primary-hover: var(--vy-primary-hover);
+  --color-signal: var(--vy-signal);
+  --color-signal-soft: var(--vy-signal-soft);
+  --color-signal-ink: var(--vy-signal-ink);
+  --color-chart-bar: var(--vy-chart-bar);
+  --color-focus: var(--vy-focus);
+  --color-band-surface: var(--vy-band-surface);
+  --color-band-surface-soft: var(--vy-band-surface-soft);
+  --color-band-hairline: var(--vy-band-hairline);
+  --color-band-hairline-strong: var(--vy-band-hairline-strong);
+  --color-band-primary: var(--vy-band-primary);
+  --color-band-primary-hover: var(--vy-band-primary-hover);
+  --color-band-on-primary: var(--vy-band-on-primary);
+  --color-band-signal-soft: var(--vy-band-signal-soft);
+  --color-band-signal-ink: var(--vy-band-signal-ink);
+
+  --font-display: var(--vy-font-display);
+  --font-body: var(--vy-font-body);
+  --font-mono: var(--vy-font-mono);
+
+  --radius-sm: var(--vy-radius-sm);
+  --radius-md: var(--vy-radius-md);
+  --radius-lg: var(--vy-radius-lg);
+  --radius-xl: var(--vy-radius-xl);
+  --radius-pill: var(--vy-radius-pill);
+
+  --shadow-1: var(--vy-shadow-1);
+  --shadow-2: var(--vy-shadow-2);
+  --shadow-3: var(--vy-shadow-3);
+  --shadow-band-2: var(--vy-band-shadow-2);
+
+  --container-content: var(--vy-content-max);
+
+  --text-display-xl: 68px;
+  --text-display-xl--line-height: 1.02;
+  --text-display-xl--letter-spacing: -0.028em;
+  --text-display-l: 52px;
+  --text-display-l--line-height: 1.06;
+  --text-display-l--letter-spacing: -0.024em;
+  --text-heading-2: 32px;
+  --text-heading-2--line-height: 1.16;
+  --text-heading-2--letter-spacing: -0.018em;
+  --text-heading-3: 23px;
+  --text-heading-3--line-height: 1.22;
+  --text-heading-3--letter-spacing: -0.01em;
+  --text-subhead: 20px;
+  --text-subhead--line-height: 1.45;
+  --text-body-l: 18px;
+  --text-body-l--line-height: 1.6;
+  --text-label: 13px;
+  --text-label--line-height: 1.4;
+  --text-caption: 12.5px;
+  --text-caption--line-height: 1.4;
+  --text-metric: 40px;
+  --text-metric--line-height: 1;
+  --text-metric--letter-spacing: -0.03em;
 }
 
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-body);
+@layer base {
+  .vy-ui :focus-visible {
+    outline: 2px solid var(--vy-focus);
+    outline-offset: 2px;
+  }
+  .vy-ui [data-tone="dark"] :focus-visible {
+    outline-color: var(--vy-band-primary);
+  }
 }
 
-h1, h2, h3 {
-  font-family: var(--font-heading);
-  font-weight: 700;
+@layer components {
+  /* Section bands and the gradient transitions between them */
+  .vy-band {
+    background: var(--vy-base);
+  }
+  .vy-band[data-variant="light"] {
+    background: linear-gradient(180deg, var(--vy-base), var(--vy-surface-soft));
+  }
+  .vy-band[data-variant="light"][data-hold="true"] {
+    background: linear-gradient(180deg, var(--vy-base) 0, var(--vy-base) 40%, var(--vy-surface-soft) 100%);
+  }
+  .vy-band[data-variant="tint"] {
+    background: linear-gradient(180deg, var(--vy-surface-soft), var(--vy-base));
+  }
+  .vy-band[data-variant="dark"] {
+    --vy-band-from: var(--vy-base);
+    --vy-band-to: var(--vy-base);
+    background: linear-gradient(
+      180deg,
+      var(--vy-band-from) 0%,
+      var(--vy-band-dark) 13%,
+      var(--vy-band-dark) 88%,
+      var(--vy-band-to) 100%
+    );
+  }
+  .vy-band[data-variant="dark"][data-from="soft"] {
+    --vy-band-from: var(--vy-surface-soft);
+  }
+  .vy-band[data-variant="dark"][data-to="dark"] {
+    background: linear-gradient(180deg, var(--vy-band-from) 0%, var(--vy-band-dark) 16%, var(--vy-band-dark) 100%);
+  }
+  .vy-hero-panel {
+    background: radial-gradient(
+      120% 140% at 12% 0%,
+      var(--vy-surface-soft) 0%,
+      var(--vy-surface-panel) 62%,
+      var(--vy-band-tint) 100%
+    );
+  }
+  .vy-shot {
+    background: linear-gradient(160deg, var(--vy-band-surface-soft), var(--vy-band-surface));
+    box-shadow: inset 0 0 0 1px var(--vy-band-hairline);
+  }
+  .vy-video {
+    background: linear-gradient(155deg, var(--vy-surface), var(--vy-surface-panel));
+  }
+
+  /* Hero loop: mobile first (stacked, vertical connectors), three across from 860px */
+  .vy-loop {
+    position: relative;
+    padding-bottom: 20px;
+  }
+  .vy-loop-cards {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 56px;
+    align-items: stretch;
+  }
+  .vy-wire {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 2px;
+    height: 56px;
+    margin-left: -1px;
+    background: var(--vy-primary);
+  }
+  .vy-wire::after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    bottom: -1px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 9px solid var(--vy-primary);
+  }
+  .vy-ret {
+    margin-top: 28px;
+    text-align: center;
+  }
+  .vy-ret span {
+    display: inline-block;
+  }
+
+  @media (width >= 860px) {
+    .vy-loop {
+      padding-bottom: 70px;
+    }
+    .vy-loop-cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 64px;
+    }
+    .vy-wire {
+      left: 100%;
+      top: 50%;
+      width: 64px;
+      height: 2px;
+      margin: -1px 0 0;
+    }
+    .vy-wire::after {
+      left: auto;
+      right: -1px;
+      top: -4px;
+      bottom: auto;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 9px solid var(--vy-primary);
+      border-right: none;
+    }
+    .vy-ret {
+      position: absolute;
+      left: calc((100% - 128px) / 6);
+      right: calc((100% - 128px) / 6);
+      bottom: 20px;
+      height: 50px;
+      margin: 0;
+      border: 2px solid var(--vy-primary);
+      border-top: none;
+      border-radius: 0 0 16px 16px;
+    }
+    .vy-ret::before {
+      content: "";
+      position: absolute;
+      left: -6.5px;
+      top: -1px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 9px solid var(--vy-primary);
+    }
+    .vy-ret span {
+      position: absolute;
+      left: 50%;
+      bottom: -12px;
+      transform: translateX(-50%);
+      background: var(--vy-surface-panel);
+      padding: 2px 14px;
+      white-space: nowrap;
+    }
+  }
+
+  /* Billing toggle on /pricing: CSS only, both prices are in the HTML */
+  .vy-billing:has(#billing-yearly:checked) [data-billing="monthly"],
+  .vy-billing:not(:has(#billing-yearly:checked)) [data-billing="yearly"] {
+    display: none;
+  }
+}
+
+/*
+ * Hero loop animation, 9s cycle. The resting styles above are the finished
+ * state, so with animation off (reduced motion, or no CSS animation support)
+ * everything shows. Paused while the loop is off screen.
+ */
+@keyframes vy-k1 { 0% { opacity: 0; transform: translateY(10px); } 5%, 94% { opacity: 1; transform: none; } 98%, 100% { opacity: 0; transform: translateY(10px); } }
+@keyframes vy-k2 { 0%, 18% { opacity: 0; transform: translateY(10px); } 24%, 94% { opacity: 1; transform: none; } 98%, 100% { opacity: 0; transform: translateY(10px); } }
+@keyframes vy-k3 { 0%, 40% { opacity: 0; transform: translateY(10px); } 46%, 94% { opacity: 1; transform: none; } 98%, 100% { opacity: 0; transform: translateY(10px); } }
+@keyframes vy-wipe { 0%, 4% { clip-path: inset(0 100% 0 0); } 16%, 94% { clip-path: inset(0 0 0 0); } 98%, 100% { clip-path: inset(0 100% 0 0); } }
+@keyframes vy-wire1 { 0%, 13% { clip-path: inset(0 0 100% 0); } 19%, 94% { clip-path: inset(0 0 0 0); } 98%, 100% { clip-path: inset(0 0 100% 0); } }
+@keyframes vy-wire2 { 0%, 36% { clip-path: inset(0 0 100% 0); } 41%, 94% { clip-path: inset(0 0 0 0); } 98%, 100% { clip-path: inset(0 0 100% 0); } }
+@keyframes vy-wire1-h { 0%, 13% { clip-path: inset(0 100% 0 0); } 19%, 94% { clip-path: inset(0 0 0 0); } 98%, 100% { clip-path: inset(0 100% 0 0); } }
+@keyframes vy-wire2-h { 0%, 36% { clip-path: inset(0 100% 0 0); } 41%, 94% { clip-path: inset(0 0 0 0); } 98%, 100% { clip-path: inset(0 100% 0 0); } }
+@keyframes vy-ret { 0%, 62% { clip-path: inset(0 0 0 100%); } 74%, 94% { clip-path: inset(0 0 0 0); } 98%, 100% { clip-path: inset(0 0 0 100%); } }
+@keyframes vy-grow { 0%, 24% { transform: scaleY(0.06); } 34%, 94% { transform: scaleY(1); } 98%, 100% { transform: scaleY(0.06); } }
+@keyframes vy-pop { 0%, 32% { opacity: 0; transform: scale(0.9); } 36%, 94% { opacity: 1; transform: none; } 98%, 100% { opacity: 0; transform: scale(0.9); } }
+@keyframes vy-line1 { 0%, 46% { opacity: 0; transform: translateY(4px); } 52%, 94% { opacity: 1; transform: none; } 98%, 100% { opacity: 0; } }
+@keyframes vy-line2 { 0%, 54% { opacity: 0; transform: translateY(4px); } 60%, 94% { opacity: 1; transform: none; } 98%, 100% { opacity: 0; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .vy-loop .vy-c1 { animation: vy-k1 9s infinite; }
+  .vy-loop .vy-c2 { animation: vy-k2 9s infinite; }
+  .vy-loop .vy-c3 { animation: vy-k3 9s infinite; }
+  .vy-loop .vy-typed { animation: vy-wipe 9s infinite; }
+  .vy-loop .vy-w1 { animation: vy-wire1 9s infinite; }
+  .vy-loop .vy-w2 { animation: vy-wire2 9s infinite; }
+  .vy-loop .vy-spark-bar { transform-origin: bottom; animation: vy-grow 9s cubic-bezier(0.2, 0.8, 0.3, 1) infinite; }
+  .vy-loop .vy-pop { animation: vy-pop 9s infinite; }
+  .vy-loop .vy-l1 { animation: vy-line1 9s infinite; }
+  .vy-loop .vy-l2 { animation: vy-line2 9s infinite; }
+
+  @media (width >= 860px) {
+    .vy-loop .vy-w1 { animation-name: vy-wire1-h; }
+    .vy-loop .vy-w2 { animation-name: vy-wire2-h; }
+    .vy-loop .vy-ret { animation: vy-ret 9s infinite; }
+  }
+
+  .vy-loop[data-offscreen="true"] * {
+    animation-play-state: paused;
+  }
 }

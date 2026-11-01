@@ -240,7 +240,7 @@ export default function LinkedInGrowthToolPage() {
               No browser extensions. No scraping. No automation scripts. VYRAL uses LinkedIn&apos;s official Community Management API and Share on LinkedIn API for all data access and publishing.
             </p>
             <p style={{ ...body, margin: 0 }}>
-              VYRAL only uses LinkedIn's official API, and never automates likes, comments or connection requests.{" "}
+              VYRAL only uses LinkedIn&apos;s official API, and never automates likes, comments or connection requests.{" "}
               <Link href="/linkedin-tool-safe" style={{ color: "#a78bfa", textDecoration: "none" }}>
                 Learn more about our security approach →
               </Link>

@@ -2,6 +2,7 @@
 
 import { useEffect, useSyncExternalStore } from "react";
 import Link from "next/link";
+import Button from "@/components/site/Button";
 
 // Google Analytics only loads after the visitor says yes. Before a choice, or
 // after "Decline", no analytics script is requested and no analytics cookies
@@ -133,84 +134,52 @@ export default function CookieConsent() {
   const visible = choice === "none";
   if (!visible) return null;
 
-  const button: React.CSSProperties = {
-    background: "rgba(255,255,255,0.06)",
-    border: "1px solid rgba(167,139,250,0.55)",
-    borderRadius: 100,
-    padding: "10px 22px",
-    minWidth: 150,
-    fontSize: 14,
-    fontWeight: 600,
-    fontFamily: "Inter, sans-serif",
-    color: "#ffffff",
-    cursor: "pointer",
-    whiteSpace: "nowrap",
-  };
+  // Accept and Decline carry equal visual weight on purpose.
+  const button = "w-full ring-1 ring-hairline-strong";
 
   return (
     <div
       role="dialog"
       aria-modal="false"
       aria-label="Cookie consent"
-      style={{
-        position: "fixed",
-        left: 16,
-        right: 16,
-        bottom: 16,
-        zIndex: 1000,
-        maxWidth: 920,
-        margin: "0 auto",
-        background: "#13131e",
-        border: "1px solid rgba(255,255,255,0.1)",
-        borderRadius: 16,
-        padding: "18px 22px",
-        boxShadow: "0 8px 32px rgba(0,0,0,0.5)",
-        display: "flex",
-        flexWrap: "wrap",
-        alignItems: "center",
-        gap: 16,
-      }}
+      className="vy-ui fixed inset-x-4 bottom-4 z-[1000] mx-auto flex max-w-[920px] flex-wrap items-center gap-4 rounded-lg bg-surface px-5 py-[18px] font-body text-ink shadow-2 ring-1 ring-hairline"
     >
-      <p
-        style={{
-          flex: "1 1 320px",
-          margin: 0,
-          fontSize: 14,
-          lineHeight: 1.6,
-          color: "rgba(255,255,255,0.75)",
-          fontFamily: "Inter, sans-serif",
-        }}
-      >
+      <p className="m-0 flex-[1_1_320px] text-[14.5px] leading-[1.6] text-ink-2">
         We use Google Analytics to see which pages help people. Nothing loads
         until you say yes.{" "}
         <Link
           href="/legal/cookies"
-          style={{ color: "#a78bfa", textDecoration: "underline" }}
+          className="font-semibold text-primary-hover underline underline-offset-2 hover:text-primary-strong"
         >
           Read cookie policy
         </Link>
       </p>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 10,
-          flex: "0 1 340px",
-        }}
-      >
-        <button type="button" style={button} onClick={() => decide("granted")}>
+      <div className="grid flex-[0_1_340px] grid-cols-2 gap-2.5">
+        <Button variant="ghost" size="sm" className={button} onClick={() => decide("granted")}>
           Accept analytics
-        </button>
-        <button type="button" style={button} onClick={() => decide("denied")}>
+        </Button>
+        <Button variant="ghost" size="sm" className={button} onClick={() => decide("denied")}>
           Decline
-        </button>
+        </Button>
       </div>
     </div>
   );
 }
 
-// Footer link. Clears the saved choice and shows the banner again.
-export function CookieSettingsLink() {
+// Footer link. Clears the saved choice and shows the banner again. With a
+// className it takes that styling (redesigned footer); without, the legacy look.
+export function CookieSettingsLink({ className }: { className?: string }) {
+  if (className) {
+    return (
+      <button
+        type="button"
+        className={className}
+        onClick={() => window.dispatchEvent(new Event(SETTINGS_EVENT))}
+      >
+        Cookie settings
+      </button>
+    );
+  }
   return (
     <button
       type="button"

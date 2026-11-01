@@ -379,7 +379,7 @@ export default function LinkedInPostAnalyticsPage() {
             <h2 style={{ ...h2, fontSize: 32 }}>Safe and official</h2>
             <p style={{ ...body, maxWidth: 480, margin: "0 auto 8px" }}>
               All analytics data comes from LinkedIn&apos;s official API. No browser
-              extensions, no scraping. Your account connects through LinkedIn's official login, and you can remove access any time in your LinkedIn settings.{" "}
+              extensions, no scraping. Your account connects through LinkedIn&apos;s official login, and you can remove access any time in your LinkedIn settings.{" "}
               <Link
                 href="/linkedin-tool-safe"
                 style={{ color: "#a78bfa", textDecoration: "none" }}

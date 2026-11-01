@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+
+/*
+ * Old global styles, kept for the pages in the (legacy) route group.
+ * Next.js does not unload stylesheets on client navigation, so these rules are
+ * scoped to the legacy wrapper and cannot leak into the redesigned pages.
+ * :where() keeps the specificity of the original element selectors.
+ */
+
+body:has(> .legacy-root) {
+  background-color: #080510;
+}
+
+:where(.legacy-root) {
+  background-color: #080510;
+  color: #f8f8f8;
+  font-family: 'Inter', sans-serif;
+}
+
+:where(.legacy-root) h1,
+:where(.legacy-root) h2,
+:where(.legacy-root) h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
