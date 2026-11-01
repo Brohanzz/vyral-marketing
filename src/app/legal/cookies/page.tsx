@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Cookie Policy | VYRAL',
   description: 'How VYRAL uses cookies and tracking technologies.',
+  alternates: { canonical: 'https://www.getvyral.io/legal/cookies' },
 };
 
 export default function Cookies() {

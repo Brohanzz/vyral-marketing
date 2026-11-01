@@ -72,7 +72,7 @@ const features = [
   { Icon: Users,      title: "Audience Intelligence", body: "Understand who engages, what resonates, and where to double down." },
   { Icon: Sparkles,   title: "Content Calendar",    body: "Plan strategically, schedule posts, and auto-publish via LinkedIn's official API." },
   { Icon: Rocket,     title: "Knowledge Hub",       body: "Learn the frameworks top creators use — then implement them with AI guidance." },
-  { Icon: Shield,     title: "100% API-Based",      body: "No browser extensions, no scraping, no risk to your LinkedIn account." },
+  { Icon: Shield,     title: "100% API-Based",      body: "No browser extensions, no scraping." },
 ];
 
 const problemCards = [
@@ -240,7 +240,7 @@ export default function LinkedInGrowthToolPage() {
               No browser extensions. No scraping. No automation scripts. VYRAL uses LinkedIn&apos;s official Community Management API and Share on LinkedIn API for all data access and publishing.
             </p>
             <p style={{ ...body, margin: 0 }}>
-              Your LinkedIn account will never be flagged, restricted, or banned because of VYRAL.{" "}
+              VYRAL only uses LinkedIn's official API, and never automates likes, comments or connection requests.{" "}
               <Link href="/linkedin-tool-safe" style={{ color: "#a78bfa", textDecoration: "none" }}>
                 Learn more about our security approach →
               </Link>

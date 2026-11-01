@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Privacy Policy | VYRAL',
   description: 'How VYRAL protects and processes your personal data.',
+  alternates: { canonical: 'https://www.getvyral.io/legal/privacy-policy' },
 };
 
 export default function PrivacyPolicy() {

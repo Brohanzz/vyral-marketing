@@ -259,7 +259,7 @@ export default function LinkedInContentCalendarPage() {
             <p style={{ ...body, maxWidth: 500, margin: "0 auto 32px" }}>
               VYRAL uses LinkedIn&apos;s Share on LinkedIn API to publish your posts.
               This is the same API that LinkedIn provides to approved partners.
-              No browser extensions, no workarounds, no risk to your account.
+              No browser extensions, no workarounds.
             </p>
             <div
               style={{
