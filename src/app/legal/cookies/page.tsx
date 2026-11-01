@@ -22,16 +22,7 @@ export default function Cookies() {
           <li>Analytics cookies (Google Analytics): which pages are visited and how people find the site. Only set after you click Accept analytics.</li>
         </ul>
 
-        <h2 style={h2}>2. Essential Cookies</h2>
-        <p style={p}>These cookies are necessary for the Service to function. They include:</p>
-        <ul style={ul}>
-          <li>Authentication tokens</li>
-          <li>Session identifiers</li>
-          <li>Security cookies (CSRF protection)</li>
-        </ul>
-        <p style={p}>Essential cookies cannot be disabled as they are required for basic functionality.</p>
-
-        <h2 style={h2}>3. Analytics Cookies</h2>
+        <h2 style={h2}>2. Analytics Cookies</h2>
         <p style={p}>We use analytics to understand how users interact with VYRAL. This helps us:</p>
         <ul style={ul}>
           <li>Identify and fix bugs</li>
@@ -40,10 +31,11 @@ export default function Cookies() {
         </ul>
         <p style={p}>Google Analytics receives your IP address and a cookie identifier. See Google&apos;s privacy policy for how Google handles this data.</p>
 
-        <h2 style={h2}>4. Consent</h2>
+        <h2 style={h2}>3. Consent</h2>
         <p style={p}>We only load non-essential cookies after you give consent. You can change your choice at any time with the Cookie settings link at the bottom of every page.</p>
+        <p style={p}>Your cookie choice is saved in your browser&apos;s local storage so we don&apos;t ask again.</p>
 
-        <h2 style={h2}>5. No Advertising Cookies</h2>
+        <h2 style={h2}>4. No Advertising Cookies</h2>
         <p style={p}>We do NOT use:</p>
         <ul style={ul}>
           <li>Ad networks</li>
@@ -53,7 +45,7 @@ export default function Cookies() {
           <li>Cross-site tracking</li>
         </ul>
 
-        <h2 style={h2}>6. Third-Party Cookies</h2>
+        <h2 style={h2}>5. Third-Party Cookies</h2>
         <p style={p}>Some third-party services we use may set their own cookies:</p>
         <ul style={ul}>
           <li>Stripe – for secure payment processing</li>
@@ -62,7 +54,7 @@ export default function Cookies() {
         </ul>
         <p style={p}>These cookies are subject to the respective third parties&apos; privacy policies.</p>
 
-        <h2 style={h2}>7. Managing Cookies</h2>
+        <h2 style={h2}>6. Managing Cookies</h2>
         <p style={p}>You can reject or delete cookies at any time in your browser settings. Note that disabling essential cookies may prevent you from using certain features.</p>
         <p style={p}>Common browser cookie settings:</p>
         <ul style={ul}>
@@ -72,16 +64,16 @@ export default function Cookies() {
           <li>Edge: Settings → Cookies and site permissions</li>
         </ul>
 
-        <h2 style={h2}>8. Cookie Retention</h2>
+        <h2 style={h2}>7. Cookie Retention</h2>
         <ul style={ul}>
           <li>Session cookies: Deleted when you close your browser</li>
           <li>Persistent cookies: Up to 1 year, or until you delete them</li>
         </ul>
 
-        <h2 style={h2}>9. Updates to This Policy</h2>
+        <h2 style={h2}>8. Updates to This Policy</h2>
         <p style={p}>We may update this Cookie Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
 
-        <h2 style={h2}>10. Contact Us</h2>
+        <h2 style={h2}>9. Contact Us</h2>
         <p style={p}>If you have questions about our use of cookies, contact us at <a href="mailto:hello@getvyral.io" style={{ color: '#a78bfa' }}>hello@getvyral.io</a></p>
       </div>
     </div>

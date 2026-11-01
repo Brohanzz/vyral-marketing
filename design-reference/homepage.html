@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VYRAL homepage, design reference</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=IBM+Plex+Mono:wght@500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#FDFBF8;color:#241A17;font-family:'Public Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#B23724;text-decoration:none}a:hover{color:#C2402F}
+.wrap{max-width:1200px;margin:0 auto;padding-left:96px;padding-right:96px}
+.disp{font-family:'Bricolage Grotesque',system-ui,sans-serif;text-wrap:pretty;margin:0}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-feature-settings:"tnum"}
+.label{font-size:14px;font-weight:600;color:#C2402F;margin:0 0 14px}
+.h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:500;font-size:32px;line-height:1.16;letter-spacing:-.018em;max-width:720px;margin:0;text-wrap:pretty}
+.body{font-size:18px;line-height:1.6;color:#6E5C57;margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 24px;border-radius:12px;font-weight:600;font-size:16px;background:#C2402F;color:#fff;white-space:nowrap;box-shadow:0 1px 2px rgba(28,20,16,.06),0 10px 26px -12px rgba(28,20,16,.2)}
+.btn:hover{background:#B23724;color:#fff}
+.btn.ghost{background:rgba(255,255,255,.92);color:#241A17;box-shadow:0 1px 2px rgba(28,20,16,.05),0 3px 8px rgba(28,20,16,.04)}
+.btn.ghost:hover{background:#fff;color:#241A17}
+.btn.onDark{background:#F2735F;color:#1A1512;box-shadow:none}
+.btn.onDark:hover{background:#F58B7A;color:#1A1512}
+.ph{display:inline-flex;align-items:center;font-size:12px;font-weight:500;color:#6E5C57;border:1px dashed #E4D3CA;border-radius:100px;padding:3px 10px;white-space:nowrap}
+.delta{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#8A5210;background:#FCEEDA;border-radius:100px;padding:6px 12px;white-space:nowrap}
+.navlink{font-size:15px;font-weight:500;color:#241A17}
+.navlink:hover{color:#C2402F}
+
+/* hero loop */
+.loop{position:relative;padding-bottom:70px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:64px;align-items:stretch}
+.card{position:relative;display:flex;flex-direction:column;min-height:272px;background:#fff;border-radius:20px;padding:22px;box-shadow:0 2px 4px rgba(28,20,16,.04),0 22px 46px -20px rgba(28,20,16,.28)}
+.clabel{font-size:13px;font-weight:600;color:#6E5C57;margin:0 0 14px}
+.av{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 34% 30%,#fff,#F1D3C9);flex:none}
+.bar{display:block;border-radius:5px;background:#F1D3C9}
+.ptext{font-size:17px;line-height:1.5;margin:0}
+.foot{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:auto;padding-top:14px;font-size:12.5px;color:#6E5C57}
+.metric{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:500;font-size:42px;line-height:1;letter-spacing:-.03em;font-feature-settings:"tnum"}
+.spark{display:flex;align-items:flex-end;gap:4px;height:46px;margin-top:16px}
+.spark i{display:block;width:10px;border-radius:3px;background:#F1D3C9;transform-origin:bottom}
+.spark i.hi{background:#F0A830}
+.spark i.last{background:#E2523F;width:12px}
+.dline{font-size:16px;line-height:1.5;margin:0}
+.wire{position:absolute;left:100%;top:50%;width:64px;height:2px;background:#E2523F;margin-top:-1px}
+.wire::after{content:"";position:absolute;right:-1px;top:-4px;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:9px solid #E2523F}
+.ret{position:absolute;left:calc((100% - 128px) / 6);right:calc((100% - 128px) / 6);bottom:20px;height:50px;border:2px solid #E2523F;border-top:none;border-radius:0 0 16px 16px}
+.ret::before{content:"";position:absolute;left:-6.5px;top:-1px;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:9px solid #E2523F}
+.ret span{position:absolute;left:50%;bottom:-12px;transform:translateX(-50%);background:#F8E5DE;padding:2px 14px;font-size:13px;font-weight:500;color:#6E5C57;white-space:nowrap}
+
+@keyframes k1{0%{opacity:0;transform:translateY(10px)}5%,94%{opacity:1;transform:none}98%,100%{opacity:0;transform:translateY(10px)}}
+@keyframes k2{0%,18%{opacity:0;transform:translateY(10px)}24%,94%{opacity:1;transform:none}98%,100%{opacity:0;transform:translateY(10px)}}
+@keyframes k3{0%,40%{opacity:0;transform:translateY(10px)}46%,94%{opacity:1;transform:none}98%,100%{opacity:0;transform:translateY(10px)}}
+@keyframes wipe{0%,4%{clip-path:inset(0 100% 0 0)}16%,94%{clip-path:inset(0 0 0 0)}98%,100%{clip-path:inset(0 100% 0 0)}}
+@keyframes wire1{0%,13%{clip-path:inset(0 100% 0 0)}19%,94%{clip-path:inset(0 0 0 0)}98%,100%{clip-path:inset(0 100% 0 0)}}
+@keyframes wire2{0%,36%{clip-path:inset(0 100% 0 0)}41%,94%{clip-path:inset(0 0 0 0)}98%,100%{clip-path:inset(0 100% 0 0)}}
+@keyframes ret{0%,62%{clip-path:inset(0 0 0 100%)}74%,94%{clip-path:inset(0 0 0 0)}98%,100%{clip-path:inset(0 0 0 100%)}}
+@keyframes grow{0%,24%{transform:scaleY(.06)}34%,94%{transform:scaleY(1)}98%,100%{transform:scaleY(.06)}}
+@keyframes pop{0%,32%{opacity:0;transform:scale(.9)}36%,94%{opacity:1;transform:none}98%,100%{opacity:0;transform:scale(.9)}}
+@keyframes line1{0%,46%{opacity:0;transform:translateY(4px)}52%,94%{opacity:1;transform:none}98%,100%{opacity:0}}
+@keyframes line2{0%,54%{opacity:0;transform:translateY(4px)}60%,94%{opacity:1;transform:none}98%,100%{opacity:0}}
+@keyframes blink{50%{opacity:0}}
+.c1{animation:k1 9s infinite}
+.c2{animation:k2 9s infinite}
+.c3{animation:k3 9s infinite}
+.typed{animation:wipe 9s infinite}
+.w1{animation:wire1 9s infinite}
+.w2{animation:wire2 9s infinite}
+.ret{animation:ret 9s infinite}
+.spark i{animation:grow 9s cubic-bezier(.2,.8,.3,1) infinite}
+.delta.anim{animation:pop 9s infinite}
+.l1{animation:line1 9s infinite}
+.l2{animation:line2 9s infinite}
+@media (prefers-reduced-motion:reduce){.c1,.c2,.c3,.typed,.w1,.w2,.ret,.spark i,.delta.anim,.l1,.l2{animation:none!important}}
+
+/* product placeholders */
+.shot{background:linear-gradient(160deg,#fff,#FCF3EE);border-radius:20px;padding:18px;box-shadow:0 2px 4px rgba(28,20,16,.04),0 22px 46px -20px rgba(28,20,16,.28),inset 0 0 0 1px #F0E5DE;display:flex;flex-direction:column;gap:14px}
+.chrome{display:flex;align-items:center;gap:6px}
+.chrome i{width:9px;height:9px;border-radius:50%;background:#E4D3CA}
+.shotbody{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px}
+.side{display:flex;flex-direction:column;gap:9px;padding-top:4px}
+.side i{display:block;height:9px;border-radius:5px;background:#F0E5DE}
+.side i.on{background:#F1D3C9}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tile{background:rgba(36,26,23,.035);border-radius:12px;padding:10px 12px}
+.tile small{display:block;font-size:11.5px;color:#6E5C57}
+.tile b{display:block;margin-top:3px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:500;font-size:20px}
+.bars{display:flex;align-items:flex-end;gap:5px;height:120px}
+.bars i{flex:1;border-radius:3px;background:#F1D3C9}
+.bars i.hi{background:#E2523F}
+.bars i.hi2{background:#F0A830}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:64px;align-items:center}
+.row.flip .txt{order:2}
+.quote{display:flex;flex-direction:column;background:#fff;border-radius:20px;padding:26px;box-shadow:0 1px 2px rgba(28,20,16,.06),0 10px 26px -12px rgba(28,20,16,.2)}
+.tier{display:flex;flex-direction:column;gap:12px;background:#fff;border-radius:20px;padding:28px;box-shadow:0 1px 2px rgba(28,20,16,.06),0 10px 26px -12px rgba(28,20,16,.2)}
+.tier.hi{box-shadow:0 2px 4px rgba(28,20,16,.04),0 22px 46px -20px rgba(28,20,16,.28),inset 0 0 0 2px #E2523F}
+.tier ul{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:9px;font-size:15.5px;line-height:1.45;color:#4A3B36}
+.tier li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px}
+.tier li::before{content:"";width:7px;height:7px;border-radius:50%;background:#E2523F;margin:7px 0 0 4px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.pt{display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px}
+.pt i{width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1px #E4D3CA;position:relative;display:block;margin-top:2px}
+.pt i::after{content:"";position:absolute;left:7px;top:7px;width:8px;height:8px;border-radius:50%;background:#E2523F}
+
+
+/* dark bands */
+.dark{color:#F6F0EA}
+.dark .label{color:#F0A830}
+.dark .body{color:#B3A49B}
+.dark .ph{color:#B3A49B;border-color:#4A3C33}
+.dark .btn{background:#F2735F;color:#1A1512;box-shadow:none}
+.dark .btn:hover{background:#F58B7A;color:#1A1512}
+.dark a.tlink{color:#F6F0EA;font-weight:600;font-size:15px}
+.dark a.tlink:hover{color:#F0A830}
+.stepc{display:flex;flex-direction:column;gap:14px;background:#241D19;border-radius:20px;padding:22px;box-shadow:0 2px 6px rgba(0,0,0,.28),0 26px 54px -22px rgba(0,0,0,.6)}
+.stepc p{font-size:15.5px;line-height:1.55;color:#B3A49B;margin:0}
+.shot.dk{background:linear-gradient(160deg,#2E251F,#241D19);box-shadow:inset 0 0 0 1px #3B3029;padding:12px;gap:10px;border-radius:14px}
+.shot.dk .chrome i{background:#3B3029;width:8px;height:8px}
+.shot.dk .shotbody{grid-template-columns:52px minmax(0,1fr);gap:10px}
+.shot.dk .side i{background:#3B3029;height:7px}
+.shot.dk .side i.on{background:#5A4A40}
+.shot.dk .tile{background:rgba(255,255,255,.06);padding:8px 10px;border-radius:10px}
+.shot.dk .tile small{color:#B3A49B;font-size:10.5px}
+.shot.dk .tile b{font-size:16px;color:#F6F0EA}
+.shot.dk .bars{height:70px;gap:4px}
+.shot.dk .bars i{background:#3B3029}
+.shot.dk .bars i.hi{background:#F2735F}
+.shot.dk .bars i.hi2{background:#F0A830}
+.dark .delta{background:#3A2A12;color:#F5C26A}
+.dark .pt i{background:#2E251F;box-shadow:inset 0 0 0 1px #3B3029}
+.dark .pt i::after{background:#F0A830}
+.dark .pt b{color:#F6F0EA}
+.dark .pt span{color:#B3A49B}
+
+@media (max-width:860px){
+.wrap{padding-left:20px;padding-right:20px}
+.navlinks{display:none!important}
+.hero-h{font-size:42px!important}
+.cards{grid-template-columns:minmax(0,1fr);gap:56px}
+.wire{left:50%;top:100%;width:2px;height:56px;margin:0 0 0 -1px}
+.wire::after{right:auto;left:-4px;top:auto;bottom:-1px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid #E2523F;border-bottom:none}
+@keyframes wire1{0%,13%{clip-path:inset(0 0 100% 0)}19%,94%{clip-path:inset(0 0 0 0)}98%,100%{clip-path:inset(0 0 100% 0)}}
+@keyframes wire2{0%,36%{clip-path:inset(0 0 100% 0)}41%,94%{clip-path:inset(0 0 0 0)}98%,100%{clip-path:inset(0 0 100% 0)}}
+.loop{padding-bottom:20px}
+.ret{position:static;border:none;height:auto;text-align:center;margin-top:28px;animation:none}
+.ret::before{display:none}
+.ret span{position:static;transform:none;background:none;display:inline-block;padding:0}
+.row{grid-template-columns:minmax(0,1fr);gap:28px}
+.row.flip .txt{order:0}
+.grid3{grid-template-columns:minmax(0,1fr)}
+.shotbody{grid-template-columns:48px minmax(0,1fr);gap:10px}
+.cta-h{font-size:36px!important}
+.foldcols{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
+.twocol{grid-template-columns:minmax(0,1fr)!important;gap:32px!important}
+}
+</style>
+
+</head>
+<body>
+
+
+<div style="width:100%;background:#FDFBF8">
+
+<!-- NAV -->
+<div style="background:linear-gradient(180deg,#FBEDE7,#FDFBF8)">
+<div class="wrap" style="display:flex;align-items:center;gap:36px;height:80px">
+<a href="#" style="display:flex;align-items:center;gap:10px;color:#241A17">
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M2 3 L11 19 L20 3" stroke="#E2523F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="disp" style="font-weight:600;font-size:22px;letter-spacing:-.01em">VYRAL</span>
+</a>
+<div class="navlinks" style="display:flex;gap:28px">
+<a class="navlink" href="#inside">Product</a>
+<a class="navlink" href="#api">Official API</a>
+<a class="navlink" href="#pricing">Pricing</a>
+</div>
+<div style="margin-left:auto;display:flex;align-items:center;gap:20px">
+<a class="navlink" href="#">Log in</a>
+<a class="btn" href="#" style="min-height:44px;padding:11px 18px;font-size:15px">Start free trial</a>
+</div>
+</div>
+</div>
+
+<!-- HERO -->
+<div style="background:linear-gradient(180deg,#FDFBF8 0,#FDFBF8 40%,#FBEDE7 100%)">
+<div class="wrap" style="padding-top:40px;padding-bottom:96px">
+<div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.92);border-radius:100px;padding:9px 16px;font-size:14px;font-weight:500;color:#4A3B36;box-shadow:0 1px 2px rgba(28,20,16,.05),0 3px 8px rgba(28,20,16,.04)">
+<span style="width:8px;height:8px;border-radius:50%;background:#E2523F;display:block"></span>Built on LinkedIn's official API
+</div>
+<h1 class="disp hero-h" style="font-weight:600;font-size:68px;line-height:1.02;letter-spacing:-.028em;max-width:900px;margin-top:26px">Your last post already told you what to write next</h1>
+<p class="body" style="font-size:20px;line-height:1.45;max-width:560px;margin-top:22px">VYRAL reads the numbers on your own posts and drafts the next one from what worked.</p>
+<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:32px">
+<a class="btn" href="#" style="font-size:17px;padding:16px 28px">Start free trial</a>
+<a class="btn ghost" href="#inside" style="font-size:17px;padding:16px 28px">See how it works</a>
+<span style="font-size:14px;color:#6E5C57">14 days of Pro. No credit card.</span>
+</div>
+
+<div style="margin-top:52px;padding:32px;border-radius:28px;background:radial-gradient(120% 140% at 12% 0%,#FCF3EE 0%,#F8E5DE 62%,#F6E1D8 100%)">
+<div class="loop">
+<div class="cards">
+
+<div class="card c1">
+<p class="clabel">You posted</p>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+<span class="av"></span>
+<div><span class="bar" style="height:9px;width:104px"></span><span class="bar" style="height:7px;width:64px;margin-top:6px;background:#F0E5DE"></span></div>
+</div>
+<p class="ptext typed">We stopped writing hooks and started reading the numbers.</p>
+<div class="foot"><span class="mono">09:12</span><span>Tuesday</span><span class="ph">Sample</span></div>
+<i class="wire w1"></i>
+</div>
+
+<div class="card c2">
+<p class="clabel">What came back</p>
+<div style="display:flex;align-items:flex-end;gap:10px"><span class="metric">12,481</span><span style="font-size:14px;color:#6E5C57;padding-bottom:5px">impressions</span></div>
+<span class="delta anim" style="margin-top:14px;align-self:flex-start">&#9650; <span class="mono">38%</span> above your average</span>
+<div class="spark">
+<i style="height:34%"></i><i style="height:46%"></i><i style="height:28%"></i><i style="height:52%"></i><i style="height:41%"></i><i style="height:60%"></i><i style="height:38%"></i><i style="height:55%"></i><i style="height:47%"></i><i class="hi" style="height:68%"></i><i style="height:58%"></i><i class="last" style="height:100%"></i>
+</div>
+<div class="foot"><span class="ph">Sample data</span></div>
+<i class="wire w2"></i>
+</div>
+
+<div class="card c3">
+<p class="clabel">What Coach writes next</p>
+<div style="display:flex;flex-direction:column;gap:10px">
+<p class="dline l1">Same opening move, second act.</p>
+<p class="dline l2">Your <span class="mono">09:00</span> Tuesday slot out-reaches every other by a third.</p>
+</div>
+<span style="align-self:flex-start;margin-top:16px;display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:10px 14px;font-size:14px;font-weight:600;background:#FBEDE7;color:#B23724">Open in Coach</span>
+<div class="foot"><span class="ph">Placeholder draft</span></div>
+</div>
+
+</div>
+<div class="ret"><span>Next post, with the data behind it</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- INSIDE (dark band) -->
+<div id="inside" class="dark" style="background:linear-gradient(180deg,#FBEDE7 0%,#1A1512 13%,#1A1512 88%,#FDFBF8 100%)">
+<div class="wrap" style="padding-top:150px;padding-bottom:160px">
+<p class="label">Inside VYRAL</p>
+<h2 class="h2" style="color:#F6F0EA">What happened, why it happened, and what to write next</h2>
+<div class="grid3" style="margin-top:52px;gap:32px">
+
+<div class="stepc">
+<span class="mono" style="font-size:13px;color:#B3A49B">01</span>
+<h3 class="disp" style="font-weight:500;font-size:23px;line-height:1.22;letter-spacing:-.01em">Your week in one sentence</h3>
+<p>Open VYRAL and the first thing you see is what changed since last week. No dashboard to decode.</p>
+<div class="shot dk">
+<div class="chrome"><i></i><i></i><i></i></div>
+<div class="shotbody">
+<div class="side"><i class="on"></i><i style="width:76%"></i><i style="width:88%"></i><i style="width:64%"></i></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<span class="disp" style="font-weight:600;font-size:16px;line-height:1.15;color:#F6F0EA">Comments carried your month.</span>
+<div class="tiles"><div class="tile"><small>Impressions</small><b>148,320</b></div><div class="tile"><small>Followers</small><b>+318</b></div></div>
+<div class="bars"><i style="height:30%"></i><i style="height:44%"></i><i style="height:36%"></i><i style="height:58%"></i><i style="height:50%"></i><i style="height:42%"></i><i style="height:66%"></i><i style="height:54%"></i><i class="hi2" style="height:72%"></i><i style="height:60%"></i><i class="hi" style="height:100%"></i></div>
+</div>
+</div>
+</div>
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;color:#B3A49B"><span>Home</span><span class="ph">Placeholder screenshot</span></div>
+</div>
+
+<div class="stepc">
+<span class="mono" style="font-size:13px;color:#B3A49B">02</span>
+<h3 class="disp" style="font-weight:500;font-size:23px;line-height:1.22;letter-spacing:-.01em">See which posts earned it</h3>
+<p>Impressions, comments and followers from your own posts, with the reason next to the number.</p>
+<div class="shot dk">
+<div class="chrome"><i></i><i></i><i></i></div>
+<div class="shotbody">
+<div class="side"><i></i><i class="on" style="width:76%"></i><i style="width:88%"></i><i style="width:64%"></i></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div class="tiles"><div class="tile"><small>Engagement</small><b>4.8%</b></div><div class="tile"><small>Best slot</small><b>Tue 09:00</b></div></div>
+<div class="bars" style="height:96px"><i style="height:24%"></i><i style="height:38%"></i><i style="height:30%"></i><i style="height:52%"></i><i style="height:44%"></i><i style="height:36%"></i><i style="height:60%"></i><i style="height:48%"></i><i style="height:56%"></i><i class="hi2" style="height:70%"></i><i style="height:58%"></i><i class="hi" style="height:100%"></i></div>
+</div>
+</div>
+</div>
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;color:#B3A49B"><span>Insights</span><span class="ph">Placeholder screenshot</span></div>
+</div>
+
+<div class="stepc">
+<span class="mono" style="font-size:13px;color:#B3A49B">03</span>
+<h3 class="disp" style="font-weight:500;font-size:23px;line-height:1.22;letter-spacing:-.01em">A draft that shows its source</h3>
+<p>Every draft names the post it learned from, so you can see why it sounds like you.</p>
+<div class="shot dk">
+<div class="chrome"><i></i><i></i><i></i></div>
+<div class="shotbody">
+<div class="side"><i></i><i style="width:76%"></i><i class="on" style="width:88%"></i><i style="width:64%"></i></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<span class="delta" style="align-self:flex-start;font-size:11.5px;padding:4px 10px">From Analyst: Tuesdays win</span>
+<div style="background:rgba(255,255,255,.06);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px">
+<span class="bar" style="height:7px;width:92%;background:#4A3C33"></span><span class="bar" style="height:7px;width:84%;background:#4A3C33"></span><span class="bar" style="height:7px;width:90%;background:#4A3C33"></span><span class="bar" style="height:7px;width:48%;background:#4A3C33"></span>
+</div>
+<div class="tiles"><div class="tile"><small>Drafts ready</small><b>3</b></div><div class="tile"><small>Learned from</small><b>Tue</b></div></div>
+</div>
+</div>
+</div>
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;color:#B3A49B"><span>Coach</span><span class="ph">Placeholder screenshot</span></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- PROOF -->
+<div style="background:linear-gradient(180deg,#FDFBF8,#FBEDE7)">
+<div class="wrap" style="padding-top:104px;padding-bottom:112px">
+<p class="label">What people say</p>
+<h2 class="h2">People who stopped guessing</h2>
+<div class="grid3" style="margin-top:48px">
+
+<div class="quote">
+<p class="disp" style="font-weight:500;font-size:21px;line-height:1.32;letter-spacing:-.01em">I stopped guessing what to post. The numbers tell me, and the draft is already waiting.</p>
+<span class="delta" style="align-self:flex-start;margin-top:18px">&#9650; Reach up <span class="mono">38%</span> in <span class="mono">6</span> weeks</span>
+<div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:24px">
+<span class="av" style="width:48px;height:48px"></span>
+<div><b style="display:block;font-size:15px;font-weight:600">Anders Holm</b><span style="font-size:13.5px;color:#6E5C57">Founder, Holm Studio</span></div>
+</div>
+<div style="margin-top:14px"><span class="ph">Placeholder quote, name and photo</span></div>
+</div>
+
+<div class="quote">
+<p class="disp" style="font-weight:500;font-size:21px;line-height:1.32;letter-spacing:-.01em">The draft already knows what worked last week. I edit it instead of starting from a blank page.</p>
+<span class="delta" style="align-self:flex-start;margin-top:18px">&#9660; Time per post from <span class="mono">40</span> to <span class="mono">12</span> min</span>
+<div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:24px">
+<span class="av" style="width:48px;height:48px"></span>
+<div><b style="display:block;font-size:15px;font-weight:600">Priya Nair</b><span style="font-size:13.5px;color:#6E5C57">Head of growth, Larkfield</span></div>
+</div>
+<div style="margin-top:14px"><span class="ph">Placeholder quote, name and photo</span></div>
+</div>
+
+<div class="quote">
+<p class="disp" style="font-weight:500;font-size:21px;line-height:1.32;letter-spacing:-.01em">Two of my last three inbound leads mentioned a post. Now I can see which one did it.</p>
+<span class="delta" style="align-self:flex-start;margin-top:18px">&#9650; Inbound replies <span class="mono">2.4x</span></span>
+<div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:24px">
+<span class="av" style="width:48px;height:48px"></span>
+<div><b style="display:block;font-size:15px;font-weight:600">Jonas Weber</b><span style="font-size:13.5px;color:#6E5C57">Sales lead, Nordwerk</span></div>
+</div>
+<div style="margin-top:14px"><span class="ph">Placeholder quote, name and photo</span></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- FOUNDER -->
+<div style="background:linear-gradient(180deg,#FBEDE7,#FDFBF8)">
+<div class="wrap" style="padding-top:96px;padding-bottom:40px">
+<div class="twocol" style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:56px;align-items:center">
+<div style="position:relative;aspect-ratio:16/9;border-radius:20px;background:linear-gradient(155deg,#fff,#F8E5DE);box-shadow:0 2px 4px rgba(28,20,16,.04),0 22px 46px -20px rgba(28,20,16,.28);display:flex;align-items:center;justify-content:center">
+<span style="width:64px;height:64px;border-radius:50%;background:#C2402F;display:flex;align-items:center;justify-content:center" aria-hidden="true"><svg width="22" height="24" viewBox="0 0 22 24" fill="#fff"><path d="M4 2 L20 12 L4 22 Z"/></svg></span>
+<span class="ph" style="position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.92)">Placeholder video, 16:9</span>
+</div>
+<div>
+<p class="label">From the founders</p>
+<h2 class="h2">Why we built the measuring part first</h2>
+<p class="body" style="margin-top:16px">Our story is coming soon.</p>
+<div style="margin-top:20px"><span class="ph">Placeholder, story and names to come</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- OFFICIAL API (dark band) -->
+<div id="api" class="dark" style="background:linear-gradient(180deg,#FDFBF8 0%,#1A1512 13%,#1A1512 88%,#FDFBF8 100%)">
+<div class="wrap" style="padding-top:150px;padding-bottom:150px">
+<p class="label">Official API</p>
+<h2 class="h2" style="color:#F6F0EA">Built on LinkedIn's official API</h2>
+<div class="twocol" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start;margin-top:40px">
+<div>
+<p class="body">You connect through LinkedIn's own login. VYRAL reads your post numbers and publishes when you ask. It never scrapes, never adds anything to your browser, and never likes or comments for you.</p>
+<div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:28px">
+<a class="btn" href="#">Read how access works</a>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:22px">
+<div class="pt"><i></i><div><b style="display:block;font-size:16px;font-weight:600;margin-bottom:4px">Your account stays yours</b><span style="font-size:15.5px;line-height:1.55">Remove VYRAL's access any time from your LinkedIn settings.</span></div></div>
+<div class="pt"><i></i><div><b style="display:block;font-size:16px;font-weight:600;margin-bottom:4px">Real numbers</b><span style="font-size:15.5px;line-height:1.55">Impressions and engagement come from LinkedIn, not from a guess.</span></div></div>
+<div class="pt"><i></i><div><b style="display:block;font-size:16px;font-weight:600;margin-bottom:4px">No automation</b><span style="font-size:15.5px;line-height:1.55">No auto likes, no auto comments, no connection requests sent for you.</span></div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PRICING -->
+<div id="pricing" style="background:linear-gradient(180deg,#FDFBF8,#FBEDE7)">
+<div class="wrap" style="padding-top:104px;padding-bottom:112px">
+<p class="label">Pricing</p>
+<h2 class="h2">Start with 14 days of Pro</h2>
+<p class="body" style="margin-top:14px">No credit card. Pick a plan when the trial ends.</p>
+<div class="grid3" style="margin-top:44px;align-items:stretch">
+
+<div class="tier">
+<b style="font-size:15px;font-weight:600">Creator</b>
+<div><span class="mono" style="font-size:40px;letter-spacing:-.03em">$49</span><span style="font-size:15px;color:#6E5C57">/mo</span></div>
+<span style="font-size:14px;color:#6E5C57">or <span class="mono">$39</span>/mo billed yearly</span>
+<ul><li>Full AI Coach and ideas</li><li>Blueprint and campaigns</li><li>Content calendar and publishing</li><li>Full analytics and weekly reviews</li><li><span class="mono">250</span> AI runs a month</li></ul>
+<a class="btn ghost" href="#" style="margin-top:auto;align-self:flex-start">Start free trial</a>
+</div>
+
+<div class="tier hi">
+<b style="font-size:15px;font-weight:600">Pro</b>
+<div><span class="mono" style="font-size:40px;letter-spacing:-.03em">$99</span><span style="font-size:15px;color:#6E5C57">/mo</span></div>
+<span style="font-size:14px;color:#6E5C57">or <span class="mono">$79</span>/mo billed yearly</span>
+<ul><li>Everything in Creator</li><li>Patterns, timing and suggestions</li><li>Data Analyst</li><li>Swipe file</li><li>Unlimited AI runs</li></ul>
+<a class="btn" href="#" style="margin-top:auto;align-self:flex-start">Start free trial</a>
+</div>
+
+<div class="tier">
+<b style="font-size:15px;font-weight:600">Team</b>
+<div><span class="mono" style="font-size:40px;letter-spacing:-.03em">Custom</span></div>
+<span style="font-size:14px;color:#6E5C57">For teams and agencies</span>
+<ul><li>Everything in Pro</li><li>Team workspaces</li><li>Custom onboarding</li><li>A dedicated contact</li></ul>
+<a class="btn ghost" href="#" style="margin-top:auto;align-self:flex-start">Contact us</a>
+</div>
+
+</div>
+<p style="font-size:14.5px;color:#6E5C57;margin:26px 0 0">If your trial ends and you stop, your history stays readable. <a href="#">Compare every plan</a></p>
+</div>
+</div>
+
+<!-- CLOSING CTA (only dark band) -->
+<div style="background:linear-gradient(180deg,#FBEDE7 0%,#1A1512 16%,#1A1512 100%);text-align:center">
+<div class="wrap" style="padding-top:150px;padding-bottom:110px">
+<h2 class="disp cta-h" style="color:#F6F0EA;font-weight:600;font-size:52px;line-height:1.06;letter-spacing:-.024em;max-width:760px;margin:0 auto">Your next post is already in last week's numbers</h2>
+<div style="margin-top:34px"><a class="btn onDark" href="#" style="font-size:17px;padding:16px 28px">Start free trial</a></div>
+<p style="font-size:14px;color:#B3A49B;margin:18px 0 0">14 days of Pro. No credit card.</p>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:#1A1512;border-top:1px solid #3B3029">
+<div class="wrap" style="padding-top:48px;padding-bottom:48px">
+<div class="foldcols" style="display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px;color:#B3A49B;font-size:14.5px">
+<div>
+<div style="display:flex;align-items:center;gap:10px;color:#F6F0EA">
+<svg width="20" height="20" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M2 3 L11 19 L20 3" stroke="#F2735F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="disp" style="font-weight:600;font-size:20px">VYRAL</span>
+</div>
+<p style="margin:14px 0 0;line-height:1.5;max-width:260px">Built on LinkedIn's official API.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px"><b style="color:#F6F0EA;font-weight:600">Product</b><a style="color:#B3A49B" href="#">How it works</a><a style="color:#B3A49B" href="#">Analytics</a><a style="color:#B3A49B" href="#">AI Coach</a><a style="color:#B3A49B" href="#">Pricing</a></div>
+<div style="display:flex;flex-direction:column;gap:10px"><b style="color:#F6F0EA;font-weight:600">Resources</b><a style="color:#B3A49B" href="#">Blog</a><a style="color:#B3A49B" href="#">Help center</a><a style="color:#B3A49B" href="#">Newsletter</a><a style="color:#B3A49B" href="#">Contact</a></div>
+<div style="display:flex;flex-direction:column;gap:10px"><b style="color:#F6F0EA;font-weight:600">Legal</b><a style="color:#B3A49B" href="#">Privacy</a><a style="color:#B3A49B" href="#">Terms</a><a style="color:#B3A49B" href="#">Cookies</a><a style="color:#B3A49B" href="#">Security</a></div>
+</div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
