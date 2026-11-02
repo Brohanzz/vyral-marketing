@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CookieSettingsLink } from "@/components/CookieConsent";
+import { BRAND_LINE } from "@/lib/brand";
 import Container from "./Container";
 import Logo from "./Logo";
 import NewsletterSignup from "./NewsletterSignup";
@@ -12,7 +13,7 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
   {
     title: "Product",
     links: [
-      { label: "How it works", href: "/how-it-works" },
+      { label: "How it works", href: "/how-vyral-works" },
       { label: "Analytics", href: "/linkedin-analytics" },
       { label: "AI Coach", href: "/ai-coach" },
       { label: "Pricing", href: "/pricing" },
@@ -67,9 +68,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-8 desk:grid-cols-[minmax(0,1.4fr)_repeat(4,minmax(0,1fr))]">
           <div className="col-span-2 desk:col-span-1">
             <Logo size="footer" />
-            <p className="mt-3.5 mb-0 max-w-[260px] text-[14.5px] leading-normal">
-              Built on LinkedIn&apos;s official API.
-            </p>
+            <p className="mt-3.5 mb-0 max-w-[260px] text-[14.5px] leading-normal">{BRAND_LINE}</p>
           </div>
           {COLUMNS.map((col) => (
             <nav key={col.title} aria-labelledby={`footer-${col.title}`}>

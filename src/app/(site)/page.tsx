@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Button from "@/components/site/Button";
 import Card from "@/components/site/Card";
+import ClosingBand from "@/components/site/ClosingBand";
 import DeltaPill from "@/components/site/DeltaPill";
 import FaqAccordion, { type FaqItem } from "@/components/site/FaqAccordion";
 import JsonLd from "@/components/site/JsonLd";
@@ -11,8 +12,10 @@ import SectionLabel from "@/components/site/SectionLabel";
 import TierCard from "@/components/site/TierCard";
 import HeroLoop from "@/components/site/home/HeroLoop";
 import SkeletonShot from "@/components/site/home/SkeletonShot";
+import { BRAND_LINE } from "@/lib/brand";
 import { SITE_URL, pageMetadata } from "@/lib/metadata";
 import { PLANS, PRICED_PLANS, READ_ONLY_RULE, TRIAL, TRIAL_LINE } from "@/lib/pricing";
+import { faqSchema } from "@/lib/schema";
 import { APP_SIGNUP_URL } from "@/lib/urls";
 
 export const metadata = pageMetadata({
@@ -22,7 +25,6 @@ export const metadata = pageMetadata({
   path: "/",
 });
 
-const BRAND_LINE = "Built on LinkedIn's official API.";
 const WHAT_IS_VYRAL =
   "VYRAL is a LinkedIn content intelligence platform built on LinkedIn's official API. It reads the numbers on your own posts, shows what worked, and drafts your next post from it.";
 
@@ -68,16 +70,6 @@ const appSchema = {
     price: String(plan.monthly),
     priceCurrency: "USD",
     description: plan.features.join(", "),
-  })),
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQ.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: { "@type": "Answer", text: item.answer },
   })),
 };
 
@@ -156,13 +148,13 @@ export default function HomePage() {
     <>
       <JsonLd data={organizationSchema} />
       <JsonLd data={appSchema} />
-      <JsonLd data={faqSchema} />
+      <JsonLd data={faqSchema(FAQ)} />
 
       {/* Hero */}
-      <Section variant="light" hold labelledBy="hero-title" className="pt-10 pb-24">
+      <Section variant="light" hold labelledBy="hero-title" className="pt-[30px] pb-[72px]">
         <p className="m-0 inline-flex items-center gap-2.5 rounded-pill bg-surface/92 px-4 py-[9px] text-[14px] font-medium text-ink-2 shadow-1">
           <span aria-hidden="true" className="block size-2 rounded-full bg-primary" />
-          {BRAND_LINE.replace(/\.$/, "")}
+          {BRAND_LINE}
         </p>
         <h1
           id="hero-title"
@@ -188,7 +180,7 @@ export default function HomePage() {
       </Section>
 
       {/* Inside VYRAL */}
-      <Section variant="dark" from="soft" to="base" id="inside" labelledBy="inside-title" className="pt-[150px] pb-40">
+      <Section variant="dark" from="soft" to="base" id="inside" labelledBy="inside-title" className="pt-[112px] pb-[120px]">
         <SectionLabel>Inside VYRAL</SectionLabel>
         <SectionHeading id="inside-title">What happened, why it happened, and what to write next</SectionHeading>
         <div className="mt-[52px] grid gap-8 desk:grid-cols-3">
@@ -208,7 +200,7 @@ export default function HomePage() {
       </Section>
 
       {/* Proof */}
-      <Section variant="light" labelledBy="proof-title" className="pt-[104px] pb-28">
+      <Section variant="light" labelledBy="proof-title" className="pt-[78px] pb-[84px]">
         <SectionLabel>What people say</SectionLabel>
         <SectionHeading id="proof-title">People who stopped guessing</SectionHeading>
         <div className="mt-12 grid gap-7 desk:grid-cols-3">
@@ -236,35 +228,34 @@ export default function HomePage() {
       </Section>
 
       {/* Founders */}
-      <Section variant="tint" labelledBy="founders-title" className="pt-24 pb-10">
-        <div className="grid items-center gap-8 desk:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] desk:gap-14">
-          <div
-            role="img"
-            aria-label="Placeholder for the founders video"
-            className="vy-video relative flex aspect-video items-center justify-center rounded-lg shadow-2"
-          >
-            <span className="flex size-16 items-center justify-center rounded-full bg-primary-strong text-on-primary">
-              <svg width="22" height="24" viewBox="0 0 22 24" fill="currentColor" aria-hidden="true">
-                <path d="M4 2 L20 12 L4 22 Z" />
-              </svg>
-            </span>
-            <PlaceholderPill className="absolute bottom-4 left-4 bg-surface/92">Placeholder video, 16:9</PlaceholderPill>
+      <Section variant="tint" labelledBy="founders-title" className="py-9">
+        <div className="flex flex-col gap-5 rounded-lg bg-surface/70 p-5 shadow-1 desk:flex-row desk:items-center desk:gap-6 desk:px-7">
+          <span className="flex flex-none" aria-hidden="true">
+            <span className={`size-14 ring-3 ring-surface ${avatar}`} />
+            <span className={`-ml-3 size-14 ring-3 ring-surface ${avatar}`} />
+          </span>
+          <div className="min-w-0 flex-1">
+            <h2 id="founders-title" className="m-0 text-[14px] font-semibold text-primary-strong">
+              From the founders
+            </h2>
+            <p className="mt-1 mb-0 text-[17px] leading-normal text-ink">
+              Meet the two people behind VYRAL and why we built it.{" "}
+              <Link
+                href="/about"
+                className="font-semibold whitespace-nowrap text-primary-hover underline underline-offset-2 hover:text-primary-strong"
+              >
+                Read our story
+              </Link>
+            </p>
           </div>
-          <div>
-            <SectionLabel>From the founders</SectionLabel>
-            <SectionHeading id="founders-title">Why we built the measuring part first</SectionHeading>
-            <p className="mt-4 mb-0 text-body-l text-muted">Our story is coming soon.</p>
-            <div className="mt-5">
-              <PlaceholderPill>Placeholder, story and names to come</PlaceholderPill>
-            </div>
-          </div>
+          <PlaceholderPill className="self-start desk:self-center">Placeholder, founder photos</PlaceholderPill>
         </div>
       </Section>
 
       {/* Official API */}
-      <Section variant="dark" from="base" to="base" id="api" labelledBy="api-title" className="py-[150px]">
+      <Section variant="dark" from="base" to="base" id="api" labelledBy="api-title" className="py-[112px]">
         <SectionLabel>Official API</SectionLabel>
-        <SectionHeading id="api-title">{BRAND_LINE.replace(/\.$/, "")}</SectionHeading>
+        <SectionHeading id="api-title">{BRAND_LINE}</SectionHeading>
         <div className="mt-10 grid items-start gap-8 desk:grid-cols-2 desk:gap-16">
           <div>
             <p className="m-0 text-body-l text-on-dark-muted">
@@ -295,7 +286,7 @@ export default function HomePage() {
       </Section>
 
       {/* Pricing teaser */}
-      <Section variant="light" id="pricing" labelledBy="pricing-title" className="pt-[104px] pb-28">
+      <Section variant="light" id="pricing" labelledBy="pricing-title" className="pt-[78px] pb-[84px]">
         <SectionLabel>Pricing</SectionLabel>
         <SectionHeading id="pricing-title">
           Start with {TRIAL.days} days of {TRIAL.plan}
@@ -315,27 +306,16 @@ export default function HomePage() {
       </Section>
 
       {/* FAQ */}
-      <Section variant="tint" labelledBy="faq-title" className="pt-24 pb-28">
+      <Section variant="tint" labelledBy="faq-title" className="pt-[72px] pb-[84px]">
         <SectionLabel>FAQ</SectionLabel>
         <SectionHeading id="faq-title">Common questions</SectionHeading>
         <FaqAccordion items={FAQ} className="mt-10 max-w-[760px]" />
       </Section>
 
       {/* Closing band */}
-      <Section variant="dark" from="base" to="dark" labelledBy="closing-title" className="pt-[150px] pb-[110px] text-center">
-        <h2
-          id="closing-title"
-          className="mx-auto my-0 max-w-[760px] text-pretty font-display text-[36px] leading-[1.06] font-semibold tracking-[-0.024em] text-on-dark desk:text-display-l"
-        >
-          Your next post is already in last week&apos;s numbers
-        </h2>
-        <div className="mt-[34px]">
-          <Button href={APP_SIGNUP_URL} variant="on-dark" size="lg">
-            Start free trial
-          </Button>
-        </div>
-        <p className="mt-[18px] mb-0 text-[14px] text-on-dark-muted">{TRIAL_LINE}</p>
-      </Section>
+      <ClosingBand title={<>Your next post is already in last week&apos;s numbers</>}>
+        <p className="m-0">{TRIAL_LINE}</p>
+      </ClosingBand>
     </>
   );
 }

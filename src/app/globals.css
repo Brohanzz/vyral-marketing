@@ -110,14 +110,16 @@
   .vy-band[data-variant="tint"] {
     background: linear-gradient(180deg, var(--vy-surface-soft), var(--vy-base));
   }
+  /* Fixed-length fades, so the transition looks the same on short and tall (stacked mobile) bands. */
   .vy-band[data-variant="dark"] {
     --vy-band-from: var(--vy-base);
     --vy-band-to: var(--vy-base);
+    --vy-band-fade: 120px;
     background: linear-gradient(
       180deg,
-      var(--vy-band-from) 0%,
-      var(--vy-band-dark) 13%,
-      var(--vy-band-dark) 88%,
+      var(--vy-band-from) 0,
+      var(--vy-band-dark) var(--vy-band-fade),
+      var(--vy-band-dark) calc(100% - var(--vy-band-fade)),
       var(--vy-band-to) 100%
     );
   }
@@ -125,7 +127,7 @@
     --vy-band-from: var(--vy-surface-soft);
   }
   .vy-band[data-variant="dark"][data-to="dark"] {
-    background: linear-gradient(180deg, var(--vy-band-from) 0%, var(--vy-band-dark) 16%, var(--vy-band-dark) 100%);
+    background: linear-gradient(180deg, var(--vy-band-from) 0, var(--vy-band-dark) var(--vy-band-fade), var(--vy-band-dark) 100%);
   }
   .vy-hero-panel {
     background: radial-gradient(
@@ -138,9 +140,6 @@
   .vy-shot {
     background: linear-gradient(160deg, var(--vy-band-surface-soft), var(--vy-band-surface));
     box-shadow: inset 0 0 0 1px var(--vy-band-hairline);
-  }
-  .vy-video {
-    background: linear-gradient(155deg, var(--vy-surface), var(--vy-surface-panel));
   }
 
   /* Hero loop: mobile first (stacked, vertical connectors), three across from 860px */
@@ -181,8 +180,9 @@
   }
 
   @media (width >= 860px) {
+    /* Room below the return line for its label, which sits across the line's bottom edge. */
     .vy-loop {
-      padding-bottom: 70px;
+      padding-bottom: 92px;
     }
     .vy-loop-cards {
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -209,8 +209,8 @@
       position: absolute;
       left: calc((100% - 128px) / 6);
       right: calc((100% - 128px) / 6);
-      bottom: 20px;
-      height: 50px;
+      bottom: 34px;
+      height: 54px;
       margin: 0;
       border: 2px solid var(--vy-primary);
       border-top: none;
@@ -236,6 +236,142 @@
     }
   }
 
+  /* Article body: blog posts, comparison pages and legal text. Markdown and plain HTML both land here. */
+  .vy-prose {
+    max-width: 720px;
+    margin-inline: auto;
+    font-size: 17.5px;
+    line-height: 1.75;
+    color: var(--vy-ink-2);
+    overflow-wrap: break-word;
+  }
+  .vy-prose > :first-child {
+    margin-top: 0;
+  }
+  .vy-prose h2 {
+    margin: 2.4em 0 0.6em;
+    font-family: var(--vy-font-display);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.016em;
+    color: var(--vy-ink);
+    text-wrap: pretty;
+  }
+  .vy-prose h3 {
+    margin: 1.9em 0 0.5em;
+    font-family: var(--vy-font-display);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--vy-ink);
+  }
+  .vy-prose h4 {
+    margin: 1.6em 0 0.4em;
+    font-size: 17.5px;
+    font-weight: 600;
+    color: var(--vy-ink);
+  }
+  .vy-prose p,
+  .vy-prose ul,
+  .vy-prose ol,
+  .vy-prose blockquote,
+  .vy-prose pre {
+    margin: 0 0 1.15em;
+  }
+  .vy-prose ul,
+  .vy-prose ol {
+    padding-left: 1.4em;
+  }
+  .vy-prose ul {
+    list-style: disc;
+  }
+  .vy-prose ol {
+    list-style: decimal;
+  }
+  .vy-prose li {
+    margin-bottom: 0.4em;
+    padding-left: 0.2em;
+  }
+  .vy-prose li::marker {
+    color: var(--vy-primary);
+  }
+  .vy-prose strong {
+    font-weight: 600;
+    color: var(--vy-ink);
+  }
+  .vy-prose a {
+    font-weight: 500;
+    color: var(--vy-primary-hover);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .vy-prose a:hover {
+    color: var(--vy-primary-strong);
+  }
+  .vy-prose blockquote {
+    padding: 4px 0 4px 20px;
+    border-left: 3px solid var(--vy-primary);
+    font-family: var(--vy-font-display);
+    font-size: 21px;
+    line-height: 1.45;
+    color: var(--vy-ink);
+  }
+  .vy-prose blockquote p:last-child {
+    margin-bottom: 0;
+  }
+  .vy-prose hr {
+    margin: 2.4em 0;
+    border: 0;
+    border-top: 1px solid var(--vy-hairline-strong);
+  }
+  .vy-prose code {
+    padding: 1px 6px;
+    border-radius: var(--vy-radius-sm);
+    background: var(--vy-surface-soft);
+    font-family: var(--vy-font-mono);
+    font-size: 0.88em;
+  }
+  .vy-prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--vy-radius-lg);
+  }
+  /* Tables scroll inside their own box on narrow screens, never the page. */
+  .vy-prose .vy-table {
+    margin: 1.6em 0 1.8em;
+    overflow-x: auto;
+    border-radius: var(--vy-radius-lg);
+    background: var(--vy-surface);
+    box-shadow: var(--vy-shadow-3);
+  }
+  .vy-prose table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .vy-prose th,
+  .vy-prose td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--vy-hairline);
+    text-align: left;
+    vertical-align: top;
+  }
+  .vy-prose thead th {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--vy-muted);
+    background: var(--vy-surface-soft);
+  }
+  .vy-prose tbody tr:last-child td {
+    border-bottom: 0;
+  }
+  .vy-prose td:first-child {
+    font-weight: 600;
+    color: var(--vy-ink);
+  }
+
   /* Billing toggle on /pricing: CSS only, both prices are in the HTML */
   .vy-billing:has(#billing-yearly:checked) [data-billing="monthly"],
   .vy-billing:not(:has(#billing-yearly:checked)) [data-billing="yearly"] {
@@ -256,7 +392,8 @@
 @keyframes vy-wire2 { 0%, 36% { clip-path: inset(0 0 100% 0); } 41%, 94% { clip-path: inset(0 0 0 0); } 98%, 100% { clip-path: inset(0 0 100% 0); } }
 @keyframes vy-wire1-h { 0%, 13% { clip-path: inset(0 100% 0 0); } 19%, 94% { clip-path: inset(0 0 0 0); } 98%, 100% { clip-path: inset(0 100% 0 0); } }
 @keyframes vy-wire2-h { 0%, 36% { clip-path: inset(0 100% 0 0); } 41%, 94% { clip-path: inset(0 0 0 0); } 98%, 100% { clip-path: inset(0 100% 0 0); } }
-@keyframes vy-ret { 0%, 62% { clip-path: inset(0 0 0 100%); } 74%, 94% { clip-path: inset(0 0 0 0); } 98%, 100% { clip-path: inset(0 0 0 100%); } }
+/* The bottom inset is negative so the label, which hangs below the line, is not clipped. */
+@keyframes vy-ret { 0%, 62% { clip-path: inset(0 0 -24px 100%); } 74%, 94% { clip-path: inset(0 0 -24px 0); } 98%, 100% { clip-path: inset(0 0 -24px 100%); } }
 @keyframes vy-grow { 0%, 24% { transform: scaleY(0.06); } 34%, 94% { transform: scaleY(1); } 98%, 100% { transform: scaleY(0.06); } }
 @keyframes vy-pop { 0%, 32% { opacity: 0; transform: scale(0.9); } 36%, 94% { opacity: 1; transform: none; } 98%, 100% { opacity: 0; transform: scale(0.9); } }
 @keyframes vy-line1 { 0%, 46% { opacity: 0; transform: translateY(4px); } 52%, 94% { opacity: 1; transform: none; } 98%, 100% { opacity: 0; } }

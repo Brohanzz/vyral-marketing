@@ -1,5 +1,22 @@
 import type { NextConfig } from "next";
 
+// Pages merged in the redesign. Each old URL points permanently at the page
+// that now carries its content, so no indexed URL is lost.
+const MERGED: Record<string, string[]> = {
+  "/how-vyral-works": ["/how-it-works", "/product", "/why-vyral", "/getting-started"],
+  "/linkedin-analytics": ["/linkedin-post-analytics", "/product/analytics", "/product/performance-lab"],
+  "/ai-coach": ["/linkedin-coaching", "/ai-linkedin-post-writer"],
+  "/linkedin-content-strategy": [
+    "/linkedin-content-calendar",
+    "/linkedin-personal-branding",
+    "/linkedin-growth-tool",
+    "/product/blueprint-ai",
+  ],
+  "/solutions#agencies": ["/solutions/agencies"],
+  "/solutions#creators": ["/solutions/creators"],
+  "/solutions#ghostwriters": ["/solutions/ghostwriters"],
+};
+
 const nextConfig: NextConfig = {
   async redirects() {
     return [
@@ -13,6 +30,9 @@ const nextConfig: NextConfig = {
       // every crawler and SEO tool expects.
       { source: "/waitlist", destination: "/", statusCode: 301 },
       { source: "/beta", destination: "/", statusCode: 301 },
+      ...Object.entries(MERGED).flatMap(([destination, sources]) =>
+        sources.map((source) => ({ source, destination, statusCode: 301 as const })),
+      ),
     ];
   },
 };

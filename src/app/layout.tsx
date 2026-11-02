@@ -29,14 +29,14 @@ const plexMono = IBM_Plex_Mono({
 // Site-wide defaults only. Canonical and og:url are set per page, never here,
 // so no page can inherit the homepage's.
 export const metadata: Metadata = {
-  title: "VYRAL — LinkedIn Content Intelligence",
+  title: "VYRAL: LinkedIn Content Intelligence",
   description:
     "The only LinkedIn content platform built on official API data.",
   metadataBase: new URL("https://www.getvyral.io"),
   openGraph: {
     type: "website",
     siteName: "VYRAL",
-    title: "VYRAL — LinkedIn Content Intelligence",
+    title: "VYRAL: LinkedIn Content Intelligence",
     description:
       "The only LinkedIn content platform built on official API data.",
     images: [
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
         url: "/og-default.png",
         width: 1200,
         height: 630,
-        alt: "VYRAL — LinkedIn Content Intelligence",
+        alt: "VYRAL: LinkedIn Content Intelligence",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "VYRAL — LinkedIn Content Intelligence",
+    title: "VYRAL: LinkedIn Content Intelligence",
     description:
       "The only LinkedIn content platform built on official API data.",
     images: ["/og-default.png"],

@@ -37,7 +37,7 @@ export const PLANS: Plan[] = [
     name: "Creator",
     monthly: 49,
     yearly: 39,
-    tagline: "Everything you need to grow on LinkedIn",
+    tagline: "For one creator posting every week.",
     features: [
       "Full AI Coach and ideas",
       "Blueprint and campaigns",
@@ -53,7 +53,7 @@ export const PLANS: Plan[] = [
     name: "Pro",
     monthly: 99,
     yearly: 79,
-    tagline: "Content intelligence for serious creators",
+    tagline: "For people who want to know why their posts work.",
     features: [
       "Everything in Creator",
       "Patterns, timing and suggestions",
@@ -69,7 +69,7 @@ export const PLANS: Plan[] = [
     name: "Team",
     monthly: null,
     yearly: null,
-    tagline: "For teams and agencies. In development.",
+    tagline: "For teams and agencies. Coming soon.",
     features: [
       "Everything in Pro",
       "Multiple team seats",
@@ -89,11 +89,16 @@ export function yearlyTotal(plan: { yearly: number }) {
   return plan.yearly * 12;
 }
 
-/** Creator versus Pro, built from the facts on the previous pricing page. */
+/**
+ * Creator versus Pro, checked against the app's feature access table. Blueprint
+ * strategy inference runs wherever Blueprint does (Creator and Pro); the
+ * Strategy Builder is the Pro-only strategy feature.
+ */
 export const COMPARISON: { label: string; creator: boolean | string; pro: boolean | string }[] = [
   { label: "AI runs a month", creator: String(CREATOR_AI_RUNS), pro: "Unlimited" },
   { label: "AI Coach and ideas", creator: true, pro: true },
   { label: "Blueprint and campaigns", creator: true, pro: true },
+  { label: "Blueprint strategy inference", creator: true, pro: true },
   { label: "Content calendar and LinkedIn publishing", creator: true, pro: true },
   { label: "Full analytics and weekly reviews", creator: true, pro: true },
   { label: "Public proof page", creator: true, pro: true },
@@ -101,5 +106,5 @@ export const COMPARISON: { label: string; creator: boolean | string; pro: boolea
   { label: "Data Analyst", creator: false, pro: true },
   { label: "Swipe file", creator: false, pro: true },
   { label: "Carousel generation and editor", creator: false, pro: true },
-  { label: "Blueprint strategy inference", creator: false, pro: true },
+  { label: "Strategy Builder", creator: false, pro: true },
 ];

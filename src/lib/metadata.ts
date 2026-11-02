@@ -15,10 +15,15 @@ export function pageMetadata({
   title,
   description,
   path,
+  image = "/og-default.png",
+  type = "website",
 }: {
   title: string;
   description: string;
   path: string;
+  /** Share image. Articles pass their own; everything else uses the default. */
+  image?: string;
+  type?: "website" | "article";
 }): Metadata {
   const url = absoluteUrl(path);
   return {
@@ -26,18 +31,18 @@ export function pageMetadata({
     description,
     alternates: { canonical: url },
     openGraph: {
-      type: "website",
+      type,
       siteName: "VYRAL",
       url,
       title,
       description,
-      images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "VYRAL" }],
+      images: [{ url: image, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/og-default.png"],
+      images: [image],
     },
   };
 }

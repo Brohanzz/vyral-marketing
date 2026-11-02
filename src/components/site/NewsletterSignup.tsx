@@ -9,8 +9,8 @@ type Status = "idle" | "loading" | "success" | "error";
 const input =
   "min-h-12 min-w-0 flex-1 rounded-md border border-band-hairline-strong bg-band-surface px-4 text-[15px] text-on-dark placeholder:text-on-dark-muted disabled:opacity-60";
 
-// Footer newsletter signup for the redesigned pages. Same Loops submission as
-// the legacy form; double opt-in, so success means a confirmation email was sent.
+// Newsletter signup, drawn for dark surfaces (footer, newsletter page, blog posts).
+// Loops double opt-in, so success means a confirmation email was sent.
 export default function NewsletterSignup() {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");

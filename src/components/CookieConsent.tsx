@@ -166,38 +166,10 @@ export default function CookieConsent() {
   );
 }
 
-// Footer link. Clears the saved choice and shows the banner again. With a
-// className it takes that styling (redesigned footer); without, the legacy look.
+// Footer link. Clears the saved choice and shows the banner again.
 export function CookieSettingsLink({ className }: { className?: string }) {
-  if (className) {
-    return (
-      <button
-        type="button"
-        className={className}
-        onClick={() => window.dispatchEvent(new Event(SETTINGS_EVENT))}
-      >
-        Cookie settings
-      </button>
-    );
-  }
   return (
-    <button
-      type="button"
-      className="footer-link"
-      onClick={() => window.dispatchEvent(new Event(SETTINGS_EVENT))}
-      style={{
-        fontSize: 14,
-        color: "rgba(255,255,255,0.38)",
-        fontFamily: "Inter, sans-serif",
-        display: "block",
-        marginBottom: 10,
-        padding: 0,
-        background: "none",
-        border: "none",
-        cursor: "pointer",
-        textAlign: "left",
-      }}
-    >
+    <button type="button" className={className} onClick={() => window.dispatchEvent(new Event(SETTINGS_EVENT))}>
       Cookie settings
     </button>
   );

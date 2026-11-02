@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Button from "@/components/site/Button";
+import ClosingBand from "@/components/site/ClosingBand";
 import DeltaPill from "@/components/site/DeltaPill";
 import FaqAccordion, { type FaqItem } from "@/components/site/FaqAccordion";
 import JsonLd from "@/components/site/JsonLd";
@@ -18,7 +18,7 @@ import {
   TRIAL,
   YEARLY_SAVING_PERCENT,
 } from "@/lib/pricing";
-import { APP_SIGNUP_URL } from "@/lib/urls";
+import { faqSchema } from "@/lib/schema";
 
 const [creator, pro] = PRICED_PLANS;
 
@@ -58,7 +58,7 @@ const FAQ: FaqItem[] = [
   {
     question: "What is in the Team plan?",
     answer:
-      "Team is in development for agencies, ghostwriters and content teams. It adds multiple team seats, a team performance dashboard, aggregate analytics across members, central billing and dedicated onboarding. Contact us for early access.",
+      "Team is coming soon for agencies, ghostwriters and content teams. It adds multiple team seats, a team performance dashboard, aggregate analytics across members, central billing and dedicated onboarding. Contact us for early access.",
   },
 ];
 
@@ -68,16 +68,6 @@ const webPageSchema = {
   name: "VYRAL pricing",
   url: absoluteUrl("/pricing"),
   description: DESCRIPTION,
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQ.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: { "@type": "Answer", text: item.answer },
-  })),
 };
 
 const toggleLabel =
@@ -109,20 +99,19 @@ export default function PricingPage() {
   return (
     <>
       <JsonLd data={webPageSchema} />
-      <JsonLd data={faqSchema} />
+      <JsonLd data={faqSchema(FAQ)} />
 
       {/* Hero, billing toggle and tiers */}
-      <Section variant="light" hold labelledBy="pricing-title" className="pt-10 pb-24 desk:pt-16">
+      <Section variant="light" hold labelledBy="pricing-title" className="pt-[30px] pb-[72px] desk:pt-12">
         <SectionLabel>Pricing</SectionLabel>
         <h1
           id="pricing-title"
           className="m-0 max-w-[820px] text-pretty font-display text-[40px] leading-[1.06] font-semibold tracking-[-0.024em] desk:text-display-l"
         >
-          Simple pricing that grows with you
+          Start with <Numerals text={String(TRIAL.days)} /> days of {TRIAL.plan}
         </h1>
         <p className="mt-5 mb-0 max-w-[600px] text-subhead text-muted">
-          Every account starts with <Numerals text={String(TRIAL.days)} /> days of {TRIAL.plan}, including{" "}
-          <Numerals text={String(TRIAL.aiRuns)} /> AI runs. No credit card.
+          <Numerals text={String(TRIAL.aiRuns)} /> AI runs included. No credit card. Pick a plan when the trial ends.
         </p>
 
         <div className="vy-billing">
@@ -168,7 +157,7 @@ export default function PricingPage() {
       </Section>
 
       {/* Comparison */}
-      <Section variant="tint" labelledBy="compare-title" className="pt-24 pb-28">
+      <Section variant="tint" labelledBy="compare-title" className="pt-[72px] pb-[84px]">
         <SectionLabel>Compare</SectionLabel>
         <SectionHeading id="compare-title">
           {creator.name} and {pro.name}, side by side
@@ -211,33 +200,29 @@ export default function PricingPage() {
       </Section>
 
       {/* FAQ */}
-      <Section variant="light" labelledBy="faq-title" className="pt-24 pb-28">
+      <Section variant="light" labelledBy="faq-title" className="pt-[72px] pb-[84px]">
         <SectionLabel>FAQ</SectionLabel>
         <SectionHeading id="faq-title">Pricing questions</SectionHeading>
         <FaqAccordion items={FAQ} className="mt-10 max-w-[760px]" />
       </Section>
 
       {/* Closing band */}
-      <Section variant="dark" from="soft" to="dark" labelledBy="closing-title" className="pt-[150px] pb-[110px] text-center">
-        <h2
-          id="closing-title"
-          className="mx-auto my-0 max-w-[760px] text-pretty font-display text-[36px] leading-[1.06] font-semibold tracking-[-0.024em] text-on-dark desk:text-display-l"
-        >
-          Not sure which plan? Try {TRIAL.plan} for <Numerals text={String(TRIAL.days)} /> days.
-        </h2>
-        <div className="mt-[34px]">
-          <Button href={APP_SIGNUP_URL} variant="on-dark" size="lg">
-            Start free trial
-          </Button>
-        </div>
-        <p className="mt-[18px] mb-0 text-[14px] text-on-dark-muted">No credit card. Pick a plan when the trial ends.</p>
-        <p className="mt-3 mb-0 text-[14px] text-on-dark-muted">
+      <ClosingBand
+        from="soft"
+        title={
+          <>
+            Try {TRIAL.plan} for <Numerals text={String(TRIAL.days)} /> days, then pick a plan
+          </>
+        }
+      >
+        <p className="m-0">No credit card.</p>
+        <p className="m-0">
           Looking for a team plan?{" "}
           <Link href="/contact" className="font-semibold text-on-dark underline underline-offset-2 hover:text-signal">
             Talk to us
           </Link>
         </p>
-      </Section>
+      </ClosingBand>
     </>
   );
 }
