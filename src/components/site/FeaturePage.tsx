@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { cx } from "@/lib/cx";
+import Card from "./Card";
 import { absoluteUrl } from "@/lib/metadata";
 import { TRIAL_LINE } from "@/lib/pricing";
 import { faqSchema } from "@/lib/schema";
@@ -25,7 +26,16 @@ export type FeatureSection = {
   link?: { label: string; href: string };
 };
 
+export type CompareBlock = {
+  label: string;
+  title: string;
+  body: string[];
+  columns: { title: string; items: string[] }[];
+};
+
 export type FeaturePageContent = {
+  /** Optional comparison band right after the hero. */
+  compare?: CompareBlock;
   path: string;
   /** Short page name for the WebPage schema. */
   name: string;
@@ -82,12 +92,37 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
         <span className="text-[14px] text-muted">{TRIAL_LINE}</span>
       </PageHero>
 
+      {content.compare && (
+        <Section variant="tint" labelledBy="compare-title" className="py-[72px]">
+          <div className="grid gap-10 desk:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] desk:gap-16">
+            <div>
+              <SectionLabel>{content.compare.label}</SectionLabel>
+              <SectionHeading id="compare-title">{content.compare.title}</SectionHeading>
+              {content.compare.body.map((p) => (
+                <p key={p} className="mt-4 mb-0 text-body-l text-muted">
+                  {p}
+                </p>
+              ))}
+            </div>
+            <div className="grid gap-5 desk:grid-cols-2">
+              {content.compare.columns.map((col) => (
+                <Card key={col.title} as="article" className="p-6">
+                  <h3 className="m-0 text-[17px] font-semibold text-ink">{col.title}</h3>
+                  <Bullets items={col.items} />
+                </Card>
+              ))}
+            </div>
+          </div>
+        </Section>
+      )}
+
       {content.sections.map((s, i) => {
         const id = `section-${i + 1}`;
         const flip = i % 2 === 1;
-        // The hero ends on the soft colour, so the first section starts from it.
+        // The hero ends on the soft colour, so the first band starts from it; bands then alternate.
+        const offset = content.compare ? 1 : 0;
         return (
-          <Section key={s.title} variant={flip ? "light" : "tint"} labelledBy={id} className="py-[72px]">
+          <Section key={s.title} variant={(i + offset) % 2 === 1 ? "light" : "tint"} labelledBy={id} className="py-[72px]">
             <div className="grid items-center gap-10 desk:grid-cols-2 desk:gap-16">
               <div className={cx(flip && "desk:order-2")}>
                 <SectionLabel>{s.label}</SectionLabel>

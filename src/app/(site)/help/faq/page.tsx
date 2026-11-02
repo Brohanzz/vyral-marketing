@@ -67,7 +67,7 @@ const sections: Section[] = [
       },
       {
         q: "Why do I need to post through VYRAL to see my analytics?",
-        a: "LinkedIn's official API only provides performance data, impressions, clicks, engagement, for posts published through an approved application. Posts published directly on LinkedIn are not accessible to third-party tools through official means. Tools that show analytics for posts you didn't publish through them are either using screen scraping, browser extensions reading your LinkedIn session, or unofficial data access, all of which violate LinkedIn's Terms of Service and carry a real risk of account restriction. Posting through VYRAL is what connects your content to your data cleanly and safely.",
+        a: "Posts you publish through VYRAL keep their text and update their numbers on their own, every 3 hours for the first 14 days, then daily until day 30, then weekly. Posts you publish on LinkedIn directly are imported once when you sign up, from the last 30 days, with their numbers but not their text. After that, add them by uploading LinkedIn's analytics export, which adds their numbers once.",
       },
       {
         q: "Why can't I see an inspiration library of other people's posts?",

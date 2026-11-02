@@ -12,7 +12,7 @@ const content: FeaturePageContent = {
     "An AI Coach that learns from your own LinkedIn posts, writes in your voice and scores every draft before you publish.",
   label: "AI Coach",
   h1: "An AI Coach that learns from your posts and your numbers",
-  sub: "It writes LinkedIn posts in your voice and explains each suggestion with your own numbers.",
+  sub: "It writes LinkedIn posts in your voice, using your top posts as examples, and draws on your own numbers when it advises you.",
   sections: [
     {
       label: "Your voice",

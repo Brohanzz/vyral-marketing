@@ -105,7 +105,6 @@ export const COMPARISON: { label: string; creator: boolean | string; pro: boolea
   { label: "Blueprint strategy inference", creator: true, pro: true },
   { label: "Content calendar and LinkedIn publishing", creator: true, pro: true },
   { label: "Full analytics and weekly reviews", creator: true, pro: true },
-  { label: "Public proof page", creator: true, pro: true },
   { label: "Patterns, timing and suggestions", creator: false, pro: true },
   { label: "Data Analyst", creator: false, pro: true },
   { label: "Swipe file", creator: false, pro: true },

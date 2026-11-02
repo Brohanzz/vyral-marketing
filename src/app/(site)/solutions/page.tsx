@@ -12,7 +12,17 @@ import { absoluteUrl, pageMetadata } from "@/lib/metadata";
 import { TRIAL_LINE } from "@/lib/pricing";
 
 // One section per former /solutions/* page. Each slug is the anchor the old URL now redirects to.
-const AUDIENCES = [
+type Audience = {
+  slug: string;
+  label: string;
+  title: string;
+  body: string;
+  uses: string[];
+  soon?: string[];
+  link: { label: string; href: string };
+};
+
+const AUDIENCES: Audience[] = [
   {
     slug: "creators",
     label: "Creators",
@@ -37,12 +47,21 @@ const AUDIENCES = [
     uses: ["A Blueprint for the strategy", "Campaign tracking", "Performance reports"],
     link: { label: "See how Blueprint works", href: "/linkedin-content-strategy" },
   },
+  {
+    slug: "business",
+    label: "Businesses",
+    title: "For businesses",
+    body: "VYRAL works for a company page as well as for a person. You can connect one LinkedIn company page, publish as the page and read the page's own analytics. You need to be an admin of the page on LinkedIn. Company pages are set up with us, so talk to us first.",
+    uses: ["One LinkedIn company page, connected through LinkedIn", "Publishing as the page", "The page's own analytics"],
+    soon: ["Inviting teammates into a workspace", "Analytics that combine several people or pages"],
+    link: { label: "Talk to us", href: "/contact" },
+  },
 ];
 
-const DESCRIPTION = `How creators, ghostwriters and agencies use VYRAL to plan, write and measure LinkedIn posts. ${BRAND_LINE}`;
+const DESCRIPTION = `How creators, ghostwriters, agencies and businesses use VYRAL to plan, write and measure LinkedIn posts. ${BRAND_LINE}`;
 
 export const metadata = pageMetadata({
-  title: "VYRAL for creators, ghostwriters and agencies",
+  title: "VYRAL for creators, agencies and businesses",
   description: DESCRIPTION,
   path: "/solutions",
 });
@@ -63,7 +82,7 @@ export default function SolutionsPage() {
       <JsonLd data={webPage} />
       <PageHero
         label="Use cases"
-        title="VYRAL for creators, ghostwriters and agencies"
+        title="VYRAL for creators, ghostwriters, agencies and businesses"
         sub="Same product, different jobs. Find the part that fits how you work."
         aside={<ShotPlaceholder label="Use cases" />}
       >
@@ -86,7 +105,7 @@ export default function SolutionsPage() {
           id={a.slug}
           variant={i % 2 === 0 ? "tint" : "light"}
           labelledBy={`${a.slug}-title`}
-          className="scroll-mt-4 py-[64px]"
+          className="scroll-mt-24 py-[64px]"
         >
           <div className="grid gap-8 desk:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] desk:gap-16">
             <div>
@@ -99,9 +118,17 @@ export default function SolutionsPage() {
                 </Link>
               </p>
             </div>
-            <div className="rounded-lg bg-surface p-6 shadow-3">
-              <h3 className="m-0 text-[15px] font-semibold text-ink">What you use</h3>
-              <Bullets items={a.uses} />
+            <div className="flex flex-col gap-5">
+              <div className="rounded-lg bg-surface p-6 shadow-3">
+                <h3 className="m-0 text-[15px] font-semibold text-ink">What you use</h3>
+                <Bullets items={a.uses} />
+              </div>
+              {a.soon && (
+                <div className="rounded-lg bg-surface/70 p-6 shadow-1">
+                  <h3 className="m-0 text-[15px] font-semibold text-ink">Coming soon</h3>
+                  <Bullets items={a.soon} />
+                </div>
+              )}
             </div>
           </div>
         </Section>

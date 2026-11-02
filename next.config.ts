@@ -4,7 +4,7 @@ import type { NextConfig } from "next";
 // that now carries its content, so no indexed URL is lost.
 const MERGED: Record<string, string[]> = {
   "/how-vyral-works": ["/how-it-works", "/product", "/why-vyral", "/getting-started"],
-  "/linkedin-analytics": ["/linkedin-post-analytics", "/product/analytics", "/product/performance-lab"],
+  "/linkedin-analytics": ["/linkedin-post-analytics", "/product/analytics", "/product/performance-lab", "/product/proof-page"],
   "/ai-coach": ["/linkedin-coaching", "/ai-linkedin-post-writer"],
   "/linkedin-content-strategy": [
     "/linkedin-content-calendar",

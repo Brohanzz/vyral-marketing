@@ -46,6 +46,11 @@ const FAQ: FaqItem[] = [
     answer:
       "Founders, creators, ghostwriters and teams who post on LinkedIn and want to know what actually works for them.",
   },
+  {
+    question: "Do I have to post through VYRAL?",
+    answer:
+      "No. Posts you publish through VYRAL keep their text and update their numbers on their own. Posts you publish on LinkedIn directly are imported once when you sign up, from the last 30 days, with their numbers but not their text. After that, add them by uploading LinkedIn's analytics export.",
+  },
 ];
 
 const organizationSchema = {
@@ -79,8 +84,8 @@ const appSchema = {
 const INSIDE = [
   {
     step: "01",
-    title: "Your week in one sentence",
-    body: "Open VYRAL and the first thing you see is what changed since last week. No dashboard to decode.",
+    title: "This week next to last week",
+    body: "Open VYRAL and see this week's posts and impressions next to last week's, with the change for each.",
     shot: "home" as const,
     label: "Home",
     link: { label: "See how it works", href: "/how-vyral-works" },
@@ -95,8 +100,8 @@ const INSIDE = [
   },
   {
     step: "03",
-    title: "A draft that shows its source",
-    body: "Every draft names the post it learned from, so you can see why it sounds like you.",
+    title: "A draft written from your own posts",
+    body: "The Coach uses your top posts, your tone and your patterns as examples, so a draft sounds like you.",
     shot: "coach" as const,
     label: "Coach",
     link: { label: "Meet the AI Coach", href: "/ai-coach" },
@@ -239,28 +244,27 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Founders */}
-      <Section variant="tint" labelledBy="founders-title" className="py-9">
+      {/* Founder */}
+      <Section variant="tint" labelledBy="founder-title" className="py-9">
         <div className="flex flex-col gap-5 rounded-lg bg-surface/70 p-5 shadow-1 desk:flex-row desk:items-center desk:gap-6 desk:px-7">
           <span className="flex flex-none" aria-hidden="true">
-            <span className={`size-14 ring-3 ring-surface ${avatar}`} />
-            <span className={`-ml-3 size-14 ring-3 ring-surface ${avatar}`} />
+            <span className={`size-14 ${avatar}`} />
           </span>
           <div className="min-w-0 flex-1">
-            <h2 id="founders-title" className="m-0 text-[14px] font-semibold text-primary-strong">
-              From the founders
+            <h2 id="founder-title" className="m-0 text-[14px] font-semibold text-primary-strong">
+              From the founder
             </h2>
             <p className="mt-1 mb-0 text-[17px] leading-normal text-ink">
-              Meet the two people behind VYRAL and why we built it.{" "}
+              Meet Viktorija, the founder of VYRAL, and why she built it.{" "}
               <Link
-                href="/about"
+                href="/about#founder"
                 className="font-semibold whitespace-nowrap text-primary-hover underline underline-offset-2 hover:text-primary-strong"
               >
-                Read our story
+                Read her story
               </Link>
             </p>
           </div>
-          <PlaceholderPill className="self-start desk:self-center">Placeholder, founder photos</PlaceholderPill>
+          <PlaceholderPill className="self-start desk:self-center">Placeholder, founder photo</PlaceholderPill>
         </div>
       </Section>
 

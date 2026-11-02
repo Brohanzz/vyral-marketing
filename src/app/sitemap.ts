@@ -26,7 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/linkedin-tool-safe`, lastModified: REBUILT, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/solutions`, lastModified: REBUILT, changeFrequency: "monthly", priority: 0.7 },
     // Product sub-pages
-    { url: `${BASE}/product/proof-page`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/product/profile-review`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
     // Alternatives
     { url: `${BASE}/alternatives/taplio`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },

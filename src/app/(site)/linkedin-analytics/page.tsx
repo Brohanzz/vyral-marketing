@@ -63,7 +63,7 @@ const content: FeaturePageContent = {
     {
       question: "How often do the numbers update?",
       answer:
-        "Impressions, reactions and comments sync every few hours. Follower and connection counts update daily.",
+        "For a post's first 14 days, impressions, reactions and comments sync every 3 hours. Then they sync daily until day 30, and weekly after that. Follower and connection counts update daily.",
     },
     {
       question: "Which plan includes the Data Analyst?",
@@ -72,7 +72,7 @@ const content: FeaturePageContent = {
     {
       question: "Can I see posts from before I joined?",
       answer:
-        "LinkedIn's API only shares posts from the day you connect. Upload LinkedIn's data export to add your past impressions.",
+        "When you sign up, VYRAL imports the posts from your last 30 days that have analytics. For older posts, upload LinkedIn's data export. It adds their numbers once, without their text.",
     },
   ],
   closing: "Find out why your last post worked",

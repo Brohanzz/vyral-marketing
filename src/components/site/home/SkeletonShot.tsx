@@ -63,7 +63,7 @@ export default function SkeletonShot({ variant, label }: { variant: Variant; lab
           {variant === "home" && (
             <>
               <span className="font-display text-[16px] leading-[1.15] font-semibold text-on-dark">
-                Comments carried your month.
+                This week vs last week
               </span>
               <div className="grid grid-cols-2 gap-2.5">
                 <Tile label="Impressions" value="148,320" />
@@ -84,7 +84,7 @@ export default function SkeletonShot({ variant, label }: { variant: Variant; lab
           {variant === "coach" && (
             <>
               <DeltaPill size="sm" className="self-start">
-                From Analyst: Tuesdays win
+                Uses your top posts
               </DeltaPill>
               <div className="flex flex-col gap-2 rounded-[10px] bg-surface/6 p-3">
                 <span className="block h-[7px] w-[92%] rounded-[5px] bg-band-hairline-strong" />
@@ -94,7 +94,7 @@ export default function SkeletonShot({ variant, label }: { variant: Variant; lab
               </div>
               <div className="grid grid-cols-2 gap-2.5">
                 <Tile label="Drafts ready" value="3" />
-                <Tile label="Learned from" value="Tue" />
+                <Tile label="Voice" value="Matched" />
               </div>
             </>
           )}

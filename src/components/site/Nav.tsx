@@ -28,6 +28,7 @@ const panelLink = "flex min-h-12 items-center rounded-md px-1 text-[17px] font-m
 export default function Nav() {
   const [productOpen, setProductOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const productRef = useRef<HTMLDivElement>(null);
   const productButton = useRef<HTMLButtonElement>(null);
   const menuButton = useRef<HTMLButtonElement>(null);
@@ -61,6 +62,14 @@ export default function Nav() {
     return () => document.removeEventListener("mousedown", onClick);
   }, [productOpen]);
 
+  // The hairline under the bar appears only once the page has scrolled.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 4);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   // Lock page scroll while the mobile panel is open, and close it if the window grows to desktop.
   useEffect(() => {
     if (!menuOpen) return;
@@ -76,8 +85,13 @@ export default function Nav() {
   }, [menuOpen]);
 
   return (
-    <header className="vy-band relative z-40" data-variant="tint">
-      <Container className="flex h-20 items-center gap-4 desk:gap-9">
+    <header
+      className={cx(
+        "sticky top-0 z-40 border-b bg-base/90 pt-[env(safe-area-inset-top)] backdrop-blur-md backdrop-saturate-150 transition-colors motion-reduce:transition-none",
+        scrolled ? "border-hairline" : "border-transparent",
+      )}
+    >
+      <Container className="flex h-20 items-center gap-4 pr-[max(1.25rem,env(safe-area-inset-right))] pl-[max(1.25rem,env(safe-area-inset-left))] desk:gap-9">
         <Link href="/" onClick={closeAll} className="inline-flex min-h-11 items-center rounded-md" aria-label="VYRAL home">
           <Logo />
         </Link>
@@ -139,7 +153,10 @@ export default function Nav() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3 desk:gap-5">
-          <a href={APP_LOGIN_URL} className={cx(navLink, "hidden desk:inline-flex")}>
+          <a
+            href={APP_LOGIN_URL}
+            className="hidden min-h-11 items-center rounded-md text-[15px] font-medium whitespace-nowrap text-ink hover:text-primary-strong desk:inline-flex"
+          >
             Log in
           </a>
           <Button href={APP_SIGNUP_URL} size="sm">
@@ -168,7 +185,7 @@ export default function Nav() {
       <div
         id={menuId}
         hidden={!menuOpen}
-        className="absolute inset-x-0 top-full max-h-[calc(100dvh-5rem)] overflow-y-auto bg-base shadow-2 desk:hidden"
+        className="absolute inset-x-0 top-full max-h-[calc(100dvh-5rem-env(safe-area-inset-top))] overflow-y-auto border-t border-hairline bg-base shadow-2 desk:hidden"
       >
         <Container className="py-4">
           <nav aria-label="Menu">

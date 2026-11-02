@@ -48,6 +48,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
+        narrow
         label="About VYRAL"
         title="VYRAL helps you see what works on LinkedIn"
         sub="It reads the numbers on your own posts, shows what worked and drafts the next post from it."
@@ -80,7 +81,7 @@ export default function AboutPage() {
       </Section>
 
       <Section variant="dark" from="base" to="base" labelledBy="trust-title" className="py-[112px]">
-        <div className="grid gap-10 desk:grid-cols-2 desk:gap-16">
+        <div className={`${column} grid gap-10`}>
           <div>
             <SectionLabel>Official API</SectionLabel>
             <SectionHeading id="trust-title">{BRAND_LINE.replace(/\.$/, "")}</SectionHeading>
@@ -118,12 +119,12 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section variant="tint" id="founders" labelledBy="founders-title" className="py-[72px]">
+      <Section variant="tint" id="founder" labelledBy="founder-title" className="scroll-mt-24 py-[72px]">
         <div className={column}>
-          <SectionLabel>Founders</SectionLabel>
-          <SectionHeading id="founders-title">From the founders</SectionHeading>
+          <SectionLabel>Founder</SectionLabel>
+          <SectionHeading id="founder-title">From the founder</SectionHeading>
           <div className="mt-6">
-            <PlaceholderPill>Placeholder, founder story and photos</PlaceholderPill>
+            <PlaceholderPill>Placeholder, founder story and photo</PlaceholderPill>
           </div>
         </div>
       </Section>
