@@ -70,7 +70,7 @@ export default function ProfileReviewPage() {
     <>
       <PageHero
         label="Profile Review"
-        title="Your LinkedIn profile is either working for you or against you."
+        title="Your LinkedIn profile is either working for you or against you"
         sub="Upload a screenshot and get an instant AI audit: section-by-section scores, priority fixes, and headline rewrites tailored to your content strategy."
       >
         <Button href={APP_SIGNUP_URL} size="lg">

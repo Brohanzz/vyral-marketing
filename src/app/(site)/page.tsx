@@ -3,7 +3,8 @@ import Button from "@/components/site/Button";
 import Card from "@/components/site/Card";
 import ClosingBand from "@/components/site/ClosingBand";
 import DeltaPill from "@/components/site/DeltaPill";
-import FaqAccordion, { type FaqItem } from "@/components/site/FaqAccordion";
+import { type FaqItem } from "@/components/site/FaqAccordion";
+import FaqSection from "@/components/site/FaqSection";
 import JsonLd from "@/components/site/JsonLd";
 import PlaceholderPill from "@/components/site/PlaceholderPill";
 import Section from "@/components/site/Section";
@@ -82,6 +83,7 @@ const INSIDE = [
     body: "Open VYRAL and the first thing you see is what changed since last week. No dashboard to decode.",
     shot: "home" as const,
     label: "Home",
+    link: { label: "See how it works", href: "/how-vyral-works" },
   },
   {
     step: "02",
@@ -89,6 +91,7 @@ const INSIDE = [
     body: "Impressions, comments and followers from your own posts, with the reason next to the number.",
     shot: "insights" as const,
     label: "Insights",
+    link: { label: "See the analytics", href: "/linkedin-analytics" },
   },
   {
     step: "03",
@@ -96,6 +99,7 @@ const INSIDE = [
     body: "Every draft names the post it learned from, so you can see why it sounds like you.",
     shot: "coach" as const,
     label: "Coach",
+    link: { label: "Meet the AI Coach", href: "/ai-coach" },
   },
 ];
 
@@ -196,6 +200,12 @@ export default function HomePage() {
                 <span>{item.label}</span>
                 <PlaceholderPill>Placeholder screenshot</PlaceholderPill>
               </div>
+              <Link
+                href={item.link.href}
+                className="mt-auto inline-flex min-h-11 items-center self-start text-[15px] font-semibold text-band-primary underline underline-offset-2 hover:text-band-primary-hover"
+              >
+                {item.link.label}
+              </Link>
             </Card>
           ))}
         </div>
@@ -257,7 +267,7 @@ export default function HomePage() {
       {/* Official API */}
       <Section variant="dark" from="base" to="base" id="api" labelledBy="api-title" className="py-[112px]">
         <SectionLabel>Official API</SectionLabel>
-        <SectionHeading id="api-title">{BRAND_LINE}</SectionHeading>
+        <SectionHeading id="api-title">{BRAND_LINE.replace(/\.$/, "")}</SectionHeading>
         <div className="mt-10 grid items-start gap-8 desk:grid-cols-2 desk:gap-16">
           <div>
             <p className="m-0 text-body-l text-on-dark-muted">
@@ -290,10 +300,12 @@ export default function HomePage() {
       {/* Pricing teaser */}
       <Section variant="light" id="pricing" labelledBy="pricing-title" className="pt-[78px] pb-[84px]">
         <SectionLabel>Pricing</SectionLabel>
-        <SectionHeading id="pricing-title">
-          Start with {TRIAL.days} days of {TRIAL.plan}
-        </SectionHeading>
-        <p className="mt-3.5 mb-0 text-body-l text-muted">No credit card. Pick a plan when the trial ends.</p>
+        <div className="grid items-end gap-3.5 desk:grid-cols-2 desk:gap-16">
+          <SectionHeading id="pricing-title">
+            Start with {TRIAL.days} days of {TRIAL.plan}
+          </SectionHeading>
+          <p className="m-0 text-body-l text-muted">No credit card. Pick a plan when the trial ends.</p>
+        </div>
         <div className="mt-11 grid items-stretch gap-7 desk:grid-cols-3">
           {PLANS.map((plan) => (
             <TierCard key={plan.id} plan={plan} mode="teaser" />
@@ -308,11 +320,7 @@ export default function HomePage() {
       </Section>
 
       {/* FAQ */}
-      <Section variant="tint" labelledBy="faq-title" className="pt-[72px] pb-[84px]">
-        <SectionLabel>FAQ</SectionLabel>
-        <SectionHeading id="faq-title">Common questions</SectionHeading>
-        <FaqAccordion items={FAQ} className="mt-10 max-w-[760px]" />
-      </Section>
+      <FaqSection items={FAQ} heading="Common questions" variant="tint" />
 
       {/* Closing band */}
       <ClosingBand title={<>Your next post is already in last week&apos;s numbers</>}>

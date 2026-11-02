@@ -2,7 +2,8 @@ import Link from "next/link";
 import Button from "@/components/site/Button";
 import Card from "@/components/site/Card";
 import ClosingBand from "@/components/site/ClosingBand";
-import FaqAccordion, { type FaqItem } from "@/components/site/FaqAccordion";
+import { type FaqItem } from "@/components/site/FaqAccordion";
+import FaqSection from "@/components/site/FaqSection";
 import JsonLd from "@/components/site/JsonLd";
 import PageHero from "@/components/site/PageHero";
 import Section from "@/components/site/Section";
@@ -139,10 +140,13 @@ export default function LinkedInToolSafePage() {
       </Section>
 
       <Section variant="light" labelledBy="rules-title" className="py-[72px]">
-        <div className="max-w-[720px]">
-          <SectionLabel>LinkedIn&apos;s rules</SectionLabel>
-          <SectionHeading id="rules-title">Why the official API matters</SectionHeading>
-          <p className="mt-4 mb-0 text-body-l text-muted">
+        <div className="grid gap-8 desk:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] desk:gap-16">
+          <div>
+            <SectionLabel>LinkedIn&apos;s rules</SectionLabel>
+            <SectionHeading id="rules-title">Why the official API matters</SectionHeading>
+          </div>
+          <div>
+          <p className="m-0 text-body-l text-muted">
             LinkedIn&apos;s User Agreement does not allow scraping, or software that likes, comments or connects for you.
             VYRAL was built from the start to work within those rules, using only the APIs LinkedIn provides.
           </p>
@@ -157,14 +161,11 @@ export default function LinkedInToolSafePage() {
             </Link>{" "}
             for details.
           </p>
+          </div>
         </div>
       </Section>
 
-      <Section variant="tint" labelledBy="faq-title" className="pt-[72px] pb-[84px]">
-        <SectionLabel>FAQ</SectionLabel>
-        <SectionHeading id="faq-title">Questions about LinkedIn safety</SectionHeading>
-        <FaqAccordion items={FAQ} className="mt-10 max-w-[760px]" />
-      </Section>
+      <FaqSection items={FAQ} heading="Questions about LinkedIn safety" variant="tint" />
 
       <ClosingBand title="Try VYRAL on your own posts">
         <p className="m-0">{TRIAL_LINE}</p>

@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Card from "@/components/site/Card";
 import ClosingBand from "@/components/site/ClosingBand";
 import DeltaPill from "@/components/site/DeltaPill";
-import FaqAccordion, { type FaqItem } from "@/components/site/FaqAccordion";
+import { type FaqItem } from "@/components/site/FaqAccordion";
+import FaqSection from "@/components/site/FaqSection";
 import JsonLd from "@/components/site/JsonLd";
 import Numerals from "@/components/site/Numerals";
 import Section from "@/components/site/Section";
@@ -104,16 +106,43 @@ export default function PricingPage() {
 
       {/* Hero, billing toggle and tiers */}
       <Section variant="light" hold labelledBy="pricing-title" className="pt-[30px] pb-[72px] desk:pt-12">
-        <SectionLabel>Pricing</SectionLabel>
-        <h1
-          id="pricing-title"
-          className="m-0 max-w-[820px] text-pretty font-display text-[40px] leading-[1.06] font-semibold tracking-[-0.024em] desk:text-display-l"
-        >
-          Start with <Numerals text={String(TRIAL.days)} /> days of {TRIAL.plan}
-        </h1>
-        <p className="mt-5 mb-0 max-w-[600px] text-subhead text-muted">
-          <Numerals text={String(TRIAL.aiRuns)} /> AI runs included. No credit card. Pick a plan when the trial ends.
-        </p>
+        <div className="grid items-center gap-10 desk:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] desk:gap-16">
+          <div>
+            <SectionLabel>Pricing</SectionLabel>
+            <h1
+              id="pricing-title"
+              className="m-0 max-w-[820px] text-pretty font-display text-[40px] leading-[1.06] font-semibold tracking-[-0.024em] desk:text-display-l"
+            >
+              Start with <Numerals text={String(TRIAL.days)} /> days of {TRIAL.plan}
+            </h1>
+            <p className="mt-5 mb-0 max-w-[600px] text-subhead text-muted">
+              <Numerals text={String(TRIAL.aiRuns)} /> AI runs included. No credit card. Pick a plan when the trial
+              ends.
+            </p>
+          </div>
+          <Card className="gap-4 p-7">
+            <h2 className="m-0 text-[15px] font-semibold text-ink">Your trial</h2>
+            <dl className="m-0 grid grid-cols-3 gap-4">
+              <div>
+                <dt className="text-[13px] text-muted">Length</dt>
+                <dd className="m-0 mt-1 font-display text-[22px] leading-tight font-semibold">
+                  <Numerals text={`${TRIAL.days} days`} />
+                </dd>
+              </div>
+              <div>
+                <dt className="text-[13px] text-muted">Plan</dt>
+                <dd className="m-0 mt-1 font-display text-[22px] leading-tight font-semibold">{TRIAL.plan}</dd>
+              </div>
+              <div>
+                <dt className="text-[13px] text-muted">AI runs</dt>
+                <dd className="m-0 mt-1 font-display text-[22px] leading-tight font-semibold">
+                  <Numerals text={String(TRIAL.aiRuns)} />
+                </dd>
+              </div>
+            </dl>
+            <p className="m-0 border-t border-hairline pt-4 text-[15px] text-ink-2">No credit card.</p>
+          </Card>
+        </div>
 
         <div className="vy-billing">
           <fieldset className="mt-8 mb-0 inline-flex flex-wrap gap-1 rounded-md border-0 bg-surface-soft p-1 shadow-1">
@@ -160,11 +189,14 @@ export default function PricingPage() {
 
       {/* Comparison */}
       <Section variant="tint" labelledBy="compare-title" className="pt-[72px] pb-[84px]">
-        <SectionLabel>Compare</SectionLabel>
-        <SectionHeading id="compare-title">
-          {creator.name} and {pro.name}, side by side
-        </SectionHeading>
-        <div className="mt-10 max-w-[820px] overflow-x-auto rounded-lg bg-surface shadow-3">
+        <div className="grid gap-10 desk:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] desk:gap-16">
+        <div>
+          <SectionLabel>Compare</SectionLabel>
+          <SectionHeading id="compare-title">
+            {creator.name} and {pro.name}, side by side
+          </SectionHeading>
+        </div>
+        <div className="overflow-x-auto rounded-lg bg-surface shadow-3">
           <table className="w-full border-collapse text-left text-[15px]">
             <caption className="sr-only">
               Features in {creator.name} and {pro.name}
@@ -199,14 +231,11 @@ export default function PricingPage() {
             </tbody>
           </table>
         </div>
+        </div>
       </Section>
 
       {/* FAQ */}
-      <Section variant="light" labelledBy="faq-title" className="pt-[72px] pb-[84px]">
-        <SectionLabel>FAQ</SectionLabel>
-        <SectionHeading id="faq-title">Pricing questions</SectionHeading>
-        <FaqAccordion items={FAQ} className="mt-10 max-w-[760px]" />
-      </Section>
+      <FaqSection items={FAQ} heading="Pricing questions" />
 
       {/* Closing band */}
       <ClosingBand

@@ -2,91 +2,91 @@ import Card from "@/components/site/Card";
 import ClosingBand from "@/components/site/ClosingBand";
 import { Bullets } from "@/components/site/FeaturePage";
 import PageHero from "@/components/site/PageHero";
+import PlaceholderPill from "@/components/site/PlaceholderPill";
 import Section from "@/components/site/Section";
 import SectionHeading from "@/components/site/SectionHeading";
 import SectionLabel from "@/components/site/SectionLabel";
+import { BRAND_LINE } from "@/lib/brand";
 import { pageMetadata } from "@/lib/metadata";
+import { TRIAL_LINE } from "@/lib/pricing";
 
-// Text kept from the previous About page; only em dashes and emoji were removed.
 export const metadata = pageMetadata({
-  title: "About VYRAL: LinkedIn Growth Platform for Creators",
+  title: "About VYRAL: LinkedIn analytics and AI writing coach",
   description:
-    "VYRAL connects strategy, content, and outcomes in one platform. Built on LinkedIn's official API. No scraping, no automation.",
+    "VYRAL reads the numbers on your own LinkedIn posts, shows what worked and drafts the next post from it. Built on LinkedIn's official API.",
   path: "/about",
 });
 
 const bulletPoints = [
-  "VYRAL uses LinkedIn's official APIs (Community Management API and Share on LinkedIn) for all data access and publishing.",
-  "We never use browser extensions, scraping, automation scripts, or any unofficial methods to access LinkedIn.",
-  "Your LinkedIn account is connected via OAuth: we never see or store your LinkedIn password.",
-  "VYRAL is built on LinkedIn's official API.",
-  "Your data is encrypted at rest and in transit. We never share or sell your data.",
+  "VYRAL uses the Community Management API and Share on LinkedIn for data access and publishing.",
+  "It uses no browser extension, no scraping and no automation scripts.",
+  "You connect through LinkedIn's own login. VYRAL never sees or stores your LinkedIn password.",
+  "Your data is encrypted at rest and in transit. We never share or sell it.",
+  "You can remove VYRAL's access any time in your LinkedIn settings.",
 ];
 
 const VALUES = [
   {
     title: "Clarity over complexity",
-    text: "Your LinkedIn growth should be simple to understand and easy to act on. No dashboards full of meaningless numbers.",
+    text: "Your LinkedIn growth should be simple to understand and easy to act on. Every number comes with the reason next to it.",
   },
   {
     title: "Outcomes over vanity",
-    text: "Likes are nice, but leads and opportunities pay the bills. We help you track what actually matters.",
+    text: "Likes are nice, but leads and opportunities pay the bills. We help you track what matters.",
   },
 ];
 
 const TRUST = [
-  { title: "Official API", desc: "LinkedIn Community Management API integration" },
-  { title: "No scraping", desc: "Only official, approved API endpoints" },
-  { title: "No fake engagement", desc: "No bots, no automation, no workarounds" },
+  { title: "Official API", desc: "Community Management API and Share on LinkedIn" },
+  { title: "No scraping", desc: "VYRAL does not scrape LinkedIn" },
+  { title: "No automated engagement", desc: "No automated likes, comments or connection requests" },
 ];
+
+const column = "mx-auto max-w-[720px]";
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
         label="About VYRAL"
-        title={
-          <>
-            We&apos;re building the <span className="text-primary-strong">LinkedIn growth platform</span> creators actually
-            need
-          </>
-        }
-        sub="No vanity metrics. No generic AI. Just clear insights and content that converts."
+        title="VYRAL helps you see what works on LinkedIn"
+        sub="It reads the numbers on your own posts, shows what worked and drafts the next post from it."
       />
 
       <Section variant="tint" labelledBy="mission-title" className="py-[72px]">
-        <div className="grid gap-6 desk:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] desk:gap-16">
+        <div className={column}>
           <SectionHeading id="mission-title">Our mission</SectionHeading>
-          <p className="m-0 text-body-l text-muted">
-            Most LinkedIn tools show you metrics without meaning. They tell you what happened, not why it happened or what
-            to do next. We built VYRAL to be different: a platform that connects strategy, content, and outcomes in one
-            place. So you can finally grow on LinkedIn with confidence, not guesswork.
+          <p className="mt-4 mb-0 text-body-l text-muted">
+            Most LinkedIn tools show you numbers without the reason. They tell you what happened, not why it happened or
+            what to do next. We built VYRAL to connect your strategy, your posts and your results in one place. You see
+            what worked, why it worked and what to write next.
           </p>
         </div>
       </Section>
 
       <Section variant="light" labelledBy="values-title" className="py-[72px]">
-        <SectionLabel>Values</SectionLabel>
-        <SectionHeading id="values-title">What we believe</SectionHeading>
-        <div className="mt-10 grid gap-6 desk:grid-cols-2">
-          {VALUES.map((v) => (
-            <Card key={v.title} as="article" className="p-6">
-              <h3 className="m-0 font-display text-heading-3 font-medium">{v.title}</h3>
-              <p className="mt-3 mb-0 text-[15.5px] leading-[1.65] text-ink-2">{v.text}</p>
-            </Card>
-          ))}
+        <div className={column}>
+          <SectionLabel>Values</SectionLabel>
+          <SectionHeading id="values-title">What we believe</SectionHeading>
+          <div className="mt-8 grid gap-5 desk:grid-cols-2">
+            {VALUES.map((v) => (
+              <Card key={v.title} as="article" className="p-6">
+                <h3 className="m-0 font-display text-heading-3 font-medium">{v.title}</h3>
+                <p className="mt-3 mb-0 text-[15.5px] leading-[1.65] text-ink-2">{v.text}</p>
+              </Card>
+            ))}
+          </div>
         </div>
       </Section>
 
-      <Section variant="dark" from="soft" to="base" labelledBy="trust-title" className="py-[112px]">
+      <Section variant="dark" from="base" to="base" labelledBy="trust-title" className="py-[112px]">
         <div className="grid gap-10 desk:grid-cols-2 desk:gap-16">
           <div>
-            <SectionLabel>Compliance &amp; trust</SectionLabel>
-            <SectionHeading id="trust-title">Built on LinkedIn&apos;s official API</SectionHeading>
+            <SectionLabel>Official API</SectionLabel>
+            <SectionHeading id="trust-title">{BRAND_LINE.replace(/\.$/, "")}</SectionHeading>
             <p className="mt-4 mb-0 text-body-l text-on-dark-muted">
-              VYRAL uses LinkedIn&apos;s official Community Management API, the same infrastructure trusted by
-              LinkedIn&apos;s own ecosystem. We never scrape, never automate engagement, and never compromise your
-              account.
+              VYRAL reads your post numbers and publishes when you ask. It never scrapes, never adds anything to your
+              browser, and never likes or comments for you.
             </p>
           </div>
           <ul className="m-0 flex list-none flex-col gap-3 p-0">
@@ -111,15 +111,25 @@ export default function AboutPage() {
       </Section>
 
       <Section variant="light" labelledBy="technical-title" className="py-[72px]">
-        <div className="max-w-[760px]">
+        <div className={column}>
           <SectionLabel>Technical transparency</SectionLabel>
           <SectionHeading id="technical-title">How VYRAL works with LinkedIn</SectionHeading>
           <Bullets items={bulletPoints} />
         </div>
       </Section>
 
-      <ClosingBand from="soft" title="Start building your content engine" cta="Start building your content engine">
-        <p className="m-0">14-day free Pro trial · No credit card required</p>
+      <Section variant="tint" id="founders" labelledBy="founders-title" className="py-[72px]">
+        <div className={column}>
+          <SectionLabel>Founders</SectionLabel>
+          <SectionHeading id="founders-title">From the founders</SectionHeading>
+          <div className="mt-6">
+            <PlaceholderPill>Placeholder, founder story and photos</PlaceholderPill>
+          </div>
+        </div>
+      </Section>
+
+      <ClosingBand from="soft" title="Start with the numbers on your own posts">
+        <p className="m-0">{TRIAL_LINE}</p>
       </ClosingBand>
     </>
   );

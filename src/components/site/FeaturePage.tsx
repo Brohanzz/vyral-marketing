@@ -6,7 +6,8 @@ import { faqSchema } from "@/lib/schema";
 import { APP_SIGNUP_URL } from "@/lib/urls";
 import Button from "./Button";
 import ClosingBand from "./ClosingBand";
-import FaqAccordion, { type FaqItem } from "./FaqAccordion";
+import { type FaqItem } from "./FaqAccordion";
+import FaqSection from "./FaqSection";
 import JsonLd from "./JsonLd";
 import PageHero from "./PageHero";
 import Section from "./Section";
@@ -30,6 +31,8 @@ export type FeaturePageContent = {
   name: string;
   description: string;
   label: string;
+  /** What the hero illustration stands in for. */
+  heroShot?: string;
   h1: string;
   sub: string;
   sections: FeatureSection[];
@@ -67,7 +70,12 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
       <JsonLd data={webPage} />
       <JsonLd data={faqSchema(content.faq)} />
 
-      <PageHero label={content.label} title={content.h1} sub={content.sub}>
+      <PageHero
+        label={content.label}
+        title={content.h1}
+        sub={content.sub}
+        aside={<ShotPlaceholder label={content.heroShot ?? content.name} />}
+      >
         <Button href={APP_SIGNUP_URL} size="lg">
           Start free trial
         </Button>
@@ -104,11 +112,7 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
         );
       })}
 
-      <Section variant="light" labelledBy="faq-title" className="pt-[72px] pb-[84px]">
-        <SectionLabel>FAQ</SectionLabel>
-        <SectionHeading id="faq-title">Common questions</SectionHeading>
-        <FaqAccordion items={content.faq} className="mt-10 max-w-[760px]" />
-      </Section>
+      <FaqSection items={content.faq} heading="Common questions" />
 
       <ClosingBand from="soft" title={content.closing}>
         <p className="m-0">{TRIAL_LINE}</p>

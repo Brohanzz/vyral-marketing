@@ -3,6 +3,7 @@ import ClosingBand from "@/components/site/ClosingBand";
 import { Bullets } from "@/components/site/FeaturePage";
 import JsonLd from "@/components/site/JsonLd";
 import PageHero from "@/components/site/PageHero";
+import ShotPlaceholder from "@/components/site/ShotPlaceholder";
 import Section from "@/components/site/Section";
 import SectionHeading from "@/components/site/SectionHeading";
 import SectionLabel from "@/components/site/SectionLabel";
@@ -64,6 +65,7 @@ export default function SolutionsPage() {
         label="Use cases"
         title="VYRAL for creators, ghostwriters and agencies"
         sub="Same product, different jobs. Find the part that fits how you work."
+        aside={<ShotPlaceholder label="Use cases" />}
       >
         <nav aria-label="Use cases" className="flex flex-wrap gap-3">
           {AUDIENCES.map((a) => (

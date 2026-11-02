@@ -51,9 +51,9 @@ const legalLinks = [
 export default function LegalPage() {
   return (
     <>
-      <PageHero label="Legal" title="Legal" sub="Everything you need to know about how VYRAL operates." />
+      <PageHero narrow label="Legal" title="Legal" sub="Everything you need to know about how VYRAL operates." />
       <Section variant="tint" className="pt-4 pb-[84px]">
-        <ul className="m-0 grid list-none gap-5 p-0 desk:grid-cols-2">
+        <ul className="mx-auto m-0 flex max-w-[720px] list-none flex-col gap-5 p-0">
           {legalLinks.map((item) => (
             <li key={item.href}>
               <Card className="group h-full gap-1.5 p-6">

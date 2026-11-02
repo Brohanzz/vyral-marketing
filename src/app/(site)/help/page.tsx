@@ -55,9 +55,10 @@ const textLink = "font-semibold text-primary-hover hover:text-primary-strong";
 export default function HelpPage() {
   return (
     <>
-      <PageHero label="Help" title="How can we help?" />
+      <PageHero narrow label="Help" title="How can we help?" />
       <Section variant="tint" className="pt-4 pb-[84px]">
-        <ul className="m-0 grid list-none gap-6 p-0 desk:grid-cols-3">
+        <div className="mx-auto max-w-[720px]">
+        <ul className="m-0 flex list-none flex-col gap-5 p-0">
           {categories.map((c) => (
             <li key={c.title}>
               <Card as="article" className="h-full gap-3 p-6">
@@ -71,7 +72,7 @@ export default function HelpPage() {
           ))}
         </ul>
 
-        <div className="mt-14 grid gap-6 text-center desk:grid-cols-2">
+        <div className="mt-14 grid gap-6 desk:grid-cols-2">
           <div>
             <p className="m-0 text-[17px] text-ink">Can&apos;t find what you&apos;re looking for?</p>
             <Link href="/help/faq" className={`inline-flex min-h-11 items-center ${textLink}`}>
@@ -84,6 +85,7 @@ export default function HelpPage() {
               Contact us →
             </Link>
           </div>
+        </div>
         </div>
       </Section>
     </>

@@ -16,7 +16,18 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
       { label: "How it works", href: "/how-vyral-works" },
       { label: "Analytics", href: "/linkedin-analytics" },
       { label: "AI Coach", href: "/ai-coach" },
+      { label: "Strategy", href: "/linkedin-content-strategy" },
+      { label: "Use cases", href: "/solutions" },
+      { label: "Official API", href: "/linkedin-tool-safe" },
       { label: "Pricing", href: "/pricing" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" },
+      { label: "Newsletter", href: "/newsletter" },
     ],
   },
   {
@@ -25,8 +36,6 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
       { label: "Blog", href: "/blog" },
       { label: "Help center", href: "/help" },
       { label: "FAQ", href: "/help/faq" },
-      { label: "Newsletter", href: "/newsletter" },
-      { label: "Contact", href: "/contact" },
     ],
   },
   {
@@ -65,7 +74,7 @@ export default function Footer() {
   return (
     <footer data-tone="dark" className="border-t border-band-hairline bg-band-dark text-on-dark-muted">
       <Container className="py-12">
-        <div className="grid grid-cols-2 gap-8 desk:grid-cols-[minmax(0,1.4fr)_repeat(4,minmax(0,1fr))]">
+        <div className="grid grid-cols-2 gap-8 desk:grid-cols-[minmax(0,1.3fr)_repeat(5,minmax(0,1fr))]">
           <div className="col-span-2 desk:col-span-1">
             <Logo size="footer" />
             <p className="mt-3.5 mb-0 max-w-[260px] text-[14.5px] leading-normal">{BRAND_LINE}</p>
