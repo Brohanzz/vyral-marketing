@@ -14,7 +14,7 @@ import HeroLoop from "@/components/site/home/HeroLoop";
 import SkeletonShot from "@/components/site/home/SkeletonShot";
 import { BRAND_LINE } from "@/lib/brand";
 import { SITE_URL, pageMetadata } from "@/lib/metadata";
-import { PLANS, PRICED_PLANS, READ_ONLY_RULE, TRIAL, TRIAL_LINE } from "@/lib/pricing";
+import { FAIR_USE_LINE, PLANS, PRICED_PLANS, READ_ONLY_RULE, TRIAL, TRIAL_LINE } from "@/lib/pricing";
 import { faqSchema } from "@/lib/schema";
 import { APP_SIGNUP_URL } from "@/lib/urls";
 
@@ -69,7 +69,9 @@ const appSchema = {
     name: plan.name,
     price: String(plan.monthly),
     priceCurrency: "USD",
-    description: plan.features.join(", "),
+    description: plan.features.some((f) => f.startsWith("Unlimited"))
+      ? `${plan.features.join(", ")}. ${FAIR_USE_LINE}`
+      : plan.features.join(", "),
   })),
 };
 
@@ -298,7 +300,7 @@ export default function HomePage() {
           ))}
         </div>
         <p className="mt-[26px] mb-0 text-[14.5px] text-muted">
-          If your trial ends and you stop, your history stays readable.{" "}
+          {FAIR_USE_LINE} If your trial ends and you stop, your history stays readable.{" "}
           <Link href="/pricing" className="font-semibold text-primary-hover underline underline-offset-2 hover:text-primary-strong">
             Compare every plan
           </Link>

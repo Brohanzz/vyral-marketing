@@ -12,6 +12,7 @@ import { absoluteUrl, pageMetadata } from "@/lib/metadata";
 import {
   COMPARISON,
   CREATOR_AI_RUNS,
+  FAIR_USE_LINE,
   PLANS,
   PRICED_PLANS,
   READ_ONLY_RULE,
@@ -39,7 +40,7 @@ const FAQ: FaqItem[] = [
   {
     question: "Can I change plans?",
     answer:
-      "Yes, any time from Settings. Changes apply right away. If you downgrade, you keep your current plan until the end of the billing period.",
+      "Yes. Manage your plan in Settings, under Billing. If you cancel, you keep access until the end of your billing period.",
   },
   {
     question: "What happens when I reach my AI limit?",
@@ -153,6 +154,7 @@ export default function PricingPage() {
         <div className="mt-[26px] flex flex-col gap-1.5 text-[14.5px] text-muted">
           <p className="m-0">Billing starts the day you subscribe. Subscribing ends the trial.</p>
           <p className="m-0">{READ_ONLY_RULE}</p>
+          <p className="m-0">{FAIR_USE_LINE}</p>
         </div>
       </Section>
 

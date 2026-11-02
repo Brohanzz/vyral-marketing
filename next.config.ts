@@ -15,6 +15,8 @@ const MERGED: Record<string, string[]> = {
   "/solutions#agencies": ["/solutions/agencies"],
   "/solutions#creators": ["/solutions/creators"],
   "/solutions#ghostwriters": ["/solutions/ghostwriters"],
+  // The playbooks page described a feature the app has switched off on every plan.
+  "/blog": ["/resources/playbooks"],
 };
 
 const nextConfig: NextConfig = {

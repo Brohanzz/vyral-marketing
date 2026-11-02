@@ -1,6 +1,6 @@
 import FeaturePage, { type FeaturePageContent } from "@/components/site/FeaturePage";
 import { pageMetadata } from "@/lib/metadata";
-import { CREATOR_AI_RUNS, PRICED_PLANS, TRIAL } from "@/lib/pricing";
+import { CREATOR_AI_RUNS, FAIR_USE_LINE, PRICED_PLANS, TRIAL } from "@/lib/pricing";
 
 const [creator, pro] = PRICED_PLANS;
 
@@ -11,7 +11,7 @@ const content: FeaturePageContent = {
   description:
     "An AI Coach that learns from your own LinkedIn posts, writes in your voice and scores every draft before you publish.",
   label: "AI Coach",
-  h1: "An AI Coach trained on your content and your data",
+  h1: "An AI Coach that learns from your posts and your numbers",
   sub: "It writes LinkedIn posts in your voice and explains each suggestion with your own numbers.",
   sections: [
     {
@@ -63,7 +63,7 @@ const content: FeaturePageContent = {
     },
     {
       question: "How many AI runs do I get?",
-      answer: `${creator.name} includes ${CREATOR_AI_RUNS} AI runs a month and ${pro.name} is unlimited. Every account starts with ${TRIAL.days} days of ${TRIAL.plan}, including ${TRIAL.aiRuns} AI runs.`,
+      answer: `${creator.name} includes ${CREATOR_AI_RUNS} AI runs a month and ${pro.name} is unlimited. ${FAIR_USE_LINE} Every account starts with ${TRIAL.days} days of ${TRIAL.plan}, including ${TRIAL.aiRuns} AI runs.`,
     },
     {
       question: "Can the Coach make carousels?",

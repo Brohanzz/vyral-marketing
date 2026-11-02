@@ -18,6 +18,10 @@ export const YEARLY_SAVING_PERCENT = 20;
 
 export const CREATOR_AI_RUNS = 250;
 
+/** Daily cap enforced in the app on every plan (_shared/usage-check.ts). Shown once wherever Pro is called unlimited. */
+export const DAILY_AI_CAP = 500;
+export const FAIR_USE_LINE = `Fair use: up to ${DAILY_AI_CAP} AI runs a day on every plan.`;
+
 export type Plan = {
   id: "creator" | "pro" | "team";
   name: string;

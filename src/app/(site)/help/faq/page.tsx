@@ -46,7 +46,7 @@ const sections: Section[] = [
       },
       {
         q: "Why do some LinkedIn tools get restricted or shut down?",
-        a: "Tools that use browser extensions, scraping, or unofficial automation violate LinkedIn's Terms of Service. LinkedIn actively detects these methods and restricts or removes tools that use them. VYRAL operates entirely through LinkedIn's official API, which means your account is fully protected.",
+        a: "Tools that use browser extensions, scraping, or unofficial automation violate LinkedIn's Terms of Service. LinkedIn actively detects these methods and restricts or removes tools that use them. VYRAL only uses LinkedIn's official API and never automates likes, comments or connection requests. You can remove VYRAL's access any time in your LinkedIn settings.",
       },
       {
         q: "Does VYRAL post on my behalf automatically?",

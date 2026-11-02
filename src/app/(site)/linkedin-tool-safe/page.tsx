@@ -101,7 +101,7 @@ export default function LinkedInToolSafePage() {
 
       <PageHero
         label="Official API"
-        title={BRAND_LINE}
+        title={BRAND_LINE.replace(/\.$/, "")}
         sub="VYRAL reads your post numbers and publishes when you ask. It never scrapes, never adds anything to your browser, and never likes or comments for you."
       >
         <Button href={APP_SIGNUP_URL} size="lg">
