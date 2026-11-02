@@ -56,7 +56,7 @@ export default function TierCard({ plan, mode, showTagline }: { plan: Plan; mode
 
       {!priced && (
         <div>
-          <p className="m-0 font-display text-metric font-semibold">Custom</p>
+          <p className="m-0 font-display text-metric font-semibold">Talk to us</p>
           <p className={sub}>{plan.tagline}</p>
         </div>
       )}

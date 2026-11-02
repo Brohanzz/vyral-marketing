@@ -16,9 +16,9 @@ const content: FeaturePageContent = {
   sections: [
     {
       label: "Your numbers",
-      title: "Every post, with the reason next to the number",
+      title: "Every post, with its numbers in one place",
       body: [
-        "VYRAL syncs impressions, reactions, comments and reshares from LinkedIn's official API. It compares each post with your own average, so you can see what stood out.",
+        "VYRAL syncs impressions, reactions, comments and reshares from LinkedIn's official API. The home page shows this week next to last week, with the change for each.",
         "Filter by date range, campaign, post type or label.",
       ],
       points: [
@@ -58,7 +58,7 @@ const content: FeaturePageContent = {
     {
       question: "What does VYRAL add to the numbers?",
       answer:
-        "It compares each post with your own average and maps hooks, formats, topics and timing. You see which ones work for you and what to try next.",
+        "The home page compares this week with last week. On Pro, patterns compare your hook types, timing and themes with your own average, so you see which ones work for you.",
     },
     {
       question: "How often do the numbers update?",

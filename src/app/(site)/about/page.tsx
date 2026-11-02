@@ -28,7 +28,7 @@ const bulletPoints = [
 const VALUES = [
   {
     title: "Clarity over complexity",
-    text: "Your LinkedIn growth should be simple to understand and easy to act on. Every number comes with the reason next to it.",
+    text: "Your LinkedIn growth should be simple to understand and easy to act on. We show what changed from one week to the next.",
   },
   {
     title: "Outcomes over vanity",

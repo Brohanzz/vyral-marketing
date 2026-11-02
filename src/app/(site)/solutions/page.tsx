@@ -18,7 +18,7 @@ type Audience = {
   title: string;
   body: string;
   uses: string[];
-  soon?: string[];
+  built?: string[];
   link: { label: string; href: string };
 };
 
@@ -27,7 +27,7 @@ const AUDIENCES: Audience[] = [
     slug: "creators",
     label: "Creators",
     title: "For creators",
-    body: "VYRAL shows why each of your posts performed, compared with your own average. The Coach then drafts the next post in your voice. A content calendar keeps you posting on a steady rhythm.",
+    body: "VYRAL shows your numbers week by week. On Pro, patterns compare your hook types, timing and themes with your own average. The Coach then drafts the next post in your voice. A content calendar keeps you posting on a steady rhythm.",
     uses: ["Content calendar", "Performance insights", "Momentum tracking", "Best time to post"],
     link: { label: "See the analytics", href: "/linkedin-analytics" },
   },
@@ -43,7 +43,7 @@ const AUDIENCES: Audience[] = [
     slug: "agencies",
     label: "Agencies",
     title: "For agencies",
-    body: "Each client needs a clear strategy, a steady tone and reports that show what worked. VYRAL keeps the strategy in a Blueprint and sums up results for the last 7 or 30 days. Client workspaces and the Team plan are coming soon.",
+    body: "Each client needs a clear strategy, a steady tone and reports that show what worked. VYRAL keeps the strategy in a Blueprint and sums up results for the last 7 or 30 days. Client workspaces and team seats are built with our first business customers.",
     uses: ["A Blueprint for the strategy", "Campaign tracking", "Performance reports"],
     link: { label: "See how Blueprint works", href: "/linkedin-content-strategy" },
   },
@@ -53,7 +53,7 @@ const AUDIENCES: Audience[] = [
     title: "For businesses",
     body: "VYRAL works for a company page as well as for a person. You can connect one LinkedIn company page, publish as the page and read the page's own analytics. You need to be an admin of the page on LinkedIn. Company pages are set up with us, so talk to us first.",
     uses: ["One LinkedIn company page, connected through LinkedIn", "Publishing as the page", "The page's own analytics"],
-    soon: ["Inviting teammates into a workspace", "Analytics that combine several people or pages"],
+    built: ["Inviting teammates into a workspace", "Analytics that combine several people or pages"],
     link: { label: "Talk to us", href: "/contact" },
   },
 ];
@@ -123,10 +123,10 @@ export default function SolutionsPage() {
                 <h3 className="m-0 text-[15px] font-semibold text-ink">What you use</h3>
                 <Bullets items={a.uses} />
               </div>
-              {a.soon && (
+              {a.built && (
                 <div className="rounded-lg bg-surface/70 p-6 shadow-1">
-                  <h3 className="m-0 text-[15px] font-semibold text-ink">Coming soon</h3>
-                  <Bullets items={a.soon} />
+                  <h3 className="m-0 text-[15px] font-semibold text-ink">Built with our first business customers</h3>
+                  <Bullets items={a.built} />
                 </div>
               )}
             </div>

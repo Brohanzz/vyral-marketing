@@ -28,7 +28,6 @@ export default function Imprint() {
       <p>VYRAL is a sole proprietorship registered in Denmark, operating in compliance with Danish and European Union regulations.</p>
 
       <h2>Dispute Resolution</h2>
-      <p>The European Commission provides a platform for online dispute resolution (ODR): <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr</a></p>
       <p>We are not obligated to participate in dispute resolution proceedings before a consumer arbitration board, but we are willing to engage in direct communication to resolve any issues.</p>
 
       <h2>Contact</h2>

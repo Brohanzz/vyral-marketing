@@ -5,7 +5,7 @@
 Key facts:
 - Built on LinkedIn's official API.
 - VYRAL never scrapes, never adds anything to your browser, and never automates likes, comments or connection requests.
-- Plans: Creator at $49 a month, or $39 a month billed yearly. Pro at $99 a month, or $79 a month billed yearly. Team is coming soon, with custom pricing. Every plan is paid; the trial is the only free access.
+- Plans: Creator at $49 a month, or $39 a month billed yearly. Pro at $99 a month, or $79 a month billed yearly. Business is for companies and teams, set up with us: everything in Pro plus one LinkedIn company page. Talk to us for pricing. Every plan is paid; the trial is the only free access.
 - Every account starts with 14 days of Pro, including 50 AI runs. No credit card.
 - Creator includes 250 AI runs a month. Pro is unlimited. Fair use: up to 500 AI runs a day on every plan.
 - If a trial ends or payment stops, the account keeps read-only access to its existing history. Nothing new syncs and paid features are unavailable.

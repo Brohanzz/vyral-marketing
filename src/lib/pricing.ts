@@ -23,7 +23,7 @@ export const DAILY_AI_CAP = 500;
 export const FAIR_USE_LINE = `Fair use: up to ${DAILY_AI_CAP} AI runs a day on every plan.`;
 
 export type Plan = {
-  id: "creator" | "pro" | "team";
+  id: "creator" | "pro" | "business";
   name: string;
   /** USD per month. null for custom pricing. */
   monthly: number | null;
@@ -69,16 +69,15 @@ export const PLANS: Plan[] = [
     cta: { label: "Start free trial", href: APP_SIGNUP_URL },
   },
   {
-    id: "team",
-    name: "Team",
+    id: "business",
+    name: "Business",
     monthly: null,
     yearly: null,
-    tagline: "For teams and agencies. Coming soon.",
+    tagline: "For companies and teams. Set up with us.",
     features: [
       "Everything in Pro",
-      "Multiple team seats",
-      "Team performance dashboard",
-      "Dedicated onboarding",
+      "One LinkedIn company page: publish as the page and read its analytics",
+      "Team seats and combined analytics, built with our first business customers",
     ],
     highlighted: false,
     cta: { label: "Contact us", href: "/contact" },

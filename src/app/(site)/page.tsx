@@ -93,7 +93,7 @@ const INSIDE = [
   {
     step: "02",
     title: "See which posts earned it",
-    body: "Impressions, comments and followers from your own posts, with the reason next to the number.",
+    body: "Impressions, reactions and comments for each of your posts. On Pro, patterns show which hook types, timing and themes beat your own average.",
     shot: "insights" as const,
     label: "Insights",
     link: { label: "See the analytics", href: "/linkedin-analytics" },

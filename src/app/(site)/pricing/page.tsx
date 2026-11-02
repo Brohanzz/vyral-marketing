@@ -28,7 +28,7 @@ const [creator, pro] = PRICED_PLANS;
 const DESCRIPTION = `${creator.name} from $${creator.yearly} a month and ${pro.name} from $${pro.yearly} a month, billed yearly. Every account starts with ${TRIAL.days} days of ${TRIAL.plan}, no credit card.`;
 
 export const metadata = pageMetadata({
-  title: "VYRAL pricing: Creator, Pro and Team plans",
+  title: "VYRAL pricing: Creator, Pro and Business plans",
   description: DESCRIPTION,
   path: "/pricing",
 });
@@ -59,9 +59,9 @@ const FAQ: FaqItem[] = [
       "You connect through LinkedIn's own login, so we never see your password. Your data is encrypted at rest and in transit, and we never share or sell it.",
   },
   {
-    question: "What is in the Team plan?",
+    question: "What is in the Business plan?",
     answer:
-      "Team is coming soon for agencies, ghostwriters and content teams. It adds multiple team seats, a team performance dashboard, aggregate analytics across members, central billing and dedicated onboarding. Contact us for early access.",
+      "Everything in Pro, plus one LinkedIn company page: publish as the page and read its analytics. Team seats and analytics across several people are built with our first business customers. Talk to us to get started.",
   },
 ];
 
@@ -248,7 +248,7 @@ export default function PricingPage() {
       >
         <p className="m-0">No credit card.</p>
         <p className="m-0">
-          Looking for a team plan?{" "}
+          Looking for the Business plan?{" "}
           <Link href="/contact" className="font-semibold text-on-dark underline underline-offset-2 hover:text-signal">
             Talk to us
           </Link>
