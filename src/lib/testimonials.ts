@@ -20,4 +20,11 @@ export const TESTIMONIALS: Testimonial[] = [
     linkedin: "https://www.linkedin.com/in/dan-rees-8360b5a3/",
     photo: "dan-rees.png",
   },
+  {
+    name: "Suji Goetzke",
+    role: "Head of GTM, Trellus",
+    quote: "VYRAL has become the place where my LinkedIn content comes together. My drafts land there ready to go, I add the photo, and I just hit post.\n\nWhat I didn’t expect is how much it helps on the brand side. Having all my stats in one place makes it easy to put together a portfolio, and walking into a brand deal negotiation with real numbers changes the whole conversation. If you work with brands, this is the tool I’d point you to. Huge credit to the team for building something creators actually want to use.",
+    linkedin: "https://www.linkedin.com/in/suji-goetzke/",
+    photo: "suji-goetzke.png",
+  },
 ];
