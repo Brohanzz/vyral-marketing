@@ -55,7 +55,7 @@ A personal profile is one voice by definition. If you have five people who could
 
 The company page is the shared surface. Five contributors, one growing follower base, one archive. For teams and agencies this is the difference between five small audiences and one that actually accumulates.
 
-### 4. It unlocks things profiles do not have
+### 4. It does things profiles cannot
 
 Company pages carry capabilities personal profiles lack entirely. They can run LinkedIn ads. They host job postings that feed LinkedIn's jobs ecosystem. They appear in LinkedIn search when people look for the company rather than the person. They can be followed by other companies. They surface in the "people also viewed" and employer sections of every employee's profile.
 
@@ -83,7 +83,7 @@ There are practical reasons for this. Personal-profile content is where the grow
 
 Personal profile data and company page data come from different parts of LinkedIn's API, with different permission structures and different approval requirements. A tool that reads personal post analytics is not automatically able to read organization analytics. It requires separate authorization, tied to the page itself, granted by an actual page admin.
 
-This creates a real division. Tools built on browser extensions, which read what LinkedIn renders on screen during your session, are structurally limited to what a logged-in user can see in the interface. Tools built on unverified basic OAuth access typically have personal-profile scopes only. Reading organization data programmatically requires official API access with organization scopes, which is a meaningfully higher bar and one that comparatively few tools clear.
+This creates a real division. Reading organization data programmatically requires API access with organization scopes, which LinkedIn grants separately from personal-profile access. Company page support therefore varies from tool to tool, so check a tool's own site before you rely on it.
 
 The practical result: if you manage both a personal profile and a company page, you are almost certainly using two separate systems, or more likely, using a tool for your profile and doing the company page manually in LinkedIn's native interface.
 
@@ -139,7 +139,7 @@ No. Identical cross-posting performs poorly on the page and makes it read as an 
 
 **Why do most LinkedIn tools not support company pages?**
 
-Two reasons. The market went where the growth story was, which is personal-profile content. More importantly, organization data sits behind different LinkedIn API permissions than personal profile data, requiring separate authorization granted by a page admin. Tools built on browser extensions or basic unverified OAuth typically cannot access it at all.
+Two reasons. The market went where the growth story was, which is personal-profile content. More importantly, organization data sits behind different LinkedIn API permissions than personal profile data, requiring separate authorization granted by a page admin.
 
 **How often should a company page post?**
 

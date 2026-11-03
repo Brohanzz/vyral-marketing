@@ -21,6 +21,7 @@ export function articleSchema({
   url,
   image,
   datePublished,
+  dateModified,
   author,
 }: {
   headline: string;
@@ -28,6 +29,7 @@ export function articleSchema({
   url: string;
   image?: string;
   datePublished: string;
+  dateModified?: string;
   author: string;
 }) {
   return {
@@ -38,6 +40,7 @@ export function articleSchema({
     url,
     ...(image ? { image: image.startsWith("http") ? image : `${SITE_URL}${image}` } : {}),
     datePublished,
+    ...(dateModified ? { dateModified } : {}),
     author: { "@type": "Organization", name: author },
     publisher: { "@type": "Organization", name: "VYRAL", url: SITE_URL },
   };

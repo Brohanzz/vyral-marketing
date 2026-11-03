@@ -12,6 +12,11 @@ export interface AlternativeFrontmatter {
   tags: string[];
   image: string;
   published: boolean;
+  /** Visible H1 when it should differ from the page title. */
+  h1?: string;
+  /** ISO date of the last edit, shown as "Last updated" and used as dateModified. */
+  updated?: string;
+  faq?: { question: string; answer: string }[];
 }
 
 export interface Alternative {
