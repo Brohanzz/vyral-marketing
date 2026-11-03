@@ -151,3 +151,28 @@ Left out: Shield's features, pricing and any statement that it is closing. The a
 - Strategy, https://www.getvyral.io/linkedin-content-strategy: Blueprint, content calendar, campaigns, publishing and scheduling through the official API, Strategy Builder on Pro.
 - Sync timing, https://www.getvyral.io/how-vyral-works: every 3 hours for a post's first 14 days, daily until day 30, then weekly.
 - Company pages and teams, https://www.getvyral.io/solutions: one company page on Business; team seats and combined analytics built with first business customers.
+
+---
+
+## LinkedIn's own pages (used for the safety guide and the Shield blog post)
+Checked on 2026-11-03. Every LinkedIn menu step in those two posts comes from these pages. Steps that could not be confirmed are left out.
+
+LinkedIn help pages:
+- https://www.linkedin.com/help/linkedin/answer/a519947/third-party-applications-data-use
+  Used: desktop steps to remove a service (Me, Settings & Privacy, Data privacy, Other applications, Change next to Permitted Services, Remove); what happens after removal (no further access, can be restored by granting access again, the app owner may keep data it already received and handles deletion requests); what connecting shares (profile information and data about your use of the LinkedIn network) and that you can authorise actions on your behalf such as sharing content and sending messages.
+- https://www.linkedin.com/help/linkedin/answer/a522690/log-in-with-linkedin-credentials
+  Used: what a genuine sign-in looks like (a "Connect with LinkedIn" or "Log in with LinkedIn" button, a separate browser pop-up, a URL containing www.linkedin.com); advice to grant access only to third parties you trust; mobile steps (profile picture, Settings, Data privacy, Permitted Services, Remove); the setting for turning data sharing with all third-party applications on or off.
+- https://www.linkedin.com/help/linkedin/answer/a1339364/downloading-your-account-data
+  Used: steps to download your data (Me, Settings & Privacy, Data Privacy, Download your data under "How LinkedIn uses your data", choose data, Request archive); specific categories arrive within minutes and the larger archive within 24 hours; link active for 72 hours; not available on mobile; examples of categories; what is not included.
+  Left out: the page's category tables say some categories take up to 48 hours, which conflicts with the 24 hour figure, so the post says some take longer. Whether the archive contains per-post analytics is not stated, so the post does not say.
+- https://www.linkedin.com/help/linkedin/answer/a1339266
+  Used: "LinkedIn will never ask you for your password or ask you to download any programs"; how to report a suspicious email (phishing@linkedin.com), message (More menu, Report/Block, "It's spam or a scam") and comment (More menu, Report Post, fraud or scam option).
+  Left out: any advice about what to do after typing a password into an untrusted site (not on the pages read).
+
+LinkedIn developer documentation (LinkedIn's official API docs, hosted on Microsoft Learn; the permission descriptions are not on the help pages):
+- https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2
+  Used: openid ("Required to indicate the application wants to use OIDC to authenticate the member"), profile ("retrieve the member's lite profile including their id, name, and profile picture"), email ("retrieve the member's email address").
+- https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin
+  Used: w_member_social ("create a LinkedIn post on behalf of the authenticated member").
+- https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics
+  Used: r_member_postAnalytics ("Retrieve your posts and their reporting data").

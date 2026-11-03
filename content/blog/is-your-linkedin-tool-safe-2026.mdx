@@ -1,58 +1,96 @@
 ---
-title: "How to check a LinkedIn tool before connecting"
+title: "LinkedIn tool safety: how to check a tool before connecting"
 h1: "How to check a LinkedIn tool before you connect it"
-description: "How LinkedIn tools can connect to your account, what each method means, and a checklist to judge any tool before you sign in. Plus how VYRAL connects."
+description: "How LinkedIn tools connect to your account, what each permission allows, how to remove connected apps and what to do if a tool asks for your password."
 date: "2026-07-08"
 updated: "2026-11-03"
 author: "VYRAL Team"
 slug: "is-your-linkedin-tool-safe-2026"
 tags: ["linkedin api", "linkedin tools", "checklist"]
-image: "/blog/og-linkedin-tool-safe.png"
+image: "/og-default.png"
 published: true
 faq:
-  - question: "Where do I remove a tool's access to my LinkedIn account?"
-    answer: "In your LinkedIn settings. If a tool signs in through LinkedIn, you can remove its access there at any time."
-  - question: "What does \"official API\" mean?"
-    answer: "It means the tool uses the interfaces LinkedIn publishes for third-party apps. You sign in on LinkedIn's own page and choose the permissions you give."
-  - question: "Should I share my LinkedIn password with a tool?"
-    answer: "No. A tool that signs in through LinkedIn does not need your password."
+  - question: "Where do I see which apps are connected to my LinkedIn account?"
+    answer: "On a computer: the Me icon, then Settings & Privacy, then Data privacy. Under Other applications, click Change next to Permitted Services. On mobile: tap your profile picture, then Settings, then Data privacy, then Permitted Services."
+  - question: "Does removing a tool delete my data from it?"
+    answer: "No. LinkedIn's help page says the tool can no longer access your LinkedIn data, but its owner may keep data it received earlier and is responsible for handling it, including deletion requests."
+  - question: "Should I type my LinkedIn password into a tool?"
+    answer: "No. LinkedIn's help page says LinkedIn will never ask you for your password. A genuine sign-in opens a separate window on a linkedin.com address."
   - question: "How does VYRAL connect to LinkedIn?"
     answer: "You sign in through LinkedIn's own login, so VYRAL never sees your password. VYRAL uses LinkedIn's official APIs, never adds anything to your browser, and never automates likes, comments or connection requests. You can remove its access any time in your LinkedIn settings."
 ---
-Before you connect a LinkedIn tool to your account, it helps to know how the tool connects and what it can do once it is connected. This guide explains the common ways, gives you a checklist you can use on any tool, and then describes how VYRAL connects. It does not rate or name any other tool.
+Before you connect a LinkedIn tool to your account, it helps to know how the tool connects, what each permission lets it do, and how to take that access away again. This guide covers all four, with the exact steps from LinkedIn's own help pages, a list of questions to ask any tool, and a description of how VYRAL connects. It does not rate or name any other tool.
 
 ## How LinkedIn tools can connect to your account
 
-Tools reach your LinkedIn account in a few different ways. Each one gives the tool different access.
+Tools reach your LinkedIn account in a few different ways. Each gives the tool different access.
 
-### Signing in with LinkedIn
-
-You are sent to LinkedIn's own page, you choose which permissions to give, and the tool receives access through LinkedIn's APIs. The tool never sees your password, and you can remove its access in your LinkedIn settings. LinkedIn publishes these APIs for third-party apps.
-
-### A browser extension
-
-An extension runs inside your browser and works with the pages you open on LinkedIn. What it can read or do depends on the permissions you accept when you install it.
-
-### Automation
-
-Some software performs actions on your account on a schedule or in response to rules, for example liking, commenting, sending connection requests or messaging. If a tool does this, check which actions it takes and how often.
-
-### Sharing login details
-
-A few tools ask for your password or for session details. You should not need to give either to a tool that signs in through LinkedIn.
+- **Signing in with LinkedIn.** You are sent to a LinkedIn window and approve the access there, instead of giving the tool your password. The tool then receives access through LinkedIn's APIs, and you can remove it in your LinkedIn settings.
+- **A browser extension.** An extension runs inside your browser and works with the pages you open on LinkedIn. What it can read or do depends on the permissions you accept when you install it.
+- **Automation.** Some software performs actions on your account, such as liking, commenting, sending connection requests or messaging. If a tool does this, check which actions it takes and how often.
+- **Sharing login details.** A few tools ask for your password. You should not need to give it to a tool that signs in through LinkedIn.
 
 LinkedIn's own documentation and User Agreement describe what third parties may do. Read them for the full rules.
 
-## A checklist for judging any tool
+## What a genuine sign-in looks like
 
-Use these questions on any LinkedIn tool, whatever it claims.
+LinkedIn's help page on logging in with LinkedIn describes it. You click a button such as "Connect with LinkedIn" or "Log in with LinkedIn", and a separate browser pop-up window opens. The address in that window should contain www.linkedin.com. LinkedIn advises you to grant access only to third parties you trust with your network information. See [LinkedIn's help page](https://www.linkedin.com/help/linkedin/answer/a522690/log-in-with-linkedin-credentials).
 
-1. **How does it sign in?** Through LinkedIn's own page, or by asking for your password?
-2. **Which permissions does it ask for?** Do they match what the tool does? Reading analytics is different from publishing.
-3. **Can you remove its access?** You should be able to do it in your LinkedIn settings, without contacting the tool.
+## What each sign-in permission lets a tool do
+
+Behind the sign-in window are permissions, which LinkedIn's developer documentation calls scopes. LinkedIn's help page says that connecting shares data with the app, including profile information and data about your use of the LinkedIn network, and that you can authorise an app to take actions on your behalf, such as sharing content and sending messages. See [the help page](https://www.linkedin.com/help/linkedin/answer/a519947/third-party-applications-data-use).
+
+These are common permissions and what LinkedIn's developer documentation says about them:
+
+| Permission | What it lets the tool do |
+|---|---|
+| openid | Tells LinkedIn the tool wants to use sign-in (OpenID Connect) to identify you. |
+| profile | Retrieve your lite profile: your ID, name and profile picture. |
+| email | Retrieve your email address. |
+| w_member_social | Create a LinkedIn post on your behalf. |
+| r_member_postAnalytics | Retrieve your posts and their reporting data. |
+
+The descriptions come from LinkedIn's documentation for [sign-in](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2), [sharing](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin) and [post statistics](https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics). A useful test is whether the permissions match what the tool does. A tool that only reads your analytics has no need to create posts, and a tool that publishes needs the posting permission.
+
+## How to see and remove the apps connected to your account
+
+On a computer, following [LinkedIn's help page](https://www.linkedin.com/help/linkedin/answer/a519947/third-party-applications-data-use):
+
+1. Click the **Me** icon at the top of your LinkedIn homepage.
+2. Click **Settings & Privacy** in the dropdown.
+3. Click **Data privacy** on the left.
+4. Under **Other applications**, click **Change** next to **Permitted Services**.
+5. Click **Remove** next to the service you want to disconnect.
+
+On mobile, following [LinkedIn's help page](https://www.linkedin.com/help/linkedin/answer/a522690/log-in-with-linkedin-credentials):
+
+1. Tap your profile picture.
+2. Tap **Settings**.
+3. Tap **Data privacy**, then **Permitted Services**.
+4. Tap **Remove** next to the service.
+
+After you remove a service, it can no longer access your LinkedIn data. To restore access, go back to the service and grant it again. LinkedIn's help page adds that the service's owner may keep data it received before, and is responsible for handling it, including answering deletion requests. The same page mentions a setting for turning data sharing with all third-party applications on or off.
+
+## If a tool asks for your LinkedIn password
+
+LinkedIn's help page on phishing states: "LinkedIn will never ask you for your password or ask you to download any programs." A genuine sign-in happens in a separate window on a linkedin.com address, not in a form on the tool's own page. If a tool or a message asks for your password, do not enter it. LinkedIn's page lists how to report it:
+
+- **An email:** forward it to phishing@linkedin.com.
+- **A LinkedIn message:** open the More menu, choose Report/Block, then "It's spam or a scam", and answer the questions.
+- **A comment:** open the More menu, choose Report Post, then the fraud or scam option.
+
+See [LinkedIn's phishing help page](https://www.linkedin.com/help/linkedin/answer/a1339266).
+
+## Questions to ask any tool before you connect
+
+Use these on any LinkedIn tool, whatever it claims.
+
+1. **How does it sign in?** Through a LinkedIn window, or by asking for your password?
+2. **Which permissions does it ask for?** Do they match what it does?
+3. **Can you remove its access?** You should be able to, in Permitted Services, without contacting the tool.
 4. **Does it act on your account on its own?** Check for automatic likes, comments, connection requests or messages, and whether you can switch them off.
-5. **What does it store, and where?** Look for a privacy policy that says what data it keeps and for how long.
-6. **Can you delete your data?** Check how to delete your account and what happens to your data after.
+5. **What does it store, and for how long?** Look for a privacy policy that says so.
+6. **Can you delete your data?** Check how to delete your account and what happens to your data afterwards.
 7. **Who runs it?** Look for a named company, an address, a security page and a data processing agreement if you are a business.
 8. **What does your plan include?** Check limits, trial terms and cancellation before you pay.
 
@@ -61,11 +99,7 @@ Use these questions on any LinkedIn tool, whatever it claims.
 - **Sign-in.** You connect through LinkedIn's own login, so VYRAL never sees your password.
 - **Permissions.** LinkedIn uses separate permissions for publishing and for analytics, so you connect twice. One lets VYRAL publish the posts you choose, and the other reads the numbers on your posts.
 - **Actions.** VYRAL publishes when you click Publish or schedule a post. It never automates likes, comments or connection requests, and it adds nothing to your browser.
-- **Access.** You can remove VYRAL's access any time in your LinkedIn settings.
+- **Access.** You can remove VYRAL's access any time in Permitted Services.
 - **Data.** Your data is encrypted at rest and in transit. We never share or sell it. You can delete your account and its data from Settings.
 
-Read more on the [Official API page](/linkedin-tool-safe), the [privacy policy](/legal/privacy-policy) and the [security statement](/legal/security). The [pricing](/pricing) page lists what each plan includes.
-
-## Using the checklist on tools you compare
-
-When you compare tools, run the same eight questions on each and write down the answers. Our comparison pages, such as [Taplio alternatives](/alternatives/taplio), show plans and prices from each tool's own site. The checklist covers the part a table cannot: how a tool connects and what it does with your account.
+Read more on the [Official API page](/linkedin-tool-safe), the [privacy policy](/legal/privacy-policy) and the [security statement](/legal/security). The [pricing](/pricing) page lists what each plan includes, and our [Taplio alternatives](/alternatives/taplio) page shows plans and prices from each tool's own site.

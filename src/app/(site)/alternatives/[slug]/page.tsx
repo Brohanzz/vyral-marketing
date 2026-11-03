@@ -4,7 +4,7 @@ import Article, { FaqList, Markdown, formatDate } from "@/components/site/Articl
 import Button from "@/components/site/Button";
 import JsonLd from "@/components/site/JsonLd";
 import { getAllAlternatives, getAlternativeBySlug } from "@/lib/alternatives";
-import { absoluteUrl, pageMetadata } from "@/lib/metadata";
+import { absoluteUrl, pageMetadata, withSuffix } from "@/lib/metadata";
 import { articleSchema, faqSchema } from "@/lib/schema";
 import { APP_SIGNUP_URL } from "@/lib/urls";
 
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!alt) return {};
   const { frontmatter: fm } = alt;
   return pageMetadata({
-    title: `${fm.title} | VYRAL`,
+    title: withSuffix(fm.title, " | VYRAL"),
     description: fm.description,
     path: `/alternatives/${fm.slug}`,
     image: fm.image,

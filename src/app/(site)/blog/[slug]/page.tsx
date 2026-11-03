@@ -5,7 +5,7 @@ import Button from "@/components/site/Button";
 import JsonLd from "@/components/site/JsonLd";
 import NewsletterSignup from "@/components/site/NewsletterSignup";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
-import { absoluteUrl, pageMetadata } from "@/lib/metadata";
+import { absoluteUrl, pageMetadata, withSuffix } from "@/lib/metadata";
 import { articleSchema, faqSchema } from "@/lib/schema";
 import { APP_SIGNUP_URL } from "@/lib/urls";
 
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
   const { frontmatter: fm } = post;
   return pageMetadata({
-    title: `${fm.title} | VYRAL Blog`,
+    title: withSuffix(fm.title, " | VYRAL Blog"),
     description: fm.description,
     path: `/blog/${fm.slug}`,
     image: fm.image,
