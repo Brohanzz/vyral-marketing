@@ -28,7 +28,6 @@ const content: FeaturePageContent = {
         "Stories and proof the Coach can use",
         "Your voice, and what you would never say",
       ],
-      shot: "Blueprint",
     },
     {
       label: "Calendar",
@@ -38,7 +37,6 @@ const content: FeaturePageContent = {
         "Pick a time and VYRAL publishes to LinkedIn through the official API. Suggested times come from your own analytics, and you can cancel a scheduled post any time before it goes live.",
       ],
       points: ["Text, image and document posts", "Campaigns with goals you can track"],
-      shot: "Content calendar",
     },
     {
       label: "Alignment",
@@ -47,7 +45,6 @@ const content: FeaturePageContent = {
         "VYRAL tracks how well your posts match your pillars and nudges you when you drift. As your data shows what works, it suggests changes to your Blueprint.",
         `On ${pro.name}, the Strategy Builder walks you through seven steps to build a strategy from the start.`,
       ],
-      shot: "Pillar alignment",
       link: { label: "See the analytics behind it", href: "/linkedin-analytics" },
     },
   ],

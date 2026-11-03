@@ -1,16 +1,15 @@
-import PlaceholderPill from "./PlaceholderPill";
 
 // Class strings are written out in full so Tailwind can see them.
 const BARS = ["h-[36%]", "h-[52%]", "h-[44%]", "h-[64%]", "h-[48%]", "h-[72%]", "h-[58%]", "h-full"];
 
 /**
- * A light skeleton screenshot with a placeholder pill, for feature pages until
- * real product screenshots exist. Exposed to assistive tech as one image.
+ * A drawn, light skeleton of a product screen for feature pages. Decorative, so
+ * hidden from assistive tech.
  */
-export default function ShotPlaceholder({ label }: { label: string }) {
+export default function ScreenIllustration() {
   return (
-    <div className="vy-hero-panel relative rounded-xl p-4 desk:p-6">
-      <div role="img" aria-label={`Placeholder screenshot of ${label}`} className="flex flex-col gap-3 rounded-lg bg-surface p-4 shadow-2">
+    <div aria-hidden="true" className="vy-hero-panel relative rounded-xl p-4 desk:p-6">
+      <div className="flex flex-col gap-3 rounded-lg bg-surface p-4 shadow-2">
         <div className="flex items-center gap-1.5" aria-hidden="true">
           <i className="size-2 rounded-full bg-hairline-strong" />
           <i className="size-2 rounded-full bg-hairline-strong" />
@@ -28,10 +27,6 @@ export default function ShotPlaceholder({ label }: { label: string }) {
         </div>
         <span className="block h-[7px] w-[80%] rounded-[5px] bg-hairline" />
         <span className="block h-[7px] w-[62%] rounded-[5px] bg-hairline" />
-      </div>
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-caption text-muted">
-        <span>{label}</span>
-        <PlaceholderPill>Placeholder screenshot</PlaceholderPill>
       </div>
     </div>
   );

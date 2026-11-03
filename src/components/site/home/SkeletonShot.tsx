@@ -1,7 +1,7 @@
 import DeltaPill from "../DeltaPill";
 
-// Dark skeleton screenshots for the Inside VYRAL band. Exposed as a single
-// image to assistive tech so the sample numbers are not read out as facts.
+// Dark skeleton screens for the Inside VYRAL band. Decorative and hidden from
+// assistive tech, so the sample numbers are not read out as facts.
 // Class strings are written out in full so Tailwind can see them.
 
 type Variant = "home" | "insights" | "coach";
@@ -40,9 +40,9 @@ function Bars({ bars, height }: { bars: Bar[]; height: string }) {
   );
 }
 
-export default function SkeletonShot({ variant, label }: { variant: Variant; label: string }) {
+export default function SkeletonShot({ variant }: { variant: Variant }) {
   return (
-    <div role="img" aria-label={`Placeholder screenshot of ${label}`} className="vy-shot flex flex-col gap-2.5 rounded-[14px] p-3">
+    <div aria-hidden="true" className="vy-shot flex flex-col gap-2.5 rounded-[14px] p-3">
       <div className="flex items-center gap-1.5">
         <i className="size-2 rounded-full bg-band-hairline" />
         <i className="size-2 rounded-full bg-band-hairline" />

@@ -26,14 +26,12 @@ const content: FeaturePageContent = {
         "Hook patterns that work for your audience",
         "Vocabulary, formatting and tone",
       ],
-      shot: "Voice profile",
     },
     {
       label: "Drafts",
       title: "Every draft gets a score before you publish",
       body: ["The Coach scores each post on six points and tells you what to fix. You see the reason, not just a number."],
       points: ["Hook", "Clarity", "Pacing", "Tone", "Call to action", "Fit with your strategy"],
-      shot: "Draft scoring",
     },
     {
       label: "Ideas",
@@ -42,7 +40,6 @@ const content: FeaturePageContent = {
         "Ask for ideas and the Coach starts from your Blueprint and your analytics. It suggests topics that fit your pillars and have worked before.",
         "You can also paste a draft and ask for a review. It checks the hook, clarity, pacing, tone and call to action, in your voice.",
       ],
-      shot: "Coach ideas",
       link: { label: "How your Blueprint guides the Coach", href: "/linkedin-content-strategy" },
     },
   ],

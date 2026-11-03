@@ -1,13 +1,15 @@
+import Image from "next/image";
 import Card from "@/components/site/Card";
 import ClosingBand from "@/components/site/ClosingBand";
 import { Bullets } from "@/components/site/FeaturePage";
 import PageHero from "@/components/site/PageHero";
-import PlaceholderPill from "@/components/site/PlaceholderPill";
 import Section from "@/components/site/Section";
 import SectionHeading from "@/components/site/SectionHeading";
 import SectionLabel from "@/components/site/SectionLabel";
 import { BRAND_LINE } from "@/lib/brand";
-import { pageMetadata } from "@/lib/metadata";
+import { FOUNDER, FOUNDER_HEADING, FOUNDER_STORY, founderSchema } from "@/lib/founder";
+import JsonLd from "@/components/site/JsonLd";
+import { SITE_URL, pageMetadata } from "@/lib/metadata";
 import { TRIAL_LINE } from "@/lib/pricing";
 
 export const metadata = pageMetadata({
@@ -44,9 +46,19 @@ const TRUST = [
 
 const column = "mx-auto max-w-[720px]";
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "VYRAL",
+  url: SITE_URL,
+  description: BRAND_LINE,
+  founder: founderSchema,
+};
+
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={organizationSchema} />
       <PageHero
         narrow
         label="About VYRAL"
@@ -121,10 +133,32 @@ export default function AboutPage() {
 
       <Section variant="tint" id="founder" labelledBy="founder-title" className="scroll-mt-24 py-[72px]">
         <div className={column}>
-          <SectionLabel>Founder</SectionLabel>
-          <SectionHeading id="founder-title">From the founder</SectionHeading>
-          <div className="mt-6">
-            <PlaceholderPill>Placeholder, founder story and photo</PlaceholderPill>
+          <SectionLabel>From the founder</SectionLabel>
+          <SectionHeading id="founder-title">{FOUNDER_HEADING}</SectionHeading>
+          <figure className="mt-8 mb-0 flex items-center gap-4">
+            <Image
+              src={FOUNDER.photo}
+              alt={FOUNDER.alt}
+              width={96}
+              height={96}
+              sizes="96px"
+              className="size-24 flex-none rounded-full"
+            />
+            <figcaption className="text-[15px]">
+              <a
+                href={FOUNDER.linkedin}
+                target="_blank"
+                rel="noopener"
+                className="font-semibold text-primary-hover underline underline-offset-2 hover:text-primary-strong"
+              >
+                {FOUNDER.caption}
+              </a>
+            </figcaption>
+          </figure>
+          <div className="vy-prose mt-8">
+            {FOUNDER_STORY.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
           </div>
         </div>
       </Section>

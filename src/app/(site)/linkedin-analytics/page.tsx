@@ -26,7 +26,6 @@ const content: FeaturePageContent = {
         "Text, carousels, images, videos and polls side by side",
         "Momentum, and a consistency score from 0 to 100",
       ],
-      shot: "Analytics overview",
     },
     {
       label: "Patterns",
@@ -36,7 +35,6 @@ const content: FeaturePageContent = {
         `Timing comes from your own data. You see your best days and hours, not general advice. Patterns and timing are part of ${pro.name}.`,
       ],
       points: ["Hook performance", "Content pillar performance", "Best time to post, by hour and weekday"],
-      shot: "Patterns and timing",
     },
     {
       label: "Reports",
@@ -45,7 +43,6 @@ const content: FeaturePageContent = {
         "Performance reports sum up what worked, what changed and what to try next.",
         `On ${pro.name}, the Data Analyst answers questions about your data in plain English. Ask which format worked best this month and get the answer from your own posts.`,
       ],
-      shot: "Performance report",
       link: { label: "Compare plans", href: "/pricing" },
     },
   ],

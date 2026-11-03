@@ -14,15 +14,13 @@ import PageHero from "./PageHero";
 import Section from "./Section";
 import SectionHeading from "./SectionHeading";
 import SectionLabel from "./SectionLabel";
-import ShotPlaceholder from "./ShotPlaceholder";
+import ScreenIllustration from "./ScreenIllustration";
 
 export type FeatureSection = {
   label: string;
   title: string;
   body: string[];
   points?: string[];
-  /** Which screen the placeholder screenshot stands in for. */
-  shot: string;
   link?: { label: string; href: string };
 };
 
@@ -41,8 +39,6 @@ export type FeaturePageContent = {
   name: string;
   description: string;
   label: string;
-  /** What the hero illustration stands in for. */
-  heroShot?: string;
   h1: string;
   sub: string;
   sections: FeatureSection[];
@@ -84,7 +80,7 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
         label={content.label}
         title={content.h1}
         sub={content.sub}
-        aside={<ShotPlaceholder label={content.heroShot ?? content.name} />}
+        aside={<ScreenIllustration />}
       >
         <Button href={APP_SIGNUP_URL} size="lg">
           Start free trial
@@ -141,7 +137,7 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
                   </p>
                 )}
               </div>
-              <ShotPlaceholder label={s.shot} />
+              <ScreenIllustration />
             </div>
           </Section>
         );

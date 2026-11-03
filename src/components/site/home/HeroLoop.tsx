@@ -1,7 +1,7 @@
 import Card from "../Card";
 import DeltaPill from "../DeltaPill";
 import LoopViewport from "../LoopViewport";
-import PlaceholderPill from "../PlaceholderPill";
+import SampleTag from "../SampleTag";
 
 // Class strings are written out in full so Tailwind can see them.
 const SPARK = [
@@ -33,7 +33,7 @@ export default function HeroLoop() {
           <div className={foot}>
             <span className={mono}>09:12</span>
             <span>Tuesday</span>
-            <PlaceholderPill>Sample</PlaceholderPill>
+            <SampleTag>Sample post</SampleTag>
           </div>
           <i className="vy-wire vy-w1" aria-hidden="true" />
         </Card>
@@ -45,7 +45,7 @@ export default function HeroLoop() {
             <span className="pb-[5px] text-[14px] text-muted">impressions</span>
           </div>
           <DeltaPill direction="up" className="vy-pop mt-3.5 self-start">
-            <span className={mono}>38%</span> above your average
+            <span className={mono}>38%</span> above last week
           </DeltaPill>
           <div className="mt-4 flex h-[46px] items-end gap-1" aria-hidden="true">
             {SPARK.map((cls, i) => (
@@ -53,7 +53,7 @@ export default function HeroLoop() {
             ))}
           </div>
           <div className={foot}>
-            <PlaceholderPill>Sample data</PlaceholderPill>
+            <SampleTag>Sample data</SampleTag>
           </div>
           <i className="vy-wire vy-w2" aria-hidden="true" />
         </Card>
@@ -70,7 +70,7 @@ export default function HeroLoop() {
             Open in Coach
           </span>
           <div className={foot}>
-            <PlaceholderPill>Placeholder draft</PlaceholderPill>
+            <SampleTag>Sample draft</SampleTag>
           </div>
         </Card>
       </div>

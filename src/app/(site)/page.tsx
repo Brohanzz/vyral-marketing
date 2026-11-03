@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/site/Button";
 import Card from "@/components/site/Card";
@@ -14,6 +15,8 @@ import TierCard from "@/components/site/TierCard";
 import HeroLoop from "@/components/site/home/HeroLoop";
 import SkeletonShot from "@/components/site/home/SkeletonShot";
 import { BRAND_LINE } from "@/lib/brand";
+import { SHOW_TESTIMONIALS } from "@/lib/flags";
+import { FOUNDER, FOUNDER_TAGLINE, founderSchema } from "@/lib/founder";
 import { SITE_URL, pageMetadata } from "@/lib/metadata";
 import { FAIR_USE_LINE, PLANS, PRICED_PLANS, READ_ONLY_RULE, TRIAL, TRIAL_LINE } from "@/lib/pricing";
 import { faqSchema } from "@/lib/schema";
@@ -59,6 +62,7 @@ const organizationSchema = {
   name: "VYRAL",
   url: SITE_URL,
   description: BRAND_LINE,
+  founder: founderSchema,
   sameAs: ["https://linkedin.com/company/vyral", "https://twitter.com/getvyral"],
 };
 
@@ -200,10 +204,9 @@ export default function HomePage() {
               <span className="font-mono text-[13px] font-medium text-on-dark-muted tabular-nums">{item.step}</span>
               <h3 className="m-0 text-pretty font-display text-heading-3 font-medium">{item.title}</h3>
               <p className="m-0 text-[15.5px] leading-[1.55] text-on-dark-muted">{item.body}</p>
-              <SkeletonShot variant={item.shot} label={item.label} />
+              <SkeletonShot variant={item.shot} />
               <div className="flex flex-wrap justify-between gap-2.5 text-caption text-on-dark-muted">
                 <span>{item.label}</span>
-                <PlaceholderPill>Placeholder screenshot</PlaceholderPill>
               </div>
               <Link
                 href={item.link.href}
@@ -216,60 +219,67 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Proof */}
-      <Section variant="light" labelledBy="proof-title" className="pt-[78px] pb-[84px]">
-        <SectionLabel>What people say</SectionLabel>
-        <SectionHeading id="proof-title">People who stopped guessing</SectionHeading>
-        <div className="mt-12 grid gap-7 desk:grid-cols-3">
-          {QUOTES.map((q) => (
-            <Card key={q.name} as="figure" className="m-0 p-[26px]">
-              <blockquote className="m-0">
-                <p className="m-0 font-display text-[21px] leading-[1.32] font-medium tracking-[-0.01em]">{q.quote}</p>
-              </blockquote>
-              <DeltaPill direction={q.direction} className="mt-[18px] self-start">
-                {q.delta}
-              </DeltaPill>
-              <figcaption className="mt-auto flex items-center gap-3 pt-6">
-                <span aria-hidden="true" className={`size-12 ${avatar}`} />
-                <span>
-                  <b className="block text-[15px] font-semibold">{q.name}</b>
-                  <span className="text-[13.5px] text-muted">{q.role}</span>
-                </span>
-              </figcaption>
-              <div className="mt-3.5">
-                <PlaceholderPill>Placeholder quote, name and photo</PlaceholderPill>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </Section>
+      {SHOW_TESTIMONIALS && (
+        <>
+        {/* Proof */}
+        <Section variant="light" labelledBy="proof-title" className="pt-[78px] pb-[84px]">
+          <SectionLabel>What people say</SectionLabel>
+          <SectionHeading id="proof-title">People who stopped guessing</SectionHeading>
+          <div className="mt-12 grid gap-7 desk:grid-cols-3">
+            {QUOTES.map((q) => (
+              <Card key={q.name} as="figure" className="m-0 p-[26px]">
+                <blockquote className="m-0">
+                  <p className="m-0 font-display text-[21px] leading-[1.32] font-medium tracking-[-0.01em]">{q.quote}</p>
+                </blockquote>
+                <DeltaPill direction={q.direction} className="mt-[18px] self-start">
+                  {q.delta}
+                </DeltaPill>
+                <figcaption className="mt-auto flex items-center gap-3 pt-6">
+                  <span aria-hidden="true" className={`size-12 ${avatar}`} />
+                  <span>
+                    <b className="block text-[15px] font-semibold">{q.name}</b>
+                    <span className="text-[13.5px] text-muted">{q.role}</span>
+                  </span>
+                </figcaption>
+                <div className="mt-3.5">
+                  <PlaceholderPill>Placeholder quote, name and photo</PlaceholderPill>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Section>
+        </>
+      )}
 
       {/* Founder */}
-      <Section variant="tint" labelledBy="founder-title" className="py-9">
+      <Section variant={SHOW_TESTIMONIALS ? "tint" : "light"} labelledBy="founder-title" className="py-9">
         <div className="flex flex-col gap-5 rounded-lg bg-surface/70 p-5 shadow-1 desk:flex-row desk:items-center desk:gap-6 desk:px-7">
-          <span className="flex flex-none" aria-hidden="true">
-            <span className={`size-14 ${avatar}`} />
-          </span>
+          <Image
+            src={FOUNDER.photo}
+            alt={FOUNDER.alt}
+            width={56}
+            height={56}
+            sizes="56px"
+            className="size-14 flex-none rounded-full"
+          />
           <div className="min-w-0 flex-1">
             <h2 id="founder-title" className="m-0 text-[14px] font-semibold text-primary-strong">
               From the founder
             </h2>
-            <p className="mt-1 mb-0 text-[17px] leading-normal text-ink">
-              Meet Viktorija, the founder of VYRAL, and why she built it.{" "}
-              <Link
-                href="/about#founder"
-                className="font-semibold whitespace-nowrap text-primary-hover underline underline-offset-2 hover:text-primary-strong"
-              >
-                Read her story
-              </Link>
-            </p>
+            <p className="mt-1 mb-0 text-[17px] leading-normal text-ink">{FOUNDER_TAGLINE}</p>
+            <p className="mt-1 mb-0 text-[14px] text-muted">{FOUNDER.name}, founder</p>
           </div>
-          <PlaceholderPill className="self-start desk:self-center">Placeholder, founder photo</PlaceholderPill>
+          <Link
+            href="/about#founder"
+            className="inline-flex min-h-11 items-center self-start font-semibold whitespace-nowrap text-primary-hover underline underline-offset-2 hover:text-primary-strong desk:self-center"
+          >
+            Read Vicky&apos;s story
+          </Link>
         </div>
       </Section>
 
       {/* Official API */}
-      <Section variant="dark" from="base" to="base" id="api" labelledBy="api-title" className="py-[112px]">
+      <Section variant="dark" from={SHOW_TESTIMONIALS ? "base" : "soft"} to="base" id="api" labelledBy="api-title" className="py-[112px]">
         <SectionLabel>Official API</SectionLabel>
         <SectionHeading id="api-title">{BRAND_LINE.replace(/\.$/, "")}</SectionHeading>
         <div className="mt-10 grid items-start gap-8 desk:grid-cols-2 desk:gap-16">

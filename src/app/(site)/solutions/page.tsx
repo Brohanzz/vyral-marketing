@@ -3,7 +3,7 @@ import ClosingBand from "@/components/site/ClosingBand";
 import { Bullets } from "@/components/site/FeaturePage";
 import JsonLd from "@/components/site/JsonLd";
 import PageHero from "@/components/site/PageHero";
-import ShotPlaceholder from "@/components/site/ShotPlaceholder";
+import ScreenIllustration from "@/components/site/ScreenIllustration";
 import Section from "@/components/site/Section";
 import SectionHeading from "@/components/site/SectionHeading";
 import SectionLabel from "@/components/site/SectionLabel";
@@ -35,7 +35,7 @@ const AUDIENCES: Audience[] = [
     slug: "ghostwriters",
     label: "Ghostwriters",
     title: "For ghostwriters",
-    body: "The Coach builds a voice profile from your client's posts and suggests hooks in their style. Analytics show which themes, hooks and tones land, so you can explain every choice. Multiple client workspaces are coming soon.",
+    body: "The Coach builds a voice profile from your client's posts and suggests hooks in their style. Analytics show which themes, hooks and tones land, so you can explain every choice. Client workspaces are built with our first business customers.",
     uses: ["Voice profile from the client's posts", "Draft scoring", "Theme and hook analysis"],
     link: { label: "Meet the AI Coach", href: "/ai-coach" },
   },
@@ -84,7 +84,7 @@ export default function SolutionsPage() {
         label="Use cases"
         title="VYRAL for creators, ghostwriters, agencies and businesses"
         sub="Same product, different jobs. Find the part that fits how you work."
-        aside={<ShotPlaceholder label="Use cases" />}
+        aside={<ScreenIllustration />}
       >
         <nav aria-label="Use cases" className="flex flex-wrap gap-3">
           {AUDIENCES.map((a) => (

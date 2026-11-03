@@ -49,7 +49,6 @@ const content: FeaturePageContent = {
         "Analytics: impressions, reactions and comments for each post",
         "Follower and connection counts, tracked daily",
       ],
-      shot: "LinkedIn connections",
       link: { label: "Read how access works", href: "/linkedin-tool-safe" },
     },
     {
@@ -59,7 +58,6 @@ const content: FeaturePageContent = {
         "The Coach helps you draft. You click Publish, or pick a time. You can cancel a scheduled post any time before it goes live.",
         "Posts you publish through VYRAL keep their text and update their numbers on their own. There is nothing extra to do.",
       ],
-      shot: "Coach and scheduler",
       link: { label: "Meet the AI Coach", href: "/ai-coach" },
     },
     {
@@ -69,7 +67,6 @@ const content: FeaturePageContent = {
         "Impressions, reactions and comments sync every 3 hours for a post's first 14 days, then daily until day 30, then weekly. VYRAL maps hook types, tone, timing and themes, then shows which ones work for you.",
         "When you sign up, VYRAL imports the posts from your last 30 days that have analytics. To add older posts, upload the data export LinkedIn gives you.",
       ],
-      shot: "Analytics overview",
       link: { label: "See the analytics", href: "/linkedin-analytics" },
     },
   ],
