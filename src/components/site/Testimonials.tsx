@@ -32,6 +32,14 @@ function Person({ t, size }: { t: Testimonial; size: number }) {
   );
 }
 
+function Paragraphs({ quote, className }: { quote: string; className: string }) {
+  return quote.split("\n\n").map((para, i) => (
+    <p key={i} className={`${className}${i > 0 ? " mt-4" : ""}`}>
+      {para}
+    </p>
+  ));
+}
+
 function Result({ t }: { t: Testimonial }) {
   if (!t.result) return null;
   return (
@@ -58,9 +66,10 @@ export default function Testimonials({ items }: { items: Testimonial[] }) {
         />
         <div className="flex flex-col">
           <blockquote className="m-0">
-            <p className="m-0 text-pretty font-display text-[22px] leading-[1.4] font-medium tracking-[-0.01em] desk:text-[26px]">
-              {t.quote}
-            </p>
+            <Paragraphs
+              quote={t.quote}
+              className="m-0 text-pretty font-display text-[22px] leading-[1.4] font-medium tracking-[-0.01em] desk:text-[26px]"
+            />
           </blockquote>
           <Result t={t} />
           <figcaption className="mt-6">
@@ -86,7 +95,10 @@ export default function Testimonials({ items }: { items: Testimonial[] }) {
       {items.map((t) => (
         <Card key={t.name} as="figure" className="m-0 p-[26px]">
           <blockquote className="m-0">
-            <p className="m-0 font-display text-[21px] leading-[1.32] font-medium tracking-[-0.01em]">{t.quote}</p>
+            <Paragraphs
+              quote={t.quote}
+              className="m-0 font-display text-[21px] leading-[1.32] font-medium tracking-[-0.01em]"
+            />
           </blockquote>
           <Result t={t} />
           <figcaption className="mt-auto pt-6">
