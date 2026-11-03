@@ -1,59 +1,61 @@
 # VYRAL
 
-> VYRAL is a LinkedIn content intelligence platform for professionals who want to grow on LinkedIn. It provides AI-powered post coaching, performance analytics, and a personal content Blueprint — all built on LinkedIn's official Community Management API.
-
-VYRAL is the compliance-first alternative to Shield (shut down May 2026).
+> VYRAL is a LinkedIn analytics tool and AI writing coach. It reads the numbers on your own posts, shows what worked, and drafts your next post from it. Built on LinkedIn's official API.
 
 Key facts:
-- Founded by Johan Mortensen and Vicky (co-founders), with angel investor Henrik
-- VYRAL is built on LinkedIn's official API.
-- Plans: Creator ($49/mo), Pro ($99/mo), Team (custom). No free plan. Every account starts with a 14-day free trial of Pro, no credit card. If a trial ends or payment stops, the account keeps read-only access to its history.
-- AI pipeline: Gemini Flash for most tasks, Claude Sonnet for Pro-tier Coach and Analyst
-- Headquartered and serving a global user base; platform live at app.getvyral.io
+- Built on LinkedIn's official API.
+- VYRAL never scrapes, never adds anything to your browser, and never automates likes, comments or connection requests.
+- Plans: Creator at $49 a month, or $39 a month billed yearly. Pro at $99 a month, or $79 a month billed yearly. Business is for companies and teams, set up with us: everything in Pro plus one LinkedIn company page. Talk to us for pricing. Every plan is paid; the trial is the only free access.
+- Every account starts with 14 days of Pro, including 50 AI runs. No credit card.
+- Creator includes 250 AI runs a month. Pro is unlimited. Fair use: up to 500 AI runs a day on every plan.
+- If a trial ends or payment stops, the account keeps read-only access to its existing history. Nothing new syncs and paid features are unavailable.
+- The app runs at app.getvyral.io.
+- Founder: Vicky Salunova (https://www.linkedin.com/in/vicky-salunova/)
 
 ## Key pages
 
-- [Homepage](https://www.getvyral.io): What VYRAL is and why it exists
-- [Sign up](https://app.getvyral.io/auth?mode=signup): Start a free trial
-
-## Features
-
-- [AI Coach](https://www.getvyral.io): Generates LinkedIn posts matched to your personal Blueprint (voice, format, topics)
-- [Analyst](https://www.getvyral.io): Conversational AI analytics — ask questions about your LinkedIn performance data
-- [Blueprint](https://www.getvyral.io): Your personal content strategy document — defines tone, topics, and post formats
-- [Analytics Dashboard](https://www.getvyral.io): Impressions, engagement, follower growth, top posts — all synced via LinkedIn API
-
-## Competitive context
-
-- Shield: shut down May 2026 — VYRAL is a direct alternative
-- VYRAL differentiator: official API compliance, AI coaching, and Analyst chat interface
+- [Homepage](https://www.getvyral.io): What VYRAL does
+- [How VYRAL works](https://www.getvyral.io/how-vyral-works): Connecting LinkedIn, publishing and how the numbers sync
+- [LinkedIn analytics](https://www.getvyral.io/linkedin-analytics): Post analytics, patterns, timing and reports
+- [AI Coach](https://www.getvyral.io/ai-coach): Drafts in your voice, draft scoring and ideas from your own posts
+- [LinkedIn content strategy](https://www.getvyral.io/linkedin-content-strategy): The Blueprint, the content calendar and pillar alignment
+- [Use cases](https://www.getvyral.io/solutions): How creators, ghostwriters and agencies use VYRAL
+- [Official API](https://www.getvyral.io/linkedin-tool-safe): How VYRAL connects to LinkedIn, and what it never does
+- [Pricing](https://www.getvyral.io/pricing): Plans, the trial and a feature comparison
+- [Sign up](https://app.getvyral.io/auth?mode=signup): Start the 14-day trial
 
 ## Blog
 
-- [LinkedIn Company Pages in 2026: What They Can Actually Do](https://www.getvyral.io/blog/linkedin-company-page-strategy-2026): Covers why company pages reach less than personal profiles, the four jobs a page does that a profile cannot, how company page analytics differ from profile analytics, why most LinkedIn tools do not support pages, and how to run both surfaces together without doubling the workload.
-- [LinkedIn's 'Seems Like AI Slop' Button: What It Actually Flags](https://www.getvyral.io/blog/linkedin-ai-slop-button-2026): Covers the AI slop report button LinkedIn shipped on July 30, 2026, the six changes announced alongside it, why the tells that get posts flagged are structural rather than vocabulary-based, and how to evaluate your own content against them.
-- [Shield Analytics Is Shutting Down: What Happened and Where to Go Next](https://www.getvyral.io/blog/shield-analytics-shutting-down-alternatives): Covers Shield Analytics' May 2026 shutdown, the broader pattern of LinkedIn enforcement against Chrome extension-based tools since 2025, and how to evaluate a replacement based on API access method.
-- [Is Your LinkedIn Tool Safe? A 2026 Compliance Guide](https://www.getvyral.io/blog/is-your-linkedin-tool-safe-2026): Explains the four ways LinkedIn tools connect to user accounts (official API, Chrome extension DOM reading, Chrome extension with cookie access, scraping), the compliance spectrum across major LinkedIn tools, and how to evaluate any tool's safety.
-- [Best LinkedIn Analytics Tools 2026](https://www.getvyral.io/blog/best-linkedin-analytics-tools-2026)
-- [LinkedIn Algorithm 2026](https://www.getvyral.io/blog/linkedin-algorithm-2026)
-- [AI LinkedIn Post Writer Guide](https://www.getvyral.io/blog/ai-linkedin-post-writer-guide)
 - [What 350 LinkedIn Posts Tell Us About What Performs in 2026](https://www.getvyral.io/blog/350-linkedin-posts-what-performs-2026)
+- [The AI LinkedIn Post Writer Guide: What Actually Works in 2026](https://www.getvyral.io/blog/ai-linkedin-post-writer-guide)
+- [Best LinkedIn Analytics Tools in 2026](https://www.getvyral.io/blog/best-linkedin-analytics-tools-2026)
+- [Is Your LinkedIn Tool Safe? A 2026 Compliance Guide](https://www.getvyral.io/blog/is-your-linkedin-tool-safe-2026)
+- [LinkedIn's 'Seems Like AI Slop' Button: What It Actually Flags](https://www.getvyral.io/blog/linkedin-ai-slop-button-2026)
+- [How the LinkedIn Algorithm Works in 2026](https://www.getvyral.io/blog/linkedin-algorithm-2026)
+- [LinkedIn Company Pages in 2026: What They Can Actually Do](https://www.getvyral.io/blog/linkedin-company-page-strategy-2026)
+- [A LinkedIn Content Framework for Founders Who Don't Have Time](https://www.getvyral.io/blog/linkedin-content-calendar-founders)
 - [What Happens to Your LinkedIn Reach When You Stop Posting](https://www.getvyral.io/blog/linkedin-reach-stop-posting)
-- [Saves vs Likes vs Comments](https://www.getvyral.io/blog/saves-likes-comments-linkedin-metrics)
-- [LinkedIn Content Framework for Founders](https://www.getvyral.io/blog/linkedin-content-calendar-founders)
+- [Saves vs Likes vs Comments: Which LinkedIn Metric Actually Predicts Growth](https://www.getvyral.io/blog/saves-likes-comments-linkedin-metrics)
+- [Shield Analytics Is Shutting Down: What Happened and Where to Go Next](https://www.getvyral.io/blog/shield-analytics-shutting-down-alternatives)
 
-## Alternatives Comparison Pages
+## Comparison pages
 
-- [Taplio alternatives](https://www.getvyral.io/alternatives/taplio)
-- [Shield alternatives](https://www.getvyral.io/alternatives/shield)
-- [Kleo alternatives](https://www.getvyral.io/alternatives/kleo)
-- [AuthoredUp alternatives](https://www.getvyral.io/alternatives/authoredup)
-- [MagicPost alternatives](https://www.getvyral.io/alternatives/magicpost)
-- [Postiv AI alternatives](https://www.getvyral.io/alternatives/postiv)
-- [Scripe alternatives](https://www.getvyral.io/alternatives/scripe)
-- [Supergrow alternatives](https://www.getvyral.io/alternatives/supergrow)
-- [Stanley alternatives](https://www.getvyral.io/alternatives/stanley)
+- [Taplio](https://www.getvyral.io/alternatives/taplio)
+- [Shield](https://www.getvyral.io/alternatives/shield)
+- [Typefully](https://www.getvyral.io/alternatives/typefully)
+- [Kleo](https://www.getvyral.io/alternatives/kleo)
+- [AuthoredUp](https://www.getvyral.io/alternatives/authoredup)
+- [MagicPost](https://www.getvyral.io/alternatives/magicpost)
+- [Postiv](https://www.getvyral.io/alternatives/postiv)
+- [Scripe](https://www.getvyral.io/alternatives/scripe)
+- [Supergrow](https://www.getvyral.io/alternatives/supergrow)
+- [Stanley](https://www.getvyral.io/alternatives/stanley)
 
-## Optional
+## Help and legal
 
-- [Privacy policy](https://www.getvyral.io/legal/privacy-policy): Data handling and LinkedIn API compliance details
+- [Help center](https://www.getvyral.io/help)
+- [FAQ](https://www.getvyral.io/help/faq)
+- [Contact](https://www.getvyral.io/contact)
+- [Privacy policy](https://www.getvyral.io/legal/privacy-policy)
+- [Security](https://www.getvyral.io/legal/security)
+- [Terms](https://www.getvyral.io/legal/terms)

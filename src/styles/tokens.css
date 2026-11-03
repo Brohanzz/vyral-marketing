@@ -1,0 +1,63 @@
+/*
+ * VYRAL design tokens, light values from design-reference/tokens.json.
+ * This is the only file in the redesign that may contain colour literals.
+ * The "band" group holds the tokens.json dark-theme values that the website's
+ * dark bands (Inside VYRAL, Official API, closing band, footer) are drawn with.
+ */
+:root {
+  /* colour */
+  --vy-base: #fdfbf8;
+  --vy-surface: #ffffff;
+  --vy-surface-soft: #fbede7;
+  --vy-surface-panel: #f8e5de;
+  --vy-band-tint: #f6e1d8;
+  --vy-band-dark: #1a1512;
+  --vy-ink: #241a17;
+  --vy-ink-2: #4a3b36;
+  --vy-muted: #6e5c57;
+  --vy-on-dark: #f6f0ea;
+  --vy-on-dark-muted: #b3a49b;
+  --vy-hairline: #f0e5de;
+  --vy-hairline-strong: #e4d3ca;
+  --vy-primary: #e2523f;
+  --vy-primary-strong: #c2402f;
+  --vy-on-primary: #ffffff;
+  --vy-primary-hover: #b23724;
+  --vy-signal: #f0a830;
+  --vy-signal-soft: #fceeda;
+  --vy-signal-ink: #8a5210;
+  --vy-chart-bar: #f1d3c9;
+  --vy-focus: #c2402f;
+
+  /* colour on dark bands (tokens.json dark values) */
+  --vy-band-surface: #241d19;
+  --vy-band-surface-soft: #2e251f;
+  --vy-band-hairline: #3b3029;
+  --vy-band-hairline-strong: #4a3c33;
+  --vy-band-primary: #f2735f;
+  --vy-band-primary-hover: #f58b7a;
+  --vy-band-on-primary: #1a1512;
+  --vy-band-signal-soft: #3a2a12;
+  --vy-band-signal-ink: #f5c26a;
+
+  /* shadow */
+  --vy-shadow-1: 0 1px 2px rgb(28 20 16 / 0.05), 0 3px 8px rgb(28 20 16 / 0.04);
+  --vy-shadow-2: 0 2px 4px rgb(28 20 16 / 0.04), 0 22px 46px -20px rgb(28 20 16 / 0.28);
+  --vy-shadow-3: 0 1px 2px rgb(28 20 16 / 0.06), 0 10px 26px -12px rgb(28 20 16 / 0.2);
+  --vy-band-shadow-2: 0 2px 6px rgb(0 0 0 / 0.28), 0 26px 54px -22px rgb(0 0 0 / 0.6);
+
+  /* radius */
+  --vy-radius-sm: 8px;
+  --vy-radius-md: 12px;
+  --vy-radius-lg: 20px;
+  --vy-radius-xl: 28px;
+  --vy-radius-pill: 100px;
+
+  /* layout */
+  --vy-content-max: 1200px;
+
+  /* type families; the --font-* variables come from next/font in the root layout */
+  --vy-font-display: var(--font-bricolage), system-ui, sans-serif;
+  --vy-font-body: var(--font-public-sans), system-ui, sans-serif;
+  --vy-font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
