@@ -55,14 +55,7 @@ export const metadata: Metadata = {
       "The only LinkedIn content platform built on official API data.",
     images: ["/og-default.png"],
   },
-  icons: {
-    icon: [
-      { url: '/favicon.png', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-512x512.png', sizes: '512x512', type: 'image/png' },
-    ],
-    apple: '/apple-touch-icon.png',
-  },
+  // Icons come from the files in this folder: icon.svg, favicon.ico and apple-icon.png.
 };
 
 // viewport-fit=cover lets the sticky bar read the phone safe-area insets.
