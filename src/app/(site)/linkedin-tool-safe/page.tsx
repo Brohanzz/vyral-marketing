@@ -6,6 +6,7 @@ import { type FaqItem } from "@/components/site/FaqAccordion";
 import FaqSection from "@/components/site/FaqSection";
 import JsonLd from "@/components/site/JsonLd";
 import PageHero from "@/components/site/PageHero";
+import { RingMarker } from "@/components/site/Marker";
 import Section from "@/components/site/Section";
 import SectionHeading from "@/components/site/SectionHeading";
 import SectionLabel from "@/components/site/SectionLabel";
@@ -82,12 +83,7 @@ function List({ items, mark }: { items: string[]; mark: "no" | "yes" }) {
     <ul className="m-0 mt-5 flex list-none flex-col gap-3 p-0 text-[15.5px] leading-[1.5] text-on-dark-muted">
       {items.map((item) => (
         <li key={item} className="grid grid-cols-[22px_minmax(0,1fr)] gap-3">
-          <span
-            aria-hidden="true"
-            className="mt-px flex size-[22px] items-center justify-center rounded-full bg-band-surface-soft ring-1 ring-band-hairline ring-inset"
-          >
-            <span className={mark === "yes" ? "size-2 rounded-full bg-signal" : "h-0.5 w-2 rounded-full bg-band-primary"} />
-          </span>
+          <RingMarker lineHeight={23.25} kind={mark} />
           <span>{item}</span>
         </li>
       ))}
@@ -114,9 +110,9 @@ export default function LinkedInToolSafePage() {
       <Section variant="tint" labelledBy="connect-title" className="py-[72px]">
         <SectionLabel>How it connects</SectionLabel>
         <SectionHeading id="connect-title">How VYRAL connects to LinkedIn</SectionHeading>
-        <div className="mt-10 grid gap-6 desk:grid-cols-3">
+        <div className="mt-10 grid gap-6 desk:grid-cols-3 desk:gap-y-0">
           {CONNECTIONS.map((c) => (
-            <Card key={c.title} as="article" className="p-6">
+            <Card key={c.title} as="article" className="p-6 desk:row-span-2 desk:grid desk:grid-rows-subgrid desk:gap-y-0">
               <h3 className="m-0 font-display text-heading-3 font-medium">{c.title}</h3>
               <p className="mt-3 mb-0 text-[16px] leading-[1.6] text-ink-2">{c.body}</p>
             </Card>
@@ -124,15 +120,15 @@ export default function LinkedInToolSafePage() {
         </div>
       </Section>
 
-      <Section variant="dark" from="base" to="base" labelledBy="does-title" className="py-[112px]">
+      <Section variant="dark" from="base" to="base" labelledBy="does-title">
         <SectionLabel>In plain words</SectionLabel>
         <SectionHeading id="does-title">What VYRAL does, and what it never does</SectionHeading>
-        <div className="mt-10 grid gap-6 desk:grid-cols-2">
-          <Card variant="dark" className="p-6">
+        <div className="mt-10 grid gap-6 desk:grid-cols-2 desk:gap-y-0">
+          <Card variant="dark" className="p-6 desk:row-span-2 desk:grid desk:grid-rows-subgrid desk:gap-y-0">
             <h3 className="m-0 text-[17px] font-semibold text-on-dark">VYRAL never</h3>
             <List items={NEVER} mark="no" />
           </Card>
-          <Card variant="dark" className="p-6">
+          <Card variant="dark" className="p-6 desk:row-span-2 desk:grid desk:grid-rows-subgrid desk:gap-y-0">
             <h3 className="m-0 text-[17px] font-semibold text-on-dark">VYRAL does</h3>
             <List items={DOES} mark="yes" />
           </Card>

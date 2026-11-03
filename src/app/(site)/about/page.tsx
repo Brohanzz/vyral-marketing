@@ -3,6 +3,7 @@ import Card from "@/components/site/Card";
 import ClosingBand from "@/components/site/ClosingBand";
 import { Bullets } from "@/components/site/FeaturePage";
 import PageHero from "@/components/site/PageHero";
+import { RingMarker } from "@/components/site/Marker";
 import Section from "@/components/site/Section";
 import SectionHeading from "@/components/site/SectionHeading";
 import SectionLabel from "@/components/site/SectionLabel";
@@ -83,7 +84,7 @@ export default function AboutPage() {
           <SectionHeading id="values-title">What we believe</SectionHeading>
           <div className="mt-8 grid gap-5 desk:grid-cols-2">
             {VALUES.map((v) => (
-              <Card key={v.title} as="article" className="p-6">
+              <Card key={v.title} as="article" className="p-6 desk:row-span-2 desk:grid desk:grid-rows-subgrid desk:gap-y-0">
                 <h3 className="m-0 font-display text-heading-3 font-medium">{v.title}</h3>
                 <p className="mt-3 mb-0 text-[15.5px] leading-[1.65] text-ink-2">{v.text}</p>
               </Card>
@@ -92,7 +93,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section variant="dark" from="base" to="base" labelledBy="trust-title" className="py-[112px]">
+      <Section variant="dark" from="base" to="base" labelledBy="trust-title">
         <div className={`${column} grid gap-10`}>
           <div>
             <SectionLabel>Official API</SectionLabel>
@@ -106,14 +107,9 @@ export default function AboutPage() {
             {TRUST.map((t) => (
               <li key={t.title}>
                 <Card variant="dark" className="grid grid-cols-[22px_minmax(0,1fr)] gap-3.5 p-5">
-                  <span
-                    aria-hidden="true"
-                    className="mt-0.5 flex size-[22px] items-center justify-center rounded-full bg-band-surface-soft ring-1 ring-band-hairline ring-inset"
-                  >
-                    <span className="size-2 rounded-full bg-signal" />
-                  </span>
+                  <RingMarker lineHeight={24} />
                   <div>
-                    <b className="block text-[16px] font-semibold text-on-dark">{t.title}</b>
+                    <b className="block text-[16px] leading-[24px] font-semibold text-on-dark">{t.title}</b>
                     <span className="text-[15px] text-on-dark-muted">{t.desc}</span>
                   </div>
                 </Card>

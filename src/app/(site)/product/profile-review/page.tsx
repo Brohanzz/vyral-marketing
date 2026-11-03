@@ -98,9 +98,9 @@ export default function ProfileReviewPage() {
         <p className="mt-4 mb-0 max-w-[620px] text-body-l text-muted">
           Not a generic checklist. Every score is contextualised against your content strategy and goals.
         </p>
-        <div className="mt-10 grid gap-5 desk:grid-cols-3">
+        <div className="mt-10 grid gap-5 desk:grid-cols-3 desk:gap-y-0">
           {SECTIONS.map((s) => (
-            <Card key={s.title} as="article" className="p-6">
+            <Card key={s.title} as="article" className="p-6 desk:row-span-2 desk:grid desk:grid-rows-subgrid desk:gap-y-0">
               <h3 className="m-0 text-[17px] font-semibold text-ink">{s.title}</h3>
               <p className="mt-2 mb-0 text-[15px] leading-[1.6] text-muted">{s.text}</p>
             </Card>
@@ -111,15 +111,13 @@ export default function ProfileReviewPage() {
       <Section variant="tint" labelledBy="steps-title" className="py-[72px]">
         <SectionLabel>How it works</SectionLabel>
         <SectionHeading id="steps-title">Three steps to a stronger profile</SectionHeading>
-        <ol className="m-0 mt-10 grid list-none gap-5 p-0 desk:grid-cols-3">
+        <ol className="m-0 mt-10 grid list-none gap-5 p-0 desk:grid-cols-3 desk:gap-y-0">
           {STEPS.map((s) => (
-            <li key={s.num}>
-              <Card className="h-full p-6">
-                <span className="font-mono text-[13px] font-medium text-muted tabular-nums">{s.num}</span>
-                <h3 className="mt-2 mb-0 text-[17px] font-semibold text-ink">{s.title}</h3>
-                <p className="mt-2 mb-0 text-[15px] leading-[1.6] text-muted">{s.text}</p>
-              </Card>
-            </li>
+            <Card key={s.num} as="li" className="p-6 desk:row-span-3 desk:grid desk:grid-rows-subgrid desk:gap-y-0">
+              <span className="font-mono text-[13px] font-medium text-muted tabular-nums">{s.num}</span>
+              <h3 className="mt-2 mb-0 text-[17px] font-semibold text-ink">{s.title}</h3>
+              <p className="mt-2 mb-0 text-[15px] leading-[1.6] text-muted">{s.text}</p>
+            </Card>
           ))}
         </ol>
         <p className="mt-8 mb-0 text-[15px]">

@@ -173,7 +173,7 @@ export default function PricingPage() {
             </label>
           </fieldset>
 
-          <div className="mt-10 grid items-stretch gap-7 desk:grid-cols-3">
+          <div className="mt-10 grid items-stretch gap-7 desk:grid-cols-3 desk:gap-y-0">
             {PLANS.map((plan) => (
               <TierCard key={plan.id} plan={plan} mode="toggle" showTagline />
             ))}
