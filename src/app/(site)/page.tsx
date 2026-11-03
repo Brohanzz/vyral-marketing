@@ -3,20 +3,20 @@ import Link from "next/link";
 import Button from "@/components/site/Button";
 import Card from "@/components/site/Card";
 import ClosingBand from "@/components/site/ClosingBand";
-import DeltaPill from "@/components/site/DeltaPill";
 import { type FaqItem } from "@/components/site/FaqAccordion";
 import FaqSection from "@/components/site/FaqSection";
 import JsonLd from "@/components/site/JsonLd";
-import PlaceholderPill from "@/components/site/PlaceholderPill";
 import Section from "@/components/site/Section";
 import SectionHeading from "@/components/site/SectionHeading";
 import SectionLabel from "@/components/site/SectionLabel";
 import TierCard from "@/components/site/TierCard";
+import Testimonials from "@/components/site/Testimonials";
 import HeroLoop from "@/components/site/home/HeroLoop";
 import SkeletonShot from "@/components/site/home/SkeletonShot";
 import { BRAND_LINE } from "@/lib/brand";
 import { SHOW_TESTIMONIALS } from "@/lib/flags";
 import { FOUNDER, FOUNDER_TAGLINE, founderSchema } from "@/lib/founder";
+import { TESTIMONIALS } from "@/lib/testimonials";
 import { SITE_URL, pageMetadata } from "@/lib/metadata";
 import { FAIR_USE_LINE, PLANS, PRICED_PLANS, READ_ONLY_RULE, TRIAL, TRIAL_LINE } from "@/lib/pricing";
 import { faqSchema } from "@/lib/schema";
@@ -112,51 +112,12 @@ const INSIDE = [
   },
 ];
 
-const mono = "font-mono font-medium tabular-nums";
-
-const QUOTES = [
-  {
-    quote: "I stopped guessing what to post. The numbers tell me, and the draft is already waiting.",
-    delta: (
-      <>
-        Reach up <span className={mono}>38%</span> in <span className={mono}>6</span> weeks
-      </>
-    ),
-    direction: "up" as const,
-    name: "Anders Holm",
-    role: "Founder, Holm Studio",
-  },
-  {
-    quote: "The draft already knows what worked last week. I edit it instead of starting from a blank page.",
-    delta: (
-      <>
-        Time per post from <span className={mono}>40</span> to <span className={mono}>12</span> min
-      </>
-    ),
-    direction: "down" as const,
-    name: "Priya Nair",
-    role: "Head of growth, Larkfield",
-  },
-  {
-    quote: "Two of my last three inbound leads mentioned a post. Now I can see which one did it.",
-    delta: (
-      <>
-        Inbound replies <span className={mono}>2.4x</span>
-      </>
-    ),
-    direction: "up" as const,
-    name: "Jonas Weber",
-    role: "Sales lead, Nordwerk",
-  },
-];
 
 const API_POINTS = [
   { title: "Your account stays yours", body: "Remove VYRAL's access any time from your LinkedIn settings." },
   { title: "Real numbers", body: "Impressions and engagement come from LinkedIn, not from a guess." },
   { title: "No automation", body: "No auto likes, no auto comments, no connection requests sent for you." },
 ];
-
-const avatar = "flex-none rounded-full bg-[radial-gradient(circle_at_34%_30%,var(--vy-surface),var(--vy-chart-bar))]";
 
 export default function HomePage() {
   return (
@@ -219,36 +180,14 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {SHOW_TESTIMONIALS && (
-        <>
-        {/* Proof */}
+      {SHOW_TESTIMONIALS && TESTIMONIALS.length > 0 && (
         <Section variant="light" labelledBy="proof-title" className="pt-[78px] pb-[84px]">
           <SectionLabel>What people say</SectionLabel>
-          <SectionHeading id="proof-title">People who stopped guessing</SectionHeading>
-          <div className="mt-12 grid gap-7 desk:grid-cols-3">
-            {QUOTES.map((q) => (
-              <Card key={q.name} as="figure" className="m-0 p-[26px]">
-                <blockquote className="m-0">
-                  <p className="m-0 font-display text-[21px] leading-[1.32] font-medium tracking-[-0.01em]">{q.quote}</p>
-                </blockquote>
-                <DeltaPill direction={q.direction} className="mt-[18px] self-start">
-                  {q.delta}
-                </DeltaPill>
-                <figcaption className="mt-auto flex items-center gap-3 pt-6">
-                  <span aria-hidden="true" className={`size-12 ${avatar}`} />
-                  <span>
-                    <b className="block text-[15px] font-semibold">{q.name}</b>
-                    <span className="text-[13.5px] text-muted">{q.role}</span>
-                  </span>
-                </figcaption>
-                <div className="mt-3.5">
-                  <PlaceholderPill>Placeholder quote, name and photo</PlaceholderPill>
-                </div>
-              </Card>
-            ))}
+          <SectionHeading id="proof-title">What people say about VYRAL</SectionHeading>
+          <div className="mt-12">
+            <Testimonials items={TESTIMONIALS} />
           </div>
         </Section>
-        </>
       )}
 
       {/* Founder */}

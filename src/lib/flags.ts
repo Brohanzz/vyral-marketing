@@ -1,5 +1,5 @@
 /**
- * Homepage testimonials. The section and its data stay in the code; switch this
- * on once there are real quotes, names and photos to show.
+ * Homepage testimonials, read from src/lib/testimonials.ts. Switch this
+ * off to hide the whole section.
  */
-export const SHOW_TESTIMONIALS = false;
+export const SHOW_TESTIMONIALS = true;
