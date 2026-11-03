@@ -45,8 +45,8 @@ const sections: Section[] = [
         a: "Yes. VYRAL is built exclusively on LinkedIn's official Community Management API. We don't use browser extensions, scraping, or any automation outside what LinkedIn explicitly permits. Your account connects through LinkedIn's official login, and you can remove access any time in your LinkedIn settings.",
       },
       {
-        q: "Why do some LinkedIn tools get restricted or shut down?",
-        a: "Tools that use browser extensions, scraping, or unofficial automation violate LinkedIn's Terms of Service. LinkedIn actively detects these methods and restricts or removes tools that use them. VYRAL only uses LinkedIn's official API and never automates likes, comments or connection requests. You can remove VYRAL's access any time in your LinkedIn settings.",
+        q: "How does VYRAL connect to LinkedIn?",
+        a: "VYRAL only uses LinkedIn's official API and never automates likes, comments or connection requests. You can remove VYRAL's access any time in your LinkedIn settings.",
       },
       {
         q: "Does VYRAL post on my behalf automatically?",
@@ -63,7 +63,7 @@ const sections: Section[] = [
     items: [
       {
         q: "Why can't I tag or mention people in posts?",
-        a: "Tagging people in posts requires access to a restricted part of LinkedIn's API that is not available to most third-party tools. Tools that do offer tagging typically route the post through a Chrome extension using your LinkedIn session cookies, not through the official API. This works until it doesn't: LinkedIn actively detects and restricts cookie-based automation, and it puts your account at risk. VYRAL doesn't offer tagging via workarounds. If you need to tag someone, draft your post in VYRAL and publish natively on LinkedIn where you can add mentions directly.",
+        a: "Tagging people in posts needs access to a part of LinkedIn's API that is not open to most third-party tools. VYRAL doesn't offer tagging. If you need to tag someone, draft your post in VYRAL and publish natively on LinkedIn where you can add mentions directly.",
       },
       {
         q: "Why do I need to post through VYRAL to see my analytics?",

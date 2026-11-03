@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Article, { Markdown, formatDate } from "@/components/site/Article";
+import Article, { FaqList, Markdown, formatDate } from "@/components/site/Article";
 import Button from "@/components/site/Button";
 import JsonLd from "@/components/site/JsonLd";
 import NewsletterSignup from "@/components/site/NewsletterSignup";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
-import { absoluteUrl, pageMetadata } from "@/lib/metadata";
-import { articleSchema } from "@/lib/schema";
+import { absoluteUrl, pageMetadata, withSuffix } from "@/lib/metadata";
+import { articleSchema, faqSchema } from "@/lib/schema";
 import { APP_SIGNUP_URL } from "@/lib/urls";
 
 interface Props {
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
   const { frontmatter: fm } = post;
   return pageMetadata({
-    title: `${fm.title} | VYRAL Blog`,
+    title: withSuffix(fm.title, " | VYRAL Blog"),
     description: fm.description,
     path: `/blog/${fm.slug}`,
     image: fm.image,
@@ -48,22 +48,24 @@ export default async function BlogPostPage({ params }: Props) {
           url: absoluteUrl(`/blog/${fm.slug}`),
           image: fm.image,
           datePublished: fm.date,
+          dateModified: fm.updated,
           author: "VYRAL",
         })}
       />
+      {fm.faq && <JsonLd data={faqSchema(fm.faq)} />}
       <Article
         back={{ label: "← Back to blog", href: "/blog" }}
-        title={fm.title}
+        title={fm.h1 ?? fm.title}
         meta={
           <>
-            {formatDate(fm.date)} · {fm.author}
+            {fm.updated ? `Last updated ${formatDate(fm.updated)}` : formatDate(fm.date)} · {fm.author}
           </>
         }
         tags={fm.tags}
         after={
           <>
             <div className="rounded-lg bg-surface-soft p-8 text-center shadow-1">
-              <h2 className="m-0 font-display text-heading-2 font-medium text-ink">Ready to grow on LinkedIn?</h2>
+              <h2 className="m-0 font-display text-heading-2 font-medium text-ink">Try VYRAL on your own posts</h2>
               <p className="mt-3 mb-6 text-[16px] text-muted">
                 Join VYRAL and get official LinkedIn analytics, AI coaching, and content intelligence in one place.
               </p>
@@ -80,6 +82,7 @@ export default async function BlogPostPage({ params }: Props) {
         }
       >
         <Markdown source={content} />
+        {fm.faq && <FaqList items={fm.faq} />}
       </Article>
     </>
   );

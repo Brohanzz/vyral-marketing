@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Article, { Markdown, formatDate } from "@/components/site/Article";
+import Article, { FaqList, Markdown, formatDate } from "@/components/site/Article";
 import Button from "@/components/site/Button";
 import JsonLd from "@/components/site/JsonLd";
 import { getAllAlternatives, getAlternativeBySlug } from "@/lib/alternatives";
-import { absoluteUrl, pageMetadata } from "@/lib/metadata";
-import { articleSchema } from "@/lib/schema";
+import { absoluteUrl, pageMetadata, withSuffix } from "@/lib/metadata";
+import { articleSchema, faqSchema } from "@/lib/schema";
 import { APP_SIGNUP_URL } from "@/lib/urls";
 
 interface Props {
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!alt) return {};
   const { frontmatter: fm } = alt;
   return pageMetadata({
-    title: `${fm.title} | VYRAL`,
+    title: withSuffix(fm.title, " | VYRAL"),
     description: fm.description,
     path: `/alternatives/${fm.slug}`,
     image: fm.image,
@@ -48,28 +48,31 @@ export default async function AlternativePage({ params }: Props) {
           url: absoluteUrl(`/alternatives/${fm.slug}`),
           image: fm.image,
           datePublished: fm.date,
+          dateModified: fm.updated,
           author: "VYRAL",
         })}
       />
+      {fm.faq && <JsonLd data={faqSchema(fm.faq)} />}
       <Article
-        title={fm.title}
+        title={fm.h1 ?? fm.title}
         meta={
           <>
-            {formatDate(fm.date)} · {fm.author}
+            {fm.updated ? `Last updated ${formatDate(fm.updated)}` : formatDate(fm.date)} · {fm.author}
           </>
         }
         tags={fm.tags}
         after={
           <div className="rounded-lg bg-surface-soft p-8 text-center shadow-1">
-            <h2 className="m-0 font-display text-heading-2 font-medium text-ink">Ready to switch to VYRAL?</h2>
+            <h2 className="m-0 font-display text-heading-2 font-medium text-ink">Try VYRAL on your own posts</h2>
             <p className="mt-3 mb-6 text-[16px] text-muted">
-              Official LinkedIn API. AI coaching. Deep analytics. 14-day free trial, no credit card required.
+              Built on LinkedIn&apos;s official API. 14 days of Pro with 50 AI runs, no credit card.
             </p>
-            <Button href={APP_SIGNUP_URL}>Sign up for a trial</Button>
+            <Button href={APP_SIGNUP_URL}>Start free trial</Button>
           </div>
         }
       >
         <Markdown source={content} />
+        {fm.faq && <FaqList items={fm.faq} />}
       </Article>
     </>
   );

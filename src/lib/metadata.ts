@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 
 export const SITE_URL = "https://www.getvyral.io";
 
+/** Adds a brand suffix to a page title only if the result stays within 60 characters. */
+export function withSuffix(title: string, suffix: string) {
+  const full = `${title}${suffix}`;
+  return full.length <= 60 ? full : title;
+}
+
 export function absoluteUrl(path: string) {
   return path === "/" ? SITE_URL : `${SITE_URL}${path}`;
 }
