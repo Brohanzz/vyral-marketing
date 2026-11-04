@@ -1,53 +1,11 @@
 import Image from "next/image";
 import type { Testimonial } from "@/lib/testimonials";
 import Card from "./Card";
-import DeltaPill from "./DeltaPill";
+import TestimonialCard, { Paragraphs, Result } from "./TestimonialCard";
+import TestimonialSlider from "./TestimonialSlider";
 
-// One component, three layouts by count: one featured card, two cards, or a three-column grid.
-
-function Person({ t, size }: { t: Testimonial; size: number }) {
-  return (
-    <div className="flex items-center gap-3.5">
-      <Image
-        src={`/testimonials/${t.photo}`}
-        alt={t.name}
-        width={size}
-        height={size}
-        sizes={`${size}px`}
-        className="flex-none rounded-full"
-      />
-      <div>
-        <b className="block text-[16px] font-semibold text-ink">{t.name}</b>
-        <span className="block text-[14px] text-muted">{t.role}</span>
-        <a
-          href={t.linkedin}
-          target="_blank"
-          rel="noopener"
-          className="mt-0.5 inline-flex min-h-11 items-center text-[14px] font-semibold text-primary-hover underline underline-offset-2 hover:text-primary-strong"
-        >
-          {t.name} on LinkedIn
-        </a>
-      </div>
-    </div>
-  );
-}
-
-function Paragraphs({ quote, className }: { quote: string; className: string }) {
-  return quote.split("\n\n").map((para, i) => (
-    <p key={i} className={`${className}${i > 0 ? " mt-4" : ""}`}>
-      {para}
-    </p>
-  ));
-}
-
-function Result({ t }: { t: Testimonial }) {
-  if (!t.result) return null;
-  return (
-    <DeltaPill direction={t.result.direction} className="mt-[18px] self-start">
-      {t.result.text}
-    </DeltaPill>
-  );
-}
+// The data file alone decides the layout: one featured card, two static cards,
+// or, from three, a slider.
 
 export default function Testimonials({ items }: { items: Testimonial[] }) {
   if (items.length === 0) return null;
@@ -89,23 +47,15 @@ export default function Testimonials({ items }: { items: Testimonial[] }) {
     );
   }
 
-  const cols = items.length === 2 ? "desk:grid-cols-2" : "desk:grid-cols-3";
-  return (
-    <div className={`grid gap-7 ${cols}`}>
-      {items.map((t) => (
-        <Card key={t.name} as="figure" className="m-0 p-[26px]">
-          <blockquote className="m-0">
-            <Paragraphs
-              quote={t.quote}
-              className="m-0 font-display text-[21px] leading-[1.32] font-medium tracking-[-0.01em]"
-            />
-          </blockquote>
-          <Result t={t} />
-          <figcaption className="mt-auto pt-6">
-            <Person t={t} size={48} />
-          </figcaption>
-        </Card>
-      ))}
-    </div>
-  );
+  if (items.length === 2) {
+    return (
+      <div className="grid gap-7 desk:grid-cols-2">
+        {items.map((t) => (
+          <TestimonialCard key={t.name} t={t} />
+        ))}
+      </div>
+    );
+  }
+
+  return <TestimonialSlider items={items} />;
 }
