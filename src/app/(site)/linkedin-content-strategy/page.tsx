@@ -13,6 +13,24 @@ const content: FeaturePageContent = {
   label: "Strategy",
   h1: "Your LinkedIn content strategy, in one Blueprint",
   sub: "Write down who you are, who you help and what you talk about. VYRAL uses it in every draft, plan and report.",
+  connect: {
+    label: "How it connects",
+    title: "One plan behind every draft, date and number",
+    points: [
+      {
+        title: "Drafts",
+        body: "The Coach reads your positioning, audience, pillars, tone and rules before it writes a draft.",
+      },
+      {
+        title: "Dates",
+        body: "The calendar plans your week around your pillars and favours the ones you have posted about least in the last 30 days.",
+      },
+      {
+        title: "Numbers",
+        body: "Analytics shows your posts by pillar, and on Pro how each pillar performs. A monthly report shows where your posts drift from the plan.",
+      },
+    ],
+  },
   sections: [
     {
       label: "Blueprint",
@@ -33,7 +51,7 @@ const content: FeaturePageContent = {
       label: "Calendar",
       title: "Plan the week around your pillars",
       body: [
-        "The content calendar knows your pillars and your posting rhythm. If you have not posted about a main pillar this week, you see the gap.",
+        "The content calendar knows your pillars and your posting rhythm, and plans around the pillars you have posted about least lately. Analytics shows which pillars are thin.",
         "Pick a time and VYRAL publishes to LinkedIn through the official API. Suggested times come from your own analytics, and you can cancel a scheduled post any time before it goes live.",
       ],
       points: ["Text, image and document posts", "Campaigns with goals you can track"],
@@ -42,7 +60,7 @@ const content: FeaturePageContent = {
       label: "Alignment",
       title: "See when your posts drift from the plan",
       body: [
-        "VYRAL tracks how well your posts match your pillars and nudges you when you drift. As your data shows what works, it suggests changes to your Blueprint.",
+        "Once a month, VYRAL compares your recent posts with your Blueprint and shows where you drift from your pillars, what is holding steady and what to watch. You can also ask VYRAL to review your Blueprint and suggest improvements.",
         `On ${pro.name}, the Strategy Builder walks you through seven steps to build a strategy from the start.`,
       ],
       link: { label: "See the analytics behind it", href: "/linkedin-analytics" },

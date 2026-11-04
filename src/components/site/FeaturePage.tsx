@@ -11,6 +11,7 @@ import { type FaqItem } from "./FaqAccordion";
 import FaqSection from "./FaqSection";
 import JsonLd from "./JsonLd";
 import PageHero from "./PageHero";
+import { DotMarker } from "./Marker";
 import Section from "./Section";
 import SectionHeading from "./SectionHeading";
 import SectionLabel from "./SectionLabel";
@@ -31,7 +32,15 @@ export type CompareBlock = {
   columns: { title: string; items: string[] }[];
 };
 
+export type ConnectBlock = {
+  label: string;
+  title: string;
+  points: { title: string; body: string }[];
+};
+
 export type FeaturePageContent = {
+  /** Optional band of short points right after the hero. */
+  connect?: ConnectBlock;
   /** Optional comparison band right after the hero. */
   compare?: CompareBlock;
   path: string;
@@ -53,7 +62,7 @@ export function Bullets({ items }: { items: string[] }) {
     <ul className="mt-5 mb-0 flex list-none flex-col gap-[9px] p-0 text-[16px] leading-[1.5] text-ink-2">
       {items.map((item) => (
         <li key={item} className="grid grid-cols-[18px_minmax(0,1fr)] gap-2">
-          <span aria-hidden="true" className="mt-[8px] ml-1 size-[7px] rounded-full bg-primary" />
+          <DotMarker lineHeight={24} />
           <span>{item}</span>
         </li>
       ))}
@@ -88,6 +97,21 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
         <span className="text-[14px] text-muted">{TRIAL_LINE}</span>
       </PageHero>
 
+      {content.connect && (
+        <Section variant="tint" labelledBy="connect-title" className="py-[72px]">
+          <SectionLabel>{content.connect.label}</SectionLabel>
+          <SectionHeading id="connect-title">{content.connect.title}</SectionHeading>
+          <div className="mt-10 grid gap-5 desk:grid-cols-3">
+            {content.connect.points.map((pt) => (
+              <Card key={pt.title} as="article" className="p-6 desk:row-span-2 desk:grid desk:grid-rows-subgrid desk:gap-y-0">
+                <h3 className="m-0 font-display text-heading-3 font-medium">{pt.title}</h3>
+                <p className="mt-3 mb-0 text-[15.5px] leading-[1.65] text-ink-2">{pt.body}</p>
+              </Card>
+            ))}
+          </div>
+        </Section>
+      )}
+
       {content.compare && (
         <Section variant="tint" labelledBy="compare-title" className="py-[72px]">
           <div className="grid gap-10 desk:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] desk:gap-16">
@@ -100,9 +124,9 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
                 </p>
               ))}
             </div>
-            <div className="grid gap-5 desk:grid-cols-2">
+            <div className="grid gap-5 desk:grid-cols-2 desk:gap-y-0">
               {content.compare.columns.map((col) => (
-                <Card key={col.title} as="article" className="p-6">
+                <Card key={col.title} as="article" className="p-6 desk:row-span-2 desk:grid desk:grid-rows-subgrid desk:gap-y-0">
                   <h3 className="m-0 text-[17px] font-semibold text-ink">{col.title}</h3>
                   <Bullets items={col.items} />
                 </Card>
@@ -116,7 +140,7 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
         const id = `section-${i + 1}`;
         const flip = i % 2 === 1;
         // The hero ends on the soft colour, so the first band starts from it; bands then alternate.
-        const offset = content.compare ? 1 : 0;
+        const offset = (content.compare ? 1 : 0) + (content.connect ? 1 : 0);
         return (
           <Section key={s.title} variant={(i + offset) % 2 === 1 ? "light" : "tint"} labelledBy={id} className="py-[72px]">
             <div className="grid items-center gap-10 desk:grid-cols-2 desk:gap-16">

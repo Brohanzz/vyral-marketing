@@ -119,6 +119,8 @@
     --vy-band-from: var(--vy-base);
     --vy-band-to: var(--vy-base);
     --vy-band-fade: 120px;
+    /* Nothing sits inside a fade: the band's own padding is the fade plus 48px, top and bottom. */
+    padding-block: calc(var(--vy-band-fade) + 48px);
     background: linear-gradient(
       180deg,
       var(--vy-band-from) 0,
@@ -130,7 +132,9 @@
   .vy-band[data-variant="dark"][data-from="soft"] {
     --vy-band-from: var(--vy-surface-soft);
   }
+  /* A band that stays dark into the footer has no bottom fade; the closing band sets its own bottom padding. */
   .vy-band[data-variant="dark"][data-to="dark"] {
+    padding-block-end: 0;
     background: linear-gradient(180deg, var(--vy-band-from) 0, var(--vy-band-dark) var(--vy-band-fade), var(--vy-band-dark) 100%);
   }
   .vy-hero-panel {

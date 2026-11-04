@@ -24,26 +24,28 @@ export default function BlogPage() {
         ) : (
           <ul className="m-0 grid list-none gap-6 p-0 desk:grid-cols-2">
             {posts.map((post) => (
-              <li key={post.frontmatter.slug}>
-                <Card as="article" className="group h-full gap-3.5 p-7">
-                  <Tags tags={post.frontmatter.tags} />
-                  <h2 className="m-0 text-pretty font-display text-heading-3 font-medium text-ink">
-                    <Link
-                      href={`/blog/${post.frontmatter.slug}`}
-                      className="after:absolute after:inset-0 after:rounded-lg group-hover:text-primary-strong"
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                  </h2>
-                  <p className="m-0 text-[15px] leading-[1.6] text-muted">{post.frontmatter.description}</p>
-                  <div className="mt-auto flex items-center justify-between gap-4 pt-2 text-[13px]">
-                    <span className="text-muted">{formatDate(post.frontmatter.date)}</span>
-                    <span aria-hidden="true" className="font-semibold text-primary-hover">
-                      Read more →
-                    </span>
-                  </div>
-                </Card>
-              </li>
+              <Card
+                key={post.frontmatter.slug}
+                as="li"
+                className="group gap-3.5 p-7 desk:row-span-4 desk:grid desk:grid-rows-subgrid desk:gap-y-0"
+              >
+                <Tags tags={post.frontmatter.tags} />
+                <h2 className="m-0 text-pretty font-display text-heading-3 font-medium text-ink desk:mt-3.5">
+                  <Link
+                    href={`/blog/${post.frontmatter.slug}`}
+                    className="after:absolute after:inset-0 after:rounded-lg group-hover:text-primary-strong"
+                  >
+                    {post.frontmatter.title}
+                  </Link>
+                </h2>
+                <p className="m-0 text-[15px] leading-[1.6] text-muted desk:mt-3.5">{post.frontmatter.description}</p>
+                <div className="mt-auto flex items-center justify-between gap-4 pt-2 text-[13px] desk:mt-3.5">
+                  <span className="text-muted">{formatDate(post.frontmatter.date)}</span>
+                  <span aria-hidden="true" className="font-semibold text-primary-hover">
+                    Read more →
+                  </span>
+                </div>
+              </Card>
             ))}
           </ul>
         )}

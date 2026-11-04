@@ -18,7 +18,7 @@ export default function ClosingBand({
   children?: React.ReactNode;
 }) {
   return (
-    <Section variant="dark" from={from} to="dark" labelledBy="closing-title" className="pt-[112px] pb-[82px] text-center">
+    <Section variant="dark" from={from} to="dark" labelledBy="closing-title" className="pb-[82px] text-center">
       <h2
         id="closing-title"
         className="mx-auto my-0 max-w-[760px] text-pretty font-display text-[36px] leading-[1.06] font-semibold tracking-[-0.024em] text-on-dark desk:text-display-l"
