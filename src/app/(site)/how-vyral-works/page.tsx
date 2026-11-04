@@ -3,6 +3,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 // Merged here: /how-it-works, /product, /why-vyral, /getting-started (redirects in next.config.ts).
 const content: FeaturePageContent = {
+  heroScreen: "content-calendar",
   compare: {
     label: "Why publish through VYRAL",
     title: "Publish through VYRAL and your numbers keep themselves up to date",
@@ -50,6 +51,7 @@ const content: FeaturePageContent = {
         "Follower and connection counts, tracked daily",
       ],
       link: { label: "Read how access works", href: "/linkedin-tool-safe" },
+      screen: "settings-linkedin",
     },
     {
       label: "Write and publish",
@@ -68,6 +70,7 @@ const content: FeaturePageContent = {
         "When you sign up, VYRAL imports the posts from your last 30 days that have analytics. To add older posts, upload the data export LinkedIn gives you.",
       ],
       link: { label: "See the analytics", href: "/linkedin-analytics" },
+      screen: "insights-explore",
     },
   ],
   faq: [

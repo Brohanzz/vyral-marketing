@@ -15,6 +15,7 @@ import { DotMarker } from "./Marker";
 import Section from "./Section";
 import SectionHeading from "./SectionHeading";
 import SectionLabel from "./SectionLabel";
+import AppScreen, { type ScreenName } from "./AppScreen";
 import ScreenIllustration from "./ScreenIllustration";
 
 export type FeatureSection = {
@@ -23,6 +24,8 @@ export type FeatureSection = {
   body: string[];
   points?: string[];
   link?: { label: string; href: string };
+  /** A real app screen in place of the drawn illustration. */
+  screen?: ScreenName;
 };
 
 export type CompareBlock = {
@@ -39,6 +42,10 @@ export type ConnectBlock = {
 };
 
 export type FeaturePageContent = {
+  /** A real app screen for the hero, in place of the drawn illustration. */
+  heroScreen?: ScreenName;
+  /** Desktop crop for the hero screen: width / height and object-position. */
+  heroCrop?: { ratio: number; position: string };
   /** Optional band of short points right after the hero. */
   connect?: ConnectBlock;
   /** Optional comparison band right after the hero. */
@@ -89,7 +96,13 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
         label={content.label}
         title={content.h1}
         sub={content.sub}
-        aside={<ScreenIllustration />}
+        aside={
+          content.heroScreen ? (
+            <AppScreen name={content.heroScreen} priority ratio={content.heroCrop?.ratio} position={content.heroCrop?.position} />
+          ) : (
+            <ScreenIllustration />
+          )
+        }
       >
         <Button href={APP_SIGNUP_URL} size="lg">
           Start free trial
@@ -161,7 +174,7 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
                   </p>
                 )}
               </div>
-              <ScreenIllustration />
+              {s.screen ? <AppScreen name={s.screen} /> : <ScreenIllustration />}
             </div>
           </Section>
         );

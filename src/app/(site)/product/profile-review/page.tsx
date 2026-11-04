@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AppScreen from "@/components/site/AppScreen";
 import Button from "@/components/site/Button";
 import Card from "@/components/site/Card";
 import ClosingBand from "@/components/site/ClosingBand";
@@ -72,6 +73,7 @@ export default function ProfileReviewPage() {
         label="Profile Review"
         title="Your LinkedIn profile is either working for you or against you"
         sub="Upload a screenshot and get an instant AI audit: section-by-section scores, priority fixes, and headline rewrites tailored to your content strategy."
+        aside={<AppScreen name="profile-review" priority />}
       >
         <Button href={APP_SIGNUP_URL} size="lg">
           Start free trial
@@ -96,7 +98,7 @@ export default function ProfileReviewPage() {
         <SectionLabel>What gets reviewed</SectionLabel>
         <SectionHeading id="reviewed-title">Every section of your profile, scored and explained</SectionHeading>
         <p className="mt-4 mb-0 max-w-[620px] text-body-l text-muted">
-          Not a generic checklist. Every score is contextualised against your content strategy and goals.
+          Not a generic checklist. You get a score out of 100, a score out of 10 for each section and the three fixes to make first. Every score is contextualised against your content strategy and goals.
         </p>
         <div className="mt-10 grid gap-5 desk:grid-cols-3 desk:gap-y-0">
           {SECTIONS.map((s) => (

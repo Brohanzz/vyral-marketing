@@ -6,6 +6,7 @@ const [creator, pro] = PRICED_PLANS;
 
 // Merged here: /linkedin-coaching, /ai-linkedin-post-writer.
 const content: FeaturePageContent = {
+  heroScreen: "coach-draft-score",
   path: "/ai-coach",
   name: "AI Coach for LinkedIn",
   description:
@@ -31,14 +32,14 @@ const content: FeaturePageContent = {
       label: "Drafts",
       title: "Every draft gets a score before you publish",
       body: ["The Coach scores each post on six points and tells you what to fix. You see the reason, not just a number."],
-      points: ["Hook", "Clarity", "Pacing", "Tone", "Call to action", "Fit with your strategy"],
+      points: ["Opening line", "Clarity", "Flow", "Tone", "Call to action", "Fits your strategy"],
     },
     {
       label: "Ideas",
       title: "Ideas from your best posts, not a blank page",
       body: [
         "Ask for ideas and the Coach starts from your Blueprint and your analytics. It suggests topics that fit your pillars and have worked before.",
-        "You can also paste a draft and ask for a review. It checks the hook, clarity, pacing, tone and call to action, in your voice.",
+        "You can also paste a draft and ask for a review. It checks the opening line, clarity, flow, tone and call to action, in your voice.",
       ],
       link: { label: "How your Blueprint guides the Coach", href: "/linkedin-content-strategy" },
     },
