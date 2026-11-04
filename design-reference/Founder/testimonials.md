@@ -21,3 +21,18 @@ Quote:
 VYRAL has become the place where my LinkedIn content comes together. My drafts land there ready to go, I add the photo, and I just hit post.
 
 What I didn’t expect is how much it helps on the brand side. Having all my stats in one place makes it easy to put together a portfolio, and walking into a brand deal negotiation with real numbers changes the whole conversation. If you work with brands, this is the tool I’d point you to. Huge credit to the team for building something creators actually want to use.
+
+## Marco Villari
+- Photo: marco-villari.png (800 x 800, transparent circle)
+- LinkedIn: https://www.linkedin.com/in/marcvillari/
+- Role and company: Account Executive, Partnership & Alliances, Odoo
+- Result pill: none
+- Permission to publish name, photo and quote: confirmed (Marco agreed to photo, LinkedIn link and quote)
+- Note: brand name written as "VYRAL" (Marco wrote "Vyral"); no other change
+
+Quote:
+I’ve been using VYRAL for months, and it’s become essential to my LinkedIn workflow. I love all-in-one solutions, and having content creation, publishing and performance stats in one place saves time and headaches.
+
+But the real game changer? The integrated coach. It challenges your ideas, sharpens your writing and helps you improve. A no-brainer!
+
+Huge shoutout to the team behind it for building something genuinely valuable!

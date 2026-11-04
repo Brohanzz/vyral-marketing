@@ -27,4 +27,11 @@ export const TESTIMONIALS: Testimonial[] = [
     linkedin: "https://www.linkedin.com/in/suji-goetzke/",
     photo: "suji-goetzke.png",
   },
+  {
+    name: "Marco Villari",
+    role: "Account Executive, Partnership & Alliances, Odoo",
+    quote: "I’ve been using VYRAL for months, and it’s become essential to my LinkedIn workflow. I love all-in-one solutions, and having content creation, publishing and performance stats in one place saves time and headaches.\n\nBut the real game changer? The integrated coach. It challenges your ideas, sharpens your writing and helps you improve. A no-brainer!\n\nHuge shoutout to the team behind it for building something genuinely valuable!",
+    linkedin: "https://www.linkedin.com/in/marcvillari/",
+    photo: "marco-villari.png",
+  },
 ];
