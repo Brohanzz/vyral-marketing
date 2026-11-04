@@ -33,10 +33,10 @@ const content: FeaturePageContent = {
       label: "Patterns",
       title: "Find the hooks, formats and topics that work for you",
       body: [
-        "VYRAL looks at your last 180 days of posts. It maps hook types, structure, tone and themes, and shows which ones get more engagement from your audience.",
-        `Timing comes from your own data. You see your best days and hours, not general advice. Patterns and timing are part of ${pro.name}.`,
+        "You choose the period, and Patterns starts on the last 90 days. VYRAL compares your opening lines, post types, lengths and formats with your own average engagement rate, and each finding says how many posts it rests on.",
+        `Timing comes from your own data. You see your best weekdays and times of day, not general advice. Patterns and timing are part of ${pro.name}.`,
       ],
-      points: ["Hook performance", "Content pillar performance", "Best time to post, by hour and weekday"],
+      points: ["Hook performance", "Content pillar performance", "Best time to post, by weekday and time of day"],
       screen: "insights-patterns",
     },
     {

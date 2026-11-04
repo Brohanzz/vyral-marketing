@@ -67,6 +67,7 @@ const content: FeaturePageContent = {
       title: "Your numbers sync on their own",
       body: [
         "Impressions, reactions and comments sync every 3 hours for a post's first 14 days, then daily until day 30, then weekly. VYRAL maps hook types, tone, timing and themes, then shows which ones work for you.",
+        "In Explore, chart any metric over any period and compare it with the previous period.",
         "When you sign up, VYRAL imports the posts from your last 30 days that have analytics. To add older posts, upload the data export LinkedIn gives you.",
       ],
       link: { label: "See the analytics", href: "/linkedin-analytics" },

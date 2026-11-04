@@ -42,11 +42,11 @@ const content: FeaturePageContent = {
         "You do not start from scratch. VYRAL suggests a Blueprint from the posts you import. Review it, change it, or skip it and set it up later.",
       ],
       points: [
-        "Positioning and audience",
-        "Offers, and the outcomes your content should lead to",
-        "Content pillars and recurring angles",
-        "Stories and proof the Coach can use",
-        "Your voice, and what you would never say",
+        "Positioning, goals and audience",
+        "What you sell, how people buy and your revenue goal",
+        "Content pillars, each with a description",
+        "Your voice: tone words, what to do, what you would never say, and whether the Coach may use personal stories",
+        "A posting plan: posts per week, formats and calls to action",
       ],
     },
     {

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import AppScreen from "@/components/site/AppScreen";
 import Button from "@/components/site/Button";
@@ -21,27 +20,31 @@ export const metadata = pageMetadata({
 
 const SECTIONS = [
   {
-    title: "Strategy Alignment",
-    text: "See how well your profile positions you for your content goals, not just your job title.",
+    title: "Profile photo",
+    text: "Is your photo professional and approachable, and does it fit the rest of your profile?",
   },
   {
-    title: "About Section",
-    text: "Is your About section built for conversion or just a copy of your CV? You'll know.",
-  },
-  {
-    title: "Banner & Photo",
-    text: "Visual first impressions scored and compared against what works for LinkedIn creators.",
+    title: "Banner",
+    text: "Does your banner say what you do and who you help?",
   },
   {
     title: "Headline",
     text: "Your headline is the most important line on your profile. Get rewrites that actually convert.",
   },
   {
-    title: "Featured Section",
+    title: "About",
+    text: "Is your About section built for conversion or just a copy of your CV? You'll know.",
+  },
+  {
+    title: "Featured",
     text: "The most underused section on LinkedIn. Find out if you're leaving authority on the table.",
   },
   {
-    title: "Overall Consistency",
+    title: "Experience",
+    text: "Do your roles show results for your audience, not only your duties?",
+  },
+  {
+    title: "Consistency",
     text: "Does your profile tell a coherent story? VYRAL checks alignment across every section.",
   },
 ];
@@ -60,7 +63,7 @@ const STEPS = [
   {
     num: "03",
     title: "Fix with the Coach",
-    text: "Take your priority fixes straight into the AI Coach to rewrite your headline, About section, and more, in your voice.",
+    text: "Every section that scores under 7 of 10 has a Fix with Coach button. It opens the Coach with that fix, to rewrite your headline, About section and more.",
   },
 ];
 
@@ -81,24 +84,11 @@ export default function ProfileReviewPage() {
         <span className="text-[14px] text-muted">{TRIAL_NOTE}</span>
       </PageHero>
 
-      <Section variant="tint" className="py-[48px]">
-        <div className="mx-auto max-w-[720px]">
-          <Image
-            src="/profileviewer.png"
-            alt="VYRAL Profile Review: AI LinkedIn profile audit"
-            width={1238}
-            height={1778}
-            sizes="(min-width: 860px) 720px, 100vw"
-            className="block h-auto w-full rounded-lg shadow-2"
-          />
-        </div>
-      </Section>
-
-      <Section variant="light" labelledBy="reviewed-title" className="py-[72px]">
+      <Section variant="tint" labelledBy="reviewed-title" className="py-[72px]">
         <SectionLabel>What gets reviewed</SectionLabel>
         <SectionHeading id="reviewed-title">Every section of your profile, scored and explained</SectionHeading>
         <p className="mt-4 mb-0 max-w-[620px] text-body-l text-muted">
-          Not a generic checklist. You get a score out of 100, a score out of 10 for each section and the three fixes to make first. Every score is contextualised against your content strategy and goals.
+          Not a generic checklist. You get a score out of 100, a score out of 10 for each of seven sections and the three fixes to make first. A separate Fits your strategy score compares your profile with your Blueprint.
         </p>
         <div className="mt-10 grid gap-5 desk:grid-cols-3 desk:gap-y-0">
           {SECTIONS.map((s) => (
@@ -110,7 +100,7 @@ export default function ProfileReviewPage() {
         </div>
       </Section>
 
-      <Section variant="tint" labelledBy="steps-title" className="py-[72px]">
+      <Section variant="light" labelledBy="steps-title" className="py-[72px]">
         <SectionLabel>How it works</SectionLabel>
         <SectionHeading id="steps-title">Three steps to a stronger profile</SectionHeading>
         <ol className="m-0 mt-10 grid list-none gap-5 p-0 desk:grid-cols-3 desk:gap-y-0">
@@ -129,7 +119,7 @@ export default function ProfileReviewPage() {
         </p>
       </Section>
 
-      <ClosingBand title="Find out what your profile is really saying">
+      <ClosingBand from="soft" title="Find out what your profile is really saying">
         <p className="m-0">{TRIAL_NOTE}</p>
       </ClosingBand>
     </>
