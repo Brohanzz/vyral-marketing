@@ -145,10 +145,6 @@
       var(--vy-band-tint) 100%
     );
   }
-  .vy-shot {
-    background: linear-gradient(160deg, var(--vy-band-surface-soft), var(--vy-band-surface));
-    box-shadow: inset 0 0 0 1px var(--vy-band-hairline);
-  }
 
   /* Hero loop: mobile first (stacked, vertical connectors), three across from 860px */
   .vy-loop {

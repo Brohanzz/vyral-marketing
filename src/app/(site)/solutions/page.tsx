@@ -3,6 +3,7 @@ import ClosingBand from "@/components/site/ClosingBand";
 import { Bullets } from "@/components/site/FeaturePage";
 import JsonLd from "@/components/site/JsonLd";
 import PageHero from "@/components/site/PageHero";
+import AppScreen from "@/components/site/AppScreen";
 import ScreenIllustration from "@/components/site/ScreenIllustration";
 import Section from "@/components/site/Section";
 import SectionHeading from "@/components/site/SectionHeading";
@@ -20,6 +21,8 @@ type Audience = {
   uses: string[];
   built?: string[];
   link: { label: string; href: string };
+  /** A real app screen under the "What you use" card. */
+  screen?: "profile-review";
 };
 
 const AUDIENCES: Audience[] = [
@@ -28,8 +31,9 @@ const AUDIENCES: Audience[] = [
     label: "Creators",
     title: "For creators",
     body: "VYRAL shows your numbers week by week. On Pro, patterns compare your hook types, timing and themes with your own average. The Coach then drafts the next post in your voice. A content calendar keeps you posting on a steady rhythm.",
-    uses: ["Content calendar", "Performance insights", "Momentum tracking", "Best time to post"],
+    uses: ["Content calendar", "Performance insights", "Momentum tracking", "Best time to post", "Profile review"],
     link: { label: "See the analytics", href: "/linkedin-analytics" },
+    screen: "profile-review",
   },
   {
     slug: "ghostwriters",
@@ -129,6 +133,7 @@ export default function SolutionsPage() {
                   <Bullets items={a.built} />
                 </div>
               )}
+              {a.screen && <AppScreen name={a.screen} />}
             </div>
           </div>
         </Section>

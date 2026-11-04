@@ -6,6 +6,8 @@ const [creator, pro] = PRICED_PLANS;
 
 // Merged here: /linkedin-content-calendar, /linkedin-personal-branding, /linkedin-growth-tool, /product/blueprint-ai.
 const content: FeaturePageContent = {
+  heroScreen: "strategy-blueprint",
+  heroCrop: { ratio: 1.7, position: "90% 0%" },
   path: "/linkedin-content-strategy",
   name: "LinkedIn content strategy Blueprint",
   description:
@@ -40,11 +42,11 @@ const content: FeaturePageContent = {
         "You do not start from scratch. VYRAL suggests a Blueprint from the posts you import. Review it, change it, or skip it and set it up later.",
       ],
       points: [
-        "Positioning and audience",
-        "Offers, and the outcomes your content should lead to",
-        "Content pillars and recurring angles",
-        "Stories and proof the Coach can use",
-        "Your voice, and what you would never say",
+        "Positioning, goals and audience",
+        "What you sell, how people buy and your revenue goal",
+        "Content pillars, each with a description",
+        "Your voice: tone words, what to do, what you would never say, and whether the Coach may use personal stories",
+        "A posting plan: posts per week, formats and calls to action",
       ],
     },
     {
@@ -54,7 +56,8 @@ const content: FeaturePageContent = {
         "The content calendar knows your pillars and your posting rhythm, and plans around the pillars you have posted about least lately. Analytics shows which pillars are thin.",
         "Pick a time and VYRAL publishes to LinkedIn through the official API. Suggested times come from your own analytics, and you can cancel a scheduled post any time before it goes live.",
       ],
-      points: ["Text, image and document posts", "Campaigns with goals you can track"],
+      points: ["Text, image and document posts", "Campaigns generated from your strategy, with posts, impressions and engagement rate for each"],
+      screen: "strategy-campaigns",
     },
     {
       label: "Alignment",

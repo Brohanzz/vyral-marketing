@@ -6,6 +6,7 @@ const [creator, pro] = PRICED_PLANS;
 
 // Merged here: /linkedin-post-analytics, /product/analytics, /product/performance-lab.
 const content: FeaturePageContent = {
+  heroScreen: "insights-overview",
   path: "/linkedin-analytics",
   name: "LinkedIn analytics tool",
   description:
@@ -18,23 +19,25 @@ const content: FeaturePageContent = {
       label: "Your numbers",
       title: "Every post, with its numbers in one place",
       body: [
-        "VYRAL syncs impressions, reactions, comments and reshares from LinkedIn's official API. The home page shows this week next to last week, with the change for each.",
-        "Filter by date range, campaign, post type or label.",
+        "VYRAL syncs impressions, reactions, comments and reshares from LinkedIn's official API. Insights shows your last 30 days next to the period before, with the change for each.",
+        "Search your posts and filter them by status, pillar or format.",
       ],
       points: [
         "Engagement rate by format, pillar and time of day",
         "Text, carousels, images, videos and polls side by side",
         "Momentum, and a consistency score from 0 to 100",
       ],
+      screen: "posts-list",
     },
     {
       label: "Patterns",
       title: "Find the hooks, formats and topics that work for you",
       body: [
-        "VYRAL looks at your last 180 days of posts. It maps hook types, structure, tone and themes, and shows which ones get more engagement from your audience.",
-        `Timing comes from your own data. You see your best days and hours, not general advice. Patterns and timing are part of ${pro.name}.`,
+        "You choose the period, and Patterns starts on the last 90 days. VYRAL compares your opening lines, post types, lengths and formats with your own average engagement rate, and each finding says how many posts it rests on.",
+        `Timing comes from your own data. You see your best weekdays and times of day, not general advice. Patterns and timing are part of ${pro.name}.`,
       ],
-      points: ["Hook performance", "Content pillar performance", "Best time to post, by hour and weekday"],
+      points: ["Hook performance", "Content pillar performance", "Best time to post, by weekday and time of day"],
+      screen: "insights-patterns",
     },
     {
       label: "Reports",
@@ -44,6 +47,7 @@ const content: FeaturePageContent = {
         `On ${pro.name}, the Data Analyst answers questions about your data in plain English. Ask which format worked best this month and get the answer from your own posts.`,
       ],
       link: { label: "Compare plans", href: "/pricing" },
+      screen: "insights-explore-analyst",
     },
   ],
   faq: [

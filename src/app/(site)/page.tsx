@@ -12,9 +12,8 @@ import SectionHeading from "@/components/site/SectionHeading";
 import SectionLabel from "@/components/site/SectionLabel";
 import TierCard from "@/components/site/TierCard";
 import Testimonials from "@/components/site/Testimonials";
-import BlueprintIllustration from "@/components/site/home/BlueprintIllustration";
+import AppScreen, { type ScreenName } from "@/components/site/AppScreen";
 import HeroLoop from "@/components/site/home/HeroLoop";
-import SkeletonShot from "@/components/site/home/SkeletonShot";
 import { BRAND_LINE } from "@/lib/brand";
 import { SHOW_TESTIMONIALS } from "@/lib/flags";
 import { FOUNDER, FOUNDER_TAGLINE, founderSchema } from "@/lib/founder";
@@ -94,17 +93,17 @@ const appSchema = {
 const INSIDE = [
   {
     step: "01",
-    title: "This week next to last week",
-    body: "Open VYRAL and see this week's posts and impressions next to last week's, with the change for each.",
-    shot: "home" as const,
-    label: "Home",
+    title: "Plan your week",
+    body: "Plan posts around your pillars and your best slots, then publish or schedule straight to LinkedIn.",
+    screen: "content-calendar" as ScreenName,
+    label: "Calendar",
     link: { label: "See how it works", href: "/how-vyral-works" },
   },
   {
     step: "02",
     title: "See which posts earned it",
-    body: "Impressions, reactions and comments for each of your posts. On Pro, patterns show which hook types, timing and themes beat your own average.",
-    shot: "insights" as const,
+    body: "Impressions, engagement rate, comments and followers for the period, and the numbers for each post. On Pro, patterns show which hook types, timing and themes beat your own average.",
+    screen: "insights-overview" as ScreenName,
     label: "Insights",
     link: { label: "See the analytics", href: "/linkedin-analytics" },
   },
@@ -112,7 +111,7 @@ const INSIDE = [
     step: "03",
     title: "A draft written from your own posts",
     body: "The Coach uses your Blueprint, your top posts and your tone, so a draft sounds like you and follows your strategy.",
-    shot: "coach" as const,
+    screen: "coach-draft-score" as ScreenName,
     label: "Coach",
     link: { label: "Meet the AI Coach", href: "/ai-coach" },
   },
@@ -190,7 +189,7 @@ export default function HomePage() {
               <h3 className="m-0 text-pretty font-display text-heading-3 font-medium desk:mt-3.5">{item.title}</h3>
               <p className="m-0 text-[15.5px] leading-[1.55] text-on-dark-muted desk:mt-3.5">{item.body}</p>
               <div className="desk:mt-3.5">
-                <SkeletonShot variant={item.shot} />
+                <AppScreen name={item.screen} onDark ratio={2} sizes="(min-width: 860px) 400px, 100vw" />
               </div>
               <div className="flex flex-wrap justify-between gap-2.5 text-caption text-on-dark-muted desk:mt-3.5">
                 <span>{item.label}</span>
@@ -236,7 +235,9 @@ export default function HomePage() {
               </Link>
             </p>
           </div>
-          <BlueprintIllustration />
+          <div className="desk:self-center">
+            <AppScreen name="strategy-blueprint" ratio={1.7} position="90% 0%" sizes="(min-width: 860px) 520px, 100vw" />
+          </div>
         </div>
       </Section>
 
