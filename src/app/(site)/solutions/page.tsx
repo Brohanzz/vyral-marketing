@@ -4,7 +4,6 @@ import { Bullets } from "@/components/site/FeaturePage";
 import JsonLd from "@/components/site/JsonLd";
 import PageHero from "@/components/site/PageHero";
 import AppScreen from "@/components/site/AppScreen";
-import ScreenIllustration from "@/components/site/ScreenIllustration";
 import Section from "@/components/site/Section";
 import SectionHeading from "@/components/site/SectionHeading";
 import SectionLabel from "@/components/site/SectionLabel";
@@ -88,7 +87,7 @@ export default function SolutionsPage() {
         label="Use cases"
         title="VYRAL for creators, ghostwriters, agencies and businesses"
         sub="Same product, different jobs. Find the part that fits how you work."
-        aside={<ScreenIllustration />}
+        aside={<AppScreen name="posts-list" priority />}
       >
         <nav aria-label="Use cases" className="flex flex-wrap gap-3">
           {AUDIENCES.map((a) => (

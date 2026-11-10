@@ -29,7 +29,7 @@ const content: FeaturePageContent = {
       },
       {
         title: "Numbers",
-        body: "Analytics shows your posts by pillar, and on Pro how each pillar performs. A monthly report shows where your posts drift from the plan.",
+        body: "Analytics shows your posts by pillar, and on Pro how each pillar performs. Once a month, VYRAL checks your posts against the plan, and on Pro the Analyst tells you when they drift.",
       },
     ],
   },
@@ -48,6 +48,7 @@ const content: FeaturePageContent = {
         "Your voice: tone words, what to do, what you would never say, and whether the Coach may use personal stories",
         "A posting plan: posts per week, formats and calls to action",
       ],
+      screen: "strategy-positioning",
     },
     {
       label: "Calendar",
@@ -63,10 +64,12 @@ const content: FeaturePageContent = {
       label: "Alignment",
       title: "See when your posts drift from the plan",
       body: [
-        "Once a month, VYRAL compares your recent posts with your Blueprint and shows where you drift from your pillars, what is holding steady and what to watch. You can also ask VYRAL to review your Blueprint and suggest improvements.",
+        `Once a month, VYRAL compares your recent posts with your strategy. On ${pro.name}, when your posts drift from your pillars, the Analyst tells you what it found and links straight to your strategy.`,
+        "VYRAL also checks your voice rules and flags any that need a look.",
         `On ${pro.name}, the Strategy Builder walks you through seven steps to build a strategy from the start.`,
       ],
       link: { label: "See the analytics behind it", href: "/linkedin-analytics" },
+      screen: "strategy-alignment-analyst",
     },
   ],
   faq: [
