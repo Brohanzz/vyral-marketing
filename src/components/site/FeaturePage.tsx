@@ -16,7 +16,6 @@ import Section from "./Section";
 import SectionHeading from "./SectionHeading";
 import SectionLabel from "./SectionLabel";
 import AppScreen, { type ScreenName } from "./AppScreen";
-import ScreenIllustration from "./ScreenIllustration";
 
 export type FeatureSection = {
   label: string;
@@ -24,8 +23,8 @@ export type FeatureSection = {
   body: string[];
   points?: string[];
   link?: { label: string; href: string };
-  /** A real app screen in place of the drawn illustration. */
-  screen?: ScreenName;
+  /** A real app screen beside the text. */
+  screen: ScreenName;
 };
 
 export type CompareBlock = {
@@ -42,8 +41,8 @@ export type ConnectBlock = {
 };
 
 export type FeaturePageContent = {
-  /** A real app screen for the hero, in place of the drawn illustration. */
-  heroScreen?: ScreenName;
+  /** A real app screen for the hero. */
+  heroScreen: ScreenName;
   /** Desktop crop for the hero screen: width / height and object-position. */
   heroCrop?: { ratio: number; position: string };
   /** Optional band of short points right after the hero. */
@@ -97,11 +96,7 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
         title={content.h1}
         sub={content.sub}
         aside={
-          content.heroScreen ? (
-            <AppScreen name={content.heroScreen} priority ratio={content.heroCrop?.ratio} position={content.heroCrop?.position} />
-          ) : (
-            <ScreenIllustration />
-          )
+          <AppScreen name={content.heroScreen} priority ratio={content.heroCrop?.ratio} position={content.heroCrop?.position} />
         }
       >
         <Button href={APP_SIGNUP_URL} size="lg">
@@ -174,7 +169,7 @@ export default function FeaturePage({ content }: { content: FeaturePageContent }
                   </p>
                 )}
               </div>
-              {s.screen ? <AppScreen name={s.screen} /> : <ScreenIllustration />}
+              <AppScreen name={s.screen} />
             </div>
           </Section>
         );

@@ -79,16 +79,28 @@ const SCREENS = {
     alt: "VYRAL draft score of 84 with scores for opening line, clarity, flow, tone, call to action and fit with your strategy",
   },
   "coach-ideas-try-next": {
-    w: 1610,
-    h: 494,
+    w: 524,
+    h: 496,
     natural: true,
-    alt: "VYRAL suggestions for what to post next, each with a button to draft it in the Coach",
+    alt: "A VYRAL suggestion for what to post next, with a button to draft it in the Coach",
   },
   "coach-write-publish": {
     w: 1980,
     h: 1120,
     natural: true,
     alt: "VYRAL Coach chat next to a draft, with the Publish button",
+  },
+  "strategy-positioning": {
+    w: 982,
+    h: 500,
+    natural: true,
+    alt: "VYRAL strategy page with your positioning and goal",
+  },
+  "strategy-alignment-analyst": {
+    w: 564,
+    h: 364,
+    natural: true,
+    alt: "VYRAL Analyst warning that recent posts are drifting from your strategy",
   },
 } satisfies Record<string, Screen>;
 
