@@ -27,6 +27,7 @@ Key facts:
 
 ## Blog
 
+- [What Is VYRAL? Everything You Can Do With It in 2026](https://www.getvyral.io/blog/what-is-vyral-2026): A feature-by-feature guide to VYRAL, the LinkedIn analytics and AI writing coach built on LinkedIn's official API
 - [What 350 LinkedIn Posts Tell Us About What Performs in 2026](https://www.getvyral.io/blog/350-linkedin-posts-what-performs-2026)
 - [The AI LinkedIn Post Writer Guide: What Actually Works in 2026](https://www.getvyral.io/blog/ai-linkedin-post-writer-guide)
 - [Best LinkedIn Analytics Tools in 2026](https://www.getvyral.io/blog/best-linkedin-analytics-tools-2026)
