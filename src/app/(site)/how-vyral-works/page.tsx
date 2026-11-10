@@ -61,6 +61,7 @@ const content: FeaturePageContent = {
         "Posts you publish through VYRAL keep their text and update their numbers on their own. There is nothing extra to do.",
       ],
       link: { label: "Meet the AI Coach", href: "/ai-coach" },
+      screen: "coach-write-publish",
     },
     {
       label: "Measure",
