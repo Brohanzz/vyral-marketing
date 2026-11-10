@@ -1,9 +1,14 @@
 import Image from "next/image";
 import { cx } from "@/lib/cx";
 
-// Real screens from the app, in public/screens/. Each file is 2400 px wide, so it is never
-// shown larger than its own width. `m` is where the image is cropped to on mobile (below
-// 860px), where it sits full width under the text at 4:3.
+// Real screens from the app, in public/screens/. Full screens are 2400 px wide, so they are
+// never shown larger than their own width. `m` is where the image is cropped to on mobile
+// (below 860px), where it sits full width under the text at 4:3.
+//
+// Close-ups (`natural`) have their own width `w` and keep their own shape everywhere: no
+// crop on desktop or mobile, and never wider than the file itself.
+
+type Screen = { h: number; alt: string; m?: string; w?: number; natural?: boolean };
 
 const SCREENS = {
   "content-calendar": {
@@ -61,7 +66,31 @@ const SCREENS = {
     m: "70% 0%",
     alt: "VYRAL settings showing LinkedIn publishing and analytics connected",
   },
-} as const;
+  "coach-voice-rules": {
+    w: 990,
+    h: 576,
+    natural: true,
+    alt: "VYRAL voice settings with tone words and the rules the Coach always follows",
+  },
+  "coach-score-panel": {
+    w: 748,
+    h: 914,
+    natural: true,
+    alt: "VYRAL draft score of 84 with scores for opening line, clarity, flow, tone, call to action and fit with your strategy",
+  },
+  "coach-ideas-try-next": {
+    w: 1610,
+    h: 494,
+    natural: true,
+    alt: "VYRAL suggestions for what to post next, each with a button to draft it in the Coach",
+  },
+  "coach-write-publish": {
+    w: 1980,
+    h: 1120,
+    natural: true,
+    alt: "VYRAL Coach chat next to a draft, with the Publish button",
+  },
+} satisfies Record<string, Screen>;
 
 export type ScreenName = keyof typeof SCREENS;
 
@@ -93,12 +122,15 @@ export default function AppScreen({
   onDark?: boolean;
   className?: string;
 }) {
-  const s = SCREENS[name];
-  const desktop = ratio ?? W / s.h;
+  const s: Screen = SCREENS[name];
+  const w = s.w ?? W;
+  const desktop = ratio ?? w / s.h;
   return (
     <div
+      style={s.natural ? { maxWidth: w } : undefined}
       className={cx(
         "overflow-hidden rounded-lg border",
+        s.natural && "mx-auto w-full",
         onDark ? "border-band-hairline-strong shadow-band-2" : "border-hairline-strong shadow-2",
         className,
       )}
@@ -106,18 +138,24 @@ export default function AppScreen({
       <Image
         src={`/screens/${name}.png`}
         alt={s.alt}
-        width={W}
+        width={w}
         height={s.h}
         sizes={sizes}
         priority={priority}
         style={
-          {
-            "--vy-ar": desktop,
-            "--vy-pos-m": s.m,
-            "--vy-pos-d": position ?? "50% 0%",
-          } as React.CSSProperties
+          s.natural
+            ? undefined
+            : ({
+                "--vy-ar": desktop,
+                "--vy-pos-m": s.m,
+                "--vy-pos-d": position ?? "50% 0%",
+              } as React.CSSProperties)
         }
-        className="block aspect-[4/3] w-full object-cover object-[var(--vy-pos-m)] desk:aspect-[var(--vy-ar)] desk:object-[var(--vy-pos-d)]"
+        className={
+          s.natural
+            ? "block h-auto w-full"
+            : "block aspect-[4/3] w-full object-cover object-[var(--vy-pos-m)] desk:aspect-[var(--vy-ar)] desk:object-[var(--vy-pos-d)]"
+        }
       />
     </div>
   );

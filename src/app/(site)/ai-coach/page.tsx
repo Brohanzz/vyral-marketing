@@ -19,29 +19,32 @@ const content: FeaturePageContent = {
       label: "Your voice",
       title: "It learns how you write",
       body: [
-        "Connect LinkedIn or upload a CSV of your posts. The Coach studies your top posts and builds a voice profile from them.",
-        "When it drafts, it writes like you. When it suggests a change, it keeps your tone.",
+        "In Strategy, you pick your tone words and write the rules the Coach should always and never follow.",
+        "When it drafts, it uses up to five of your own posts as voice examples. Pin the ones you want, or let it pick your top posts.",
       ],
       points: [
-        "Sentence length and paragraph structure",
-        "Hook patterns that work for your audience",
-        "Vocabulary, formatting and tone",
+        "Tone words, such as friendly or conversational",
+        "Always and never rules, in your own words",
+        "Sentence length, layout and openings, measured from your voice examples",
       ],
+      screen: "coach-voice-rules",
     },
     {
       label: "Drafts",
       title: "Every draft gets a score before you publish",
       body: ["The Coach scores each post on six points and tells you what to fix. You see the reason, not just a number."],
       points: ["Opening line", "Clarity", "Flow", "Tone", "Call to action", "Fits your strategy"],
+      screen: "coach-score-panel",
     },
     {
       label: "Ideas",
-      title: "Ideas from your best posts, not a blank page",
+      title: "Ideas from your own numbers, not a blank page",
       body: [
-        "Ask for ideas and the Coach starts from your Blueprint and your analytics. It suggests topics that fit your pillars and have worked before.",
-        "You can also paste a draft and ask for a review. It checks the opening line, clarity, flow, tone and call to action, in your voice.",
+        `On ${pro.name}, Patterns suggests what to try next, based on how your hooks, formats and themes perform. Each suggestion has a Draft in Coach button that opens it in the Coach.`,
+        "You can also ask the Coach for ideas. It suggests a few topics, starting from your top posts, your strategy and your numbers.",
       ],
-      link: { label: "How your Blueprint guides the Coach", href: "/linkedin-content-strategy" },
+      link: { label: "How your strategy guides the Coach", href: "/linkedin-content-strategy" },
+      screen: "coach-ideas-try-next",
     },
   ],
   faq: [
@@ -52,7 +55,7 @@ const content: FeaturePageContent = {
     {
       question: "Does the Coach write in my voice?",
       answer:
-        "Yes. It builds a voice profile from your top posts: sentence length, hooks, formatting, vocabulary and tone. Drafts start from that profile, and you edit them before anything is published.",
+        "Yes. It follows your tone words and your always and never rules, and uses up to five of your posts as voice examples. Drafts start from those, and you edit them before anything is published.",
     },
     {
       question: "Does the Coach publish for me?",
