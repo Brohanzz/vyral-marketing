@@ -132,7 +132,7 @@ const STRATEGY_STEPS = [
   {
     step: "03",
     title: "Measure it",
-    body: "See your posts by pillar, and on Pro how each pillar performs. A monthly report shows where your posts drift from the plan, so you know what to keep and what to change.",
+    body: "See your posts by pillar, and on Pro how each pillar performs. Once a month, VYRAL checks your posts against the plan, and on Pro the Analyst tells you when they drift, so you know what to keep and what to change.",
   },
 ];
 
