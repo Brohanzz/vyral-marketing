@@ -1,61 +1,66 @@
 import type { MetadataRoute } from "next";
+import { getAllAlternatives } from "@/lib/alternatives";
 import { getAllPosts } from "@/lib/blog";
+import { pageLastModified } from "@/lib/page-dates";
+import { lastUpdated } from "@/lib/schema";
 
 const BASE = "https://www.getvyral.io";
-const STATIC_LAST_MOD = "2026-05-27";
-/** Pages rebuilt in the redesign. */
-const REBUILT = "2026-11-02";
+
+/** Static pages; each lastmod is the last commit that touched its page file. */
+const STATIC_ROUTES = [
+  // Core
+  "/",
+  "/pricing",
+  // Feature pages (each also carries the content of the URLs merged into it)
+  "/how-vyral-works",
+  "/linkedin-analytics",
+  "/ai-coach",
+  "/linkedin-content-strategy",
+  "/linkedin-tool-safe",
+  "/solutions",
+  // Product sub-pages
+  "/product/profile-review",
+  // Other pages
+  "/about",
+  "/contact",
+  "/newsletter",
+  // Help
+  "/help",
+  "/help/faq",
+  // Legal
+  "/legal",
+  "/legal/privacy-policy",
+  "/legal/terms",
+  "/legal/cookies",
+  "/legal/gdpr",
+  "/legal/dpa",
+  "/legal/security",
+  "/legal/imprint",
+];
+
+const latest = (dates: string[]) => dates.reduce((a, b) => (b > a ? b : a));
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const blogPosts = getAllPosts().map((post) => ({
+  const posts = getAllPosts().map((post) => ({
     url: `${BASE}/blog/${post.frontmatter.slug}`,
-    lastModified: post.frontmatter.date,
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
+    lastModified: lastUpdated(post.frontmatter),
   }));
 
-  return [
-    // Core
-    { url: `${BASE}/`, lastModified: REBUILT, changeFrequency: "weekly", priority: 1.0 },
-    { url: `${BASE}/pricing`, lastModified: REBUILT, changeFrequency: "monthly", priority: 0.9 },
-    // Feature pages (each also carries the content of the URLs merged into it)
-    { url: `${BASE}/how-vyral-works`, lastModified: REBUILT, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE}/linkedin-analytics`, lastModified: REBUILT, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/ai-coach`, lastModified: REBUILT, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/linkedin-content-strategy`, lastModified: REBUILT, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/linkedin-tool-safe`, lastModified: REBUILT, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/solutions`, lastModified: REBUILT, changeFrequency: "monthly", priority: 0.7 },
-    // Product sub-pages
-    { url: `${BASE}/product/profile-review`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
-    // Alternatives
-    { url: `${BASE}/alternatives/taplio`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/alternatives/shield`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/alternatives/typefully`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/alternatives/authoredup`, lastModified: "2026-05-29", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/alternatives/kleo`, lastModified: "2026-05-29", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/alternatives/magicpost`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/alternatives/postiv`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/alternatives/scripe`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/alternatives/supergrow`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/alternatives/stanley`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.7 },
-    // Other pages
-    { url: `${BASE}/about`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE}/contact`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE}/newsletter`, lastModified: "2026-08-17", changeFrequency: "monthly", priority: 0.6 },
-    // Blog
-    { url: `${BASE}/blog`, lastModified: STATIC_LAST_MOD, changeFrequency: "weekly", priority: 0.6 },
-    ...blogPosts,
-    // Help
-    { url: `${BASE}/help`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE}/help/faq`, lastModified: STATIC_LAST_MOD, changeFrequency: "monthly", priority: 0.6 },
-    // Legal
-    { url: `${BASE}/legal`, lastModified: STATIC_LAST_MOD, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${BASE}/legal/privacy-policy`, lastModified: STATIC_LAST_MOD, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${BASE}/legal/terms`, lastModified: STATIC_LAST_MOD, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${BASE}/legal/cookies`, lastModified: STATIC_LAST_MOD, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${BASE}/legal/gdpr`, lastModified: STATIC_LAST_MOD, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${BASE}/legal/dpa`, lastModified: STATIC_LAST_MOD, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${BASE}/legal/security`, lastModified: STATIC_LAST_MOD, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${BASE}/legal/imprint`, lastModified: STATIC_LAST_MOD, changeFrequency: "yearly", priority: 0.3 },
-  ];
+  const alternatives = getAllAlternatives().map((alt) => ({
+    url: `${BASE}/alternatives/${alt.frontmatter.slug}`,
+    lastModified: lastUpdated(alt.frontmatter),
+  }));
+
+  const pages = STATIC_ROUTES.map((route) => ({
+    url: route === "/" ? `${BASE}/` : `${BASE}${route}`,
+    lastModified: pageLastModified(route),
+  }));
+
+  // The blog index changes when its page file changes or a listed post does.
+  const blogIndex = {
+    url: `${BASE}/blog`,
+    lastModified: latest([pageLastModified("/blog"), ...posts.map((p) => p.lastModified)]),
+  };
+
+  return [...pages, ...alternatives, blogIndex, ...posts];
 }

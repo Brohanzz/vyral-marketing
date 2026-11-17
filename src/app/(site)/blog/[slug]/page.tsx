@@ -6,7 +6,7 @@ import JsonLd from "@/components/site/JsonLd";
 import NewsletterSignup from "@/components/site/NewsletterSignup";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { absoluteUrl, pageMetadata, withSuffix } from "@/lib/metadata";
-import { articleSchema, faqSchema } from "@/lib/schema";
+import { articleSchema, faqSchema, lastUpdated } from "@/lib/schema";
 import { APP_SIGNUP_URL } from "@/lib/urls";
 
 interface Props {
@@ -48,7 +48,7 @@ export default async function BlogPostPage({ params }: Props) {
           url: absoluteUrl(`/blog/${fm.slug}`),
           image: fm.image,
           datePublished: fm.date,
-          dateModified: fm.updated,
+          dateModified: lastUpdated(fm),
           author: "VYRAL",
         })}
       />
@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: Props) {
         title={fm.h1 ?? fm.title}
         meta={
           <>
-            {fm.updated ? `Last updated ${formatDate(fm.updated)}` : formatDate(fm.date)} · {fm.author}
+            {lastUpdated(fm) !== fm.date ? `Last updated ${formatDate(lastUpdated(fm))}` : formatDate(fm.date)} · {fm.author}
           </>
         }
         tags={fm.tags}

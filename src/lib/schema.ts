@@ -15,6 +15,11 @@ export function faqSchema(items: FaqItem[]) {
   };
 }
 
+/** Last content change of a blog or alternatives page: its `updated` field, else its publish date. */
+export function lastUpdated(fm: { date: string; updated?: string }): string {
+  return fm.updated ?? fm.date;
+}
+
 export function articleSchema({
   headline,
   description,
