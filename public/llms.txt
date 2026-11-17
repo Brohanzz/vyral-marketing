@@ -25,6 +25,10 @@ Key facts:
 - [Pricing](https://www.getvyral.io/pricing): Plans, the trial and a feature comparison
 - [Sign up](https://app.getvyral.io/auth?mode=signup): Start the 14-day trial
 
+## Tools
+
+- [LinkedIn reach checker](https://www.getvyral.io/tools/linkedin-reach-checker): compare your recent post impressions with older posts and with the platform-wide decline
+
 ## Blog
 
 - [What Is VYRAL? Everything You Can Do With It in 2026](https://www.getvyral.io/blog/what-is-vyral-2026): A feature-by-feature guide to VYRAL, the LinkedIn analytics and AI writing coach built on LinkedIn's official API

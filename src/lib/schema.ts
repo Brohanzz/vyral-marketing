@@ -20,6 +20,34 @@ export function lastUpdated(fm: { date: string; updated?: string }): string {
   return fm.updated ?? fm.date;
 }
 
+/** A free tool that runs in the browser. */
+export function webApplicationSchema({
+  name,
+  description,
+  url,
+  dateModified,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  dateModified: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name,
+    description,
+    url,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Any",
+    browserRequirements: "Requires JavaScript",
+    isAccessibleForFree: true,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    dateModified,
+    publisher: { "@type": "Organization", name: "VYRAL", url: SITE_URL },
+  };
+}
+
 export function articleSchema({
   headline,
   description,

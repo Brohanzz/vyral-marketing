@@ -27,6 +27,7 @@ const content: FeaturePageContent = {
         "Text, carousels, images, videos and polls side by side",
         "Momentum, and a consistency score from 0 to 100",
       ],
+      link: { label: "Is your reach drop you or LinkedIn? Check it free", href: "/tools/linkedin-reach-checker" },
       screen: "posts-list",
     },
     {
