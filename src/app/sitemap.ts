@@ -24,6 +24,8 @@ const STATIC_ROUTES = [
   "/about",
   "/contact",
   "/newsletter",
+  // Tools
+  "/tools/linkedin-reach-checker",
   // Help
   "/help",
   "/help/faq",
